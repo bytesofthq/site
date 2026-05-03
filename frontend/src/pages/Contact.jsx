@@ -61,8 +61,8 @@ export default function Contact() {
                 <p className="text-gray-600 mb-4 text-sm leading-relaxed">
                   Ready to start a project? Talk to our sales and strategy team.
                 </p>
-                <a href="mailto:sales@bytesoft.in" className="text-primary font-bold hover:text-secondary flex items-center">
-                  sales@bytesoft.in
+                <a href="mailto:bytesofthq@gmail.com" className="text-primary font-bold hover:text-secondary flex items-center">
+                  bytesofthq@gmail.com
                 </a>
               </div>
 
@@ -75,8 +75,8 @@ export default function Contact() {
                 <p className="text-gray-600 mb-4 text-sm leading-relaxed">
                   Existing client needing technical assistance? We're here 24/7.
                 </p>
-                <a href="mailto:support@bytesoft.in" className="text-primary font-bold hover:text-secondary flex items-center">
-                  support@bytesoft.in
+                <a href="mailto:bytesofthq@gmail.com" className="text-primary font-bold hover:text-secondary flex items-center">
+                  bytesofthq@gmail.com
                 </a>
               </div>
 
@@ -88,13 +88,13 @@ export default function Contact() {
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">Headquarters</h3>
                 <p className="text-blue-100 mb-4 text-sm leading-relaxed">
-                  First Floor 111-112, Rishal Complex,<br />
-                  Shiva Market, Pitampura,<br />
-                  New Delhi - 110034
+                  Integral University,<br />
+                  Lucknow,<br />
+                  226026
                 </p>
                 <div className="flex items-center text-white font-bold mt-6">
                   <Phone size={18} className="mr-2 text-secondary" />
-                  +91 78349 80726
+                  +91 9214749997
                 </div>
               </div>
             </div>

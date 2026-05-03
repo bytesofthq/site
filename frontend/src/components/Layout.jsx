@@ -77,7 +77,7 @@ export default function Layout() {
                 <span className="text-white">BYTE</span><span className="text-secondary">SOFT</span>
               </div>
               <p className="text-sm leading-relaxed text-gray-400">
-                Delhi's premier website development and digital solutions company, dedicated to helping businesses grow online with cutting-edge technology and strategic marketing.
+                A premier digital agency specializing in high-performance web development, strategic SEO, and data-driven marketing to elevate your brand's online presence.
               </p>
             </div>
 
@@ -108,19 +108,19 @@ export default function Layout() {
                   <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center mr-3 shrink-0">
                     <MapPin size={14} className="text-white" />
                   </div>
-                  <span className="leading-relaxed text-gray-400 mt-1">First Floor 111-112, Rishal Complex, Shiva Market, Pitampura, New Delhi - 110034</span>
+                  <span className="leading-relaxed text-gray-400 mt-1">Integral University, Lucknow, 226026</span>
                 </li>
                 <li className="flex items-center">
                   <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center mr-3 shrink-0">
                     <Phone size={14} className="text-white" />
                   </div>
-                  <span className="text-gray-400">+91 78349 80726</span>
+                  <span className="text-gray-400">+91 9214749997</span>
                 </li>
                 <li className="flex items-center">
                   <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center mr-3 shrink-0">
                     <Mail size={14} className="text-white" />
                   </div>
-                  <span className="text-gray-400">customerbysoft@gmail.com</span>
+                  <span className="text-gray-400">bytesofthq@gmail.com</span>
                 </li>
               </ul>
             </div>
@@ -155,7 +155,7 @@ export default function Layout() {
           
           {/* Bottom Bar */}
           <div className="pt-8 border-t border-gray-800 text-center text-sm text-gray-500">
-            <p>© 2026 Bytesoft Delhi. All Rights Reserved.</p>
+            <p>© {new Date().getFullYear()} Bytesoft. All Rights Reserved.</p>
           </div>
         </div>
       </footer>
