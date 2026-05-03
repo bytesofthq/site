@@ -1,7 +1,10 @@
+import { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import { MessageSquare, Phone, MapPin, Mail, Send } from 'lucide-react';
+import { MessageSquare, Phone, MapPin, Mail, Send, Menu, X } from 'lucide-react';
 
 export default function Layout() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen flex flex-col font-sans">
       {/* Navigation */}
@@ -13,6 +16,7 @@ export default function Layout() {
             </Link>
           </div>
           
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <Link to="/" className="text-gray-700 hover:text-primary font-medium transition-colors">Home</Link>
             <Link to="/services" className="text-gray-700 hover:text-primary font-medium transition-colors">Services</Link>
@@ -27,7 +31,34 @@ export default function Layout() {
               Get Quote
             </Link>
           </div>
+
+          {/* Mobile Menu Button */}
+          <div className="md:hidden flex items-center">
+            <button 
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="text-gray-700 hover:text-primary focus:outline-none"
+            >
+              {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
+          </div>
         </div>
+
+        {/* Mobile Navigation Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden bg-white border-t border-gray-100 shadow-lg absolute w-full">
+            <div className="px-4 pt-2 pb-6 space-y-1 flex flex-col">
+              <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md font-medium">Home</Link>
+              <Link to="/services" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md font-medium">Services</Link>
+              <Link to="/portfolio" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md font-medium">Portfolio</Link>
+              <Link to="/pricing" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md font-medium">Pricing</Link>
+              <Link to="/about" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md font-medium">About</Link>
+              <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md font-medium">Contact</Link>
+              <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="mt-4 block text-center bg-primary text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-800 transition-colors">
+                Get Quote
+              </Link>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* Main Content */}
