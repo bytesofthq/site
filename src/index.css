@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1e3a8a; /* A nice deep blue matching Bytesoft's image */
+  --color-secondary: #f97316; /* An orange accent matching Bytesoft's image */
+}
+
+@layer utilities {
+  .btn-primary {
+    @apply bg-primary text-white font-semibold py-3 px-6 rounded-md hover:bg-blue-800 transition-colors;
+  }
+  .btn-secondary {
+    @apply border-2 border-primary text-primary font-semibold py-3 px-6 rounded-md hover:bg-primary hover:text-white transition-colors;
+  }
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #333;
+}

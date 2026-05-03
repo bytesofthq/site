@@ -1,0 +1,302 @@
+import { MapPin, Building2, Phone, MonitorSmartphone, LineChart, Users, Store, Star, Zap, HeartHandshake, Mail, HeartPulse, Smartphone, Bot, Palette } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
+export default function Home() {
+  return (
+    <div className="pt-20">
+      {/* Hero Section */}
+      <section className="bg-slate-50 py-20 overflow-hidden relative">
+        {/* Modern abstract background element instead of simple skew */}
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-100/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-orange-50/50 rounded-full blur-3xl translate-y-1/3 -translate-x-1/4"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center relative z-10">
+          <div className="md:w-1/2 pr-0 md:pr-12 mb-12 md:mb-0">
+            <h1 className="text-5xl md:text-6xl font-bold text-primary leading-tight mb-6">
+              BYTESOFT — Engineering Digital Experiences That <span className="text-secondary relative whitespace-nowrap">
+                Drive Growth
+                <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 100 20" preserveAspectRatio="none">
+                  <path d="M0 10 Q 50 20 100 10" fill="transparent" stroke="#f97316" strokeWidth="4" strokeLinecap="round" />
+                </svg>
+              </span>
+            </h1>
+            <p className="text-lg text-gray-600 mb-8 max-w-lg leading-relaxed mt-4">
+              A premier digital agency specializing in high-performance web development, strategic SEO, and data-driven marketing to elevate your brand's online presence.
+            </p>
+            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+              <Link to="/contact" className="btn-primary text-center">Start Your Project</Link>
+              <Link to="/portfolio" className="btn-secondary text-center bg-white/50 backdrop-blur-sm">Explore Our Work</Link>
+            </div>
+          </div>
+          <div className="md:w-1/2 relative">
+            <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/20">
+              <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Team analyzing data" className="w-full h-auto object-cover" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-24 bg-white relative">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl font-bold text-primary mb-4">Digital Solutions</h2>
+            <div className="w-16 h-1.5 bg-secondary mx-auto mb-6 rounded-full"></div>
+            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+              Comprehensive strategies and technical expertise tailored to your business goals.
+            </p>
+          </div>          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { icon: <MonitorSmartphone size={32} />, title: "Web Engineering", desc: "Custom, responsive web applications built with modern frameworks for exceptional speed and user experience." },
+              { icon: <LineChart size={32} />, title: "Search Optimization", desc: "Technical and content-driven SEO strategies that dominate search rankings and capture high-intent traffic." },
+              { icon: <Users size={32} />, title: "Social Media Strategy", desc: "Engaging campaigns across social channels that build brand loyalty, foster community, and generate leads." },
+              { icon: <Store size={32} />, title: "E-commerce Platforms", desc: "Scalable, secure online storefronts optimized for seamless shopping experiences and high conversion rates." },
+              { icon: <HeartPulse size={32} />, title: "Healthcare Software", desc: "Secure, compliant, and intuitive software solutions designed specifically for healthcare providers and patients." },
+              { icon: <Smartphone size={32} />, title: "App Development", desc: "Native and cross-platform mobile applications that deliver engaging experiences right to your users' fingertips." },
+              { icon: <Bot size={32} />, title: "AI Integration", desc: "Intelligent automation and AI-driven solutions to streamline operations and unlock powerful data insights." },
+              { icon: <Palette size={32} />, title: "UI/UX Design", desc: "User-centric interface design focusing on aesthetics and usability to maximize engagement and conversion." }
+            ].map((service, index) => (
+              <div key={index} className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:-translate-y-1 hover:border-blue-100 group">
+                <div className="w-16 h-16 bg-blue-50 rounded-xl flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                  {service.icon}
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{service.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Section */}
+      <section className="py-24 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl font-bold text-primary mb-4">The Bytesoft Advantage</h2>
+            <div className="w-16 h-1.5 bg-secondary mx-auto mb-6 rounded-full"></div>
+            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+              Partner with us for reliable execution, innovative design, and a steadfast commitment to your success.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+            <div className="flex flex-col items-center group">
+              <div className="w-24 h-24 bg-orange-50 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Star size={40} className="text-secondary" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Uncompromising Quality</h3>
+              <p className="text-gray-600">We deliver top-tier engineering and digital solutions with an obsessive focus on performance and usability.</p>
+            </div>
+            <div className="flex flex-col items-center group">
+              <div className="w-24 h-24 bg-orange-50 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Zap size={40} className="text-secondary" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Rapid Deployment</h3>
+              <p className="text-gray-600">We respect your timelines, employing agile methodologies to launch robust solutions ahead of schedule.</p>
+            </div>
+            <div className="flex flex-col items-center group">
+              <div className="w-24 h-24 bg-orange-50 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <HeartHandshake size={40} className="text-secondary" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Dedicated Partnership</h3>
+              <p className="text-gray-600">Consider us an extension of your team. Our proactive support ensures your digital assets always perform.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16">
+            <div className="mb-6 md:mb-0">
+              <h2 className="text-4xl font-bold text-primary mb-4">Featured Case Studies</h2>
+              <div className="w-16 h-1.5 bg-secondary mb-6 rounded-full"></div>
+              <p className="text-gray-600 max-w-xl text-lg">
+                A selection of our most impactful digital transformations.
+              </p>
+            </div>
+            <Link to="/portfolio" className="text-secondary font-bold hover:text-orange-700 flex items-center group">
+              View All Projects 
+              <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="rounded-2xl overflow-hidden shadow-lg group relative cursor-pointer">
+              <div className="relative h-72 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1555421689-491a97ff2040?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tech Startup" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                <div className="absolute inset-0 p-8 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform">
+                  <span className="text-secondary font-semibold text-sm mb-2 tracking-wider uppercase">Web App</span>
+                  <h3 className="text-2xl font-bold text-white mb-2">FinTech Dashboard</h3>
+                  <p className="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">A high-performance financial analytics platform handling real-time data.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl overflow-hidden shadow-lg group relative cursor-pointer md:-translate-y-8">
+              <div className="relative h-72 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Creative Agency" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                <div className="absolute inset-0 p-8 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform">
+                  <span className="text-secondary font-semibold text-sm mb-2 tracking-wider uppercase">E-commerce</span>
+                  <h3 className="text-2xl font-bold text-white mb-2">Retail Transformation</h3>
+                  <p className="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Complete replatforming resulting in a 210% increase in mobile conversions.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl overflow-hidden shadow-lg group relative cursor-pointer">
+              <div className="relative h-72 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Corporate" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                <div className="absolute inset-0 p-8 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform">
+                  <span className="text-secondary font-semibold text-sm mb-2 tracking-wider uppercase">Corporate</span>
+                  <h3 className="text-2xl font-bold text-white mb-2">Enterprise Portal</h3>
+                  <p className="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Scalable architecture serving 50,000+ daily active employees securely.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-24 bg-primary relative overflow-hidden">
+        {/* Subtle background pattern */}
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
+        
+        <div className="max-w-4xl mx-auto px-4 md:px-8 text-center relative z-10">
+          <h2 className="text-4xl font-bold text-white mb-4">What Our Partners Say</h2>
+          <div className="w-16 h-1.5 bg-secondary mx-auto mb-16 rounded-full"></div>
+
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-10 md:p-16 border border-white/20 shadow-2xl relative">
+            <div className="absolute -top-6 left-1/2 -translate-x-1/2 text-6xl text-secondary opacity-50">"</div>
+            <p className="text-xl md:text-2xl text-white mb-8 leading-relaxed font-light">
+              Working with Bytesoft has been a game-changer. They didn't just build a website; they engineered a digital platform that doubled our lead generation in just three months.
+            </p>
+            <div className="flex flex-col items-center">
+              <div className="w-16 h-16 rounded-full bg-gray-300 mb-4 overflow-hidden border-2 border-secondary">
+                 <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Vikram Singh" className="w-full h-full object-cover" />
+              </div>
+              <h4 className="font-bold text-white text-lg">Vikram Singh</h4>
+              <p className="text-blue-200">Director of Operations, Nexus Corp</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section (Teaser) */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="bg-slate-50 rounded-3xl p-12 text-center border border-slate-100 shadow-sm relative overflow-hidden">
+             <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/5 rounded-full blur-3xl"></div>
+            <h2 className="text-4xl font-bold text-primary mb-6">Transparent Pricing Plans</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto mb-10 text-lg">
+              No hidden fees or surprise costs. Choose a plan that scales with your ambition, or contact us for a custom enterprise solution.
+            </p>
+            <Link to="/pricing" className="btn-primary inline-block text-lg px-8 py-4">View Package Options</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Get In Touch Section */}
+      <section className="py-24 bg-slate-50 border-t border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="flex flex-col lg:flex-row gap-16">
+            
+            {/* Left Column: Contact Info */}
+            <div className="lg:w-1/2">
+              <h2 className="text-4xl font-bold text-primary mb-6">Let's Start a Conversation</h2>
+              <p className="text-gray-600 mb-12 text-lg leading-relaxed max-w-lg">
+                Ready to elevate your digital presence? Reach out to our strategists today to discuss how we can engineer your next phase of growth.
+              </p>
+
+              <div className="space-y-8 mb-12">
+                <div className="flex items-start group">
+                  <div className="w-14 h-14 bg-white shadow-sm border border-slate-100 rounded-2xl flex items-center justify-center mr-6 shrink-0 group-hover:border-secondary transition-colors">
+                    <MapPin className="text-secondary" size={26} />
+                  </div>
+                  <div className="pt-1">
+                    <h4 className="font-bold text-gray-900 mb-2 text-lg">Headquarters</h4>
+                    <p className="text-gray-600 leading-relaxed">
+                      First Floor 111-112, Rishal Complex,<br />
+                      Shiva Market, Pitampura,<br />
+                      New Delhi - 110034
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start group">
+                  <div className="w-14 h-14 bg-white shadow-sm border border-slate-100 rounded-2xl flex items-center justify-center mr-6 shrink-0 group-hover:border-secondary transition-colors">
+                    <Phone className="text-secondary" size={26} />
+                  </div>
+                  <div className="pt-2">
+                    <h4 className="font-bold text-gray-900 mb-1 text-lg">Direct Line</h4>
+                    <p className="text-gray-600">+91 78349 80726</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start group">
+                  <div className="w-14 h-14 bg-white shadow-sm border border-slate-100 rounded-2xl flex items-center justify-center mr-6 shrink-0 group-hover:border-secondary transition-colors">
+                    <Mail className="text-secondary" size={26} />
+                  </div>
+                  <div className="pt-2">
+                    <h4 className="font-bold text-gray-900 mb-1 text-lg">Email Us</h4>
+                    <p className="text-gray-600">hello@bytesoft.in</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Contact Form */}
+            <div className="lg:w-1/2">
+              <div className="bg-white p-10 md:p-12 rounded-3xl shadow-xl border border-slate-100">
+                <h3 className="text-2xl font-bold text-gray-900 mb-8">Send us a Message</h3>
+                <form className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">First Name</label>
+                      <input type="text" placeholder="John" className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border-none focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all" />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">Last Name</label>
+                      <input type="text" placeholder="Doe" className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border-none focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all" />
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address *</label>
+                    <input type="email" placeholder="john@company.com" className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border-none focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all" />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">How can we help?</label>
+                    <select className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border-none focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all appearance-none text-gray-600">
+                      <option>Select an area of interest...</option>
+                      <option>Web Engineering</option>
+                      <option>Search Optimization (SEO)</option>
+                      <option>Digital Marketing Strategy</option>
+                      <option>Other Inquiry</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">Project Details</label>
+                    <textarea rows="4" placeholder="Tell us briefly about your goals..." className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border-none focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all resize-none"></textarea>
+                  </div>
+
+                  <button type="button" className="w-full bg-primary text-white font-bold py-4 rounded-xl hover:bg-blue-900 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
+                    Submit Inquiry
+                  </button>
+                </form>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
