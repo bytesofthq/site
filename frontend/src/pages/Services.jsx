@@ -1,4 +1,5 @@
-import { MonitorSmartphone, LineChart, Users, Store, HeartPulse, Smartphone, Bot, Palette, ArrowRight, CheckCircle2, Lightbulb, PenTool, Code2, Rocket } from 'lucide-react';
+import { useState } from 'react';
+import { MonitorSmartphone, LineChart, Users, Store, HeartPulse, Smartphone, Bot, Palette, ArrowRight, CheckCircle2, Lightbulb, PenTool, Code2, Rocket, ChevronDown, ChevronUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Services() {
@@ -79,6 +80,35 @@ export default function Services() {
       desc: "Rigorous testing precedes a flawless launch, followed by ongoing optimization to ensure sustained growth."
     }
   ];
+
+  const faqs = [
+    {
+      question: "How long does a typical web engineering project take?",
+      answer: "A standard corporate website typically takes 4-8 weeks from discovery to launch. Complex e-commerce platforms or custom web applications can take 3-6 months depending on the required features and integrations. We always provide a detailed timeline during the proposal phase."
+    },
+    {
+      question: "Do you offer ongoing maintenance and support?",
+      answer: "Yes. We believe launch day is just the beginning. We offer tiered retainer packages that include priority support, security updates, continuous SEO optimization, and dedicated development hours for iterative improvements."
+    },
+    {
+      question: "What is your approach to SEO?",
+      answer: "We employ a white-hat, holistic approach. We start with a deep technical audit to ensure your site is perfectly readable by search engines. Then, we focus on on-page optimization, content strategy, and high-authority link acquisition to build sustainable, long-term rankings."
+    },
+    {
+      question: "Do I own the code and digital assets after the project is completed?",
+      answer: "Absolutely. Once the project is fully paid, 100% ownership of the source code, designs, and intellectual property transfers to you. We don't hold your assets hostage."
+    },
+    {
+      question: "Can you integrate our new website with our existing CRM and ERP systems?",
+      answer: "Yes, our engineering team specializes in complex API integrations. We routinely connect platforms like Salesforce, HubSpot, SAP, and custom legacy systems to ensure your digital infrastructure operates seamlessly."
+    }
+  ];
+
+  const [openFaq, setOpenFaq] = useState(null);
+
+  const toggleFaq = (index) => {
+    setOpenFaq(openFaq === index ? null : index);
+  };
 
   return (
     <div className="pt-20">
@@ -168,7 +198,47 @@ export default function Services() {
           </div>
         </div>
       </section>
+      {/* Service FAQs */}
+      <section className="py-24 bg-slate-50 border-t border-slate-200">
+        <div className="max-w-4xl mx-auto px-4 md:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-primary mb-4">Frequently Asked Questions</h2>
+            <div className="w-16 h-1.5 bg-secondary mx-auto mb-6 rounded-full"></div>
+            <p className="text-gray-600 text-lg">
+              Common questions clients ask before partnering with us.
+            </p>
+          </div>
 
+          <div className="space-y-4">
+            {faqs.map((faq, index) => (
+              <div 
+                key={index} 
+                className={`bg-white rounded-2xl border ${openFaq === index ? 'border-secondary shadow-md' : 'border-slate-100 shadow-sm'} overflow-hidden transition-all duration-300`}
+              >
+                <button 
+                  onClick={() => toggleFaq(index)}
+                  className="w-full px-8 py-6 text-left flex justify-between items-center focus:outline-none"
+                >
+                  <span className="text-lg font-bold text-gray-900 pr-8">{faq.question}</span>
+                  {openFaq === index ? (
+                    <ChevronUp className="text-secondary shrink-0" size={24} />
+                  ) : (
+                    <ChevronDown className="text-gray-400 shrink-0" size={24} />
+                  )}
+                </button>
+                
+                <div 
+                  className={`px-8 overflow-hidden transition-all duration-300 ease-in-out ${openFaq === index ? 'max-h-96 pb-6 opacity-100' : 'max-h-0 opacity-0'}`}
+                >
+                  <p className="text-gray-600 leading-relaxed pt-4 border-t border-slate-100">
+                    {faq.answer}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
       {/* Final CTA */}
       <section className="py-24 bg-primary relative overflow-hidden">
         <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-secondary/20 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2"></div>
