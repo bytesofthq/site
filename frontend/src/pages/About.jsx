@@ -1,4 +1,4 @@
-import { ArrowRight, Target, ShieldCheck, Zap, Award, Globe, Users } from 'lucide-react';
+import { ArrowRight, Target, ShieldCheck, Zap, Award, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function About() {
@@ -20,32 +20,7 @@ export default function About() {
     }
   ];
 
-  const team = [
-    {
-      name: "Arjun Mehta",
-      role: "Founder & CEO",
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-      bio: "Former tech lead with 15+ years of experience scaling enterprise platforms."
-    },
-    {
-      name: "Priya Sharma",
-      role: "Head of Design",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-      bio: "Award-winning UX architect passionate about human-centered design principles."
-    },
-    {
-      name: "Rahul Verma",
-      role: "Chief Technology Officer",
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-      bio: "Full-stack engineer specializing in scalable cloud architectures and AI integration."
-    },
-    {
-      name: "Sneha Patel",
-      role: "Growth Strategy Lead",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-      bio: "Data-driven marketer who has generated over $50M in client revenue."
-    }
-  ];
+
 
   return (
     <div className="pt-20">
@@ -148,47 +123,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Meet the Team */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16">
-            <div className="mb-6 md:mb-0">
-              <div className="flex items-center gap-3 mb-4">
-                <Users className="text-secondary" size={28} />
-                <h2 className="text-4xl font-bold text-primary">Leadership Team</h2>
-              </div>
-              <div className="w-16 h-1.5 bg-secondary mb-6 rounded-full"></div>
-              <p className="text-gray-600 max-w-xl text-lg">
-                Meet the industry veterans driving innovation at Bytesoft.
-              </p>
-            </div>
-            <Link to="/contact" className="text-secondary font-bold hover:text-orange-700 flex items-center group">
-              Join our team 
-              <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
-            </Link>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member, index) => (
-              <div key={index} className="group">
-                <div className="relative rounded-3xl overflow-hidden mb-6 h-80">
-                  <img 
-                    src={member.image} 
-                    alt={member.name} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/20 to-transparent opacity-60"></div>
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-1 group-hover:text-primary transition-colors">{member.name}</h3>
-                <span className="text-secondary font-bold text-sm tracking-wider uppercase block mb-3">{member.role}</span>
-                <p className="text-gray-600 leading-relaxed">
-                  {member.bio}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Final CTA */}
       <section className="py-24 bg-primary relative overflow-hidden">
