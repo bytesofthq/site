@@ -1,4 +1,4 @@
-import { ArrowRight, Target, ShieldCheck, Zap, Award, Globe } from 'lucide-react';
+import { ArrowRight, Target, ShieldCheck, Zap, Award, Globe, Search, PenTool, Code, Rocket, CheckCircle2, Server, Smartphone, Database, Layout } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function About() {
@@ -123,8 +123,82 @@ export default function About() {
         </div>
       </section>
 
+      {/* Our Proven Process */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl font-bold text-primary mb-4">Our Proven Process</h2>
+            <div className="w-16 h-1.5 bg-secondary mx-auto mb-6 rounded-full"></div>
+            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+              A systematic approach to turning complex challenges into elegant digital solutions.
+            </p>
+          </div>
 
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+            {/* Connecting line for desktop */}
+            <div className="hidden md:block absolute top-12 left-[12%] right-[12%] h-0.5 bg-slate-100 -z-10"></div>
+            
+            {[
+              { icon: <Search size={28} />, title: "1. Discovery", desc: "We dive deep into your business goals, target audience, and market landscape." },
+              { icon: <PenTool size={28} />, title: "2. Strategy & Design", desc: "Crafting intuitive user experiences and striking visual identities that convert." },
+              { icon: <Code size={28} />, title: "3. Engineering", desc: "Building robust, scalable, and blazingly fast technical infrastructure." },
+              { icon: <Rocket size={28} />, title: "4. Launch & Scale", desc: "Deploying flawlessly and continuously optimizing for maximum growth." }
+            ].map((step, index) => (
+              <div key={index} className="relative group text-center flex flex-col items-center">
+                <div className="w-24 h-24 bg-white rounded-full border-4 border-slate-50 flex items-center justify-center mb-6 shadow-sm group-hover:border-secondary transition-colors duration-300 relative z-10">
+                  <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                    {step.icon}
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
+      {/* Tech Stack Section */}
+      <section className="py-24 bg-slate-50 border-t border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="flex flex-col md:flex-row gap-16 items-center">
+            <div className="md:w-1/3">
+              <h2 className="text-4xl font-bold text-primary mb-6">The Tech Stack We Master</h2>
+              <div className="w-16 h-1.5 bg-secondary mb-8 rounded-full"></div>
+              <p className="text-gray-600 text-lg leading-relaxed mb-8">
+                We don't tie ourselves to a single technology. We select the right tools for your specific business requirements, ensuring scalability, security, and exceptional performance.
+              </p>
+              <ul className="space-y-4">
+                {['High-Performance React & Next.js', 'Robust Node.js & Python Backends', 'Scalable AWS Cloud Infrastructure', 'Modern E-commerce Platforms'].map((item, i) => (
+                  <li key={i} className="flex items-center text-gray-700 font-medium">
+                    <CheckCircle2 className="text-secondary mr-3" size={20} />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div className="md:w-2/3 grid grid-cols-2 sm:grid-cols-3 gap-4 lg:gap-6">
+              {[
+                { name: "Frontend", icon: <Layout size={24} />, tags: "React, Vue, Next.js" },
+                { name: "Backend", icon: <Server size={24} />, tags: "Node, Python, Go" },
+                { name: "Database", icon: <Database size={24} />, tags: "PostgreSQL, MongoDB" },
+                { name: "Mobile", icon: <Smartphone size={24} />, tags: "React Native, Flutter" },
+                { name: "Cloud", icon: <Globe size={24} />, tags: "AWS, GCP, Vercel" },
+                { name: "UI/UX", icon: <PenTool size={24} />, tags: "Figma, TailwindCSS" },
+              ].map((tech, idx) => (
+                <div key={idx} className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow group">
+                  <div className="w-12 h-12 bg-orange-50 text-secondary rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    {tech.icon}
+                  </div>
+                  <h4 className="font-bold text-gray-900 mb-1">{tech.name}</h4>
+                  <p className="text-sm text-gray-500">{tech.tags}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
       {/* Final CTA */}
       <section className="py-24 bg-primary relative overflow-hidden">
         <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-secondary/20 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2"></div>
