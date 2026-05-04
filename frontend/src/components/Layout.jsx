@@ -162,12 +162,43 @@ export default function Layout() {
 
       {/* Floating Action Buttons */}
       <div className="fixed bottom-6 right-6 flex flex-col space-y-4 z-50">
-        <button className="bg-primary text-white p-4 rounded-full shadow-lg hover:bg-blue-800 transition-transform hover:scale-105 flex items-center justify-center">
-          <MessageSquare size={24} />
-        </button>
-        <button className="bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-transform hover:scale-105 flex items-center justify-center">
-          <Phone size={24} />
-        </button>
+        {/* Email/Message Button */}
+        <div className="relative group flex items-center justify-end">
+          {/* Tooltip */}
+          <span className="absolute right-full mr-4 bg-gray-900 text-white text-sm px-3 py-1.5 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none shadow-sm">
+            Email Us
+            {/* Tooltip Arrow */}
+            <span className="absolute top-1/2 -right-1 -translate-y-1/2 border-4 border-transparent border-l-gray-900"></span>
+          </span>
+          <a 
+            href="mailto:bytesofthq@gmail.com"
+            className="bg-primary text-white p-4 rounded-full shadow-lg hover:bg-blue-800 transition-transform hover:scale-110 flex items-center justify-center relative z-10"
+            aria-label="Email Us"
+          >
+            <MessageSquare size={24} />
+          </a>
+        </div>
+
+        {/* Phone/WhatsApp Button */}
+        <div className="relative group flex items-center justify-end">
+          {/* Tooltip */}
+          <span className="absolute right-full mr-4 bg-gray-900 text-white text-sm px-3 py-1.5 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none shadow-sm">
+            WhatsApp Us
+            {/* Tooltip Arrow */}
+            <span className="absolute top-1/2 -right-1 -translate-y-1/2 border-4 border-transparent border-l-gray-900"></span>
+          </span>
+          {/* Ping Animation Layer */}
+          <span className="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-25"></span>
+          <a 
+            href="https://wa.me/919214749997"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-transform hover:scale-110 flex items-center justify-center relative z-10"
+            aria-label="WhatsApp Us"
+          >
+            <Phone size={24} />
+          </a>
+        </div>
       </div>
     </div>
   );
