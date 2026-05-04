@@ -221,9 +221,9 @@ export default function Home() {
                   <div className="pt-1">
                     <h4 className="font-bold text-gray-900 mb-2 text-lg">Headquarters</h4>
                     <p className="text-gray-600 leading-relaxed">
-                      First Floor 111-112, Rishal Complex,<br />
-                      Shiva Market, Pitampura,<br />
-                      New Delhi - 110034
+                      Integral University,<br />
+                      Lucknow,<br />
+                      226026
                     </p>
                   </div>
                 </div>
@@ -234,7 +234,7 @@ export default function Home() {
                   </div>
                   <div className="pt-2">
                     <h4 className="font-bold text-gray-900 mb-1 text-lg">Direct Line</h4>
-                    <p className="text-gray-600">+91 78349 80726</p>
+                    <p className="text-gray-600">+91 9214749997</p>
                   </div>
                 </div>
 
@@ -244,7 +244,7 @@ export default function Home() {
                   </div>
                   <div className="pt-2">
                     <h4 className="font-bold text-gray-900 mb-1 text-lg">Email Us</h4>
-                    <p className="text-gray-600">hello@bytesoft.in</p>
+                    <p className="text-gray-600">bytesofthq@gmail.com</p>
                   </div>
                 </div>
               </div>
