@@ -3,25 +3,14 @@ import { Send } from 'lucide-react';
 export default function ContactForm() {
   return (
     <form className="space-y-6 md:space-y-8" onSubmit={(e) => e.preventDefault()}>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-        <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-2 md:mb-3">First Name *</label>
-          <input 
-            type="text" 
-            placeholder="John" 
-            className="w-full px-4 py-3.5 md:px-5 md:py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all" 
-            required
-          />
-        </div>
-        <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-2 md:mb-3">Last Name *</label>
-          <input 
-            type="text" 
-            placeholder="Doe" 
-            className="w-full px-4 py-3.5 md:px-5 md:py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all" 
-            required
-          />
-        </div>
+      <div>
+        <label className="block text-sm font-semibold text-gray-700 mb-2 md:mb-3">Full Name *</label>
+        <input 
+          type="text" 
+          placeholder="John Doe" 
+          className="w-full px-4 py-3.5 md:px-5 md:py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all" 
+          required
+        />
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
@@ -35,11 +24,12 @@ export default function ContactForm() {
           />
         </div>
         <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-2 md:mb-3">Phone Number</label>
+          <label className="block text-sm font-semibold text-gray-700 mb-2 md:mb-3">Phone Number *</label>
           <input 
             type="tel" 
-            placeholder="+1 (555) 000-0000" 
+            placeholder="+91 98765 43210" 
             className="w-full px-4 py-3.5 md:px-5 md:py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all" 
+            required
           />
         </div>
       </div>
