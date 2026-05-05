@@ -48,7 +48,7 @@ export default function Layout() {
         <div className="max-w-7xl mx-auto px-4 md:px-8 h-20 flex items-center justify-between">
           <div className="flex items-center">
             <Link to="/" className="text-2xl font-bold tracking-tight">
-              <span className="text-primary">BY</span><span className="text-secondary">SOFT</span>
+              <span className="text-primary">BYTE</span><span className="text-secondary">SOFT</span>
             </Link>
           </div>
           
