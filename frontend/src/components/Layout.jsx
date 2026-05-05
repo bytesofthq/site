@@ -1,14 +1,45 @@
-import { useState } from 'react';
-import { Link, Outlet } from 'react-router-dom';
-import { MessageSquare, Phone, MapPin, Mail, Send, Menu, X } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Link, Outlet, useLocation } from 'react-router-dom';
+import { MessageSquare, Phone, MapPin, Mail, Send, Menu, X, Home, Briefcase, Info, CreditCard, LayoutTemplate } from 'lucide-react';
+import ContactForm from './ContactForm';
+
+const navLinks = [
+  { path: '/', label: 'Home', icon: Home },
+  { path: '/services', label: 'Services', icon: LayoutTemplate },
+  { path: '/portfolio', label: 'Portfolio', icon: Briefcase },
+  { path: '/pricing', label: 'Pricing', icon: CreditCard },
+  { path: '/about', label: 'About', icon: Info },
+  { path: '/contact', label: 'Contact', icon: Mail }
+];
 
 export default function Layout() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape' && isMobileMenuOpen) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isMobileMenuOpen]);
 
   return (
     <div className="min-h-screen flex flex-col font-sans">
       {/* Navigation */}
-      <nav className="fixed w-full bg-white shadow-sm z-50">
+      <nav className={`fixed w-full z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-white/80 backdrop-blur-lg shadow-sm py-0' : 'bg-white py-1'
+      }`}>
         <div className="max-w-7xl mx-auto px-4 md:px-8 h-20 flex items-center justify-between">
           <div className="flex items-center">
             <Link to="/" className="text-2xl font-bold text-primary tracking-tight">
@@ -18,47 +49,98 @@ export default function Layout() {
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-gray-700 hover:text-primary font-medium transition-colors">Home</Link>
-            <Link to="/services" className="text-gray-700 hover:text-primary font-medium transition-colors">Services</Link>
-            <Link to="/portfolio" className="text-gray-700 hover:text-primary font-medium transition-colors">Portfolio</Link>
-            <Link to="/pricing" className="text-gray-700 hover:text-primary font-medium transition-colors">Pricing</Link>
-            <Link to="/about" className="text-gray-700 hover:text-primary font-medium transition-colors">About</Link>
-            <Link to="/contact" className="text-gray-700 hover:text-primary font-medium transition-colors">Contact</Link>
+            {navLinks.map((link) => {
+              const isActive = location.pathname === link.path || (link.path !== '/' && location.pathname.startsWith(link.path));
+              return (
+                <Link 
+                  key={link.path} 
+                  to={link.path} 
+                  className={`relative font-medium transition-colors group py-2 ${isActive ? 'text-primary' : 'text-gray-700 hover:text-primary'}`}
+                >
+                  {link.label}
+                  <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+                </Link>
+              );
+            })}
           </div>
 
-          <div className="hidden md:flex">
-            <Link to="/contact" className="bg-primary text-white px-6 py-2.5 rounded-md font-semibold hover:bg-blue-800 transition-colors">
-              Get Quote
-            </Link>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
+          <div className="flex items-center space-x-4 md:space-x-6">
             <button 
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-gray-700 hover:text-primary focus:outline-none"
+              onClick={() => setIsModalOpen(true)} 
+              className="bg-primary text-white px-4 py-2 md:px-6 md:py-2.5 rounded-md font-semibold text-sm md:text-base hover:bg-blue-800 transition-colors"
             >
-              {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+              Get Quote
             </button>
+
+            {/* Mobile Menu Button */}
+            <div className="md:hidden flex items-center">
+              <button 
+                onClick={() => setIsMobileMenuOpen(true)}
+                className="text-gray-700 hover:text-primary focus:outline-none"
+              >
+                <Menu size={28} />
+              </button>
+            </div>
           </div>
         </div>
 
-        {/* Mobile Navigation Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden bg-white border-t border-gray-100 shadow-lg absolute w-full">
-            <div className="px-4 pt-2 pb-6 space-y-1 flex flex-col">
-              <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md font-medium">Home</Link>
-              <Link to="/services" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md font-medium">Services</Link>
-              <Link to="/portfolio" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md font-medium">Portfolio</Link>
-              <Link to="/pricing" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md font-medium">Pricing</Link>
-              <Link to="/about" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md font-medium">About</Link>
-              <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md font-medium">Contact</Link>
-              <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="mt-4 block text-center bg-primary text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-800 transition-colors">
-                Get Quote
-              </Link>
+        {/* Mobile Navigation Drawer Overlay */}
+        <div 
+          className={`fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-[60] transition-opacity duration-300 md:hidden ${
+            isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+          }`}
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+        
+        {/* Mobile Navigation Drawer */}
+        <div 
+          className={`fixed top-0 right-0 h-full w-64 bg-white shadow-2xl z-[70] transform transition-transform duration-300 ease-in-out md:hidden flex flex-col ${
+            isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
+        >
+          <div className="h-20 px-4 flex items-center justify-between border-b border-gray-100">
+            <span className="text-xl font-bold text-primary tracking-tight">Menu</span>
+            <button 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-gray-500 hover:text-gray-900 focus:outline-none p-2 bg-slate-50 hover:bg-slate-100 rounded-full transition-colors"
+            >
+              <X size={24} />
+            </button>
+          </div>
+          <div className="px-4 py-6 flex flex-col space-y-2 flex-grow overflow-y-auto">
+            {navLinks.map((link) => {
+              const Icon = link.icon;
+              const isActive = location.pathname === link.path || (link.path !== '/' && location.pathname.startsWith(link.path));
+              return (
+                <Link 
+                  key={link.path} 
+                  to={link.path} 
+                  onClick={() => setIsMobileMenuOpen(false)} 
+                  className={`flex items-center px-4 py-3 rounded-xl font-medium transition-colors ${
+                    isActive ? 'bg-blue-50 text-primary' : 'text-gray-700 hover:text-primary hover:bg-slate-50'
+                  }`}
+                >
+                  <Icon size={20} className={`mr-3 ${isActive ? 'text-primary' : 'text-gray-400'}`} />
+                  {link.label}
+                </Link>
+              );
+            })}
+          </div>
+          {/* Drawer Footer */}
+          <div className="p-6 border-t border-gray-100 bg-slate-50/50">
+            <p className="text-xs text-gray-500 font-semibold uppercase tracking-wider mb-4">Direct Contact</p>
+            <div className="flex flex-col space-y-4">
+              <a href="mailto:bytesofthq@gmail.com" className="flex items-center text-sm text-gray-600 hover:text-primary transition-colors">
+                <Mail size={16} className="mr-3 text-secondary" />
+                bytesofthq@gmail.com
+              </a>
+              <a href="tel:+919214749997" className="flex items-center text-sm text-gray-600 hover:text-primary transition-colors">
+                <Phone size={16} className="mr-3 text-secondary" />
+                +91 9214749997
+              </a>
             </div>
           </div>
-        )}
+        </div>
       </nav>
 
       {/* Main Content */}
@@ -200,6 +282,25 @@ export default function Layout() {
           </a>
         </div>
       </div>
+
+      {/* Contact Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-gray-900/50 backdrop-blur-sm">
+          <div className="bg-white rounded-3xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto relative">
+            <button 
+              onClick={() => setIsModalOpen(false)}
+              className="absolute top-6 right-6 text-gray-400 hover:text-gray-900 focus:outline-none bg-slate-100 hover:bg-slate-200 p-2 rounded-full transition-colors"
+            >
+              <X size={24} />
+            </button>
+            <div className="p-8 md:p-12">
+              <h3 className="text-3xl font-bold text-gray-900 mb-2">Request a Quote</h3>
+              <p className="text-gray-600 mb-8">Tell us about your project and we'll get back to you shortly.</p>
+              <ContactForm />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
