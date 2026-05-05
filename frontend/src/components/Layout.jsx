@@ -187,7 +187,7 @@ export default function Layout() {
       </footer>
 
       {/* Floating Action Buttons */}
-      <div className="fixed bottom-6 right-6 flex flex-col space-y-4 z-50">
+      <div className={`fixed bottom-6 right-6 flex flex-col space-y-4 z-50 transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
         {/* Email/Message Button */}
         <div className="relative group flex items-center justify-end">
           {/* Tooltip */}
