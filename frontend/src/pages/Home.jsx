@@ -23,7 +23,16 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right: Image with diagonal clip */}
+          {/* Mobile-only hero image */}
+          <div className="md:hidden w-full px-2 pb-10">
+            <img
+              src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Team working"
+              className="w-full rounded-2xl shadow-lg object-cover max-h-60"
+            />
+          </div>
+
+          {/* Right: Image with diagonal clip — desktop only */}
           <div className="md:w-1/2 relative self-stretch hidden md:flex items-center justify-end overflow-hidden">
             <div
               className="absolute inset-0 bg-white"
