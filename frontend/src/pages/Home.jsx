@@ -6,14 +6,14 @@ export default function Home() {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="bg-slate-50 py-20 overflow-hidden relative">
+      <section className="bg-slate-50 py-12 md:py-20 overflow-hidden relative">
         {/* Modern abstract background element instead of simple skew */}
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-100/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-orange-50/50 rounded-full blur-3xl translate-y-1/3 -translate-x-1/4"></div>
         
-        <div className="max-w-7xl mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center relative z-10">
-          <div className="md:w-1/2 pr-0 md:pr-12 mb-12 md:mb-0">
-            <h1 className="text-5xl md:text-6xl font-bold text-primary leading-tight mb-6">
+        <div className="max-w-7xl mx-auto px-6 md:px-8 flex flex-col md:flex-row items-center relative z-10">
+          <div className="md:w-1/2 pr-0 md:pr-12 mb-10 md:mb-0 text-center md:text-left">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-primary leading-tight mb-4 md:mb-6">
               BYTESOFT — Engineering Digital Experiences That <span className="text-secondary relative whitespace-nowrap">
                 Drive Growth
                 <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 100 20" preserveAspectRatio="none">
@@ -21,12 +21,12 @@ export default function Home() {
                 </svg>
               </span>
             </h1>
-            <p className="text-lg text-gray-600 mb-8 max-w-lg leading-relaxed mt-4">
+            <p className="text-base md:text-lg text-gray-600 mb-8 max-w-lg leading-relaxed mt-4 mx-auto md:mx-0">
               A premier digital agency specializing in high-performance web development, strategic SEO, and data-driven marketing to elevate your brand's online presence.
             </p>
-            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-              <Link to="/contact" className="btn-primary text-center">Start Your Project</Link>
-              <Link to="/portfolio" className="btn-secondary text-center bg-white/50 backdrop-blur-sm">Explore Our Work</Link>
+            <div className="flex flex-row space-x-3 justify-center md:justify-start">
+              <Link to="/contact" className="btn-primary text-center text-sm md:text-base px-5 py-3">Start Your Project</Link>
+              <Link to="/portfolio" className="btn-secondary text-center bg-white/50 backdrop-blur-sm text-sm md:text-base px-5 py-3">Explore Our Work</Link>
             </div>
           </div>
           <div className="md:w-1/2 relative">
