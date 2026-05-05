@@ -1,8 +1,39 @@
-import { MapPin, Building2, Phone, MonitorSmartphone, LineChart, Users, Store, Star, Zap, HeartHandshake, Mail, HeartPulse, Smartphone, Bot, Palette } from 'lucide-react';
+import { MapPin, Building2, Phone, MonitorSmartphone, LineChart, Users, Store, Star, Zap, HeartHandshake, Mail, HeartPulse, Smartphone, Bot, Palette, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import ContactForm from '../components/ContactForm';
 
+const testimonials = [
+  {
+    quote: "Working with Bytesoft has been a game-changer. They didn't just build a website; they engineered a digital platform that doubled our lead generation in just three months.",
+    name: "Vikram Singh",
+    role: "Director of Operations, Nexus Corp",
+    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+  },
+  {
+    quote: "Our e-commerce revenue grew by 3x within six months of launching our new Bytesoft-built platform. The team's attention to detail and speed was exceptional.",
+    name: "Priya Mehra",
+    role: "CEO, StyleHive India",
+    avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+  },
+  {
+    quote: "From the initial brief to final delivery, Bytesoft was professional, creative, and always available. Our app now has over 10,000 active users and growing.",
+    name: "Arjun Kapoor",
+    role: "Founder, HealthTrack Pro",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+  }
+];
+
+const clients = [
+  "TechNova", "StyleHive", "Nexus Corp", "HealthTrack", "FinEdge", "GrowMore", "BuildRight", "MediaPulse"
+];
+
 export default function Home() {
+  const [activeTestimonial, setActiveTestimonial] = useState(0);
+
+  const prevTestimonial = () => setActiveTestimonial((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
+  const nextTestimonial = () => setActiveTestimonial((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
+
   return (
     <div>
       {/* Hero Section */}
@@ -41,6 +72,18 @@ export default function Home() {
                 className="w-full h-64 md:h-[420px] object-cover"
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Client Logos Strip */}
+      <section className="bg-white border-y border-gray-100 py-6 md:py-8">
+        <div className="max-w-7xl mx-auto px-6 md:px-8">
+          <p className="text-center text-xs font-semibold text-gray-400 uppercase tracking-widest mb-5">Trusted by businesses across industries</p>
+          <div className="grid grid-cols-4 md:flex md:flex-wrap md:justify-center md:items-center gap-y-4 md:gap-x-12">
+            {clients.map((client) => (
+              <span key={client} className="text-sm md:text-xl font-bold text-gray-300 hover:text-gray-500 transition-colors tracking-tight cursor-default select-none text-center">{client}</span>
+            ))}
           </div>
         </div>
       </section>
@@ -114,6 +157,24 @@ export default function Home() {
         </div>
       </section>
 
+      {/* CTA Banner */}
+      <section className="bg-primary py-16 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
+        <div className="absolute -top-20 -right-20 w-72 h-72 bg-secondary/20 rounded-full blur-3xl" />
+        <div className="max-w-4xl mx-auto px-6 md:px-8 text-center relative z-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready to grow your business?</h2>
+          <p className="text-blue-200 text-lg mb-8 max-w-xl mx-auto">Let's build something great together. Get a free consultation — no commitment required.</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link to="/contact" className="bg-secondary text-white font-bold px-8 py-4 rounded-lg hover:bg-orange-600 transition-colors shadow-lg text-lg">
+              Let's Talk →
+            </Link>
+            <Link to="/portfolio" className="bg-white/10 border border-white/30 text-white font-semibold px-8 py-4 rounded-lg hover:bg-white/20 transition-colors text-lg">
+              See Our Work
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Portfolio Section */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
@@ -171,27 +232,55 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* Testimonials Carousel */}
       <section className="py-24 bg-primary relative overflow-hidden">
-        {/* Subtle background pattern */}
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
-        
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
+        <div className="absolute -bottom-20 -left-20 w-72 h-72 bg-secondary/20 rounded-full blur-3xl" />
+
         <div className="max-w-4xl mx-auto px-4 md:px-8 text-center relative z-10">
           <h2 className="text-4xl font-bold text-white mb-4">What Our Partners Say</h2>
-          <div className="w-16 h-1.5 bg-secondary mx-auto mb-16 rounded-full"></div>
+          <div className="w-16 h-1.5 bg-secondary mx-auto mb-16 rounded-full" />
 
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-10 md:p-16 border border-white/20 shadow-2xl relative">
-            <div className="absolute -top-6 left-1/2 -translate-x-1/2 text-6xl text-secondary opacity-50">"</div>
-            <p className="text-xl md:text-2xl text-white mb-8 leading-relaxed font-light">
-              Working with Bytesoft has been a game-changer. They didn't just build a website; they engineered a digital platform that doubled our lead generation in just three months.
-            </p>
-            <div className="flex flex-col items-center">
-              <div className="w-16 h-16 rounded-full bg-gray-300 mb-4 overflow-hidden border-2 border-secondary">
-                 <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Vikram Singh" className="w-full h-full object-cover" />
-              </div>
-              <h4 className="font-bold text-white text-lg">Vikram Singh</h4>
-              <p className="text-blue-200">Director of Operations, Nexus Corp</p>
+            <div className="absolute -top-6 left-1/2 -translate-x-1/2 text-6xl text-secondary opacity-50">&ldquo;</div>
+
+            {/* Stars */}
+            <div className="flex justify-center gap-1 mb-6">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} size={20} className="text-secondary fill-secondary" />
+              ))}
             </div>
+
+            {/* Quote */}
+            <p className="text-lg md:text-xl text-white mb-10 leading-relaxed font-light min-h-[100px] transition-all duration-300">
+              {testimonials[activeTestimonial].quote}
+            </p>
+
+            {/* Author */}
+            <div className="flex flex-col items-center">
+              <div className="w-16 h-16 rounded-full mb-4 overflow-hidden border-2 border-secondary">
+                <img src={testimonials[activeTestimonial].avatar} alt={testimonials[activeTestimonial].name} className="w-full h-full object-cover" />
+              </div>
+              <h4 className="font-bold text-white text-lg">{testimonials[activeTestimonial].name}</h4>
+              <p className="text-blue-200 text-sm">{testimonials[activeTestimonial].role}</p>
+            </div>
+          </div>
+
+          {/* Controls */}
+          <div className="flex items-center justify-center gap-6 mt-10">
+            <button onClick={prevTestimonial} className="w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 flex items-center justify-center text-white transition-colors">
+              <ChevronLeft size={22} />
+            </button>
+            <div className="flex gap-2">
+              {testimonials.map((_, i) => (
+                <button key={i} onClick={() => setActiveTestimonial(i)}
+                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${ i === activeTestimonial ? 'bg-secondary w-6' : 'bg-white/40 hover:bg-white/60'}`}
+                />
+              ))}
+            </div>
+            <button onClick={nextTestimonial} className="w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 flex items-center justify-center text-white transition-colors">
+              <ChevronRight size={22} />
+            </button>
           </div>
         </div>
       </section>
