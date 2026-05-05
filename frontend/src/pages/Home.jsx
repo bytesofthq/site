@@ -1,5 +1,6 @@
 import { MapPin, Building2, Phone, MonitorSmartphone, LineChart, Users, Store, Star, Zap, HeartHandshake, Mail, HeartPulse, Smartphone, Bot, Palette } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import ContactForm from '../components/ContactForm';
 
 export default function Home() {
   return (
@@ -254,43 +255,7 @@ export default function Home() {
             <div className="lg:w-1/2">
               <div className="bg-white p-10 md:p-12 rounded-3xl shadow-xl border border-slate-100">
                 <h3 className="text-2xl font-bold text-gray-900 mb-8">Send us a Message</h3>
-                <form className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">First Name</label>
-                      <input type="text" placeholder="John" className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border-none focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all" />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">Last Name</label>
-                      <input type="text" placeholder="Doe" className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border-none focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all" />
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address *</label>
-                    <input type="email" placeholder="john@company.com" className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border-none focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all" />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">How can we help?</label>
-                    <select className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border-none focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all appearance-none text-gray-600">
-                      <option>Select an area of interest...</option>
-                      <option>Web Engineering</option>
-                      <option>Search Optimization (SEO)</option>
-                      <option>Digital Marketing Strategy</option>
-                      <option>Other Inquiry</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Project Details</label>
-                    <textarea rows="4" placeholder="Tell us briefly about your goals..." className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border-none focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all resize-none"></textarea>
-                  </div>
-
-                  <button type="button" className="w-full bg-primary text-white font-bold py-4 rounded-xl hover:bg-blue-900 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
-                    Submit Inquiry
-                  </button>
-                </form>
+                <ContactForm />
               </div>
             </div>
 
