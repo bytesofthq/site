@@ -47,8 +47,12 @@ export default function Layout() {
       }`}>
         <div className="max-w-7xl mx-auto px-4 md:px-8 h-20 flex items-center justify-between">
           <div className="flex items-center">
-            <Link to="/" className="text-2xl font-bold tracking-tight">
-              <span className="text-primary">BYTE</span><span className="text-secondary">SOFT</span>
+            <Link to="/" className="inline-flex items-center" aria-label="Bytesoft home">
+              <img
+                src="/bs-logo.jpg"
+                alt="Bytesoft"
+                className="h-12 w-auto object-contain"
+              />
             </Link>
           </div>
           
@@ -104,8 +108,12 @@ export default function Layout() {
             
             {/* Column 1: About */}
             <div>
-              <div className="text-2xl font-bold mb-6 tracking-tight">
-                <span className="text-white">BYTE</span><span className="text-secondary">SOFT</span>
+              <div className="mb-6">
+                <img
+                  src="/bs-logo.jpg"
+                  alt="Bytesoft"
+                  className="h-14 w-auto object-contain"
+                />
               </div>
               <p className="text-sm leading-relaxed text-gray-400">
                 A premier digital agency specializing in high-performance web development, strategic SEO, and data-driven marketing to elevate your brand's online presence.
