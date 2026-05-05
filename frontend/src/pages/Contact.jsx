@@ -25,7 +25,7 @@ export default function Contact() {
   ];
 
   return (
-    <div className="pt-20">
+    <div>
       
       {/* Page Hero */}
       <section className="relative bg-slate-50 py-24 border-b border-slate-200 overflow-hidden">

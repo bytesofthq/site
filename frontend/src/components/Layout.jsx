@@ -36,14 +36,19 @@ export default function Layout() {
 
   return (
     <div className="min-h-screen flex flex-col font-sans">
+      {/* Thin Top Bar */}
+      <div className="bg-[#0b1120] text-gray-300 text-xs py-1.5 text-center hidden md:block">
+        ✨ Get a Free Consultation Today — No Commitment Required &nbsp;|&nbsp; <a href="tel:+919214749997" className="text-secondary hover:underline font-medium">Call: +91 9214749997</a>
+      </div>
+
       {/* Navigation */}
-      <nav className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/80 backdrop-blur-lg shadow-sm py-0' : 'bg-white py-1'
+      <nav className={`sticky top-0 w-full z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-white/90 backdrop-blur-lg shadow-sm' : 'bg-white border-b border-gray-100'
       }`}>
         <div className="max-w-7xl mx-auto px-4 md:px-8 h-20 flex items-center justify-between">
           <div className="flex items-center">
-            <Link to="/" className="text-2xl font-bold text-primary tracking-tight">
-              BYTESOFT
+            <Link to="/" className="text-2xl font-bold tracking-tight">
+              <span className="text-primary">BY</span><span className="text-secondary">SOFT</span>
             </Link>
           </div>
           
@@ -67,7 +72,7 @@ export default function Layout() {
           <div className="flex items-center space-x-4 md:space-x-6">
             <button 
               onClick={() => setIsModalOpen(true)} 
-              className="bg-primary text-white px-4 py-2 md:px-6 md:py-2.5 rounded-md font-semibold text-sm md:text-base hover:bg-blue-800 transition-colors"
+              className="bg-primary text-white px-4 py-2 md:px-7 md:py-3 rounded-full font-semibold text-sm md:text-base hover:bg-blue-800 transition-colors shadow-md"
             >
               Get Quote
             </button>

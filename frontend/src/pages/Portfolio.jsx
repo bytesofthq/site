@@ -57,7 +57,7 @@ export default function Portfolio() {
     : projects.filter(project => project.category === activeFilter);
 
   return (
-    <div className="pt-20">
+    <div>
       
       {/* Page Hero */}
       <section className="relative bg-slate-50 py-24 overflow-hidden border-b border-slate-200">

@@ -4,35 +4,37 @@ import ContactForm from '../components/ContactForm';
 
 export default function Home() {
   return (
-    <div className="pt-20">
+    <div>
       {/* Hero Section */}
-      <section className="bg-slate-50 py-12 md:py-20 overflow-hidden relative">
-        {/* Modern abstract background element instead of simple skew */}
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-100/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-orange-50/50 rounded-full blur-3xl translate-y-1/3 -translate-x-1/4"></div>
-        
+      <section className="bg-[#eef0f8] overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-6 md:px-8 flex flex-col md:flex-row items-center relative z-10">
-          <div className="md:w-1/2 pr-0 md:pr-12 mb-10 md:mb-0 text-center md:text-left">
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-primary leading-tight mb-4 md:mb-6">
-              BYTESOFT — Engineering Digital Experiences That <span className="text-secondary relative whitespace-nowrap">
-                Drive Growth
-                <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 100 20" preserveAspectRatio="none">
-                  <path d="M0 10 Q 50 20 100 10" fill="transparent" stroke="#f97316" strokeWidth="4" strokeLinecap="round" />
-                </svg>
-              </span>
+          {/* Left: Text */}
+          <div className="md:w-1/2 py-16 md:py-24 pr-0 md:pr-12 text-center md:text-left">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary leading-tight mb-6">
+              BYTESOFT — We build websites that{' '}
+              <span className="text-secondary">grow your business</span>
             </h1>
-            <p className="text-base md:text-lg text-gray-600 mb-8 max-w-lg leading-relaxed mt-4 mx-auto md:mx-0">
+            <p className="text-base md:text-lg text-gray-600 mb-8 max-w-lg leading-relaxed mx-auto md:mx-0">
               A premier digital agency specializing in high-performance web development, strategic SEO, and data-driven marketing to elevate your brand's online presence.
             </p>
-            <div className="flex flex-row space-x-3 justify-center md:justify-start">
-              <Link to="/contact" className="btn-primary text-center text-sm md:text-base px-5 py-3">Start Your Project</Link>
-              <Link to="/portfolio" className="btn-secondary text-center bg-white/50 backdrop-blur-sm text-sm md:text-base px-5 py-3">Explore Our Work</Link>
+            <div className="flex flex-row space-x-4 justify-center md:justify-start">
+              <Link to="/contact" className="bg-primary text-white font-semibold px-6 py-3 rounded-md hover:bg-blue-900 transition-colors shadow-md">Request Demo</Link>
+              <Link to="/portfolio" className="border-2 border-primary text-primary font-semibold px-6 py-3 rounded-md hover:bg-primary hover:text-white transition-colors">View Portfolio</Link>
             </div>
           </div>
-          <div className="md:w-1/2 relative">
-            <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/20">
-              <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Team analyzing data" className="w-full h-auto object-cover" />
-            </div>
+
+          {/* Right: Image with diagonal clip */}
+          <div className="md:w-1/2 relative self-stretch hidden md:flex items-center justify-end overflow-hidden">
+            <div
+              className="absolute inset-0 bg-white"
+              style={{ clipPath: 'polygon(8% 0%, 100% 0%, 100% 100%, 0% 100%)' }}
+            />
+            <img
+              src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+              alt="Team working"
+              className="relative z-10 w-full h-full object-cover"
+              style={{ clipPath: 'polygon(8% 0%, 100% 0%, 100% 100%, 0% 100%)', maxHeight: '480px' }}
+            />
           </div>
         </div>
       </section>
