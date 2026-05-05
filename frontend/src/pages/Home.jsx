@@ -6,44 +6,41 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-[#eef0f8] overflow-hidden relative">
-        <div className="max-w-7xl mx-auto px-6 md:px-8 flex flex-col md:flex-row items-center relative z-10">
+      <section className="bg-[#eef0f8] py-16 md:py-24 overflow-hidden relative">
+        {/* Subtle background blobs */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-200/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-orange-100/30 rounded-full blur-3xl translate-y-1/3 -translate-x-1/4 pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-6 md:px-8 flex flex-col md:flex-row items-center gap-12 relative z-10">
           {/* Left: Text */}
-          <div className="md:w-1/2 py-16 md:py-24 pr-0 md:pr-12 text-center md:text-left">
+          <div className="md:w-1/2 text-center md:text-left">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary leading-tight mb-6">
-              BYTESOFT — We build websites that{' '}
-              <span className="text-secondary">grow your business</span>
+              BYTESOFT — Engineering Digital Experiences That{' '}
+              <span className="text-secondary relative inline-block">
+                Drive Growth
+                <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" preserveAspectRatio="none">
+                  <path d="M0 8 Q 100 12 200 8" fill="transparent" stroke="#f97316" strokeWidth="3" strokeLinecap="round" />
+                </svg>
+              </span>
             </h1>
             <p className="text-base md:text-lg text-gray-600 mb-8 max-w-lg leading-relaxed mx-auto md:mx-0">
               A premier digital agency specializing in high-performance web development, strategic SEO, and data-driven marketing to elevate your brand's online presence.
             </p>
-            <div className="flex flex-row space-x-4 justify-center md:justify-start">
+            <div className="flex flex-row gap-4 justify-center md:justify-start">
               <Link to="/contact" className="bg-primary text-white font-semibold px-6 py-3 rounded-md hover:bg-blue-900 transition-colors shadow-md">Request Demo</Link>
               <Link to="/portfolio" className="border-2 border-primary text-primary font-semibold px-6 py-3 rounded-md hover:bg-primary hover:text-white transition-colors">View Portfolio</Link>
             </div>
           </div>
 
-          {/* Mobile-only hero image */}
-          <div className="md:hidden w-full px-2 pb-10">
-            <img
-              src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              alt="Team working"
-              className="w-full rounded-2xl shadow-lg object-cover max-h-60"
-            />
-          </div>
-
-          {/* Right: Image with diagonal clip — desktop only */}
-          <div className="md:w-1/2 relative self-stretch hidden md:flex items-center justify-end overflow-hidden">
-            <div
-              className="absolute inset-0 bg-white"
-              style={{ clipPath: 'polygon(8% 0%, 100% 0%, 100% 100%, 0% 100%)' }}
-            />
-            <img
-              src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-              alt="Team working"
-              className="relative z-10 w-full h-full object-cover"
-              style={{ clipPath: 'polygon(8% 0%, 100% 0%, 100% 100%, 0% 100%)', maxHeight: '480px' }}
-            />
+          {/* Right: Image */}
+          <div className="md:w-1/2 w-full">
+            <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+              <img
+                src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                alt="Team working at Bytesoft"
+                className="w-full h-64 md:h-[420px] object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
