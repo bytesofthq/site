@@ -6,6 +6,7 @@ import Portfolio from './pages/Portfolio';
 import Pricing from './pages/Pricing';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Products from './pages/Products';
 
 function App() {
   return (
@@ -14,10 +15,11 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="services" element={<Services />} />
-          <Route path="portfolio" element={<Portfolio />} />
+          {/* <Route path="portfolio" element={<Portfolio />} /> */}
           <Route path="pricing" element={<Pricing />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="products" element={<Products />} />
         </Route>
       </Routes>
     </Router>

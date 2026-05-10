@@ -6,7 +6,7 @@ import ContactForm from './ContactForm';
 const navLinks = [
   { path: '/', label: 'Home', icon: Home },
   { path: '/services', label: 'Services', icon: LayoutTemplate },
-  { path: '/portfolio', label: 'Portfolio', icon: Briefcase },
+  { path: '/products', label: 'Products', icon: Briefcase },
   { path: '/pricing', label: 'Pricing', icon: CreditCard },
   { path: '/about', label: 'About', icon: Info },
   { path: '/contact', label: 'Contact', icon: Mail }
