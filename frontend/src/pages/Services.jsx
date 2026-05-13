@@ -1,56 +1,119 @@
-import { useState } from 'react';
-import { MonitorSmartphone, LineChart, Users, Store, HeartPulse, Smartphone, Bot, Palette, ArrowRight, CheckCircle2, Lightbulb, PenTool, Code2, Rocket, ChevronDown, ChevronUp } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { MonitorSmartphone, LineChart, Users, Store, HeartPulse, Smartphone, Bot, Palette, ArrowRight, CheckCircle2, Lightbulb, PenTool, Code2, Rocket, ChevronDown, ChevronUp, Sparkles, TrendingUp, Shield, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Services() {
+  const [counters, setCounters] = useState({
+    projects: 0,
+    retention: 0,
+    team: 0,
+    support: 0
+  });
+  const [isVisible, setIsVisible] = useState(false);
+  const statsRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (statsRef.current) {
+      observer.observe(statsRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (isVisible) {
+      const duration = 2000;
+      const steps = 60;
+      const interval = duration / steps;
+      
+      const targets = { projects: 100, retention: 98, team: 10, support: 24 };
+      let step = 0;
+
+      const timer = setInterval(() => {
+        step++;
+        const progress = step / steps;
+        
+        setCounters({
+          projects: Math.min(Math.floor(targets.projects * progress), targets.projects),
+          retention: Math.min(Math.floor(targets.retention * progress), targets.retention),
+          team: Math.min(Math.floor(targets.team * progress), targets.team),
+          support: Math.min(Math.floor(targets.support * progress), targets.support)
+        });
+
+        if (step >= steps) {
+          clearInterval(timer);
+        }
+      }, interval);
+
+      return () => clearInterval(timer);
+    }
+  }, [isVisible]);
+
   const services = [
     {
       icon: <MonitorSmartphone size={40} className="text-white" />,
       title: "Web Engineering",
       desc: "Custom, responsive web applications built with modern frameworks for exceptional speed and user experience. We engineer scalable architectures that grow with your business.",
-      features: ["React & Next.js Development", "Custom API Integrations", "Advanced Performance Optimization", "Headless CMS Architecture"]
+      features: ["React & Next.js Development", "Custom API Integrations", "Advanced Performance Optimization", "Headless CMS Architecture"],
+      color: "from-blue-500 to-blue-700"
     },
     {
       icon: <LineChart size={40} className="text-white" />,
       title: "Search Optimization",
       desc: "Technical and content-driven SEO strategies that dominate search rankings and capture high-intent traffic. We turn search engines into your most reliable acquisition channel.",
-      features: ["Comprehensive Technical Audits", "Data-Driven Content Strategy", "High-Authority Link Building", "Local & Enterprise SEO"]
+      features: ["Comprehensive Technical Audits", "Data-Driven Content Strategy", "High-Authority Link Building", "Local & Enterprise SEO"],
+      color: "from-emerald-500 to-emerald-700"
     },
     {
       icon: <Users size={40} className="text-white" />,
       title: "Social Media Strategy",
       desc: "Engaging campaigns across social channels that build brand loyalty, foster community, and generate qualified leads. We tell your brand's story where your audience lives.",
-      features: ["Multi-Channel Content Creation", "Community Management", "Influencer Partnerships", "Advanced Analytics & Reporting"]
+      features: ["Multi-Channel Content Creation", "Community Management", "Influencer Partnerships", "Advanced Analytics & Reporting"],
+      color: "from-purple-500 to-purple-700"
     },
     {
       icon: <Store size={40} className="text-white" />,
       title: "E-commerce Platforms",
       desc: "Scalable, secure online storefronts optimized for seamless shopping experiences and high conversion rates. We build digital retail environments that drive sales.",
-      features: ["Shopify & Custom Solutions", "Secure Payment Gateways", "Inventory & ERP Sync", "Cart Abandonment Recovery"]
+      features: ["Shopify & Custom Solutions", "Secure Payment Gateways", "Inventory & ERP Sync", "Cart Abandonment Recovery"],
+      color: "from-orange-500 to-orange-700"
     },
     {
       icon: <HeartPulse size={40} className="text-white" />,
       title: "Healthcare Software",
       desc: "Secure, compliant, and intuitive software solutions designed specifically for healthcare providers and patients. We bridge the gap between medical care and modern technology.",
-      features: ["HIPAA Compliant Architecture", "EHR/EMR Integrations", "Secure Patient Portals", "Telehealth Infrastructure"]
+      features: ["HIPAA Compliant Architecture", "EHR/EMR Integrations", "Secure Patient Portals", "Telehealth Infrastructure"],
+      color: "from-rose-500 to-rose-700"
     },
     {
       icon: <Smartphone size={40} className="text-white" />,
       title: "App Development",
       desc: "Native and cross-platform mobile applications that deliver engaging experiences right to your users' fingertips. We turn complex mobile requirements into intuitive apps.",
-      features: ["iOS & Android Native Apps", "React Native Cross-Platform", "Real-time Push Notifications", "Offline Mode Synchronization"]
+      features: ["iOS & Android Native Apps", "React Native Cross-Platform", "Real-time Push Notifications", "Offline Mode Synchronization"],
+      color: "from-indigo-500 to-indigo-700"
     },
     {
       icon: <Bot size={40} className="text-white" />,
       title: "AI Integration",
       desc: "Intelligent automation and AI-driven solutions to streamline operations and unlock powerful data insights. Future-proof your business with cutting-edge machine learning.",
-      features: ["Custom LLM Integration", "Automated Customer Support Bots", "Predictive Business Analytics", "Workflow Process Automation"]
+      features: ["Custom LLM Integration", "Automated Customer Support Bots", "Predictive Business Analytics", "Workflow Process Automation"],
+      color: "from-cyan-500 to-cyan-700"
     },
     {
       icon: <Palette size={40} className="text-white" />,
       title: "UI/UX Design",
       desc: "User-centric interface design focusing on aesthetics and usability to maximize engagement and conversion. We design experiences that users love to interact with.",
-      features: ["In-depth User Research", "Wireframing & Journey Mapping", "Interactive High-Fidelity Prototyping", "Design System Creation"]
+      features: ["In-depth User Research", "Wireframing & Journey Mapping", "Interactive High-Fidelity Prototyping", "Design System Creation"],
+      color: "from-pink-500 to-pink-700"
     }
   ];
 
@@ -114,51 +177,104 @@ export default function Services() {
     <div>
       
       {/* Page Hero */}
-      <section className="relative bg-primary py-24 md:py-32 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-primary via-blue-900 to-primary py-20 md:py-28 overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-secondary/30 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        </div>
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-secondary/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
         
         <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10 text-center">
-          <span className="text-secondary font-bold tracking-wider uppercase text-sm mb-4 block">Our Expertise</span>
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
+            <Sparkles size={16} className="text-secondary" />
+            <span className="text-secondary font-bold tracking-wider uppercase text-sm">Our Expertise</span>
+          </div>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
             Comprehensive Digital <br className="hidden md:block" /> Engineering
           </h1>
-          <p className="text-xl text-blue-100 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto leading-relaxed px-4">
             End-to-end technical solutions and strategic marketing designed to scale your business and dominate your industry.
           </p>
+          
+          {/* Stats Row - Fixed Height & Animated */}
+          <div ref={statsRef} className="flex flex-wrap justify-center gap-6 md:gap-12 mt-10 pt-6 border-t border-white/10">
+            <div className="text-center min-w-[100px]">
+              <div className="text-2xl md:text-3xl font-bold text-white mb-1">
+                {counters.projects}+
+              </div>
+              <div className="text-blue-200 text-xs md:text-sm">Projects Delivered</div>
+            </div>
+            <div className="text-center min-w-[100px]">
+              <div className="text-2xl md:text-3xl font-bold text-white mb-1">
+                {counters.retention}%
+              </div>
+              <div className="text-blue-200 text-xs md:text-sm">Client Retention</div>
+            </div>
+            <div className="text-center min-w-[100px]">
+              <div className="text-2xl md:text-3xl font-bold text-white mb-1">
+                {counters.team}+
+              </div>
+              <div className="text-blue-200 text-xs md:text-sm">Expert Team</div>
+            </div>
+            <div className="text-center min-w-[100px]">
+              <div className="text-2xl md:text-3xl font-bold text-white mb-1">
+                {counters.support}/7
+              </div>
+              <div className="text-blue-200 text-xs md:text-sm">Support Available</div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="py-24 bg-slate-50">
+      <section className="py-20 md:py-24 bg-gradient-to-b from-slate-50 to-white">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">What We Deliver</h2>
+            <div className="w-16 h-1.5 bg-secondary mx-auto mb-6 rounded-full"></div>
+            <p className="text-gray-600 max-w-2xl mx-auto text-base md:text-lg px-4">
+              Comprehensive digital solutions tailored to your unique business challenges.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
             {services.map((service, index) => (
-              <div key={index} className="bg-white rounded-3xl p-10 shadow-lg shadow-slate-200/50 border border-slate-100 hover:shadow-xl transition-all duration-300 group flex flex-col h-full">
-                <div className="flex items-start justify-between mb-8">
-                  <div className="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300 group-hover:bg-blue-900">
-                    {service.icon}
+              <div 
+                key={index} 
+                className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100"
+              >
+                <div className={`h-1.5 bg-gradient-to-r ${service.color}`}></div>
+                <div className="p-6 md:p-8">
+                  <div className="flex items-start justify-between mb-5">
+                    <div className={`w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                      {service.icon}
+                    </div>
+                    <div className="text-right">
+                      <span className="text-3xl md:text-4xl font-black text-gray-200 group-hover:text-gray-300 transition-colors">
+                        {(index + 1).toString().padStart(2, '0')}
+                      </span>
+                    </div>
                   </div>
-                  <span className="text-slate-200 font-black text-6xl opacity-50 group-hover:text-slate-100 transition-colors">
-                    0{index + 1}
-                  </span>
-                </div>
-                
-                <h3 className="text-3xl font-bold text-gray-900 mb-4">{service.title}</h3>
-                <p className="text-gray-600 text-lg leading-relaxed mb-8 flex-grow">
-                  {service.desc}
-                </p>
-                
-                <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
-                  <h4 className="font-bold text-gray-900 mb-4 text-sm tracking-wider uppercase">Key Capabilities</h4>
-                  <ul className="space-y-3">
-                    {service.features.map((feature, fIndex) => (
-                      <li key={fIndex} className="flex items-center text-gray-700">
-                        <CheckCircle2 size={18} className="text-secondary mr-3 shrink-0" />
-                        <span className="font-medium">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">{service.title}</h3>
+                  <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-5">
+                    {service.desc}
+                  </p>
+                  
+                  <div className="bg-slate-50 rounded-xl p-4 md:p-5 border border-gray-100">
+                    <h4 className="font-bold text-gray-900 mb-3 text-xs tracking-wider uppercase flex items-center gap-2">
+                      <TrendingUp size={14} className="text-secondary" />
+                      Key Capabilities
+                    </h4>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {service.features.map((feature, fIndex) => (
+                        <li key={fIndex} className="flex items-center text-gray-700 text-xs md:text-sm">
+                          <CheckCircle2 size={12} className="text-secondary mr-2 shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
             ))}
@@ -167,70 +283,88 @@ export default function Services() {
       </section>
 
       {/* Our Methodology */}
-      <section className="py-24 bg-white border-t border-slate-100">
+      <section className="py-20 md:py-24 bg-white border-y border-gray-100">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-primary mb-4">Our Methodology</h2>
+          <div className="text-center mb-12 md:mb-16">
+            <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full mb-4">
+              <Shield size={16} className="text-primary" />
+              <span className="text-primary font-bold text-sm tracking-wider">OUR PROCESS</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">How We Work</h2>
             <div className="w-16 h-1.5 bg-secondary mx-auto mb-6 rounded-full"></div>
-            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-              We don't just build websites; we engineer businesses. Here is how we guarantee results for every client we partner with.
+            <p className="text-gray-600 max-w-2xl mx-auto text-base md:text-lg px-4">
+              A proven methodology that ensures transparency, quality, and exceptional results.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {methodologies.map((method, index) => (
               <div key={index} className="relative group">
-                {/* Connector line for desktop */}
-                {index < methodologies.length - 1 && (
-                  <div className="hidden lg:block absolute top-12 left-1/2 w-full h-0.5 bg-slate-100 -z-10 group-hover:bg-blue-100 transition-colors"></div>
-                )}
-                
-                <div className="flex flex-col items-center text-center">
-                  <div className="w-24 h-24 bg-white border-4 border-slate-50 rounded-full flex items-center justify-center mb-6 shadow-xl relative z-10 group-hover:border-blue-50 transition-colors">
+                <div className="flex flex-col items-center text-center p-5 md:p-6 rounded-2xl bg-white hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-gray-100">
+                  {/* Number Circle */}
+                  <div className="relative mb-4">
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/5 to-secondary/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                      <div className="w-16 h-16 rounded-full bg-white border-2 border-primary/20 flex items-center justify-center shadow-md group-hover:border-secondary/50 transition-colors duration-300">
+                        <span className="text-2xl font-black bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                          {method.step}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="absolute inset-0 rounded-full border border-dashed border-secondary/30 animate-spin-slow group-hover:border-secondary/50 transition-colors"></div>
+                  </div>
+                  
+                  <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center mb-3 group-hover:bg-secondary/20 transition-colors">
                     {method.icon}
                   </div>
-                  <span className="text-secondary font-black tracking-widest mb-2">{method.step}</span>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{method.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{method.desc}</p>
+                  
+                  <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">{method.title}</h3>
+                  <p className="text-gray-600 text-xs md:text-sm leading-relaxed">{method.desc}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </section>
+
       {/* Service FAQs */}
-      <section className="py-24 bg-slate-50 border-t border-slate-200">
+      <section className="py-20 md:py-24 bg-gradient-to-b from-slate-50 to-white">
         <div className="max-w-4xl mx-auto px-4 md:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-primary mb-4">Frequently Asked Questions</h2>
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Frequently Asked Questions</h2>
             <div className="w-16 h-1.5 bg-secondary mx-auto mb-6 rounded-full"></div>
-            <p className="text-gray-600 text-lg">
+            <p className="text-gray-600 text-base md:text-lg px-4">
               Common questions clients ask before partnering with us.
             </p>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-3 md:space-y-4">
             {faqs.map((faq, index) => (
               <div 
                 key={index} 
-                className={`bg-white rounded-2xl border ${openFaq === index ? 'border-secondary shadow-md' : 'border-slate-100 shadow-sm'} overflow-hidden transition-all duration-300`}
+                className={`bg-white rounded-xl border transition-all duration-300 overflow-hidden ${
+                  openFaq === index ? 'border-secondary shadow-lg' : 'border-gray-100 shadow-sm hover:shadow-md'
+                }`}
               >
                 <button 
                   onClick={() => toggleFaq(index)}
-                  className="w-full px-8 py-6 text-left flex justify-between items-center focus:outline-none"
+                  className="w-full px-5 md:px-6 py-4 text-left flex justify-between items-center focus:outline-none group"
                 >
-                  <span className="text-lg font-bold text-gray-900 pr-8">{faq.question}</span>
+                  <span className="text-sm md:text-base font-semibold text-gray-900 pr-4 group-hover:text-primary transition-colors">
+                    {faq.question}
+                  </span>
                   {openFaq === index ? (
-                    <ChevronUp className="text-secondary shrink-0" size={24} />
+                    <ChevronUp className="text-secondary shrink-0 transition-transform duration-300" size={18} />
                   ) : (
-                    <ChevronDown className="text-gray-400 shrink-0" size={24} />
+                    <ChevronDown className="text-gray-400 group-hover:text-secondary shrink-0 transition-all duration-300" size={18} />
                   )}
                 </button>
                 
                 <div 
-                  className={`px-8 overflow-hidden transition-all duration-300 ease-in-out ${openFaq === index ? 'max-h-96 pb-6 opacity-100' : 'max-h-0 opacity-0'}`}
+                  className={`px-5 md:px-6 overflow-hidden transition-all duration-300 ease-in-out ${
+                    openFaq === index ? 'max-h-96 pb-5 opacity-100' : 'max-h-0 opacity-0'
+                  }`}
                 >
-                  <p className="text-gray-600 leading-relaxed pt-4 border-t border-slate-100">
+                  <p className="text-gray-600 text-sm md:text-base leading-relaxed pt-3 border-t border-gray-100">
                     {faq.answer}
                   </p>
                 </div>
@@ -239,30 +373,72 @@ export default function Services() {
           </div>
         </div>
       </section>
+
       {/* Final CTA */}
-      <section className="py-24 bg-primary relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-secondary/20 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2"></div>
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-3xl translate-y-1/2 translate-x-1/2"></div>
+      <section className="py-16 md:py-20 bg-gradient-to-r from-primary via-blue-800 to-primary relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-64 h-64 md:w-96 md:h-96 bg-secondary/20 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-0 right-0 w-64 h-64 md:w-96 md:h-96 bg-blue-400/20 rounded-full blur-3xl animate-float-delayed"></div>
         
         <div className="max-w-4xl mx-auto px-4 md:px-8 text-center relative z-10">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-3 md:px-4 py-1.5 md:py-2 rounded-full mb-5">
+            <Sparkles size={14} className="text-secondary" />
+            <span className="text-secondary text-xs md:text-sm font-medium">Start Your Journey</span>
+          </div>
+          
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6 leading-tight px-2">
             Ready to engineer your next <br className="hidden md:block"/> phase of growth?
           </h2>
-          <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
+          
+          <p className="text-base md:text-xl text-blue-100 mb-8 max-w-2xl mx-auto px-4">
             Stop losing ground to competitors. Let's discuss your project and architect a digital solution that delivers measurable ROI.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-            <Link to="/contact" className="btn-primary text-lg px-8 py-4 flex items-center group w-full sm:w-auto justify-center">
+          
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-3 md:gap-4">
+            <Link 
+              to="/contact" 
+              className="group bg-secondary text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-xl hover:bg-orange-600 transition-all duration-300 shadow-lg hover:shadow-2xl text-sm md:text-lg inline-flex items-center gap-2 w-full sm:w-auto justify-center"
+            >
               Schedule a Strategy Call
-              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+              <ArrowRight className="group-hover:translate-x-1 transition-transform" size={16} />
             </Link>
-            <Link to="/portfolio" className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-xl font-bold transition-all duration-300 w-full sm:w-auto text-center">
+            <Link 
+              to="/portfolio" 
+              className="bg-white/10 hover:bg-white/20 text-white border border-white/30 px-6 md:px-8 py-3 md:py-4 rounded-xl font-semibold transition-all duration-300 w-full sm:w-auto text-center backdrop-blur-sm text-sm md:text-lg"
+            >
               View Case Studies
             </Link>
           </div>
         </div>
       </section>
 
+      <style>{`
+        @keyframes spin-slow {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-20px); }
+        }
+        
+        .animate-spin-slow {
+          animation: spin-slow 20s linear infinite;
+        }
+        
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
+        
+        .animate-float-delayed {
+          animation: float 6s ease-in-out infinite 3s;
+        }
+        
+        .counter-number {
+          font-feature-settings: "tnum";
+          font-variant-numeric: tabular-nums;
+        }
+      `}</style>
     </div>
   );
 }
