@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowRight, ExternalLink, Sparkles } from 'lucide-react';
+import { ArrowRight, ExternalLink, Sparkles, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { projectsData } from './Data/Projects';
 
@@ -98,6 +98,19 @@ export default function Products() {
                   <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-2">
                     {project.shortDescription}
                   </p>
+                  
+                  {/* Rating Section */}
+                  {project.rating && (
+                    <div className="mb-4 pb-4 border-b border-slate-100">
+                      <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-1">
+                          <Star size={16} className="fill-amber-400 text-amber-400" />
+                          <span className="font-bold text-slate-800">{project.rating}</span>
+                        </div>
+                        <span className="text-xs text-slate-500 font-medium"></span>
+                      </div>
+                    </div>
+                  )}
                   
                   <div className="mt-auto">
                     {/* Tech Stack Pills */}

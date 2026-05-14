@@ -54,6 +54,7 @@ export const projectsData = [
       "Conduct seamless online assessments"
     ],
     conclusion: "Campus Quest is not just a quiz platform — it is a complete ecosystem for modern education, combining technology, automation, and real-time interaction to enhance learning and assessment experiences.",
+    rating: 6.5,
     liveLink: "https://mohd-faizan.onrender.com/student/login"
   },
   {
@@ -108,11 +109,12 @@ export const projectsData = [
       "Integrated geocoding for easy admin management"
     ],
     conclusion: "TrackMyBus bridges the gap between university administration, drivers, and students. By leveraging real-time geocoding and live notifications without external GPS hardware, it provides a highly cost-effective, scalable, and seamless transportation experience.",
+    rating: 5.8,
     liveLink: "https://track-my-bus-v2-j21l.vercel.app/login"
   },
   {
     id: "crop-detection",
-    name: "CropDection",
+    name: "CropDetection",
     shortDescription: "An AI-powered web application designed to help farmers, students, and agriculture enthusiasts identify plants and detect crop diseases using image analysis.",
     image: "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?w=800&q=80",
     category: "AI & Agriculture",
@@ -138,6 +140,7 @@ export const projectsData = [
       "Helps in smart farming using AI"
     ],
     conclusion: "CropDection helps in smart farming using AI. With future improvements like weather integration and soil analysis, it aims to be a complete agricultural assistant.",
+    rating: 6.2,
     liveLink: "https://cropdection.netlify.app/"
   },
   {
@@ -167,6 +170,7 @@ export const projectsData = [
       "Improves customer analytics"
     ],
     conclusion: "This platform is a powerful tool for businesses to understand their customer base, optimize their marketing strategies, and make data-driven decisions.",
+    rating: 5.5
   },
   {
     id: "smart-hospital",
@@ -196,6 +200,7 @@ export const projectsData = [
       "Staff governance and dynamic queue control"
     ],
     conclusion: "The system functions as an intelligent decision-support platform enabling responsive patient flow management.",
+    rating: 6.8,
     liveLink: "https://github.com/v9mirza/solution-challenge"
   },
   {
@@ -204,7 +209,7 @@ export const projectsData = [
     shortDescription: "A modern, full-stack application for creating professional, ATS-friendly resumes in minutes.",
     image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&q=80",
     category: "Productivity Tools",
-    partner: "v9mirza",
+    partner: "Bytesoft",
     introduction: "Resumex is a modern, full-stack application built with React, Node, MongoDB, and Express for creating professional, ATS-friendly resumes in minutes. It features a real-time editor and instant previews.",
     features: {
       general: [
@@ -225,6 +230,7 @@ export const projectsData = [
       "Multiple layout options for personalization"
     ],
     conclusion: "A powerful tool to help users craft their resumes quickly with real-time preview and seamless export capabilities.",
+    rating: 6.0,
     liveLink: "https://www.resumex.cv/"
   },
   {
@@ -254,6 +260,7 @@ export const projectsData = [
       "Comprehensive order and product management APIs"
     ],
     conclusion: "A robust backend foundation for any e-commerce application, providing essential features like authentication, product management, and order processing.",
+    rating: 5.2,
     liveLink: "https://github.com/v9mirza/devcart"
   },
   {
@@ -262,7 +269,7 @@ export const projectsData = [
     shortDescription: "A modern, full-stack personal finance dashboard to track income, expenses, investments, and savings with clear visualizations.",
     image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80",
     category: "Finance & Dashboards",
-    partner: "v9mirza",
+    partner: "Bytesoft",
     introduction: "Spendly is a modern, full-stack personal finance dashboard built with the MERN stack. It allows users to track income, expenses, investments, and savings with clear visualizations and intuitive transaction management.",
     features: {
       general: [
@@ -284,6 +291,7 @@ export const projectsData = [
       "Secure user authentication"
     ],
     conclusion: "An intuitive and visually appealing finance tracker that helps users stay on top of their financial health with advanced analytics and charting.",
+    rating: 6.4,
     liveLink: "https://spendly123.vercel.app/login"
   },
   {
@@ -314,15 +322,94 @@ export const projectsData = [
       "Enhances customer trust and personalized shopping experience"
     ],
     conclusion: "A premium business website that positions Bharat Almirah as a trusted nationwide brand, emphasizing their high-quality manufacturing and customer-first approach.",
+    rating: 5.9,
     liveLink: "https://www.bharatalmirah.com/"
   },
+{
+  id: "leave-management-system",
+  name: "Leave Management System",
+  shortDescription: "A modern web-based leave management platform for employees, managers, and HR teams to manage leave requests efficiently.",
+  image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",
+  category: "HR & Management",
+  partner: "Bytesoft",
+  introduction: "The Leave Management System is a smart HR-focused web application designed to simplify employee leave tracking, leave approvals, attendance management, and workforce scheduling. It provides a clean and responsive interface where employees can apply for leave, managers can approve or reject requests, and organizations can maintain accurate leave records in real time.",
+  features: {
+    general: [
+      "Employee leave request management",
+      "Leave approval and rejection workflow",
+      "Real-time leave balance tracking",
+      "Role-based dashboard access",
+      "Attendance and leave monitoring",
+      "Responsive and user-friendly UI",
+      "Automated leave records management",
+      "Centralized employee leave database"
+    ]
+  },
+  techStack: {
+    frontend: ["React.js", "HTML", "CSS", "JavaScript"],
+    backend: ["Node.js", "Express.js"],
+    database: ["MongoDB"],
+    deployment: ["Vercel"],
+    tools: ["REST API", "JWT Authentication", "Responsive Design"]
+  },
+  impact: [
+    "Reduces manual HR workload",
+    "Improves employee leave tracking",
+    "Enhances workflow transparency",
+    "Saves time in leave approvals",
+    "Provides better workforce planning"
+  ],
+  conclusion: "This Leave Management System helps organizations streamline leave operations through automation, centralized tracking, and an intuitive interface. It improves HR efficiency, enhances employee experience, and enables smarter workforce management.",
+  rating: 6.1,
+  liveLink: "https://leave-management-system-v1.vercel.app/login",
+},
+
+{
+  id: "online-food-ordering-system",
+  name: "Online Food Ordering Platform",
+  shortDescription: "A modern food ordering web application that allows users to browse menus, order food online, and enjoy a seamless restaurant experience.",
+  image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80",
+  category: "Food & Restaurant",
+  partner: "Bytesoft",
+  introduction: "The Online Food Ordering Platform is a responsive and interactive web application developed for restaurants and food businesses to manage online food orders efficiently. Customers can explore food menus, add items to cart, place orders, and experience a smooth digital ordering process with an attractive and user-friendly interface.",
+  features: {
+    general: [
+      "Interactive food menu system",
+      "Online food ordering functionality",
+      "Cart and checkout management",
+      "Responsive mobile-friendly design",
+      "Fast and smooth user experience",
+      "Restaurant product categorization",
+      "Dynamic pricing and order summary",
+      "Modern UI with engaging animations"
+    ]
+  },
+  techStack: {
+    frontend: ["React.js", "HTML", "CSS", "JavaScript"],
+    backend: ["Node.js", "Express.js"],
+    database: ["MongoDB"],
+    deployment: ["Vercel"],
+    tools: ["REST API", "Responsive Design", "UI/UX Optimization"]
+  },
+  impact: [
+    "Improves restaurant online presence",
+    "Simplifies food ordering experience",
+    "Enhances customer engagement",
+    "Reduces manual order handling",
+    "Supports digital restaurant growth"
+  ],
+  conclusion: "This Online Food Ordering Platform provides restaurants with a modern digital solution to manage online orders efficiently while delivering customers a fast, responsive, and convenient food ordering experience.",
+  rating: 6.3,
+  liveLink: "https://online-food-ordering-system-v1.vercel.app/"
+},
+
   {
     id: "vaultcloud",
     name: "VaultCloud",
     shortDescription: "A minimal, high-performance Nextcloud deployment using Podman or Docker.",
     image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&q=80",
     category: "Cloud & Infrastructure",
-    partner: "v9mirza",
+    partner: "Bytesoft",
     introduction: "VaultCloud is a self-hosted Nextcloud solution built for developers, privacy enthusiasts, and digital minimalists. It provides a high-performance deployment using Podman or Docker, deployable via podman-compose or manual commands.",
     features: {
       general: [
@@ -344,6 +431,11 @@ export const projectsData = [
       "Seamless container orchestration"
     ],
     conclusion: "VaultCloud simplifies setting up a self-hosted cloud storage environment, allowing users to reclaim their data privacy without sacrificing performance.",
+    rating: 5.7,
     liveLink: "https://github.com/v9mirza/VaultCloud"
   }
+
+  
 ];
+
+

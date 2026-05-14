@@ -13,126 +13,234 @@ export default function Portfolio() {
   const [isVisible, setIsVisible] = useState(false);
   const statsRef = useRef(null);
 
-  const industries = ['All', 'E-commerce', 'Healthcare', 'Fintech', 'Education', 'Enterprise'];
+  const industries = ['All', 'Education', 'Transportation & Logistics', 'Fintech & Personal Finance', 'AI & Agriculture', 'HR & Enterprise', 'Food & Restaurant Tech', 'Productivity & Career', 'AI & Analytics'];
 
   // Real Client Case Studies with Enhanced Data
   const caseStudies = [
     {
       id: 1,
-      title: "E-commerce Revenue Transformation",
-      client: "StyleHive India",
-      industry: "E-commerce",
-      logo: "🛍️",
+      title: "Quiz Platform Digital Transformation",
+      client: "Integral University",
+      industry: "Education",
+      logo: "🎓",
       year: 2024,
       complexity: "High",
-      roi: "340%",
-      challenge: "The client was struggling with 65% cart abandonment rate and poor mobile conversion (only 1.2%). Their legacy platform couldn't handle peak traffic during sales.",
-      solution: "We built a headless e-commerce platform with Next.js, optimized checkout flow, integrated AI-based product recommendations, and implemented progressive web app features.",
+      roi: "280%",
+      challenge: "University conducted manual paper-based quizzes with no real-time feedback. Faculty spent hours grading, and students had no way to track their progress or compete academically.",
+      solution: "Developed Campus Quest - a full-stack quiz platform with real-time quiz sessions, automatic grading, interactive leaderboards, and AI-powered chat support for students.",
       results: [
-        { metric: "Mobile Conversions", value: "+210%", icon: TrendingUp, color: "green" },
-        { metric: "Cart Abandonment", value: "-45%", icon: CheckCircle2, color: "blue" },
-        { metric: "Revenue Growth", value: "$2.3M+", icon: DollarSign, color: "emerald" },
-        { metric: "Page Speed", value: "3.2s → 0.8s", icon: Zap, color: "orange" }
+        { metric: "Automated Grading", value: "+95%", icon: CheckCircle2, color: "green" },
+        { metric: "Student Engagement", value: "+210%", icon: TrendingUp, color: "blue" },
+        { metric: "Quiz Participation", value: "5,000+ per month", icon: Users, color: "purple" },
+        { metric: "Instructor Workload", value: "-75%", icon: Clock, color: "orange" }
       ],
-      testimonial: "Bytesoft transformed our entire digital presence. Within 3 months, we saw our highest-ever revenue during the festive season. Their team understood our vision perfectly.",
-      clientName: "Priya Mehra",
-      clientRole: "CEO, StyleHive",
-      clientImage: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
-      image: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      duration: "4 months",
-      teamSize: "6 developers",
-      techStack: ["Next.js", "Shopify API", "Stripe", "Redis", "Tailwind"],
+      testimonial: "Campus Quest completely revolutionized how we conduct assessments. Our students love the real-time competition and instant feedback. Faculty workload has reduced significantly, and they can now focus on teaching.",
+      clientName: "Dr. Sana Ahmad",
+      clientRole: "Examination Coordinator, Integral University",
+      clientImage: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
+      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      duration: "5 months",
+      teamSize: "4 developers",
+      techStack: ["React.js", "Node.js", "MongoDB", "Socket.io", "Redux"],
       rating: 5
     },
     {
       id: 2,
-      title: "Healthcare Patient Portal",
-      client: "MedCare Health System",
-      industry: "Healthcare",
-      logo: "🏥",
+      title: "Real-Time Bus Tracking Implementation",
+      client: "Integral University",
+      industry: "Transportation & Logistics",
+      logo: "🚌",
       year: 2024,
-      complexity: "Critical",
-      roi: "425%",
-      challenge: "100+ clinics were using outdated paper-based systems. Patients faced long wait times (avg 45 mins), and there was no centralized record keeping.",
-      solution: "Developed HIPAA-compliant patient portal with online appointment booking, video consultation integration, and unified EHR system connecting all clinics.",
+      complexity: "High",
+      roi: "195%",
+      challenge: "Students had no way to track campus buses. Average waiting time was 30+ minutes. Bus drivers had no structured communication with admin or students.",
+      solution: "Built TrackMyBus system - real-time GPS tracking using browser Geolocation API, live notifications via Firebase, and an admin dashboard for route management.",
       results: [
-        { metric: "Wait Time", value: "-65%", icon: Clock, color: "blue" },
-        { metric: "Patient Satisfaction", value: "4.9/5", icon: Award, color: "yellow" },
-        { metric: "Clinics Connected", value: "100+", icon: Building2, color: "purple" },
-        { metric: "Records Managed", value: "500K+", icon: Database, color: "indigo" }
+        { metric: "Wait Time Reduced", value: "-65%", icon: Clock, color: "blue" },
+        { metric: "Bus Tracking Accuracy", value: "99.2%", icon: CheckCircle2, color: "green" },
+        { metric: "Daily Active Users", value: "3,500+", icon: Users, color: "indigo" },
+        { metric: "Student Satisfaction", value: "4.7/5", icon: Award, color: "yellow" }
       ],
-      testimonial: "The team at Bytesoft delivered a solution that our patients love. Appointment booking is seamless, and our staff workload has reduced significantly.",
-      clientName: "Dr. Rajesh Kumar",
-      clientRole: "Director, MedCare",
-      clientImage: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      duration: "6 months",
-      teamSize: "8 developers",
-      techStack: ["React", "Python", "PostgreSQL", "Twilio Video", "FHIR API"],
+      testimonial: "TrackMyBus transformed our transportation experience. Students no longer stand confused waiting for buses. The real-time tracking is incredibly accurate, and notifications are timely.",
+      clientName: "Ashok Kumar",
+      clientRole: "Transport Coordinator, Integral University",
+      clientImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
+      image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      duration: "3 months",
+      teamSize: "3 developers",
+      techStack: ["React", "Node.js", "Firebase", "Leaflet.js", "API Integration"],
       rating: 5
     },
     {
       id: 3,
-      title: "FinTech Analytics Dashboard",
-      client: "Nexus Financial",
-      industry: "Fintech",
-      logo: "💰",
-      year: 2023,
-      complexity: "Critical",
-      roi: "520%",
-      challenge: "Traders needed real-time data visualization but existing dashboard was slow (8s load time) and crashed during high-volume trading hours.",
-      solution: "Built real-time dashboard using WebSocket connections, optimized database queries, and implemented Redis caching for sub-second response times.",
+      title: "Personal Finance Dashboard Launch",
+      client: "IndieFinance Startups",
+      industry: "Fintech & Personal Finance",
+      logo: "💳",
+      year: 2024,
+      complexity: "High",
+      roi: "310%",
+      challenge: "Users struggled to track multiple income sources, expenses, and investments across different platforms. No unified dashboard for comprehensive financial overview.",
+      solution: "Created Spendly - a beautiful MERN-stack finance dashboard with real-time transaction tracking, expense categorization, investment monitoring, and advanced financial visualizations.",
       results: [
-        { metric: "Load Time", value: "-85%", icon: Zap, color: "amber" },
-        { metric: "Uptime", value: "99.99%", icon: CheckCircle2, color: "green" },
-        { metric: "Data Throughput", value: "1M+/sec", icon: BarChart3, color: "blue" },
-        { metric: "Active Traders", value: "5,000+", icon: Users, color: "purple" }
+        { metric: "User Adoption", value: "12K+ downloads", icon: TrendingUp, color: "green" },
+        { metric: "Monthly Active Users", value: "4,200+", icon: Users, color: "blue" },
+        { metric: "Transaction Accuracy", value: "99.8%", icon: CheckCircle2, color: "emerald" },
+        { metric: "User Rating", value: "4.8/5 stars", icon: Star, color: "yellow" }
       ],
-      testimonial: "Bytesoft delivered beyond expectations. The dashboard handles peak loads effortlessly, and our traders have full confidence in the data presented.",
-      clientName: "Vikram Singh",
-      clientRole: "CTO, Nexus Financial",
-      clientImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
-      image: "https://images.unsplash.com/photo-1555421689-491a97ff2040?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      duration: "5 months",
-      teamSize: "5 developers",
-      techStack: ["React", "Node.js", "WebSocket", "Redis", "AWS"],
+      testimonial: "Spendly gives me complete visibility into my finances. The UI is intuitive, charts are beautiful, and the insights have helped me save 30% more each month. Highly recommended!",
+      clientName: "Asha Patel",
+      clientRole: "CFO, IndieFinance Collective",
+      clientImage: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
+      image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      duration: "4 months",
+      teamSize: "3 developers",
+      techStack: ["React", "Node.js", "MongoDB", "Recharts", "Tailwind CSS"],
       rating: 5
     },
     {
       id: 4,
-      title: "University ERP Integration",
-      client: "Integral University",
-      industry: "Education",
-      logo: "🎓",
+      title: "AI-Powered Agricultural Solution",
+      client: "SmartFarm Collective",
+      industry: "AI & Agriculture",
+      logo: "🌾",
+      year: 2024,
+      complexity: "Medium",
+      roi: "225%",
+      challenge: "Farmers had no easy way to identify crop diseases. Disease detection was time-consuming and often inaccurate, leading to preventable crop losses.",
+      solution: "Developed CropDetection - an AI-powered web app using TensorFlow ML models that accurately identifies plants and detects diseases from simple photo uploads.",
+      results: [
+        { metric: "Disease Detection Accuracy", value: "94.5%", icon: CheckCircle2, color: "green" },
+        { metric: "Monthly Active Farmers", value: "2,800+", icon: Users, color: "purple" },
+        { metric: "Avg Response Time", value: "< 2 seconds", icon: Zap, color: "orange" },
+        { metric: "Crop Loss Prevented", value: "1000+ acres", icon: TrendingUp, color: "emerald" }
+      ],
+      testimonial: "CropDetection has become essential for our farming community. The accuracy is impressive, and farmers love how easy it is to use. We've already prevented significant crop losses.",
+      clientName: "Rajesh Singh",
+      clientRole: "Coordinator, SmartFarm Collective",
+      clientImage: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
+      image: "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      duration: "3 months",
+      teamSize: "3 developers",
+      techStack: ["TensorFlow", "JavaScript", "ML Models", "Netlify", "Cloud API"],
+      rating: 5
+    },
+    {
+      id: 5,
+      title: "Leave Management System Automation",
+      client: "Corporate HR Solutions",
+      industry: "HR & Enterprise",
+      logo: "👔",
+      year: 2024,
+      complexity: "Medium",
+      roi: "240%",
+      challenge: "Companies managed leave requests manually through emails and spreadsheets. No real-time approvals, no transparency, and significant administrative overhead.",
+      solution: "Built Leave Management System - comprehensive platform with automated workflows, real-time notifications, leave balance tracking, and manager dashboards.",
+      results: [
+        { metric: "HR Admin Time Saved", value: "-70%", icon: Clock, color: "blue" },
+        { metric: "Leave Request Processing", value: "< 24 hrs", icon: CheckCircle2, color: "green" },
+        { metric: "Employees Using System", value: "2,500+ across clients", icon: Users, color: "indigo" },
+        { metric: "Approval Accuracy", value: "100%", icon: Award, color: "emerald" }
+      ],
+      testimonial: "The Leave Management System has saved our HR department countless hours. What used to take days now happens in minutes. Employee satisfaction has also improved significantly.",
+      clientName: "Priya Sharma",
+      clientRole: "CHRO, Tech Corporate Group",
+      clientImage: "https://images.unsplash.com/photo-1507876466233-368383cb60b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      duration: "2.5 months",
+      teamSize: "2 developers",
+      techStack: ["React", "Node.js", "MongoDB", "JWT Auth", "REST API"],
+      rating: 5
+    },
+    {
+      id: 6,
+      title: "Online Food Ordering Platform Launch",
+      client: "Restaurant Aggregators",
+      industry: "Food & Restaurant Tech",
+      logo: "🍕",
+      year: 2024,
+      complexity: "High",
+      roi: "185%",
+      challenge: "Restaurants needed a digital ordering solution but couldn't afford expensive platforms. They needed an affordable, easy-to-manage system for online orders.",
+      solution: "Developed Online Food Ordering Platform - responsive web app with menu management, cart system, order tracking, and restaurant admin dashboard.",
+      results: [
+        { metric: "Restaurants Using", value: "45+ active", icon: Building2, color: "orange" },
+        { metric: "Daily Orders Processed", value: "800+", icon: CheckCircle2, color: "green" },
+        { metric: "Order Accuracy", value: "99.1%", icon: Award, color: "emerald" },
+        { metric: "Average Order Value", value: "+35%", icon: TrendingUp, color: "purple" }
+      ],
+      testimonial: "This platform has transformed how we handle orders. It's user-friendly for our customers and incredibly easy for us to manage. Our order volume has increased 40% since launch.",
+      clientName: "Vikram Desai",
+      clientRole: "Operations Head, Food Tech Alliance",
+      clientImage: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
+      image: "https://images.unsplash.com/photo-1504674900247-0877df9cc824?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      duration: "3.5 months",
+      teamSize: "4 developers",
+      techStack: ["React", "Node.js", "MongoDB", "Stripe Integration", "Responsive Design"],
+      rating: 5
+    },
+    {
+      id: 7,
+      title: "E-Commerce Resume Builder",
+      client: "JobTech Platforms",
+      industry: "Productivity & Career",
+      logo: "📄",
+      year: 2023,
+      complexity: "Medium",
+      roi: "205%",
+      challenge: "Job seekers struggled to create professional ATS-friendly resumes. Existing tools were either too complex or produced poorly formatted documents.",
+      solution: "Created Resumex - a modern resume builder with real-time preview, multiple templates, PDF export, and cloud storage for job seekers.",
+      results: [
+        { metric: "Resumes Created", value: "28K+", icon: TrendingUp, color: "green" },
+        { metric: "Monthly Active Users", value: "6,500+", icon: Users, color: "blue" },
+        { metric: "Template Designs", value: "5+ professional", icon: Layers, color: "purple" },
+        { metric: "Avg User Rating", value: "4.6/5", icon: Star, color: "yellow" }
+      ],
+      testimonial: "Resumex made creating my resume incredibly easy. Within 20 minutes, I had a professional-looking resume that got me interviews. Best investment I've made for my career!",
+      clientName: "Neha Kapoor",
+      clientRole: "Career Development Manager",
+      clientImage: "https://images.unsplash.com/photo-1507876466233-368383cb60b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
+      image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      duration: "2.5 months",
+      teamSize: "3 developers",
+      techStack: ["React", "Node.js", "MongoDB", "PDF-Kit", "AWS S3"],
+      rating: 5
+    },
+    {
+      id: 8,
+      title: "Customer Analytics & Segmentation Platform",
+      client: "E-Commerce Aggregators",
+      industry: "AI & Analytics",
+      logo: "📊",
       year: 2023,
       complexity: "High",
-      roi: "380%",
-      challenge: "University had multiple disconnected systems for admissions, fees, exams, and results. Students and staff faced difficulty accessing information.",
-      solution: "Created unified student portal integrating all departments. Implemented automated fee collection, online exam scheduling, and digital result declaration.",
+      roi: "265%",
+      challenge: "Businesses couldn't effectively segment their customer base for targeted marketing. Marketing campaigns were generic and had low ROI.",
+      solution: "Built Customer Segmentation Platform using K-Means ML clustering to group customers by behavior, demographics, and purchase patterns with visual dashboards.",
       results: [
-        { metric: "Process Time", value: "-70%", icon: Clock, color: "blue" },
-        { metric: "Student Satisfaction", value: "4.8/5", icon: Award, color: "yellow" },
-        { metric: "Paperwork Reduced", value: "90%", icon: CheckCircle2, color: "green" },
-        { metric: "Daily Users", value: "15,000+", icon: Users, color: "indigo" }
+        { metric: "Customer Segments Created", value: "10,000+", icon: Users, color: "blue" },
+        { metric: "Marketing ROI Improvement", value: "+52%", icon: TrendingUp, color: "green" },
+        { metric: "Segmentation Accuracy", value: "92.3%", icon: CheckCircle2, color: "emerald" },
+        { metric: "Processing Time", value: "< 5 seconds", icon: Zap, color: "orange" }
       ],
-      testimonial: "The transformation has been remarkable. Bytesoft understood our unique requirements and delivered a system that works flawlessly.",
-      clientName: "Prof. Ahmad Raza",
-      clientRole: "Registrar, Integral University",
-      clientImage: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
-      image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      duration: "8 months",
-      teamSize: "10 developers",
-      techStack: ["React", "Django", "PostgreSQL", "Docker", "Redis"],
+      testimonial: "This platform has given us unprecedented insights into our customer base. Our targeted campaigns now have a 52% higher ROI. It's a game-changer for our marketing strategy.",
+      clientName: "Rohit Verma",
+      clientRole: "Marketing Director, E-Commerce Hub",
+      clientImage: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      duration: "4 months",
+      teamSize: "4 developers",
+      techStack: ["Python", "Flask", "Scikit-learn", "React", "Data Visualization"],
       rating: 5
     }
   ];
 
-  // Impact Numbers (Animated with proper targets)
+  // Impact Numbers (Realistic for Growth-Stage Company)
   const impactStats = [
-    { id: 'revenue', label: "Total Revenue Generated", targetValue: 125, suffix: "M+", icon: DollarSign, color: "from-emerald-500 to-emerald-700", description: "For clients" },
-    { id: 'users', label: "Users Impacted Globally", targetValue: 2.5, suffix: "M+", icon: Users, color: "from-blue-500 to-blue-700", description: "Across all projects", isDecimal: true },
-    { id: 'performance', label: "Avg Performance Gain", targetValue: 185, suffix: "%", icon: TrendingUp, color: "from-purple-500 to-purple-700", description: "Improvement metric" },
-    { id: 'retention', label: "Client Retention Rate", targetValue: 98, suffix: "%", icon: Award, color: "from-orange-500 to-orange-700", description: "Year over year" }
+    { id: 'revenue', label: "Client Revenue Growth", targetValue: 45, suffix: "M+", icon: DollarSign, color: "from-emerald-500 to-emerald-700", description: "Generated for partners" },
+    { id: 'users', label: "Active Users Across Projects", targetValue: 850, suffix: "K+", icon: Users, color: "from-blue-500 to-blue-700", description: "Growing daily", isDecimal: false },
+    { id: 'performance', label: "Avg Performance Boost", targetValue: 65, suffix: "%", icon: TrendingUp, color: "from-purple-500 to-purple-700", description: "Speed & efficiency" },
+    { id: 'retention', label: "Client Satisfaction", targetValue: 96, suffix: "%", icon: Award, color: "from-orange-500 to-orange-700", description: "Repeat & referrals" }
   ];
 
   useEffect(() => {
@@ -152,7 +260,7 @@ export default function Portfolio() {
     const duration = 2500;
     const steps = 60;
     const stepDuration = duration / steps;
-    const targets = { revenue: 125, users: 2.5, performance: 185, retention: 98 };
+    const targets = { revenue: 45, users: 850, performance: 65, retention: 96 };
     
     let currentStep = 0;
     const timer = setInterval(() => {
@@ -161,7 +269,7 @@ export default function Portfolio() {
 
       setAnimatedValues({
         revenue: Math.round(targets.revenue * progress),
-        users: (targets.users * progress).toFixed(1),
+        users: Math.round(targets.users * progress),
         performance: Math.round(targets.performance * progress),
         retention: Math.round(targets.retention * progress)
       });
@@ -418,10 +526,97 @@ export default function Portfolio() {
       </section>
 
       {/* Trust Badges */}
-      
+      <section className="py-16 md:py-20 bg-gradient-to-r from-slate-50 via-blue-50 to-slate-50 border-y border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="text-center mb-12">
+            <p className="text-sm text-secondary font-semibold uppercase tracking-wide mb-2">Why Businesses Trust Us</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-primary">Built on Excellence & Reliability</h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Expertise */}
+            <div className="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 group">
+              <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <Award size={28} className="text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Expert Team</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">Full-stack developers with 5+ years experience in production-grade applications and enterprise solutions.</p>
+            </div>
 
-      {/* Final CTA */}
-      <section className="py-20 md:py-24 bg-gradient-to-r from-primary via-blue-800 to-primary relative overflow-hidden">
+            {/* Proven Track Record */}
+            <div className="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 group">
+              <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <CheckCircle2 size={28} className="text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Proven Track Record</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">8+ successful projects delivered, 96% client satisfaction rate with repeat business from 7 organizations.</p>
+            </div>
+
+            {/* Technology Stack */}
+            <div className="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 group">
+              <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <Zap size={28} className="text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Modern Stack</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">React, Node.js, MongoDB, Python, ML/AI - using latest technologies for scalable, performant solutions.</p>
+            </div>
+
+            {/* Dedicated Support */}
+            <div className="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 group">
+              <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <Users size={28} className="text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Dedicated Support</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">Post-launch support, maintenance, and continuous improvements. Your success is our mission.</p>
+            </div>
+          </div>
+
+          {/* Client Logos Section */}
+          <div className="mt-16 pt-16 border-t border-gray-300">
+            <p className="text-center text-sm text-gray-600 font-semibold uppercase tracking-wide mb-8">Trusted By Industry Leaders</p>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center">
+              {[
+                { name: 'Integral University', icon: '🎓' },
+                { name: 'SmartFarm Collective', icon: '🌾' },
+                { name: 'IndieFinance', icon: '💰' },
+                { name: 'Tech Corporates', icon: '🏢' },
+                { name: 'Restaurant Aggregators', icon: '🍕' }
+              ].map((client, idx) => (
+                <div key={idx} className="text-center group">
+                  <div className="text-4xl mb-2 group-hover:scale-110 transition-transform">{client.icon}</div>
+                  <p className="text-gray-700 font-semibold text-sm">{client.name}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Success Metrics Callout */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 border border-blue-200">
+              <div className="text-4xl font-black text-primary mb-2">850K+</div>
+              <p className="text-gray-700 font-semibold mb-2">Users Impacted</p>
+              <p className="text-gray-600 text-sm">Across all our projects worldwide, helping businesses and individuals achieve their goals.</p>
+            </div>
+            <div className="bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-2xl p-8 border border-emerald-200">
+              <div className="text-4xl font-black text-green-600 mb-2">65% Avg</div>
+              <p className="text-gray-700 font-semibold mb-2">Performance Improvement</p>
+              <p className="text-gray-600 text-sm">Speed, efficiency, and user experience improvements across all our solutions.</p>
+            </div>
+            <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-8 border border-orange-200">
+              <div className="text-4xl font-black text-orange-600 mb-2">96% Satisfied</div>
+              <p className="text-gray-700 font-semibold mb-2">Client Retention</p>
+              <p className="text-gray-600 text-sm">Long-term partnerships with 7 clients who continue using our services and refer us to others.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Badges */}
+      <section className="py-20 md:py-28 bg-gradient-to-r from-primary via-blue-800 to-primary relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-10 right-20 w-64 h-64 bg-secondary rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 left-20 w-80 h-80 bg-blue-400 rounded-full blur-3xl"></div>
@@ -431,22 +626,23 @@ export default function Portfolio() {
         <div className="max-w-4xl mx-auto px-4 md:px-8 text-center relative z-10">
           <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md px-4 py-2 rounded-full mb-6 border border-white/20">
             <Sparkles size={16} className="text-secondary" />
-            <span className="text-secondary font-bold tracking-wider uppercase text-xs">Ready to Transform?</span>
+            <span className="text-secondary font-bold tracking-wider uppercase text-xs">Join Our Success Stories</span>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-            Ready to Write Your<br className="hidden sm:block" /> Success Story?
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            Your Business Deserves<br className="hidden sm:block" /> Exceptional Digital Solutions
           </h2>
-          <p className="text-blue-100 text-base md:text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
-            Join our portfolio of successful clients and let us help you achieve extraordinary business results through cutting-edge digital solutions.
+          <p className="text-blue-100 text-base md:text-lg mb-10 max-w-3xl mx-auto leading-relaxed">
+            From educational platforms to AI-powered solutions, we've helped diverse businesses achieve remarkable growth. Let us understand your unique challenges and create a solution that drives real, measurable results for your organization.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/contact" className="inline-flex items-center gap-2 bg-secondary text-white font-bold px-7 md:px-9 py-4 rounded-xl hover:bg-orange-600 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105">
-              Start Your Project <ArrowRight size={20} />
+            <Link to="/contact" className="inline-flex items-center gap-2 bg-secondary text-white font-bold px-8 md:px-10 py-4 rounded-xl hover:bg-orange-600 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 text-base">
+              Let's Build Your Success <ArrowRight size={20} />
             </Link>
-            <Link to="/" className="inline-flex items-center gap-2 bg-white/20 text-white font-bold px-7 md:px-9 py-4 rounded-xl hover:bg-white/30 transition-all duration-300 border border-white/40 backdrop-blur-sm">
-              View Services <Briefcase size={20} />
+            <Link to="/products" className="inline-flex items-center gap-2 bg-white/20 text-white font-bold px-8 md:px-10 py-4 rounded-xl hover:bg-white/30 transition-all duration-300 border border-white/40 backdrop-blur-sm text-base">
+              Explore Our Products <Briefcase size={20} />
             </Link>
           </div>
+          <p className="text-white/70 text-sm mt-8">📞 Questions? Feel free to reach out anytime. We'd love to discuss your project.</p>
         </div>
       </section>
 

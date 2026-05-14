@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, ExternalLink, CheckCircle2, Layers, ShieldCheck, Zap, Server, Layout as LayoutIcon, Wrench } from 'lucide-react';
+import { ArrowLeft, ExternalLink, CheckCircle2, Layers, ShieldCheck, Zap, Server, Layout as LayoutIcon, Wrench, Star } from 'lucide-react';
 import { projectsData } from './Data/Projects';
 
 export default function ProjectDetails() {
@@ -46,6 +46,12 @@ export default function ProjectDetails() {
               <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
               {project.partner}
             </span>
+            {project.rating && (
+              <span className="bg-white/10 text-white border border-white/20 px-4 py-1.5 rounded-full text-sm font-semibold backdrop-blur-md flex items-center gap-2">
+                <Star size={16} className="fill-amber-400 text-amber-400" />
+                {project.rating}
+              </span>
+            )}
           </div>
 
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight max-w-4xl">
