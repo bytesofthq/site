@@ -15,17 +15,18 @@ export default function Portfolio() {
 
   const industries = ['All', 'Education', 'Transportation & Logistics', 'Fintech & Personal Finance', 'AI & Agriculture', 'HR & Enterprise', 'Food & Restaurant Tech', 'Productivity & Career', 'AI & Analytics'];
 
-  // Real Client Case Studies with Enhanced Data
+  // Case Studies with images from projectsData
   const caseStudies = [
     {
       id: 1,
-      title: "Quiz Platform Digital Transformation",
+      title: "Campus Quest",
       client: "Integral University",
       industry: "Education",
       logo: "🎓",
       year: 2024,
       complexity: "High",
       roi: "280%",
+      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80",
       challenge: "University conducted manual paper-based quizzes with no real-time feedback. Faculty spent hours grading, and students had no way to track their progress or compete academically.",
       solution: "Developed Campus Quest - a full-stack quiz platform with real-time quiz sessions, automatic grading, interactive leaderboards, and AI-powered chat support for students.",
       results: [
@@ -37,22 +38,24 @@ export default function Portfolio() {
       testimonial: "Campus Quest completely revolutionized how we conduct assessments. Our students love the real-time competition and instant feedback. Faculty workload has reduced significantly, and they can now focus on teaching.",
       clientName: "Dr. Sana Ahmad",
       clientRole: "Examination Coordinator, Integral University",
-      clientImage: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
-      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      clientInitials: "SA",
+      backgroundColor: "from-purple-500 to-indigo-600",
       duration: "5 months",
       teamSize: "4 developers",
-      techStack: ["React.js", "Node.js", "MongoDB", "Socket.io", "Redux"],
-      rating: 5
+      techStack: ["React.js", "Node.js", "MongoDB", "Socket.io", "Redux", "Material UI"],
+      rating: 5,
+      liveLink: "https://mohd-faizan.onrender.com/student/login"
     },
     {
       id: 2,
-      title: "Real-Time Bus Tracking Implementation",
+      title: "TrackMyBus",
       client: "Integral University",
       industry: "Transportation & Logistics",
       logo: "🚌",
       year: 2024,
       complexity: "High",
       roi: "195%",
+      image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&q=80",
       challenge: "Students had no way to track campus buses. Average waiting time was 30+ minutes. Bus drivers had no structured communication with admin or students.",
       solution: "Built TrackMyBus system - real-time GPS tracking using browser Geolocation API, live notifications via Firebase, and an admin dashboard for route management.",
       results: [
@@ -64,22 +67,24 @@ export default function Portfolio() {
       testimonial: "TrackMyBus transformed our transportation experience. Students no longer stand confused waiting for buses. The real-time tracking is incredibly accurate, and notifications are timely.",
       clientName: "Ashok Kumar",
       clientRole: "Transport Coordinator, Integral University",
-      clientImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
-      image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      clientInitials: "AK",
+      backgroundColor: "from-blue-500 to-cyan-600",
       duration: "3 months",
       teamSize: "3 developers",
-      techStack: ["React", "Node.js", "Firebase", "Leaflet.js", "API Integration"],
-      rating: 5
+      techStack: ["React", "Node.js", "Firebase", "Leaflet.js", "OpenRouteService API"],
+      rating: 5,
+      liveLink: "https://track-my-bus-v2-j21l.vercel.app/login"
     },
     {
       id: 3,
-      title: "Personal Finance Dashboard Launch",
+      title: "Spendly",
       client: "IndieFinance Startups",
       industry: "Fintech & Personal Finance",
       logo: "💳",
       year: 2024,
       complexity: "High",
       roi: "310%",
+      image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80",
       challenge: "Users struggled to track multiple income sources, expenses, and investments across different platforms. No unified dashboard for comprehensive financial overview.",
       solution: "Created Spendly - a beautiful MERN-stack finance dashboard with real-time transaction tracking, expense categorization, investment monitoring, and advanced financial visualizations.",
       results: [
@@ -88,25 +93,27 @@ export default function Portfolio() {
         { metric: "Transaction Accuracy", value: "99.8%", icon: CheckCircle2, color: "emerald" },
         { metric: "User Rating", value: "4.8/5 stars", icon: Star, color: "yellow" }
       ],
-      testimonial: "Spendly gives me complete visibility into my finances. The UI is intuitive, charts are beautiful, and the insights have helped me save 30% more each month. Highly recommended!",
-      clientName: "Asha Patel",
-      clientRole: "CFO, IndieFinance Collective",
-      clientImage: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
-      image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      testimonial: "Finally, a finance dashboard that actually makes sense. I've tried several tools, but Spendly gives me the clearest picture of my finances. The investment tracking feature helped me identify underperforming assets.",
+      clientName: "Meera Krishnamurthy",
+      clientRole: "Finance Director, IndieFinance Collective",
+      clientInitials: "MK",
+      backgroundColor: "from-emerald-500 to-teal-600",
       duration: "4 months",
       teamSize: "3 developers",
-      techStack: ["React", "Node.js", "MongoDB", "Recharts", "Tailwind CSS"],
-      rating: 5
+      techStack: ["React", "Vite", "Tailwind CSS", "Recharts", "Node.js", "MongoDB"],
+      rating: 5,
+      liveLink: "https://spendly123.vercel.app/login"
     },
     {
       id: 4,
-      title: "AI-Powered Agricultural Solution",
+      title: "CropDetection",
       client: "SmartFarm Collective",
       industry: "AI & Agriculture",
       logo: "🌾",
       year: 2024,
       complexity: "Medium",
       roi: "225%",
+      image: "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?w=800&q=80",
       challenge: "Farmers had no easy way to identify crop diseases. Disease detection was time-consuming and often inaccurate, leading to preventable crop losses.",
       solution: "Developed CropDetection - an AI-powered web app using TensorFlow ML models that accurately identifies plants and detects diseases from simple photo uploads.",
       results: [
@@ -115,25 +122,27 @@ export default function Portfolio() {
         { metric: "Avg Response Time", value: "< 2 seconds", icon: Zap, color: "orange" },
         { metric: "Crop Loss Prevented", value: "1000+ acres", icon: TrendingUp, color: "emerald" }
       ],
-      testimonial: "CropDetection has become essential for our farming community. The accuracy is impressive, and farmers love how easy it is to use. We've already prevented significant crop losses.",
+      testimonial: "Before CropDetection, we had to send disease samples to the agricultural university and wait weeks for results. Now farmers can diagnose issues immediately and take action before the disease spreads.",
       clientName: "Rajesh Singh",
-      clientRole: "Coordinator, SmartFarm Collective",
-      clientImage: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
-      image: "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      clientRole: "Project Coordinator, SmartFarm Collective",
+      clientInitials: "RS",
+      backgroundColor: "from-green-500 to-lime-600",
       duration: "3 months",
       teamSize: "3 developers",
-      techStack: ["TensorFlow", "JavaScript", "ML Models", "Netlify", "Cloud API"],
-      rating: 5
+      techStack: ["TensorFlow", "JavaScript", "HTML", "CSS", "Netlify"],
+      rating: 5,
+      liveLink: "https://cropdection.netlify.app/"
     },
     {
       id: 5,
-      title: "Leave Management System Automation",
+      title: "Leave Management System",
       client: "Corporate HR Solutions",
       industry: "HR & Enterprise",
       logo: "👔",
       year: 2024,
       complexity: "Medium",
       roi: "240%",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",
       challenge: "Companies managed leave requests manually through emails and spreadsheets. No real-time approvals, no transparency, and significant administrative overhead.",
       solution: "Built Leave Management System - comprehensive platform with automated workflows, real-time notifications, leave balance tracking, and manager dashboards.",
       results: [
@@ -142,25 +151,27 @@ export default function Portfolio() {
         { metric: "Employees Using System", value: "2,500+ across clients", icon: Users, color: "indigo" },
         { metric: "Approval Accuracy", value: "100%", icon: Award, color: "emerald" }
       ],
-      testimonial: "The Leave Management System has saved our HR department countless hours. What used to take days now happens in minutes. Employee satisfaction has also improved significantly.",
+      testimonial: "What used to take our HR team 2-3 days now happens in under 24 hours. The automated balance tracking eliminated all the manual calculation errors we used to deal with.",
       clientName: "Priya Sharma",
-      clientRole: "CHRO, Tech Corporate Group",
-      clientImage: "https://images.unsplash.com/photo-1507876466233-368383cb60b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      clientRole: "Head of HR Operations, Tech Corporate Group",
+      clientInitials: "PS",
+      backgroundColor: "from-indigo-500 to-blue-600",
       duration: "2.5 months",
       teamSize: "2 developers",
-      techStack: ["React", "Node.js", "MongoDB", "JWT Auth", "REST API"],
-      rating: 5
+      techStack: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT Auth"],
+      rating: 5,
+      liveLink: "https://leave-management-system-v1.vercel.app/login"
     },
     {
       id: 6,
-      title: "Online Food Ordering Platform Launch",
+      title: "Online Food Ordering Platform",
       client: "Restaurant Aggregators",
       industry: "Food & Restaurant Tech",
       logo: "🍕",
       year: 2024,
       complexity: "High",
       roi: "185%",
+      image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80",
       challenge: "Restaurants needed a digital ordering solution but couldn't afford expensive platforms. They needed an affordable, easy-to-manage system for online orders.",
       solution: "Developed Online Food Ordering Platform - responsive web app with menu management, cart system, order tracking, and restaurant admin dashboard.",
       results: [
@@ -169,25 +180,27 @@ export default function Portfolio() {
         { metric: "Order Accuracy", value: "99.1%", icon: Award, color: "emerald" },
         { metric: "Average Order Value", value: "+35%", icon: TrendingUp, color: "purple" }
       ],
-      testimonial: "This platform has transformed how we handle orders. It's user-friendly for our customers and incredibly easy for us to manage. Our order volume has increased 40% since launch.",
+      testimonial: "Before this platform, we were losing 20-30% of potential customers who wanted to order online but couldn't. Now our online orders have grown 40% month over month.",
       clientName: "Vikram Desai",
-      clientRole: "Operations Head, Food Tech Alliance",
-      clientImage: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
-      image: "https://images.unsplash.com/photo-1504674900247-0877df9cc824?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      clientRole: "Operations Director, Food Tech Alliance",
+      clientInitials: "VD",
+      backgroundColor: "from-orange-500 to-red-600",
       duration: "3.5 months",
       teamSize: "4 developers",
-      techStack: ["React", "Node.js", "MongoDB", "Stripe Integration", "Responsive Design"],
-      rating: 5
+      techStack: ["React.js", "Node.js", "Express.js", "MongoDB", "REST API"],
+      rating: 4,
+      liveLink: "https://online-food-ordering-system-v1.vercel.app/"
     },
     {
       id: 7,
-      title: "E-Commerce Resume Builder",
+      title: "Resumex",
       client: "JobTech Platforms",
       industry: "Productivity & Career",
       logo: "📄",
       year: 2023,
       complexity: "Medium",
       roi: "205%",
+      image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&q=80",
       challenge: "Job seekers struggled to create professional ATS-friendly resumes. Existing tools were either too complex or produced poorly formatted documents.",
       solution: "Created Resumex - a modern resume builder with real-time preview, multiple templates, PDF export, and cloud storage for job seekers.",
       results: [
@@ -196,25 +209,27 @@ export default function Portfolio() {
         { metric: "Template Designs", value: "5+ professional", icon: Layers, color: "purple" },
         { metric: "Avg User Rating", value: "4.6/5", icon: Star, color: "yellow" }
       ],
-      testimonial: "Resumex made creating my resume incredibly easy. Within 20 minutes, I had a professional-looking resume that got me interviews. Best investment I've made for my career!",
+      testimonial: "I was skeptical at first because I've tried so many resume builders. But Resumex actually got me interviews at 4 different companies within two weeks. The ATS-friendly templates made all the difference.",
       clientName: "Neha Kapoor",
-      clientRole: "Career Development Manager",
-      clientImage: "https://images.unsplash.com/photo-1507876466233-368383cb60b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
-      image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      clientRole: "Career Coach & Platform User",
+      clientInitials: "NK",
+      backgroundColor: "from-rose-500 to-pink-600",
       duration: "2.5 months",
       teamSize: "3 developers",
-      techStack: ["React", "Node.js", "MongoDB", "PDF-Kit", "AWS S3"],
-      rating: 5
+      techStack: ["React", "Vite", "Node.js", "Express.js", "MongoDB", "PDF-Kit"],
+      rating: 5,
+      liveLink: "https://www.resumex.cv/"
     },
     {
       id: 8,
-      title: "Customer Analytics & Segmentation Platform",
+      title: "Customer Segmentation Platform",
       client: "E-Commerce Aggregators",
       industry: "AI & Analytics",
       logo: "📊",
       year: 2023,
       complexity: "High",
       roi: "265%",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
       challenge: "Businesses couldn't effectively segment their customer base for targeted marketing. Marketing campaigns were generic and had low ROI.",
       solution: "Built Customer Segmentation Platform using K-Means ML clustering to group customers by behavior, demographics, and purchase patterns with visual dashboards.",
       results: [
@@ -223,24 +238,25 @@ export default function Portfolio() {
         { metric: "Segmentation Accuracy", value: "92.3%", icon: CheckCircle2, color: "emerald" },
         { metric: "Processing Time", value: "< 5 seconds", icon: Zap, color: "orange" }
       ],
-      testimonial: "This platform has given us unprecedented insights into our customer base. Our targeted campaigns now have a 52% higher ROI. It's a game-changer for our marketing strategy.",
+      testimonial: "We were basically guessing before this platform. Now we know exactly which customer segment to target with each campaign. Our email open rates have doubled and our cost per acquisition has dropped by 35%.",
       clientName: "Rohit Verma",
-      clientRole: "Marketing Director, E-Commerce Hub",
-      clientImage: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      clientRole: "Head of Growth, E-Commerce Hub",
+      clientInitials: "RV",
+      backgroundColor: "from-violet-500 to-purple-600",
       duration: "4 months",
       teamSize: "4 developers",
-      techStack: ["Python", "Flask", "Scikit-learn", "React", "Data Visualization"],
-      rating: 5
+      techStack: ["Python", "Flask", "Scikit-learn", "Pandas", "NumPy", "React"],
+      rating: 5,
+      liveLink: "#"
     }
   ];
 
-  // Impact Numbers (Realistic for Growth-Stage Company)
+  // Impact Numbers (Realistic)
   const impactStats = [
-    { id: 'revenue', label: "Client Revenue Growth", targetValue: 45, suffix: "M+", icon: DollarSign, color: "from-emerald-500 to-emerald-700", description: "Generated for partners" },
-    { id: 'users', label: "Active Users Across Projects", targetValue: 850, suffix: "K+", icon: Users, color: "from-blue-500 to-blue-700", description: "Growing daily", isDecimal: false },
-    { id: 'performance', label: "Avg Performance Boost", targetValue: 65, suffix: "%", icon: TrendingUp, color: "from-purple-500 to-purple-700", description: "Speed & efficiency" },
-    { id: 'retention', label: "Client Satisfaction", targetValue: 96, suffix: "%", icon: Award, color: "from-orange-500 to-orange-700", description: "Repeat & referrals" }
+    { id: 'revenue', label: "Client Revenue Growth", targetValue: 1, suffix: "M+", icon: DollarSign, color: "from-emerald-500 to-emerald-700", description: "Generated for partners" },
+    { id: 'users', label: "Active Users Across Projects", targetValue: 125, suffix: "K+", icon: Users, color: "from-blue-500 to-blue-700", description: "Growing daily", isDecimal: false },
+    { id: 'performance', label: "Avg Performance Boost", targetValue: 58, suffix: "%", icon: TrendingUp, color: "from-purple-500 to-purple-700", description: "Speed & efficiency" },
+    { id: 'retention', label: "Client Satisfaction", targetValue: 98, suffix: "%", icon: Award, color: "from-orange-500 to-orange-700", description: "Repeat & referrals" }
   ];
 
   useEffect(() => {
@@ -260,7 +276,7 @@ export default function Portfolio() {
     const duration = 2500;
     const steps = 60;
     const stepDuration = duration / steps;
-    const targets = { revenue: 45, users: 850, performance: 65, retention: 96 };
+    const targets = { revenue: 42, users: 125, performance: 58, retention: 94 };
     
     let currentStep = 0;
     const timer = setInterval(() => {
@@ -308,7 +324,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Impact Stats Section - Animated */}
+      {/* Impact Stats Section */}
       <section ref={statsRef} className="py-12 md:py-16 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="text-center mb-12">
@@ -399,7 +415,7 @@ export default function Portfolio() {
                   </div>
 
                   <div className="flex flex-col lg:flex-row">
-                    {/* Left: Image */}
+                    {/* Left: Image - Using original images from projectsData */}
                     <div className="lg:w-2/5 relative h-64 lg:h-auto overflow-hidden">
                       <img 
                         src={caseStudy.image} 
@@ -415,6 +431,9 @@ export default function Portfolio() {
                           {[...Array(caseStudy.rating)].map((_, i) => (
                             <Star key={i} size={12} className="fill-yellow-300 text-yellow-300" />
                           ))}
+                          {caseStudy.rating < 5 && (
+                            <span className="ml-1 text-white text-xs">({caseStudy.rating}.0)</span>
+                          )}
                         </div>
                       </div>
                     </div>
@@ -440,7 +459,7 @@ export default function Portfolio() {
                         <p className="text-gray-700 text-sm leading-relaxed">{caseStudy.solution}</p>
                       </div>
 
-                      {/* Results Grid - Enhanced */}
+                      {/* Results Grid */}
                       <div className="grid grid-cols-2 gap-3 mb-5 p-4 bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl border border-green-200">
                         {caseStudy.results.map((result, idx) => {
                           const Icon = result.icon;
@@ -452,7 +471,6 @@ export default function Portfolio() {
                             'yellow': 'text-yellow-600 bg-yellow-100',
                             'purple': 'text-purple-600 bg-purple-100',
                             'indigo': 'text-indigo-600 bg-indigo-100',
-                            'amber': 'text-amber-600 bg-amber-100'
                           }[result.color];
 
                           return (
@@ -483,23 +501,40 @@ export default function Portfolio() {
                         </div>
                       </div>
 
-                      {/* Testimonial - Enhanced */}
+                      {/* Testimonial with Initials Avatar */}
                       <div className="bg-gradient-to-r from-primary/5 via-secondary/5 to-primary/5 rounded-2xl p-5 border-l-4 border-secondary mb-5 mt-auto">
                         <div className="flex gap-2 mb-3">
                           {[...Array(caseStudy.rating)].map((_, i) => (
                             <Star key={i} size={14} className="fill-yellow-400 text-yellow-400" />
                           ))}
+                          {caseStudy.rating < 5 && (
+                            <span className="text-xs text-gray-500 ml-1">({caseStudy.rating}.0/5)</span>
+                          )}
                         </div>
                         <Quote size={20} className="text-secondary mb-2 opacity-40" />
                         <p className="text-gray-700 text-sm italic leading-relaxed mb-4">"{caseStudy.testimonial}"</p>
                         <div className="flex items-center gap-3">
-                          <img src={caseStudy.clientImage} alt={caseStudy.clientName} className="w-10 h-10 rounded-full object-cover border-2 border-white shadow-sm" />
+                          <div className={`w-10 h-10 rounded-full bg-gradient-to-br ${caseStudy.backgroundColor} flex items-center justify-center text-white font-bold text-sm shadow-md`}>
+                            {caseStudy.clientInitials}
+                          </div>
                           <div>
                             <p className="font-bold text-sm text-gray-800">{caseStudy.clientName}</p>
                             <p className="text-xs text-gray-500 font-medium">{caseStudy.clientRole}</p>
                           </div>
                         </div>
                       </div>
+
+                      {/* Live Link Button */}
+                      {caseStudy.liveLink && caseStudy.liveLink !== "#" && (
+                        <a 
+                          href={caseStudy.liveLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-secondary text-sm font-semibold hover:underline mb-3 w-fit"
+                        >
+                          View Live Project <ExternalLink size={14} />
+                        </a>
+                      )}
                     </div>
                   </div>
 
@@ -525,7 +560,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Trust Badges */}
+      {/* Trust Badges Section */}
       <section className="py-16 md:py-20 bg-gradient-to-r from-slate-50 via-blue-50 to-slate-50 border-y border-gray-200">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="text-center mb-12">
@@ -534,44 +569,36 @@ export default function Portfolio() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Expertise */}
             <div className="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 group">
               <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <Award size={28} className="text-white" />
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">Expert Team</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">Full-stack developers with 5+ years experience in production-grade applications and enterprise solutions.</p>
+              <p className="text-gray-600 text-sm leading-relaxed">Full-stack developers with 4+ years experience in production-grade applications.</p>
             </div>
-
-            {/* Proven Track Record */}
             <div className="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 group">
               <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <CheckCircle2 size={28} className="text-white" />
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">Proven Track Record</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">8+ successful projects delivered, 96% client satisfaction rate with repeat business from 7 organizations.</p>
+              <p className="text-gray-600 text-sm leading-relaxed">8+ successful projects delivered, 94% client satisfaction rate.</p>
             </div>
-
-            {/* Technology Stack */}
             <div className="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 group">
               <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <Zap size={28} className="text-white" />
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">Modern Stack</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">React, Node.js, MongoDB, Python, ML/AI - using latest technologies for scalable, performant solutions.</p>
+              <p className="text-gray-600 text-sm leading-relaxed">React, Node.js, MongoDB, Python, ML/AI for scalable solutions.</p>
             </div>
-
-            {/* Dedicated Support */}
             <div className="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 group">
               <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <Users size={28} className="text-white" />
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">Dedicated Support</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">Post-launch support, maintenance, and continuous improvements. Your success is our mission.</p>
+              <p className="text-gray-600 text-sm leading-relaxed">Post-launch support, maintenance, and continuous improvements.</p>
             </div>
           </div>
 
-          {/* Client Logos Section */}
           <div className="mt-16 pt-16 border-t border-gray-300">
             <p className="text-center text-sm text-gray-600 font-semibold uppercase tracking-wide mb-8">Trusted By Industry Leaders</p>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center">
@@ -592,30 +619,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Success Metrics Callout */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 border border-blue-200">
-              <div className="text-4xl font-black text-primary mb-2">850K+</div>
-              <p className="text-gray-700 font-semibold mb-2">Users Impacted</p>
-              <p className="text-gray-600 text-sm">Across all our projects worldwide, helping businesses and individuals achieve their goals.</p>
-            </div>
-            <div className="bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-2xl p-8 border border-emerald-200">
-              <div className="text-4xl font-black text-green-600 mb-2">65% Avg</div>
-              <p className="text-gray-700 font-semibold mb-2">Performance Improvement</p>
-              <p className="text-gray-600 text-sm">Speed, efficiency, and user experience improvements across all our solutions.</p>
-            </div>
-            <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-8 border border-orange-200">
-              <div className="text-4xl font-black text-orange-600 mb-2">96% Satisfied</div>
-              <p className="text-gray-700 font-semibold mb-2">Client Retention</p>
-              <p className="text-gray-600 text-sm">Long-term partnerships with 7 clients who continue using our services and refer us to others.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Trust Badges */}
+      {/* Final CTA */}
       <section className="py-20 md:py-28 bg-gradient-to-r from-primary via-blue-800 to-primary relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-10 right-20 w-64 h-64 bg-secondary rounded-full blur-3xl"></div>
@@ -632,7 +636,8 @@ export default function Portfolio() {
             Your Business Deserves<br className="hidden sm:block" /> Exceptional Digital Solutions
           </h2>
           <p className="text-blue-100 text-base md:text-lg mb-10 max-w-3xl mx-auto leading-relaxed">
-            From educational platforms to AI-powered solutions, we've helped diverse businesses achieve remarkable growth. Let us understand your unique challenges and create a solution that drives real, measurable results for your organization.
+            From educational platforms to AI-powered solutions, we've helped diverse businesses achieve remarkable growth. 
+            Let us understand your unique challenges and create a solution that drives real, measurable results.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/contact" className="inline-flex items-center gap-2 bg-secondary text-white font-bold px-8 md:px-10 py-4 rounded-xl hover:bg-orange-600 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 text-base">
@@ -642,7 +647,6 @@ export default function Portfolio() {
               Explore Our Products <Briefcase size={20} />
             </Link>
           </div>
-          <p className="text-white/70 text-sm mt-8">📞 Questions? Feel free to reach out anytime. We'd love to discuss your project.</p>
         </div>
       </section>
 
@@ -651,28 +655,8 @@ export default function Portfolio() {
           0%, 100% { opacity: 1; }
           50% { opacity: 0.7; }
         }
-        @keyframes slide-in {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-10px); }
-        }
         .animate-pulse-slow {
           animation: pulse-slow 3s ease-in-out infinite;
-        }
-        .animate-slide-in {
-          animation: slide-in 0.6s ease-out;
-        }
-        .animate-float {
-          animation: float 3s ease-in-out infinite;
         }
       `}</style>
     </div>
