@@ -35,7 +35,7 @@ export default function Services() {
       const steps = 60;
       const interval = duration / steps;
       
-      const targets = { projects: 100, retention: 98, team: 10, support: 24 };
+      const targets = { projects: 50, retention: 100, team: 10, support: 24 };
       let step = 0;
 
       const timer = setInterval(() => {
@@ -208,13 +208,13 @@ export default function Services() {
               <div className="text-2xl md:text-3xl font-bold text-white mb-1">
                 {counters.retention}%
               </div>
-              <div className="text-blue-200 text-xs md:text-sm">Client Retention</div>
+              <div className="text-blue-200 text-xs md:text-sm">Client Satisfaction</div>
             </div>
             <div className="text-center min-w-[100px]">
               <div className="text-2xl md:text-3xl font-bold text-white mb-1">
                 {counters.team}+
               </div>
-              <div className="text-blue-200 text-xs md:text-sm">Expert Team</div>
+              <div className="text-blue-200 text-xs md:text-sm">Expert Developers</div>
             </div>
             <div className="text-center min-w-[100px]">
               <div className="text-2xl md:text-3xl font-bold text-white mb-1">

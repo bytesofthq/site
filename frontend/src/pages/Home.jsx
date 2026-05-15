@@ -72,7 +72,7 @@ export default function Home() {
       const steps = 60;
       const interval = duration / steps;
       
-      const targets = { projects: 100, satisfaction: 98, developers: 10, support: 24 };
+      const targets = { projects: 50, satisfaction: 100, developers: 10, support: 24 };
       let step = 0;
 
       const timer = setInterval(() => {
@@ -120,14 +120,14 @@ export default function Home() {
             A premier digital agency specializing in high-performance web development, strategic SEO, and data-driven marketing to elevate your brand's online presence.
           </p>
           <div className="flex flex-row gap-4 justify-center mb-10">
-            <Link to="/contact" className="bg-primary text-white font-semibold px-7 py-3 rounded-xl hover:bg-blue-900 transition-colors shadow-md">Request Demo</Link>
+            <Link to="/contact" className="bg-primary text-white font-semibold px-7 py-3 rounded-xl hover:bg-blue-900 transition-colors shadow-md">Get in Touch</Link>
             <Link to="/our-work" className="border-2 border-primary text-primary font-semibold px-7 py-3 rounded-xl hover:bg-primary hover:text-white transition-colors">View Our Work</Link>
           </div>
 
           {/* Stat row */}
           <div className="flex flex-wrap justify-center gap-8 pb-10 border-b border-gray-200">
             <div className="text-center">
-              <p className="text-2xl font-black text-primary">10+</p>
+              <p className="text-2xl font-black text-primary">50+</p>
               <p className="text-gray-500 text-sm">Projects Delivered</p>
             </div>
             <div className="text-center">
@@ -135,12 +135,12 @@ export default function Home() {
               <p className="text-gray-500 text-sm">Client Satisfaction</p>
             </div>
             <div className="text-center">
-              <p className="text-2xl font-black text-primary">24h</p>
-              <p className="text-gray-500 text-sm">Response Time</p>
+              <p className="text-2xl font-black text-primary">10+</p>
+              <p className="text-gray-500 text-sm">Expert Developers</p>
             </div>
             <div className="text-center">
-              <p className="text-2xl font-black text-primary">India</p>
-              <p className="text-gray-500 text-sm">Based in Lucknow</p>
+              <p className="text-2xl font-black text-primary">24/7</p>
+              <p className="text-gray-500 text-sm">Support Available</p>
             </div>
           </div>
         </div>
