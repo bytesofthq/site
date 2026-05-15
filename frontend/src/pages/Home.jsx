@@ -460,8 +460,8 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* Animated Counters */}
-            <div className="lg:w-1/2">
+            {/* Animated Counters + Highlights */}
+            <div className="lg:w-1/2 flex flex-col gap-6">
               <div className="grid grid-cols-2 gap-4 sm:gap-6">
                 <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                   <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-secondary mb-1 sm:mb-2 counter-number">{counters.projects}+</div>
@@ -483,6 +483,24 @@ export default function Home() {
                   <div className="text-gray-500 text-xs sm:text-sm font-medium">Support Available</div>
                   <div className="w-8 sm:w-12 h-0.5 bg-secondary/30 mx-auto mt-2 sm:mt-3 rounded-full"></div>
                 </div>
+              </div>
+
+              {/* Quick highlights */}
+              <div className="bg-primary rounded-2xl p-6 text-white flex flex-col gap-4">
+                <p className="text-sm font-bold uppercase tracking-widest text-blue-200">Why clients choose us</p>
+                {[
+                  "Fixed-price proposals — no surprise invoices",
+                  "You own 100% of the code after delivery",
+                  "Direct communication with the dev team",
+                  "Fast turnaround — most projects in 4–8 weeks"
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <div className="w-5 h-5 bg-secondary rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                      <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                    </div>
+                    <p className="text-sm text-blue-100 leading-relaxed">{item}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
