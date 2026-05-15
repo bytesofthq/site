@@ -19,6 +19,10 @@ body {
   color: #333;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+}
+
 /* Scroll fade-in */
 .reveal {
   opacity: 0;
