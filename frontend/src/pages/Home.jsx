@@ -5,22 +5,22 @@ import { projectsData } from './Data/Projects';
 
 const testimonials = [
   {
-    quote: "We hired them for our website redesign. The team delivered ahead of schedule and our traffic increased by 40% in just 2 months.",
-    name: "Vikram Singh",
-    role: "Director, Nexus Corp",
-    initial: "V"
+    quote: "Campus Quest completely revolutionized how we conduct assessments. Our students love the real-time competition and instant feedback. Faculty workload has reduced significantly, and they can now focus on teaching.",
+    name: "Dr. S. Ahmad",
+    role: "Examination Coordinator, Leading University",
+    initial: "SA"
   },
   {
-    quote: "The e-commerce platform they built is rock solid. Our sales went up by 3x compared to last year.",
-    name: "Priya Mehra",
-    role: "CEO, StyleHive",
-    initial: "P"
+    quote: "TrackMyBus transformed our transportation experience. Students no longer stand confused waiting for buses. The real-time tracking is incredibly accurate, and the notifications are always timely.",
+    name: "A. Kumar",
+    role: "Transport Coordinator, Leading University",
+    initial: "AK"
   },
   {
-    quote: "Always available when we need them. The mobile app has 4.8 rating with over 50k downloads.",
-    name: "Arjun Kapoor",
-    role: "Founder, HealthTrack",
-    initial: "A"
+    quote: "Bytesoft built us a clean, professional website that truly represents our brand. Our dealer inquiries have gone up noticeably since the launch. Great team to work with.",
+    name: "Team Bharat Almirah",
+    role: "Steel Furniture Brand, India",
+    initial: "BA"
   }
 ];
 
