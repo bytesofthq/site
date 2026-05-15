@@ -16,8 +16,8 @@ export default function ProjectDetails() {
       <div className="min-h-screen flex items-center justify-center bg-slate-50">
         <div className="text-center">
           <h2 className="text-3xl font-bold text-slate-800 mb-4">Project Not Found</h2>
-          <Link to="/products" className="text-primary hover:text-secondary flex items-center justify-center gap-2">
-            <ArrowLeft size={20} /> Back to Products
+          <Link to="/our-work" className="text-primary hover:text-secondary flex items-center justify-center gap-2">
+            <ArrowLeft size={20} /> Back to Our Work
           </Link>
         </div>
       </div>
@@ -34,8 +34,8 @@ export default function ProjectDetails() {
         </div>
         
         <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
-          <Link to="/products" className="inline-flex items-center text-slate-300 hover:text-white mb-8 transition-colors">
-            <ArrowLeft size={20} className="mr-2" /> Back to Products
+          <Link to="/our-work" className="inline-flex items-center text-slate-300 hover:text-white mb-8 transition-colors">
+            <ArrowLeft size={20} className="mr-2" /> Back to Our Work
           </Link>
           
           <div className="flex flex-wrap items-center gap-4 mb-6">

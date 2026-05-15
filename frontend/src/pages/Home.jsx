@@ -1,6 +1,7 @@
-import { MapPin, Building2, MonitorSmartphone, LineChart, Users, Store, Star, Zap, HeartHandshake, Mail, HeartPulse, Smartphone, Bot, Palette, ChevronLeft, ChevronRight } from 'lucide-react';
+import { MapPin, Building2, MonitorSmartphone, LineChart, Users, Store, Star, Zap, HeartHandshake, Mail, HeartPulse, Smartphone, Bot, Palette, ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
+import { projectsData } from './Data/Projects';
 
 const testimonials = [
   {
@@ -120,7 +121,7 @@ export default function Home() {
             </p>
             <div className="flex flex-row gap-4 justify-center lg:justify-start">
               <Link to="/contact" className="bg-primary text-white font-semibold px-6 py-3 rounded-md hover:bg-blue-900 transition-colors shadow-md">Request Demo</Link>
-              <Link to="/portfolio" className="border-2 border-primary text-primary font-semibold px-6 py-3 rounded-md hover:bg-primary hover:text-white transition-colors">View Portfolio</Link>
+              <Link to="/our-work" className="border-2 border-primary text-primary font-semibold px-6 py-3 rounded-md hover:bg-primary hover:text-white transition-colors">View Our Work</Link>
             </div>
           </div>
 
@@ -258,66 +259,55 @@ export default function Home() {
             <Link to="/contact" className="bg-secondary text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-lg hover:bg-orange-600 transition-colors shadow-lg text-base md:text-lg">
               Let's Talk →
             </Link>
-            <Link to="/portfolio" className="bg-white/10 border border-white/30 text-white font-semibold px-6 md:px-8 py-3 md:py-4 rounded-lg hover:bg-white/20 transition-colors text-base md:text-lg">
+            <Link to="/our-work" className="bg-white/10 border border-white/30 text-white font-semibold px-6 md:px-8 py-3 md:py-4 rounded-lg hover:bg-white/20 transition-colors text-base md:text-lg">
               See Our Work
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Portfolio Section */}
+      {/* Our Work Section */}
       <section className="py-20 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-12 md:mb-16 gap-4">
             <div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">Featured Case Studies</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">Featured Projects</h2>
               <div className="w-16 h-1.5 bg-secondary mb-5 md:mb-6 rounded-full"></div>
               <p className="text-gray-600 max-w-xl text-base md:text-lg">
                 A selection of our most impactful digital transformations.
               </p>
             </div>
-            <Link to="/portfolio" className="text-secondary font-bold hover:text-orange-700 flex items-center group text-sm sm:text-base">
-              View All Projects 
+            <Link to="/our-work" className="text-secondary font-bold hover:text-orange-700 flex items-center group text-sm sm:text-base">
+              View All Our Work
               <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
             </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            <div className="rounded-2xl overflow-hidden shadow-lg group relative cursor-pointer">
-              <div className="relative h-64 sm:h-72 overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1555421689-491a97ff2040?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tech Startup" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
-                <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform">
-                  <span className="text-secondary font-semibold text-xs sm:text-sm mb-2 tracking-wider uppercase">Web App</span>
-                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">FinTech Dashboard</h3>
-                  <p className="text-gray-300 text-xs sm:text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">A high-performance financial analytics platform handling real-time data.</p>
+            {projectsData.slice(0, 3).map((project, index) => (
+              <Link
+                key={project.id}
+                to={`/our-work/${project.id}`}
+                className={`rounded-2xl overflow-hidden shadow-lg group relative block ${index === 1 ? 'md:-translate-y-6 lg:-translate-y-8' : ''}`}
+              >
+                <div className="relative h-64 sm:h-72 overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.name}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                  <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform">
+                    <span className="text-secondary font-semibold text-xs sm:text-sm mb-2 tracking-wider uppercase">{project.category}</span>
+                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">{project.name}</h3>
+                    <p className="text-gray-300 text-xs sm:text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 line-clamp-2">{project.shortDescription}</p>
+                    <span className="mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-150 inline-flex items-center gap-1 text-secondary text-xs font-bold">
+                      View Details <ArrowRight size={12} />
+                    </span>
+                  </div>
                 </div>
-              </div>
-            </div>
-
-            <div className="rounded-2xl overflow-hidden shadow-lg group relative cursor-pointer md:-translate-y-6 lg:-translate-y-8">
-              <div className="relative h-64 sm:h-72 overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Creative Agency" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
-                <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform">
-                  <span className="text-secondary font-semibold text-xs sm:text-sm mb-2 tracking-wider uppercase">E-commerce</span>
-                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">Retail Transformation</h3>
-                  <p className="text-gray-300 text-xs sm:text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Complete replatforming resulting in a 210% increase in mobile conversions.</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="rounded-2xl overflow-hidden shadow-lg group relative cursor-pointer">
-              <div className="relative h-64 sm:h-72 overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Corporate" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
-                <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform">
-                  <span className="text-secondary font-semibold text-xs sm:text-sm mb-2 tracking-wider uppercase">Corporate</span>
-                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">Enterprise Portal</h3>
-                  <p className="text-gray-300 text-xs sm:text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Scalable architecture serving 50,000+ daily active employees securely.</p>
-                </div>
-              </div>
-            </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

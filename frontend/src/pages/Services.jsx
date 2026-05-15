@@ -402,10 +402,10 @@ export default function Services() {
               <ArrowRight className="group-hover:translate-x-1 transition-transform" size={16} />
             </Link>
             <Link 
-              to="/portfolio" 
+              to="/our-work" 
               className="bg-white/10 hover:bg-white/20 text-white border border-white/30 px-6 md:px-8 py-3 md:py-4 rounded-xl font-semibold transition-all duration-300 w-full sm:w-auto text-center backdrop-blur-sm text-sm md:text-lg"
             >
-              View Case Studies
+              View Our Work
             </Link>
           </div>
         </div>

@@ -6,8 +6,7 @@ import ContactForm from './ContactForm';
 const navLinks = [
   { path: '/', label: 'Home', icon: Home },
   { path: '/services', label: 'Services', icon: LayoutTemplate },
-  { path: '/products', label: 'Products', icon: Briefcase },
-  { path: '/portfolio', label: 'Portfolio', icon: Briefcase },
+  { path: '/our-work', label: 'Our Work', icon: Briefcase },
   { path: '/about', label: 'About', icon: Info },
   { path: '/contact', label: 'Contact', icon: Mail }
 ];
@@ -185,8 +184,7 @@ export default function Layout() {
               <ul className="space-y-3 text-sm">
                 <li><Link to="/" className="text-gray-400 hover:text-secondary transition-colors flex items-center gap-2">→ Home</Link></li>
                 <li><Link to="/services" className="text-gray-400 hover:text-secondary transition-colors flex items-center gap-2">→ Services</Link></li>
-                <li><Link to="/products" className="text-gray-400 hover:text-secondary transition-colors flex items-center gap-2">→ Products</Link></li>
-                <li><Link to="/portfolio" className="text-gray-400 hover:text-secondary transition-colors flex items-center gap-2">→ Portfolio</Link></li>
+                <li><Link to="/our-work" className="text-gray-400 hover:text-secondary transition-colors flex items-center gap-2">→ Our Work</Link></li>
                 <li><Link to="/about" className="text-gray-400 hover:text-secondary transition-colors flex items-center gap-2">→ About Us</Link></li>
                 <li><Link to="/contact" className="text-gray-400 hover:text-secondary transition-colors flex items-center gap-2">→ Contact</Link></li>
               </ul>

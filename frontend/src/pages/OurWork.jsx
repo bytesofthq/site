@@ -3,7 +3,7 @@ import { ArrowRight, ExternalLink, Sparkles, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { projectsData } from './Data/Projects';
 
-export default function Products() {
+export default function OurWork() {
   const [activeFilter, setActiveFilter] = useState('All');
 
   // Extract unique categories from projectsData
@@ -27,13 +27,13 @@ export default function Products() {
         <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10 text-center">
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
             <Sparkles size={16} className="text-secondary" />
-            <span className="text-secondary font-bold tracking-wider uppercase text-sm">Our Products & Innovations</span>
+            <span className="text-secondary font-bold tracking-wider uppercase text-sm">Our Work</span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
-            Next-Gen Digital Solutions
+            Projects We've Built
           </h1>
           <p className="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto leading-relaxed px-4">
-            Explore our curated collection of production-ready applications, AI tools, and enterprise platforms.
+            A showcase of web apps, platforms, and digital products we've delivered for clients and partners.
           </p>
         </div>
       </section>
@@ -128,7 +128,7 @@ export default function Products() {
                     </div>
                     
                     <div className="flex items-center justify-between border-t border-slate-100 pt-4">
-                      <Link to={`/products/${project.id}`} className="text-primary font-bold text-sm inline-flex items-center group-hover:text-secondary transition-colors">
+                      <Link to={`/our-work/${project.id}`} className="text-primary font-bold text-sm inline-flex items-center group-hover:text-secondary transition-colors">
                         View Details
                         <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={14} />
                       </Link>
@@ -153,7 +153,7 @@ export default function Products() {
           {/* Empty State */}
           {filteredProjects.length === 0 && (
             <div className="text-center py-20 text-gray-500">
-              No products found in this category.
+              No projects found in this category.
             </div>
           )}
 
