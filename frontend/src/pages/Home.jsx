@@ -283,18 +283,18 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            {projectsData.slice(0, 3).map((project, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-stretch">
+            {projectsData.slice(0, 3).map((project) => (
               <Link
                 key={project.id}
                 to={`/our-work/${project.id}`}
-                className={`rounded-2xl overflow-hidden shadow-lg group relative block ${index === 1 ? 'md:-translate-y-6 lg:-translate-y-8' : ''}`}
+                className="rounded-2xl overflow-hidden shadow-lg group relative block"
               >
-                <div className="relative h-64 sm:h-72 overflow-hidden">
+                <div className="relative h-72 overflow-hidden">
                   <img
                     src={project.image}
                     alt={project.name}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
                   <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform">

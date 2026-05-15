@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, ExternalLink, CheckCircle2, Layers, ShieldCheck, Zap, Server, Layout as LayoutIcon, Wrench, Star } from 'lucide-react';
 import { projectsData } from './Data/Projects';
 
-export default function ProjectDetails() {
+export default function ProjectDetail() {
   const { id } = useParams();
   const project = projectsData.find(p => p.id === id);
 
