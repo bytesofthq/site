@@ -101,38 +101,58 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-[#eef0f8] py-20 md:py-28 overflow-hidden relative">
+      <section className="bg-[#eef0f8] pt-20 pb-0 overflow-hidden relative">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-200/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-orange-100/30 rounded-full blur-3xl translate-y-1/3 -translate-x-1/4 pointer-events-none" />
+        <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-orange-100/30 rounded-full blur-3xl -translate-y-1/4 -translate-x-1/4 pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-12 relative z-10">
-          <div className="lg:w-1/2 text-center lg:text-left">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary leading-tight mb-6">
-              BYTESOFT — Engineering Digital Experiences That{' '}
-              <span className="text-secondary relative inline-block">
-                Drive Growth
-                <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" preserveAspectRatio="none">
-                  <path d="M0 8 Q 100 12 200 8" fill="transparent" stroke="#f97316" strokeWidth="3" strokeLinecap="round" />
-                </svg>
-              </span>
-            </h1>
-            <p className="text-base md:text-lg text-gray-600 mb-8 max-w-lg leading-relaxed mx-auto lg:mx-0">
-              A premier digital agency specializing in high-performance web development, strategic SEO, and data-driven marketing to elevate your brand's online presence.
-            </p>
-            <div className="flex flex-row gap-4 justify-center lg:justify-start">
-              <Link to="/contact" className="bg-primary text-white font-semibold px-6 py-3 rounded-md hover:bg-blue-900 transition-colors shadow-md">Request Demo</Link>
-              <Link to="/our-work" className="border-2 border-primary text-primary font-semibold px-6 py-3 rounded-md hover:bg-primary hover:text-white transition-colors">View Our Work</Link>
-            </div>
+        {/* Centered text block */}
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary leading-tight mb-6">
+            Engineering Digital Experiences That{' '}
+            <span className="text-secondary relative inline-block">
+              Drive Growth
+              <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" preserveAspectRatio="none">
+                <path d="M0 8 Q 100 12 200 8" fill="transparent" stroke="#f97316" strokeWidth="3" strokeLinecap="round" />
+              </svg>
+            </span>
+          </h1>
+          <p className="text-base md:text-lg text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
+            A premier digital agency specializing in high-performance web development, strategic SEO, and data-driven marketing to elevate your brand's online presence.
+          </p>
+          <div className="flex flex-row gap-4 justify-center mb-10">
+            <Link to="/contact" className="bg-primary text-white font-semibold px-7 py-3 rounded-xl hover:bg-blue-900 transition-colors shadow-md">Request Demo</Link>
+            <Link to="/our-work" className="border-2 border-primary text-primary font-semibold px-7 py-3 rounded-xl hover:bg-primary hover:text-white transition-colors">View Our Work</Link>
           </div>
 
-          <div className="lg:w-1/2 w-full">
-            <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
-              <img
-                src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                alt="Team working at Bytesoft"
-                className="w-full h-64 sm:h-80 lg:h-[420px] object-cover"
-              />
+          {/* Stat row */}
+          <div className="flex flex-wrap justify-center gap-8 pb-10 border-b border-gray-200">
+            <div className="text-center">
+              <p className="text-2xl font-black text-primary">10+</p>
+              <p className="text-gray-500 text-sm">Projects Delivered</p>
             </div>
+            <div className="text-center">
+              <p className="text-2xl font-black text-primary">100%</p>
+              <p className="text-gray-500 text-sm">Client Satisfaction</p>
+            </div>
+            <div className="text-center">
+              <p className="text-2xl font-black text-primary">24h</p>
+              <p className="text-gray-500 text-sm">Response Time</p>
+            </div>
+            <div className="text-center">
+              <p className="text-2xl font-black text-primary">India</p>
+              <p className="text-gray-500 text-sm">Based in Lucknow</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Full-width image banner */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="rounded-t-3xl overflow-hidden shadow-2xl">
+            <img
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+              alt="Team working at Bytesoft"
+              className="w-full h-64 sm:h-80 lg:h-[420px] object-cover object-center"
+            />
           </div>
         </div>
       </section>

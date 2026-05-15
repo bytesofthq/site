@@ -386,11 +386,11 @@ export default function Services() {
           </div>
           
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6 leading-tight px-2">
-            Ready to engineer your next <br className="hidden md:block"/> phase of growth?
+            Have a project in mind? <br className="hidden md:block"/> Let's talk.
           </h2>
           
           <p className="text-base md:text-xl text-blue-100 mb-8 max-w-2xl mx-auto px-4">
-            Stop losing ground to competitors. Let's discuss your project and architect a digital solution that delivers measurable ROI.
+            Whether you're starting from scratch or improving something existing, we'd love to hear about your goals and see how we can help.
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center items-center gap-3 md:gap-4">

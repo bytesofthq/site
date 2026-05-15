@@ -42,10 +42,6 @@ export default function ProjectDetail() {
             <span className="bg-primary/20 text-blue-200 border border-primary/30 px-4 py-1.5 rounded-full text-sm font-semibold backdrop-blur-md">
               {project.category}
             </span>
-            <span className="bg-white/10 text-white border border-white/20 px-4 py-1.5 rounded-full text-sm font-semibold backdrop-blur-md flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-              {project.partner}
-            </span>
             {project.rating && (
               <span className="bg-white/10 text-white border border-white/20 px-4 py-1.5 rounded-full text-sm font-semibold backdrop-blur-md flex items-center gap-2">
                 <Star size={16} className="fill-amber-400 text-amber-400" />

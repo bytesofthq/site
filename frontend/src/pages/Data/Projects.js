@@ -6,7 +6,6 @@ export const projectsData = [
     shortDescription: "A modern full-stack quiz platform designed for educational institutions with real-time interaction, analytics, and automation.",
     image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80",
     category: "Web Apps",
-    partner: "Integral University",
     introduction: "Campus Quest is a modern full-stack quiz platform exclusively developed in strategic partnership with Integral University. Built to serve their dynamic educational ecosystem, it transforms traditional assessments into an interactive, real-time experience where students can participate in live quizzes, track their performance, and compete with peers. The platform handles multiple user roles, delivers real-time updates, and provides deep insights through analytics — making it a complete digital assessment solution tailored for leading educational institutions.",
     features: {
       student: [
@@ -63,7 +62,6 @@ export const projectsData = [
     shortDescription: "A premium Indian steel furniture manufacturing brand website showcasing heavy-duty steel almirahs and secure storage solutions.",
     image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80",
     category: "Web Apps",
-    partner: "Bharat Almirah",
     introduction: "The website presents Bharat Almirah as a trusted nationwide brand with 50,000+ happy customers, 500+ dealer partners, and a 30+ year legacy. Established in 1995, the company focuses on durable, elegant steel furniture for homes and institutions.",
     features: {
       general: [
@@ -93,7 +91,6 @@ export const projectsData = [
     shortDescription: "A MERN-stack application designed for real-time triage, dynamic prioritization, and capacity-aware bed allocation decisions.",
     image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80",
     category: "AI & ML",
-    partner: "Solution Challenge Project 2026",
     introduction: "A MERN-stack application (MongoDB, Express, React, Node.js) designed for real-time triage, dynamic prioritization, and capacity-aware bed allocation decisions. This system functions as a decision-support platform, not a traditional static FIFO queue, enabling intelligent and responsive patient flow management.",
     features: {
       general: [
@@ -124,7 +121,6 @@ export const projectsData = [
     shortDescription: "A smart, real-time university bus tracking system using browser geolocation APIs and live notifications.",
     image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&q=80",
     category: "Web Apps",
-    partner: "Integral University",
     introduction: "TrackMyBus is a smart, real-time bus tracking system built especially for Integral University students and staff. It allows students to track their university buses live, while drivers share their current GPS coordinates using the browser's Geolocation API (watchPosition()) — no external GPS hardware needed. The system ensures accurate arrival notifications, complete admin control, and seamless communication between students, drivers, and the administration.",
     features: {
       student: [
@@ -178,7 +174,6 @@ export const projectsData = [
     shortDescription: "A modern, full-stack personal finance dashboard to track income, expenses, investments, and savings with clear visualizations.",
     image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80",
     category: "Web Apps",
-    partner: "Bytesoft",
     introduction: "Spendly is a modern, full-stack personal finance dashboard built with the MERN stack. It allows users to track income, expenses, investments, and savings with clear visualizations and intuitive transaction management.",
     features: {
       general: [
@@ -208,7 +203,6 @@ export const projectsData = [
     shortDescription: "An AI-powered web application designed to help farmers, students, and agriculture enthusiasts identify plants and detect crop diseases using image analysis.",
     image: "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?w=800&q=80",
     category: "AI & ML",
-    partner: "ByteSoft",
     introduction: "CropDection is an AI-powered web application designed to help farmers, students, and agriculture enthusiasts identify plants and detect crop diseases using image analysis. By simply uploading an image of a plant, the AI analyzes it and provides detailed information about the plant or any detected diseases.",
     features: {
       general: [
@@ -238,7 +232,6 @@ export const projectsData = [
     shortDescription: "An AI-powered web application to analyze and segment customers for smarter business decisions.",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
     category: "AI & ML",
-    partner: "ByteSoft",
     introduction: "The Customer Segmentation Platform is a machine learning-based web application that groups customers into meaningful segments based on behavioral and demographic data. It uses K-Means clustering to provide intelligent customer clustering, data visualization, and fast processing.",
     features: {
       general: [
@@ -266,7 +259,6 @@ export const projectsData = [
     shortDescription: "A modern, full-stack application for creating professional, ATS-friendly resumes in minutes.",
     image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&q=80",
     category: "Web Apps",
-    partner: "Bytesoft",
     introduction: "Resumex is a modern, full-stack application built with React, Node, MongoDB, and Express for creating professional, ATS-friendly resumes in minutes. It features a real-time editor and instant previews.",
     features: {
       general: [
@@ -294,8 +286,7 @@ export const projectsData = [
     name: "DevCart Backend",
     shortDescription: "A backend-only e-commerce API built with Node.js, Express, and MongoDB.",
     image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80",
-    category: "Backend & DevOps",
-    partner: "v9mirza",
+    category: "Open Source",
     introduction: "DevCart is a backend-only e-commerce API built with Node.js, Express, and MongoDB. It handles JWT auth, role-based access, product APIs, and order APIs with a product seeder containing sample data.",
     features: {
       general: [
@@ -324,7 +315,6 @@ export const projectsData = [
     shortDescription: "A modern web-based leave management platform for employees, managers, and HR teams to manage leave requests efficiently.",
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",
     category: "Web Apps",
-    partner: "Bytesoft",
     introduction: "The Leave Management System is a smart HR-focused web application designed to simplify employee leave tracking, leave approvals, attendance management, and workforce scheduling. It provides a clean and responsive interface where employees can apply for leave, managers can approve or reject requests, and organizations can maintain accurate leave records in real time.",
     features: {
       general: [
@@ -361,7 +351,6 @@ export const projectsData = [
     shortDescription: "A modern food ordering web application that allows users to browse menus, order food online, and enjoy a seamless restaurant experience.",
     image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80",
     category: "Web Apps",
-    partner: "Bytesoft",
     introduction: "The Online Food Ordering Platform is a responsive and interactive web application developed for restaurants and food businesses to manage online food orders efficiently. Customers can explore food menus, add items to cart, place orders, and experience a smooth digital ordering process with an attractive and user-friendly interface.",
     features: {
       general: [
@@ -397,8 +386,7 @@ export const projectsData = [
     name: "VaultCloud",
     shortDescription: "A minimal, high-performance Nextcloud deployment using Podman or Docker.",
     image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&q=80",
-    category: "Backend & DevOps",
-    partner: "Bytesoft",
+    category: "Open Source",
     introduction: "VaultCloud is a self-hosted Nextcloud solution built for developers, privacy enthusiasts, and digital minimalists. It provides a high-performance deployment using Podman or Docker, deployable via podman-compose or manual commands.",
     features: {
       general: [

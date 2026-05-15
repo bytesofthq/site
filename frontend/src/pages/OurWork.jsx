@@ -82,13 +82,10 @@ export default function OurWork() {
                     </span>
                   </div>
 
-                  {/* Title & Partner Preview */}
+                  {/* Title Preview */}
                   <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end">
                     <div>
                       <h3 className="text-xl md:text-2xl font-bold text-white mb-1 drop-shadow-md">{project.name}</h3>
-                      <p className="text-slate-300 text-xs md:text-sm font-medium flex items-center gap-2">
-                        {project.partner}
-                      </p>
                     </div>
                   </div>
                 </div>
