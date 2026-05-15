@@ -61,10 +61,18 @@ export default function OurWork() {
 
           {/* Project Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {filteredProjects.map((project) => (
+            {filteredProjects.map((project, index) => (
               <div 
                 key={project.id} 
-                className="bg-white rounded-2xl overflow-hidden shadow-lg shadow-slate-200/50 group relative border border-slate-100 flex flex-col hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className="reveal bg-white rounded-2xl overflow-hidden shadow-lg shadow-slate-200/50 group relative border border-slate-100 flex flex-col hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                ref={(el) => {
+                  if (!el) return;
+                  el.style.transitionDelay = `${(index % 3) * 0.1}s`;
+                  const observer = new IntersectionObserver(([entry]) => {
+                    if (entry.isIntersecting) { el.classList.add('visible'); observer.unobserve(el); }
+                  }, { threshold: 0.1 });
+                  observer.observe(el);
+                }}
               >
                 <div className="relative h-56 md:h-64 overflow-hidden shrink-0">
                   <img 

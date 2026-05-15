@@ -2,6 +2,7 @@ import { MapPin, Building2, MonitorSmartphone, LineChart, Users, Store, Star, Za
 import { Link } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 import { projectsData } from './Data/Projects';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const testimonials = [
   {
@@ -94,6 +95,20 @@ export default function Home() {
       return () => clearInterval(timer);
     }
   }, [isVisible]);
+
+  useEffect(() => {
+    const elements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    elements.forEach(el => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
 
   const prevTestimonial = () => setActiveTestimonial((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
   const nextTestimonial = () => setActiveTestimonial((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
@@ -201,7 +216,7 @@ export default function Home() {
       {/* Services Section */}
       <section className="py-20 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 md:mb-20">
+          <div className="reveal text-center mb-16 md:mb-20">
             <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">Digital Solutions</h2>
             <div className="w-16 h-1.5 bg-secondary mx-auto mb-6 rounded-full"></div>
             <p className="text-gray-600 max-w-2xl mx-auto text-base md:text-lg px-4">
@@ -219,7 +234,7 @@ export default function Home() {
               { icon: <Bot size={28} className="sm:w-8 sm:h-8" />, title: "AI Integration", desc: "Intelligent automation and AI-driven solutions to streamline operations and unlock powerful data insights." },
               { icon: <Palette size={28} className="sm:w-8 sm:h-8" />, title: "UI/UX Design", desc: "User-centric interface design focusing on aesthetics and usability to maximize engagement and conversion." }
             ].map((service, index) => (
-              <div key={index} className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:-translate-y-1 hover:border-blue-100 group">
+              <div key={index} className={`reveal reveal-delay-${(index % 4) + 1} bg-white rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:-translate-y-1 hover:border-blue-100 group`}>
                 <div className="w-14 h-14 sm:w-16 sm:h-16 bg-blue-50 rounded-xl flex items-center justify-center mb-5 sm:mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                   {service.icon}
                 </div>
@@ -234,7 +249,7 @@ export default function Home() {
       {/* Why Choose Section */}
       <section className="py-20 md:py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 md:mb-20">
+          <div className="reveal text-center mb-16 md:mb-20">
             <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">The Bytesoft Advantage</h2>
             <div className="w-16 h-1.5 bg-secondary mx-auto mb-6 rounded-full"></div>
             <p className="text-gray-600 max-w-2xl mx-auto text-base md:text-lg px-4">
@@ -243,21 +258,21 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 text-center">
-            <div className="flex flex-col items-center group px-4">
+            <div className="reveal reveal-delay-1 flex flex-col items-center group px-4">
               <div className="w-20 h-20 md:w-24 md:h-24 bg-orange-50 rounded-full flex items-center justify-center mb-5 md:mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Star size={32} className="md:w-10 md:h-10 text-secondary" />
               </div>
               <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3 md:mb-4">Uncompromising Quality</h3>
               <p className="text-sm md:text-base text-gray-600">We deliver top-tier engineering and digital solutions with an obsessive focus on performance and usability.</p>
             </div>
-            <div className="flex flex-col items-center group px-4">
+            <div className="reveal reveal-delay-2 flex flex-col items-center group px-4">
               <div className="w-20 h-20 md:w-24 md:h-24 bg-orange-50 rounded-full flex items-center justify-center mb-5 md:mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Zap size={32} className="md:w-10 md:h-10 text-secondary" />
               </div>
               <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3 md:mb-4">Rapid Deployment</h3>
               <p className="text-sm md:text-base text-gray-600">We respect your timelines, employing agile methodologies to launch robust solutions ahead of schedule.</p>
             </div>
-            <div className="flex flex-col items-center group px-4">
+            <div className="reveal reveal-delay-3 flex flex-col items-center group px-4">
               <div className="w-20 h-20 md:w-24 md:h-24 bg-orange-50 rounded-full flex items-center justify-center mb-5 md:mb-6 group-hover:scale-110 transition-transform duration-300">
                 <HeartHandshake size={32} className="md:w-10 md:h-10 text-secondary" />
               </div>

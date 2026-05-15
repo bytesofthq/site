@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import { MessageSquare, Phone, MapPin, Mail, Send, Menu, X, Home, Briefcase, Info, CreditCard, LayoutTemplate, ChevronUp, ExternalLink, Sparkles } from 'lucide-react';
 import ContactForm from './ContactForm';
@@ -90,9 +90,6 @@ export default function Layout() {
               alt="Bytesoft"
               className="h-10 md:h-12 w-auto object-contain transition-transform group-hover:scale-105 duration-300"
             />
-            <span className="hidden lg:block ml-2 text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Bytesoft
-            </span>
           </Link>
           
           {/* Desktop Navigation */}
@@ -140,7 +137,7 @@ export default function Layout() {
       </nav>
 
       {/* Main Content */}
-      <main className="flex-grow">
+      <main key={location.pathname} className="flex-grow page-transition">
         <Outlet />
       </main>
 
@@ -308,7 +305,6 @@ export default function Layout() {
         <div className="h-16 px-5 flex items-center justify-between border-b border-gray-100 bg-gradient-to-r from-primary/5 to-secondary/5">
           <div className="flex items-center gap-2">
             <img src="/bs-logo.jpg" alt="Bytesoft" className="h-8 w-auto" />
-            <span className="font-bold text-primary">Menu</span>
           </div>
           <button 
             onClick={() => setIsMobileMenuOpen(false)}
