@@ -66,7 +66,7 @@ export default function About() {
                   <Globe className="text-primary" size={24} />
                 </div>
                 <div>
-                  <span className="block text-2xl md:text-3xl font-black text-gray-900 mb-1">100+</span>
+                  <span className="block text-2xl md:text-3xl font-black text-gray-900 mb-1">50+</span>
                   <span className="text-gray-600 text-sm md:text-base font-medium">Projects Delivered</span>
                 </div>
               </div>
@@ -80,17 +80,17 @@ export default function About() {
                 At Bytesoft, we believe that the internet is the most powerful tool for business growth in human history. Yet, too many companies are held back by slow, outdated, and uninspired digital infrastructure.
               </p>
               <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-6 md:mb-8">
-                Our mission is simple: <strong className="text-gray-900 font-semibold">We don't just build websites; we architect digital growth platforms.</strong> By combining cutting-edge software engineering with deep psychological marketing insights, we build digital assets that dominate markets and drive measurable ROI.
+                Our mission is simple: <strong className="text-gray-900 font-semibold">We don't just build websites; we architect digital growth platforms.</strong> By combining cutting-edge software engineering with strategic digital insights, we build digital assets that help businesses grow and succeed online.
               </p>
               
               <div className="grid grid-cols-2 gap-6 md:gap-8">
                 <div className="border-l-4 border-secondary pl-5 md:pl-6">
-                  <span className="block text-3xl md:text-4xl font-black text-gray-900 mb-1 md:mb-2">98%</span>
-                  <span className="text-gray-600 text-sm md:text-base font-medium">Client Retention Rate</span>
+                  <span className="block text-3xl md:text-4xl font-black text-gray-900 mb-1 md:mb-2">50+</span>
+                  <span className="text-gray-600 text-sm md:text-base font-medium">Projects Delivered</span>
                 </div>
                 <div className="border-l-4 border-primary pl-5 md:pl-6">
-                  <span className="block text-3xl md:text-4xl font-black text-gray-900 mb-1 md:mb-2">10x</span>
-                  <span className="text-gray-600 text-sm md:text-base font-medium">Average ROI Delivered</span>
+                  <span className="block text-3xl md:text-4xl font-black text-gray-900 mb-1 md:mb-2">100%</span>
+                  <span className="text-gray-600 text-sm md:text-base font-medium">Client Satisfaction</span>
                 </div>
               </div>
             </div>
