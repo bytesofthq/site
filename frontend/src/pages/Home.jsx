@@ -1,4 +1,4 @@
-import { MapPin, Building2, MonitorSmartphone, LineChart, Users, Store, Star, Zap, HeartHandshake, Mail, HeartPulse, Smartphone, Bot, Palette, ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
+import { MapPin, Building2, MonitorSmartphone, LineChart, Users, Store, Star, Zap, HeartHandshake, Mail, HeartPulse, Smartphone, Bot, Palette, ChevronLeft, ChevronRight, ArrowRight, Phone, Clock, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 import { projectsData } from './Data/Projects';
@@ -382,49 +382,51 @@ export default function Home() {
                 Ready to elevate your digital presence? Reach out to our strategists today to discuss how we can engineer your next phase of growth.
               </p>
 
-              {/* Integral University - With Workspace Image */}
-              <a 
-                href="https://maps.google.com/?q=Integral+University+Lucknow" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="block group"
-              >
-                <div className="bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-md border border-gray-100 hover:shadow-xl transition-all duration-300 cursor-pointer">
-                  {/* Workspace Image - Real Office Space */}
-                  <div className="relative h-32 sm:h-40 md:h-48 overflow-hidden">
-                    <img 
-                      src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                      alt="Bytesoft Workspace at Integral University"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                    <div className="absolute bottom-3 left-3 right-3">
-                      <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                        <span className="text-white text-xs font-medium">Operational • Integral University Campus</span>
-                      </div>
-                    </div>
+              {/* Remote-first badge */}
+              <div className="inline-flex items-center gap-2 bg-green-50 border border-green-200 text-green-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                Remote-first · Serving clients across India & beyond
+              </div>
+
+              {/* Contact details */}
+              <div className="bg-white rounded-2xl shadow-md border border-gray-100 divide-y divide-gray-100">
+                <a href="mailto:bytesofthq@gmail.com" className="flex items-center gap-4 p-4 sm:p-5 hover:bg-slate-50 transition-colors group">
+                  <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-primary transition-colors">
+                    <Mail size={18} className="text-primary group-hover:text-white transition-colors" />
                   </div>
-                  
-                  {/* Content */}
-                  <div className="p-4 sm:p-5">
-                    <div className="flex items-start gap-3 sm:gap-4">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-xl flex items-center justify-center shrink-0">
-                        <Building2 size={20} className="sm:w-6 sm:h-6 text-primary" />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="font-bold text-gray-800 text-base sm:text-lg group-hover:text-primary transition-colors">
-                          HeadQuarter: Integral University Lucknow
-                        </h3>
-                        <p className="text-gray-500 text-xs sm:text-sm mt-1">
-                          Corporate Office • Main Campus
-                        </p>
-                        
-                      </div>
-                    </div>
+                  <div>
+                    <p className="text-xs text-gray-400 font-medium uppercase tracking-wide">Email us</p>
+                    <p className="text-gray-800 font-semibold text-sm sm:text-base">bytesofthq@gmail.com</p>
+                  </div>
+                </a>
+                <a href="tel:+919214749997" className="flex items-center gap-4 p-4 sm:p-5 hover:bg-slate-50 transition-colors group">
+                  <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-primary transition-colors">
+                    <Phone size={18} className="text-primary group-hover:text-white transition-colors" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-gray-400 font-medium uppercase tracking-wide">Call us</p>
+                    <p className="text-gray-800 font-semibold text-sm sm:text-base">+91 9214749997</p>
+                  </div>
+                </a>
+                <div className="flex items-center gap-4 p-4 sm:p-5">
+                  <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center shrink-0">
+                    <MapPin size={18} className="text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-gray-400 font-medium uppercase tracking-wide">Based in</p>
+                    <p className="text-gray-800 font-semibold text-sm sm:text-base">Lucknow, India</p>
                   </div>
                 </div>
-              </a>
+                <div className="flex items-center gap-4 p-4 sm:p-5">
+                  <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center shrink-0">
+                    <Clock size={18} className="text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-gray-400 font-medium uppercase tracking-wide">Response time</p>
+                    <p className="text-gray-800 font-semibold text-sm sm:text-base">We reply within 24 hours</p>
+                  </div>
+                </div>
+              </div>
 
               {/* Attractive Contact Us Button */}
               <Link 
