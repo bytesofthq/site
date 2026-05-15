@@ -51,7 +51,7 @@ body {
 }
 
 .page-transition {
-  animation: page-fade-in 0.3s ease forwards;
+  animation: page-fade-in 0.6s ease forwards;
 }
 
 
