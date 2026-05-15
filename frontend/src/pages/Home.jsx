@@ -144,7 +144,7 @@ export default function Home() {
           
           
           <p className="text-center text-sm font-bold text-gray-800 uppercase tracking-wider mb-3">
-            TRUSTED BY BUSINESSES ACROSS INDUSTRIES
+            INDUSTRIES WE SERVE
           </p>
           
           
@@ -213,7 +213,7 @@ export default function Home() {
 
       {/* Why Choose Section */}
       <section className="py-20 md:py-24 bg-slate-50">
-        <div className="maxw-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 md:mb-20">
             <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">The Bytesoft Advantage</h2>
             <div className="w-16 h-1.5 bg-secondary mx-auto mb-6 rounded-full"></div>
@@ -355,20 +355,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Pricing Section */}
-      {/* <section className="py-20 md:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-slate-50 rounded-2xl sm:rounded-3xl p-8 sm:p-12 text-center border border-slate-100 shadow-sm relative overflow-hidden">
-             <div className="absolute top-0 right-0 w-48 h-48 sm:w-64 sm:h-64 bg-secondary/5 rounded-full blur-3xl"></div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-4 sm:mb-6">Transparent Pricing Plans</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto mb-6 sm:mb-10 text-base sm:text-lg px-2">
-              No hidden fees or surprise costs. Choose a plan that scales with your ambition, or contact us for a custom enterprise solution.
-            </p>
-            <Link to="/pricing" className="inline-block bg-primary text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-lg hover:bg-blue-900 transition-colors text-base md:text-lg">View Package Options</Link>
-          </div>
-        </div>
-
-      </section> */}
 
       {/* Get In Touch Section - Professional */}
             {/* Get In Touch Section - Professional with Workspace Image */}

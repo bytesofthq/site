@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Send, MessageSquare, Briefcase, HelpCircle, ChevronDown, ChevronUp, Building2, ExternalLink } from 'lucide-react';
+import { Mail, Phone, MapPin, HelpCircle, ChevronDown, ChevronUp, Building2 } from 'lucide-react';
 import ContactForm from '../components/ContactForm';
 
 export default function Contact() {
@@ -23,8 +23,8 @@ export default function Contact() {
       answer: "We believe in transparent, value-based pricing. After our initial discovery call, we provide a detailed proposal with a fixed project fee or a retainer structure, ensuring there are no hidden costs or surprise invoices down the line."
     },
     {
-      question: "Can I visit your office for a meeting?",
-      answer: "Absolutely! We welcome clients to our headquarters at Integral University, Lucknow. Please schedule an appointment with our team before visiting, and we'll be happy to host you."
+      question: "Can we have a meeting?",
+      answer: "Absolutely! We're a remote-first team based in Lucknow, India. We're happy to connect over a video call or phone at a time that suits you. Reach out via our contact form or email and we'll schedule something promptly."
     }
   ];
 
@@ -66,33 +66,18 @@ export default function Contact() {
                 <p className="text-gray-600">Choose the most convenient way to reach us.</p>
               </div>
 
-              {/* Sales / New Business */}
+              {/* Contact Card */}
               <div className="bg-gradient-to-br from-slate-50 to-white p-6 md:p-8 rounded-2xl border border-gray-100 group hover:border-secondary/30 hover:shadow-xl transition-all duration-300">
                 <div className="w-12 h-12 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-                  <Briefcase className="text-secondary" size={24} />
+                  <Mail className="text-secondary" size={24} />
                 </div>
-                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">New Business</h3>
+                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">Email Us</h3>
                 <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                  Ready to start a project? Talk to our sales and strategy team.
+                  Whether you have a new project in mind or need support — we're here for everything. We reply within 24 hours.
                 </p>
                 <a href="mailto:bytesofthq@gmail.com" className="text-primary font-semibold hover:text-secondary flex items-center gap-2 text-sm transition-colors">
                   <Mail size={14} />
                   bytesofthq@gmail.com
-                </a>
-              </div>
-
-              {/* Client Support */}
-              <div className="bg-gradient-to-br from-slate-50 to-white p-6 md:p-8 rounded-2xl border border-gray-100 group hover:border-secondary/30 hover:shadow-xl transition-all duration-300">
-                <div className="w-12 h-12 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-                  <MessageSquare className="text-secondary" size={24} />
-                </div>
-                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">Client Support</h3>
-                <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                  Existing client needing technical assistance? We're here 24/7.
-                </p>
-                <a href="mailto:support@bytesoft.com" className="text-primary font-semibold hover:text-secondary flex items-center gap-2 text-sm transition-colors">
-                  <Mail size={14} />
-                  support@bytesoft.com
                 </a>
               </div>
 
@@ -105,35 +90,29 @@ export default function Contact() {
                   <div className="w-12 h-12 bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center mb-5 border border-white/20 group-hover:scale-110 transition-transform">
                     <Building2 className="text-white" size={24} />
                   </div>
-                  <h3 className="text-lg md:text-xl font-bold text-white mb-2">Headquarters</h3>
+                  <h3 className="text-lg md:text-xl font-bold text-white mb-2">Based In</h3>
                   <p className="text-blue-100 text-sm leading-relaxed mb-3">
-                     <a 
-                    href="https://maps.google.com/?q=Integral+University+Lucknow" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg text-white text-sm font-medium transition-all duration-300 group/link"
-                  >
-                    <MapPin size={14} className="text-secondary" />
-                  
-                    
-                  
-                    Integral University, Kursi Road<br />
-                    Lucknow, Uttar Pradesh<br />
-                    Pin Code: 226026
-                    </a>
+                    <span className="inline-flex items-center gap-2">
+                      <MapPin size={14} className="text-secondary shrink-0" />
+                      Lucknow, Uttar Pradesh, India
+                    </span>
+                    <br />
+                    <span className="text-blue-200 text-xs mt-2 block">Remote-first · Available across India & globally</span>
                   </p>
                   
-                  {/* Phone Number */}
-                  
-                  
-                  {/* Clickable Map Link */}
-                 
-                  <div className="flex items-center gap-2 text-white/90 text-sm mb-4">
-                    <Phone size={14} className="text-secondary" />
-                    <span>+91 8810743304</span>
-                    <span>+91 9214749997</span>
-                       <span>+91 8009874351</span>
-
+                  <div className="flex flex-col gap-1.5 text-white/90 text-sm mb-4">
+                    <a href="tel:+919214749997" className="flex items-center gap-2 hover:text-secondary transition-colors">
+                      <Phone size={14} className="text-secondary shrink-0" />
+                      +91 9214749997
+                    </a>
+                    <a href="tel:+917033546623" className="flex items-center gap-2 hover:text-secondary transition-colors">
+                      <Phone size={14} className="text-secondary shrink-0" />
+                      +91 7033546623
+                    </a>
+                    <a href="tel:+918009874351" className="flex items-center gap-2 hover:text-secondary transition-colors">
+                      <Phone size={14} className="text-secondary shrink-0" />
+                      +91 8009874351
+                    </a>
                   </div>
                 </div>
               </div>
@@ -155,9 +134,6 @@ export default function Contact() {
           </div>
         </div>
       </section>
-
-      {/* Map Section - Full Width */}
-      
 
       {/* FAQ Section */}
       <section className="py-20 md:py-24 bg-white">
@@ -209,31 +185,26 @@ export default function Contact() {
       </section>
 
       {/* CTA Banner */}
-           {/* CTA Banner */}
       <section className="py-12 md:py-16 bg-gradient-to-r from-primary via-blue-800 to-primary">
         <div className="max-w-4xl mx-auto px-4 md:px-8 text-center">
           <h3 className="text-xl md:text-2xl font-bold text-white mb-3">Prefer a quick call?</h3>
-          <p className="text-blue-100 mb-6 md:mb-8">Speak directly with our strategy team</p>
-          
+          <p className="text-blue-100 mb-6 md:mb-8">Speak directly with our team</p>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 md:gap-6">
-            <a 
-              href="tel:+918810743304" 
+            <a
+              href="tel:+919214749997"
               className="inline-flex items-center justify-center gap-2 bg-secondary text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-xl hover:bg-orange-600 transition-all duration-300 shadow-lg text-base md:text-lg w-full sm:w-auto"
-            >
-              <Phone size={18} />
-              +91 8810743304
-            </a>
-
-            <a 
-              href="tel:+919214749997" 
-              className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-xl hover:bg-white/20 transition-all duration-300 shadow-lg text-base md:text-lg border border-white/20 w-full sm:w-auto"
             >
               <Phone size={18} />
               +91 9214749997
             </a>
+            <a
+              href="tel:+918009874351"
+              className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-xl hover:bg-white/20 transition-all duration-300 shadow-lg text-base md:text-lg border border-white/20 w-full sm:w-auto"
+            >
+              <Phone size={18} />
+              +91 8009874351
+            </a>
           </div>
-          
-          
         </div>
       </section>
 

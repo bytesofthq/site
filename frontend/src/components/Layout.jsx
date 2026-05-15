@@ -199,7 +199,7 @@ export default function Layout() {
               <ul className="space-y-4 text-sm">
                 <li className="flex items-start gap-3">
                   <MapPin size={16} className="text-secondary shrink-0 mt-0.5" />
-                  <span className="text-gray-400">Integral University, Lucknow, Uttar Pradesh - 226026</span>
+                  <span className="text-gray-400">Lucknow, Uttar Pradesh, India</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Phone size={16} className="text-secondary shrink-0 mt-0.5" />
