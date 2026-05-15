@@ -191,18 +191,18 @@ export default function Contact() {
           <p className="text-blue-100 mb-6 md:mb-8">Speak directly with our team</p>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 md:gap-6">
             <a
-              href="tel:+919214749997"
+              href="tel:+918810743304"
               className="inline-flex items-center justify-center gap-2 bg-secondary text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-xl hover:bg-orange-600 transition-all duration-300 shadow-lg text-base md:text-lg w-full sm:w-auto"
             >
               <Phone size={18} />
-              +91 9214749997
+              +91 8810743304
             </a>
             <a
-              href="tel:+918009874351"
+              href="tel:+919214749997"
               className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-xl hover:bg-white/20 transition-all duration-300 shadow-lg text-base md:text-lg border border-white/20 w-full sm:w-auto"
             >
               <Phone size={18} />
-              +91 8009874351
+              +91 9214749997
             </a>
           </div>
         </div>
