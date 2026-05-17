@@ -107,7 +107,7 @@ export default function Contact() {
                     </a>
                     <a href="tel:+917033546623" className="flex items-center gap-2 hover:text-secondary transition-colors">
                       <Phone size={14} className="text-secondary shrink-0" />
-                      +91 7033546623
+                      +91 8810743304
                     </a>
                     <a href="tel:+918009874351" className="flex items-center gap-2 hover:text-secondary transition-colors">
                       <Phone size={14} className="text-secondary shrink-0" />
