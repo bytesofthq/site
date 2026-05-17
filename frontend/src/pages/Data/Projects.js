@@ -214,7 +214,7 @@ export const projectsData = [
       ]
     },
     techStack: {
-      frontend: ["HTML", "CSS", "JavaScript"],
+      frontend: ["React.js", "Bootstrap", "Node.js","Express.js","MongoDB"],
       backend: ["Netlify Hosting"],
       tools: ["TensorFlow", "ML Models"]
     },
@@ -242,7 +242,7 @@ export const projectsData = [
       ]
     },
     techStack: {
-      frontend: ["HTML", "CSS", "JavaScript"],
+      frontend: ["HTML", "CSS", "JavaScript","Streamlit"],
       backend: ["Python (Flask)", "Render"],
       tools: ["Scikit-learn", "Pandas", "NumPy", "Machine Learning"]
     },
