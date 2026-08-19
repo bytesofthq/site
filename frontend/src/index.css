@@ -16,7 +16,8 @@
 
 body {
   font-family: 'Inter', system-ui, sans-serif;
-  color: #333;
+  background-color: #121212;
+  color: #ededed;
 }
 
 h1, h2, h3, h4, h5, h6 {
