@@ -10,12 +10,6 @@ export default function App() {
 
       {/* Main Content */}
       <main className="max-w-2xl my-auto py-12 space-y-6">
-        {/* Status Badge */}
-        <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-lg border border-neutral-800 bg-neutral-900/70 text-xs font-mono text-neutral-400 shadow-sm">
-          <span className="h-2 w-2 rounded-full bg-amber-500 animate-pulse"></span>
-          <span>Under Minor Psychological Construction</span>
-        </div>
-
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-white font-['Space_Grotesk'] leading-tight">
           ByteSoft is Currently Being Soft.
         </h2>
