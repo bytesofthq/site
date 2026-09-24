@@ -13,6 +13,7 @@ node_modules/
 # Production / Next / Vite build artifacts
 dist/
 dist-ssr/
+.vite/
 .next/
 out/
 next-env.d.ts

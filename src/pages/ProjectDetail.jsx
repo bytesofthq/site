@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, ExternalLink, CheckCircle2, Layers, ShieldCheck, Zap, Server, Layout as LayoutIcon, Wrench, Star } from 'lucide-react';
-import { projectsData } from './Data/Projects';
+import { projectsData } from '../data/projects';
 
 export default function ProjectDetail() {
   const { id } = useParams();

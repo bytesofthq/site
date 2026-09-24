@@ -1,8 +1,7 @@
-import { MapPin, Building2, MonitorSmartphone, LineChart, Users, Store, Star, Zap, HeartHandshake, Mail, HeartPulse, Smartphone, Bot, Palette, ChevronLeft, ChevronRight, ArrowRight, Phone, Clock, Globe } from 'lucide-react';
+import { MapPin, MonitorSmartphone, LineChart, Users, Store, Star, Zap, HeartHandshake, Mail, HeartPulse, Smartphone, Bot, Palette, ChevronLeft, ChevronRight, ArrowRight, Phone, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
-import { projectsData } from './Data/Projects';
-import { useScrollReveal } from '../hooks/useScrollReveal';
+import { projectsData } from '../data/projects';
 
 const testimonials = [
   {

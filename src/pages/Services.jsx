@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { MonitorSmartphone, LineChart, Users, Store, HeartPulse, Smartphone, Bot, Palette, ArrowRight, CheckCircle2, Lightbulb, PenTool, Code2, Rocket, ChevronDown, ChevronUp, Sparkles, TrendingUp, Shield, Zap } from 'lucide-react';
+import { MonitorSmartphone, LineChart, Users, Store, HeartPulse, Smartphone, Bot, Palette, ArrowRight, CheckCircle2, Lightbulb, PenTool, Code2, Rocket, ChevronDown, ChevronUp, Sparkles, TrendingUp, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Services() {

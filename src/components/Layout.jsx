@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef } from 'react';
-import { Link, Outlet, useLocation, useNavigationType } from 'react-router-dom';
-import { MessageSquare, Phone, MapPin, Mail, Send, Menu, X, Home, Briefcase, Info, CreditCard, LayoutTemplate, ChevronUp, ExternalLink, Sparkles } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Link, Outlet, useLocation } from 'react-router-dom';
+import { MessageSquare, Phone, MapPin, Mail, Send, Menu, X, Home, Briefcase, Info, LayoutTemplate, ChevronUp, Sparkles } from 'lucide-react';
 import ContactForm from './ContactForm';
 
 const navLinks = [

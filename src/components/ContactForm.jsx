@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { Send, CheckCircle2, AlertCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 

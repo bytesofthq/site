@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ArrowRight, ExternalLink, Sparkles, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { projectsData } from './Data/Projects';
+import { projectsData } from '../data/projects';
 
 export default function OurWork() {
   const [activeFilter, setActiveFilter] = useState('All');
