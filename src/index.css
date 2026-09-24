@@ -70,8 +70,19 @@ h1, h2, h3, h4, h5, h6 {
   will-change: transform;
 }
 
+.hero-sheen {
+  background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, 0.18) 48%, transparent 62%);
+  animation: hero-sheen 7s ease-in-out infinite;
+}
+
+@keyframes hero-sheen {
+  0%, 100% { transform: translateX(-35%); opacity: 0.35; }
+  50% { transform: translateX(35%); opacity: 0.8; }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .hero-float {
+  .hero-float,
+  .hero-sheen {
     animation: none;
   }
 }

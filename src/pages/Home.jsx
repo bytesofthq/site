@@ -109,15 +109,50 @@ export default function Home() {
           </div>
 
           <div className="relative flex justify-center lg:justify-end">
-            <img
-              src="/hero-panels.png"
-              alt="Layered interface panels"
-              className="hero-float w-full max-w-[540px] h-auto select-none"
+            <div
+              className="hero-float relative w-full max-w-[500px] h-[400px] sm:h-[440px]"
               style={{
-                WebkitMaskImage: "radial-gradient(ellipse 62% 58% at 50% 48%, #000 52%, transparent 78%)",
-                maskImage: "radial-gradient(ellipse 62% 58% at 50% 48%, #000 52%, transparent 78%)"
+                WebkitMaskImage: "radial-gradient(ellipse 78% 74% at 48% 52%, #000 62%, transparent 92%)",
+                maskImage: "radial-gradient(ellipse 78% 74% at 48% 52%, #000 62%, transparent 92%)"
               }}
-            />
+              aria-hidden="true"
+            >
+              <div className="absolute left-[18%] top-[18%] h-56 w-56 rounded-full bg-blue-200/70 blur-3xl" />
+
+              <div className="absolute left-0 top-3 w-[70%] origin-bottom-left -rotate-[13deg] rounded-[1.6rem] border border-white/80 bg-white/40 p-4 shadow-[0_18px_40px_-28px_rgba(15,23,42,0.55)] backdrop-blur-md sm:p-5">
+                <p className="text-[10px] font-semibold tracking-[0.22em] text-slate-400">01</p>
+                <p className="mt-1 text-base font-semibold text-slate-600">Discover</p>
+                <div className="mt-4 space-y-2">
+                  <div className="h-1.5 w-[84%] rounded-full bg-slate-300/80" />
+                  <div className="h-1.5 w-[60%] rounded-full bg-slate-200" />
+                  <div className="h-1.5 w-[72%] rounded-full bg-slate-200/80" />
+                </div>
+              </div>
+
+              <div className="absolute left-[14%] top-[5.25rem] w-[72%] -rotate-[4deg] rounded-[1.6rem] border border-white bg-white/75 p-4 shadow-[0_24px_50px_-28px_rgba(30,58,138,0.55)] backdrop-blur-md sm:p-5">
+                <p className="text-[10px] font-semibold tracking-[0.22em] text-primary">02</p>
+                <p className="mt-1 text-base font-semibold text-slate-900">Design</p>
+                <div className="mt-4 flex gap-2">
+                  <div className="h-12 flex-1 rounded-xl border border-blue-100 bg-gradient-to-b from-blue-50 to-white" />
+                  <div className="h-12 flex-1 rounded-xl border border-slate-100 bg-slate-50" />
+                  <div className="h-12 w-9 rounded-xl border border-blue-100 bg-blue-50" />
+                </div>
+              </div>
+
+              <div className="absolute right-0 top-[11.5rem] w-[74%] rotate-[7deg] overflow-hidden rounded-[1.7rem] bg-gradient-to-br from-[#2a56c6] via-[#1e3a8a] to-[#152a66] p-5 text-white shadow-[0_30px_55px_-18px_rgba(30,58,138,0.7)]">
+                <div className="hero-sheen pointer-events-none absolute inset-0" />
+                <div className="pointer-events-none absolute inset-y-3 right-0 w-px bg-gradient-to-b from-transparent via-amber-200 to-amber-400/70" />
+                <div className="pointer-events-none absolute inset-x-6 bottom-0 h-px bg-gradient-to-r from-transparent via-amber-200/90 to-amber-300" />
+                <p className="relative text-[10px] font-semibold tracking-[0.22em] text-white/55">03</p>
+                <p className="relative mt-1 text-xl font-semibold">Build</p>
+                <p className="relative mt-2 text-sm leading-relaxed text-blue-100/80">Clean code, shipped with you.</p>
+                <div className="relative mt-4 flex items-center gap-1.5">
+                  <span className="h-1.5 w-8 rounded-full bg-white/75" />
+                  <span className="h-1.5 w-4 rounded-full bg-white/30" />
+                  <span className="h-1.5 w-6 rounded-full bg-amber-200/90" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
