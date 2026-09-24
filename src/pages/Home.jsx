@@ -1,4 +1,4 @@
-import { MonitorSmartphone, LineChart, Users, Store, HeartPulse, Smartphone, Bot, Palette, Star, Zap, HeartHandshake, Mail, ChevronLeft, ChevronRight, ArrowRight, Phone, MapPin, Shield, Sparkles } from 'lucide-react';
+import { MonitorSmartphone, LineChart, Users, Store, HeartPulse, Smartphone, Bot, Palette, Star, Zap, HeartHandshake, Mail, ChevronLeft, ChevronRight, ArrowRight, Phone, MapPin, Shield, Sparkles, Quote, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { projectsData } from '../data/projects';
@@ -7,20 +7,32 @@ const testimonials = [
   {
     quote: "Campus Quest completely revolutionized how we conduct assessments. Our students love the real-time competition and instant feedback. Faculty workload has reduced significantly, and they can now focus on teaching.",
     name: "Dr. S. Ahmad",
-    role: "Examination Coordinator, Leading University",
-    initial: "SA"
+    role: "Examination Coordinator",
+    org: "Leading University",
+    initial: "SA",
+    project: "Campus Quest",
+    category: "EdTech Platform",
+    projectId: "campus-quest"
   },
   {
     quote: "TrackMyBus transformed our transportation experience. Students no longer stand confused waiting for buses. The real-time tracking is incredibly accurate, and the notifications are always timely.",
     name: "A. Kumar",
-    role: "Transport Coordinator, Leading University",
-    initial: "AK"
+    role: "Transport Coordinator",
+    org: "Leading University",
+    initial: "AK",
+    project: "TrackMyBus",
+    category: "IoT & Mobility",
+    projectId: "track-my-bus"
   },
   {
     quote: "Bytesoft built us a clean, professional website that truly represents our brand. Our dealer inquiries have gone up noticeably since the launch. Great team to work with.",
     name: "Team Bharat Almirah",
-    role: "Steel Furniture Brand, India",
-    initial: "BA"
+    role: "Management Team",
+    org: "Bharat Almirah, India",
+    initial: "BA",
+    project: "Bharat Almirah",
+    category: "Brand Platform",
+    projectId: "bharat-almirah"
   }
 ];
 
@@ -77,6 +89,15 @@ const process = [
 
 export default function Home() {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    if (isPaused) return;
+    const timer = setInterval(() => {
+      setActiveTestimonial((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
+    }, 6000);
+    return () => clearInterval(timer);
+  }, [isPaused]);
 
   useEffect(() => {
     const elements = document.querySelectorAll('.reveal');
@@ -353,36 +374,106 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 md:py-20">
+      <section className="py-16 md:py-24">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-8">What our partners say</h2>
-          <div className="bg-white rounded-3xl border border-slate-100 shadow-sm p-5 sm:p-10 md:p-12">
-            <p className="text-base sm:text-lg text-slate-700 leading-relaxed mb-8">
+          <div className="inline-flex items-center gap-2 bg-white border border-blue-100 text-primary text-xs font-semibold px-3.5 py-1.5 rounded-full mb-3 shadow-sm">
+            <Sparkles size={13} className="text-secondary" />
+            <span>Client Feedback</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">What our partners say</h2>
+          <p className="text-slate-500 text-sm sm:text-base max-w-lg mx-auto mb-10">
+            Real feedback from organizations we have partnered with to build impactful digital products.
+          </p>
+
+          {/* Refined Spotlight Card */}
+          <div
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+            className="relative bg-white rounded-3xl border border-slate-100 shadow-[0_12px_40px_-15px_rgba(15,23,42,0.06)] p-7 sm:p-10 md:p-12 transition-all overflow-hidden text-center group"
+          >
+            {/* Watermark Quote Icon */}
+            <Quote className="absolute top-6 right-8 w-20 h-20 text-slate-100 -rotate-12 pointer-events-none select-none transition-transform group-hover:scale-105 duration-500" />
+
+            {/* Stars & Case Study Link */}
+            <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-3 mb-8 pb-6 border-b border-slate-100">
+              <div className="flex items-center gap-1 text-amber-400">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={16} fill="currentColor" />
+                ))}
+              </div>
+              <Link
+                to={`/our-work/${testimonials[activeTestimonial].projectId}`}
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:text-secondary bg-slate-50 hover:bg-blue-50/60 px-3 py-1.5 rounded-full border border-slate-100 transition-all group/link"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
+                <span>{testimonials[activeTestimonial].project}</span>
+                <span className="text-slate-300">•</span>
+                <span className="text-slate-500 font-normal">{testimonials[activeTestimonial].category}</span>
+                <ArrowRight size={12} className="text-slate-400 group-hover/link:text-secondary group-hover/link:translate-x-0.5 transition-all ml-0.5" />
+              </Link>
+            </div>
+
+            {/* Quote with Smooth Key Transition */}
+            <p
+              key={activeTestimonial}
+              className="relative z-10 text-base sm:text-lg md:text-xl text-slate-800 leading-relaxed font-normal mb-8 max-w-2xl mx-auto"
+            >
               “{testimonials[activeTestimonial].quote}”
             </p>
-            <div className="flex flex-col items-center">
-              <div className="w-12 h-12 rounded-full bg-blue-50 text-primary font-bold flex items-center justify-center mb-3">
+
+            {/* Author with Verified Badge */}
+            <div className="relative z-10 flex items-center justify-center gap-3.5">
+              <div className="w-11 h-11 rounded-full bg-blue-50 text-primary font-bold text-sm flex items-center justify-center border border-blue-100/80 shadow-sm shrink-0">
                 {testimonials[activeTestimonial].initial}
               </div>
-              <p className="font-semibold text-slate-900">{testimonials[activeTestimonial].name}</p>
-              <p className="text-sm text-slate-500">{testimonials[activeTestimonial].role}</p>
+              <div className="text-left">
+                <div className="flex items-center gap-1.5">
+                  <p className="font-semibold text-slate-900 text-sm sm:text-base leading-snug">
+                    {testimonials[activeTestimonial].name}
+                  </p>
+                  <span title="Verified Client Partner" className="inline-flex text-emerald-500">
+                    <CheckCircle2 size={14} />
+                  </span>
+                </div>
+                <p className="text-xs text-slate-500">
+                  {testimonials[activeTestimonial].role} · <span className="text-slate-600 font-medium">{testimonials[activeTestimonial].org}</span>
+                </p>
+              </div>
             </div>
           </div>
-          <div className="flex items-center justify-center gap-4 mt-6">
-            <button onClick={prevTestimonial} className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:border-accent hover:text-accent" aria-label="Previous testimonial">
+
+          {/* Pagination & Arrow Controls */}
+          <div className="flex items-center justify-center gap-4 mt-8">
+            <button
+              onClick={prevTestimonial}
+              className="w-10 h-10 rounded-full bg-white border border-slate-200/90 shadow-sm flex items-center justify-center text-slate-600 hover:border-primary hover:text-primary transition-all hover:scale-105 active:scale-95"
+              aria-label="Previous testimonial"
+            >
               <ChevronLeft size={18} />
             </button>
-            <div className="flex gap-2">
+            <div className="flex items-center gap-2">
               {testimonials.map((_, i) => (
-                <button key={i} onClick={() => setActiveTestimonial(i)} aria-label={`Testimonial ${i + 1}`} className={`h-2 rounded-full transition-all ${i === activeTestimonial ? 'bg-accent w-6' : 'bg-slate-300 w-2'}`} />
+                <button
+                  key={i}
+                  onClick={() => setActiveTestimonial(i)}
+                  aria-label={`Testimonial ${i + 1}`}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    i === activeTestimonial ? 'bg-primary w-7' : 'bg-slate-300 hover:bg-slate-400 w-2'
+                  }`}
+                />
               ))}
             </div>
-            <button onClick={nextTestimonial} className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:border-accent hover:text-accent" aria-label="Next testimonial">
+            <button
+              onClick={nextTestimonial}
+              className="w-10 h-10 rounded-full bg-white border border-slate-200/90 shadow-sm flex items-center justify-center text-slate-600 hover:border-primary hover:text-primary transition-all hover:scale-105 active:scale-95"
+              aria-label="Next testimonial"
+            >
               <ChevronRight size={18} />
             </button>
           </div>
         </div>
       </section>
+
 
       <section className="py-16 md:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
