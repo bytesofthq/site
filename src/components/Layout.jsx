@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
-import { MessageSquare, Phone, MapPin, Mail, Menu, X, Home, Briefcase, Info, LayoutTemplate, ChevronUp, ChevronRight } from 'lucide-react';
+import { MessageSquareMore, Phone, MapPin, Mail, Menu, X, Home, Briefcase, Info, LayoutTemplate, ChevronUp, ChevronRight } from 'lucide-react';
 import ContactForm from './ContactForm';
 
 const navLinks = [
@@ -213,7 +213,7 @@ export default function Layout() {
           className="group bg-green-500 text-white p-3.5 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 hover:scale-110 flex items-center justify-center relative"
           aria-label="WhatsApp Us"
         >
-          <Phone size={20} />
+          <MessageSquareMore size={20} />
           <span className="absolute right-full mr-3 bg-gray-900 text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
             WhatsApp Us
           </span>
