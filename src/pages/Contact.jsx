@@ -35,7 +35,7 @@ export default function Contact() {
       <section className="pt-14 pb-4 md:pt-20">
         <div className="max-w-3xl mx-auto px-4 md:px-8">
           <p className="text-accent text-xs font-semibold tracking-[0.2em] uppercase mb-4">Contact</p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 leading-tight">
             Let's Build Something <span className="text-accent">Extraordinary</span>
           </h1>
           <p className="text-lg text-slate-500 leading-relaxed max-w-2xl">

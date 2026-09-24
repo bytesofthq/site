@@ -43,7 +43,7 @@ export default function ProjectDetail() {
               </span>
             )}
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4 leading-tight max-w-4xl">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 leading-tight max-w-4xl">
             {project.name}
           </h1>
           <p className="text-lg text-slate-500 max-w-3xl leading-relaxed">
@@ -69,7 +69,7 @@ export default function ProjectDetail() {
           {/* Left Column (Main Details) */}
           <div className="lg:col-span-2 space-y-8">
             {/* Introduction */}
-            <div className="bg-white rounded-3xl p-8 shadow-xl shadow-slate-200/50 border border-slate-100">
+            <div className="bg-white rounded-3xl p-5 sm:p-8 shadow-xl shadow-slate-200/50 border border-slate-100">
               <h2 className="text-2xl font-bold text-slate-800 mb-4 flex items-center gap-2">
                 <Layers className="text-primary" /> Overview
               </h2>
@@ -80,7 +80,7 @@ export default function ProjectDetail() {
 
             {/* Features */}
             {project.features && Object.keys(project.features).length > 0 && (
-              <div className="bg-white rounded-3xl p-8 shadow-xl shadow-slate-200/50 border border-slate-100">
+              <div className="bg-white rounded-3xl p-5 sm:p-8 shadow-xl shadow-slate-200/50 border border-slate-100">
                 <h2 className="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
                   <Zap className="text-primary" /> Key Features
                 </h2>
@@ -106,7 +106,7 @@ export default function ProjectDetail() {
 
             {/* Real-Time (If exists) */}
             {project.realTime && project.realTime.length > 0 && (
-              <div className="bg-white rounded-3xl p-8 shadow-xl shadow-slate-200/50 border border-slate-100">
+              <div className="bg-white rounded-3xl p-5 sm:p-8 shadow-xl shadow-slate-200/50 border border-slate-100">
                 <h2 className="text-2xl font-bold text-slate-800 mb-4">Real-Time Capabilities</h2>
                 <ul className="space-y-3">
                   {project.realTime.map((item, i) => (
@@ -121,7 +121,7 @@ export default function ProjectDetail() {
             
             {/* Impact */}
             {project.impact && project.impact.length > 0 && (
-              <div className="bg-white rounded-3xl p-8 shadow-xl shadow-slate-200/50 border border-slate-100">
+              <div className="bg-white rounded-3xl p-5 sm:p-8 shadow-xl shadow-slate-200/50 border border-slate-100">
                 <h2 className="text-2xl font-bold text-slate-800 mb-4">Project Impact</h2>
                 <ul className="space-y-3">
                   {project.impact.map((item, i) => (
@@ -136,7 +136,7 @@ export default function ProjectDetail() {
 
             {/* Conclusion */}
             {project.conclusion && (
-              <div className="bg-gradient-to-br from-blue-50 to-emerald-50 rounded-3xl p-8 border border-blue-100">
+              <div className="bg-gradient-to-br from-blue-50 to-emerald-50 rounded-3xl p-5 sm:p-8 border border-blue-100">
                 <p className="text-slate-700 leading-relaxed font-medium text-lg italic">
                   "{project.conclusion}"
                 </p>
@@ -153,7 +153,7 @@ export default function ProjectDetail() {
 
             {/* Tech Stack */}
             {project.techStack && (
-              <div className="bg-white rounded-3xl p-8 shadow-xl shadow-slate-200/50 border border-slate-100">
+              <div className="bg-white rounded-3xl p-5 sm:p-8 shadow-xl shadow-slate-200/50 border border-slate-100">
                 <h2 className="text-xl font-bold text-slate-800 mb-6">Technologies Used</h2>
                 
                 <div className="space-y-6">
@@ -207,7 +207,7 @@ export default function ProjectDetail() {
 
             {/* Security */}
             {project.security && project.security.length > 0 && (
-              <div className="bg-white rounded-3xl p-8 shadow-sm border border-slate-100">
+              <div className="bg-white rounded-3xl p-5 sm:p-8 shadow-sm border border-slate-100">
                 <h2 className="text-xl font-bold mb-4 flex items-center gap-2 text-slate-900">
                   <ShieldCheck size={24} className="text-accent" /> Security Features
                 </h2>

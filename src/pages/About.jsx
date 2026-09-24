@@ -27,7 +27,7 @@ export default function About() {
       <section className="pt-14 pb-6 md:pt-20">
         <div className="max-w-3xl mx-auto px-4 md:px-8 text-center">
           <p className="text-accent text-xs font-semibold tracking-[0.2em] uppercase mb-4">Who we are</p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 leading-tight">
             Engineering the future of <span className="text-accent">digital</span>
           </h1>
           <p className="text-lg text-slate-500 leading-relaxed">
@@ -47,7 +47,7 @@ export default function About() {
               <img 
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
                 alt="Bytesoft Team Collaboration" 
-                className="rounded-2xl shadow-2xl border border-slate-100 object-cover w-full h-[400px] md:h-[500px]"
+                className="rounded-2xl shadow-2xl border border-slate-100 object-cover w-full h-64 sm:h-[400px] md:h-[500px]"
               />
               
               {/* Floating Stat Card */}

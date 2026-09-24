@@ -59,29 +59,29 @@ export default function Layout() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col font-sans bg-[#f6f8fc]">
+    <div className="min-h-screen flex flex-col font-sans bg-[#f6f8fc] overflow-x-hidden">
       <nav className={`sticky top-0 w-full z-50 transition-all duration-300 ${
         isScrolled
           ? 'bg-[#f6f8fc]/90 backdrop-blur-xl shadow-sm'
           : 'bg-[#f6f8fc]'
       }`}>
-        <div className="max-w-7xl mx-auto px-4 md:px-8 h-16 md:h-[4.5rem] flex items-center justify-between gap-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 lg:h-[4.75rem] flex items-center justify-between gap-3">
           <Link to="/" className="flex items-center shrink-0 group" aria-label="Bytesoft home">
             <img
               src="/bs-logo.jpg"
               alt="Bytesoft"
-              className="h-10 md:h-11 w-auto object-contain transition-transform group-hover:scale-105 duration-300"
+              className="h-9 sm:h-10 lg:h-11 w-auto object-contain transition-transform group-hover:scale-105 duration-300"
             />
           </Link>
 
-          <div className="hidden md:flex items-center bg-white/80 border border-slate-200/80 rounded-full p-1 shadow-sm">
+          <div className="hidden lg:flex items-center bg-white/80 border border-slate-200/80 rounded-full p-1.5 shadow-sm">
             {navLinks.map((link) => {
               const isActive = location.pathname === link.path || (link.path !== '/' && location.pathname.startsWith(link.path));
               return (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`px-3.5 lg:px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
+                  className={`px-4 lg:px-5 py-2 rounded-full text-[15px] font-medium transition-all duration-200 ${
                     isActive
                       ? 'bg-white text-primary shadow-sm border border-slate-200'
                       : 'text-slate-500 hover:text-slate-900 border border-transparent'
@@ -96,7 +96,7 @@ export default function Layout() {
           <div className="flex items-center space-x-3">
             <button
               onClick={() => setIsModalOpen(true)}
-              className="bg-primary text-white px-4 md:px-5 py-2 md:py-2.5 rounded-full font-semibold text-sm hover:bg-blue-900 transition-colors shadow-sm inline-flex items-center gap-1.5"
+              className="bg-primary text-white px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full font-semibold text-sm hover:bg-blue-900 transition-colors shadow-sm inline-flex items-center gap-1.5"
             >
               Get Started
               <span aria-hidden="true">→</span>
@@ -105,7 +105,7 @@ export default function Layout() {
             {/* Mobile Menu Button */}
             <button 
               onClick={() => setIsMobileMenuOpen(true)}
-              className="md:hidden p-2 rounded-lg text-gray-700 hover:text-primary hover:bg-gray-100 transition-colors focus:outline-none"
+              className="lg:hidden p-2 rounded-lg text-gray-700 hover:text-primary hover:bg-gray-100 transition-colors focus:outline-none"
               aria-label="Open Menu"
             >
               <Menu size={24} />
@@ -192,7 +192,7 @@ export default function Layout() {
       </footer>
 
       {/* Floating Action Buttons */}
-      <div className={`fixed bottom-6 right-6 flex flex-col space-y-3 z-50 transition-all duration-300 ${isMobileMenuOpen || isModalOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+      <div className={`fixed bottom-4 right-4 sm:bottom-6 sm:right-6 flex flex-col space-y-3 z-40 transition-all duration-300 ${isMobileMenuOpen || isModalOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
         {/* Email Button */}
         <a 
           href="mailto:bytesofthq@gmail.com"
@@ -223,7 +223,7 @@ export default function Layout() {
       {/* Scroll to Top Button */}
       <button
         onClick={scrollToTop}
-        className={`fixed bottom-6 left-6 bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-primary transition-all duration-300 z-50 ${
+        className={`fixed bottom-4 left-4 sm:bottom-6 sm:left-6 bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-primary transition-all duration-300 z-40 ${
           showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
         }`}
         aria-label="Scroll to top"
@@ -233,7 +233,7 @@ export default function Layout() {
 
       {/* Mobile Navigation Drawer Overlay */}
       <div 
-        className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-[100] transition-all duration-300 md:hidden ${
+        className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-[100] transition-all duration-300 lg:hidden ${
           isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
         onClick={() => setIsMobileMenuOpen(false)}
@@ -241,7 +241,7 @@ export default function Layout() {
       
       {/* Mobile Navigation Drawer */}
       <div 
-        className={`fixed top-0 right-0 h-full w-80 bg-white shadow-2xl z-[110] transform transition-transform duration-300 ease-out md:hidden flex flex-col ${
+        className={`fixed top-0 right-0 h-full w-[min(20rem,100vw)] bg-white shadow-2xl z-[110] transform transition-transform duration-300 ease-out lg:hidden flex flex-col ${
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >

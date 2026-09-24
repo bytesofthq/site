@@ -180,13 +180,13 @@ export default function Services() {
       <section className="pt-14 pb-8 md:pt-20 md:pb-10">
         <div className="max-w-3xl mx-auto px-4 md:px-8 text-center">
           <p className="text-accent text-xs font-semibold tracking-[0.2em] uppercase mb-4">Our expertise</p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 leading-tight">
             Comprehensive Digital <span className="text-accent">Engineering</span>
           </h1>
           <p className="text-lg text-slate-500 leading-relaxed">
             End-to-end technical solutions and strategic marketing designed to scale your business.
           </p>
-          <div ref={statsRef} className="flex flex-wrap justify-center gap-8 md:gap-12 mt-10">
+          <div ref={statsRef} className="flex flex-wrap justify-center gap-x-6 gap-y-5 sm:gap-8 md:gap-12 mt-10">
             <div className="text-center min-w-[100px]">
               <div className="text-3xl font-bold text-accent mb-1">{counters.projects}+</div>
               <div className="text-slate-500 text-sm">Projects Delivered</div>

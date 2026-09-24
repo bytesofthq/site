@@ -80,7 +80,7 @@ export default function Home() {
               <Sparkles size={14} />
               Digital experiences that drive growth
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-bold text-slate-900 leading-[1.05] tracking-tight mb-6">
+            <h1 className="text-[2rem] sm:text-5xl lg:text-[3.5rem] font-bold text-slate-900 leading-[1.08] tracking-tight mb-6">
               Engineering Digital
               <span className="block">Experiences That</span>
               <span className="mt-1 pl-4 border-l-[5px] border-secondary block">Drive Growth</span>
@@ -163,7 +163,7 @@ export default function Home() {
               ["24/7", "Support Available"]
             ].map(([value, label]) => (
               <div key={label}>
-                <p className="text-4xl md:text-5xl font-bold text-accent">{value}</p>
+                <p className="text-3xl sm:text-4xl md:text-5xl font-bold text-accent">{value}</p>
                 <p className="text-sm text-slate-500 mt-1">{label}</p>
               </div>
             ))}
@@ -237,8 +237,8 @@ export default function Home() {
       <section className="py-16 md:py-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-8">What our partners say</h2>
-          <div className="bg-white rounded-3xl border border-slate-100 shadow-sm p-8 sm:p-12">
-            <p className="text-lg text-slate-700 leading-relaxed mb-8 min-h-[96px]">
+          <div className="bg-white rounded-3xl border border-slate-100 shadow-sm p-5 sm:p-10 md:p-12">
+            <p className="text-base sm:text-lg text-slate-700 leading-relaxed mb-8">
               “{testimonials[activeTestimonial].quote}”
             </p>
             <div className="flex flex-col items-center">
@@ -267,7 +267,7 @@ export default function Home() {
 
       <section className="py-16 md:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-3xl border border-slate-100 shadow-sm p-8 md:p-12 grid md:grid-cols-2 gap-10 items-center">
+          <div className="bg-white rounded-3xl border border-slate-100 shadow-sm p-6 sm:p-8 md:p-12 grid md:grid-cols-2 gap-8 md:gap-10 items-center">
             <div>
               <h2 className="text-3xl font-bold text-slate-900 mb-3">Let's start a conversation</h2>
               <p className="text-slate-500 mb-6">
