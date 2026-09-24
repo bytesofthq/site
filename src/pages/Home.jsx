@@ -113,6 +113,10 @@ export default function Home() {
               src="/hero-panels.png"
               alt="Layered interface panels"
               className="hero-float w-full max-w-[540px] h-auto select-none"
+              style={{
+                WebkitMaskImage: "radial-gradient(ellipse 62% 58% at 50% 48%, #000 52%, transparent 78%)",
+                maskImage: "radial-gradient(ellipse 62% 58% at 50% 48%, #000 52%, transparent 78%)"
+              }}
             />
           </div>
         </div>
