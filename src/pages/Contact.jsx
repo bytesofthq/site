@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, Phone, MapPin, HelpCircle, ChevronDown, ChevronUp, Building2 } from 'lucide-react';
+import { Mail, Phone, MapPin, HelpCircle, ChevronDown, ChevronUp, Building2, Sparkles } from 'lucide-react';
 import ContactForm from '../components/ContactForm';
 
 export default function Contact() {
@@ -114,50 +114,97 @@ export default function Contact() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 md:py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-4 md:px-8">
-          <div className="text-center mb-12 md:mb-16">
-            <div className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl mb-4">
-              <HelpCircle size={28} className="text-primary" />
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Frequently Asked Questions</h2>
-            <div className="w-16 h-1.5 bg-secondary mx-auto mb-6 rounded-full"></div>
-            <p className="text-gray-600 text-base md:text-lg px-4">Everything you need to know before we get started.</p>
-          </div>
-
-          <div className="space-y-3 md:space-y-4">
-            {faqs.map((faq, index) => (
-              <div 
-                key={index} 
-                className={`bg-white rounded-xl border transition-all duration-300 overflow-hidden ${
-                  openFaq === index ? 'border-secondary shadow-lg' : 'border-gray-100 shadow-sm hover:shadow-md'
-                }`}
-              >
-                <button 
-                  className="w-full px-5 md:px-6 py-4 text-left flex justify-between items-center focus:outline-none group"
-                  onClick={() => setOpenFaq(openFaq === index ? -1 : index)}
-                >
-                  <span className="text-sm md:text-base font-semibold text-gray-900 pr-4 group-hover:text-primary transition-colors">
-                    {faq.question}
-                  </span>
-                  {openFaq === index ? (
-                    <ChevronUp className="text-primary shrink-0 transition-transform duration-300" size={18} />
-                  ) : (
-                    <ChevronDown className="text-gray-400 group-hover:text-primary shrink-0 transition-all duration-300" size={18} />
-                  )}
-                </button>
-                
-                <div 
-                  className={`px-5 md:px-6 overflow-hidden transition-all duration-300 ease-in-out ${
-                    openFaq === index ? 'max-h-96 pb-5 opacity-100' : 'max-h-0 opacity-0'
-                  }`}
-                >
-                  <p className="text-gray-600 text-sm md:text-base leading-relaxed pt-3 border-t border-gray-100">
-                    {faq.answer}
-                  </p>
-                </div>
+      <section className="py-16 md:py-24 bg-slate-50/50 border-t border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+            
+            {/* Left Column: Heading + Direct Help Card */}
+            <div className="lg:col-span-5 lg:sticky lg:top-28">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100/80 text-primary text-xs font-semibold uppercase tracking-wider mb-4">
+                <Sparkles size={13} className="text-secondary" />
+                <span>Frequently Asked</span>
               </div>
-            ))}
+              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight mb-4">
+                Frequently Asked Questions
+              </h2>
+              <p className="text-slate-500 text-sm sm:text-base leading-relaxed mb-8">
+                Everything you need to know about our partnership models, timelines, onboarding, and pricing before we kick off.
+              </p>
+
+              {/* Direct Help Card */}
+              <div className="p-6 rounded-2xl bg-white border border-slate-100 shadow-sm">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 rounded-xl bg-blue-50 text-primary flex items-center justify-center shrink-0">
+                    <HelpCircle size={18} />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-slate-900 text-sm">Need quick clarity?</h3>
+                    <p className="text-xs text-slate-500">We respond in under 24 hours.</p>
+                  </div>
+                </div>
+                <p className="text-xs text-slate-500 leading-relaxed mb-4">
+                  Have a specific question not covered here? Feel free to reach out directly or drop us a line below.
+                </p>
+                <a
+                  href="mailto:contact@bytesofthq.com"
+                  className="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-xl bg-primary text-white text-xs font-semibold hover:bg-blue-900 transition-colors shadow-xs"
+                >
+                  <Mail size={13} />
+                  <span>Email our team</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Right Column: Accordions */}
+            <div className="lg:col-span-7 space-y-3.5">
+              {faqs.map((faq, index) => {
+                const isOpen = openFaq === index;
+                return (
+                  <div
+                    key={index}
+                    className={`bg-white rounded-2xl border transition-all duration-200 overflow-hidden ${
+                      isOpen
+                        ? 'border-blue-200/90 shadow-md shadow-blue-900/[0.04]'
+                        : 'border-slate-100 shadow-xs hover:border-slate-200'
+                    }`}
+                  >
+                    <button
+                      onClick={() => setOpenFaq(isOpen ? -1 : index)}
+                      className="w-full px-5 sm:px-6 py-4.5 text-left flex justify-between items-center focus:outline-none group cursor-pointer gap-4"
+                    >
+                      <div className="flex items-center gap-3.5">
+                        <span className="text-xs font-mono font-semibold text-slate-300 group-hover:text-secondary transition-colors">
+                          {(index + 1).toString().padStart(2, '0')}
+                        </span>
+                        <span className="text-sm sm:text-[15px] font-semibold text-slate-900 group-hover:text-primary transition-colors leading-snug">
+                          {faq.question}
+                        </span>
+                      </div>
+                      <div
+                        className={`w-7 h-7 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${
+                          isOpen
+                            ? 'bg-primary text-white border-primary rotate-180'
+                            : 'bg-slate-50 text-slate-400 border-slate-100 group-hover:border-blue-100 group-hover:text-primary'
+                        }`}
+                      >
+                        <ChevronDown size={14} />
+                      </div>
+                    </button>
+
+                    <div
+                      className={`px-5 sm:px-6 overflow-hidden transition-all duration-300 ease-in-out ${
+                        isOpen ? 'max-h-96 pb-5 opacity-100' : 'max-h-0 opacity-0'
+                      }`}
+                    >
+                      <p className="text-slate-500 text-xs sm:text-sm leading-relaxed pt-3 border-t border-slate-100 pl-7">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
           </div>
         </div>
       </section>

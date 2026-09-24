@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { MonitorSmartphone, LineChart, Users, Store, HeartPulse, Smartphone, Bot, Palette, ArrowRight, ArrowUpRight, CheckCircle2, Lightbulb, PenTool, Code2, Rocket, ChevronDown, ChevronUp, TrendingUp, Shield, Sparkles } from 'lucide-react';
+import { MonitorSmartphone, LineChart, Users, Store, HeartPulse, Smartphone, Bot, Palette, ArrowRight, ArrowUpRight, CheckCircle2, Lightbulb, PenTool, Code2, Rocket, ChevronDown, ChevronUp, TrendingUp, Shield, Sparkles, HelpCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Services() {
@@ -327,54 +327,97 @@ export default function Services() {
       </section>
 
       {/* Service FAQs */}
-      <section className="py-16 md:py-20 bg-slate-50/50">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100/80 text-primary text-xs font-semibold uppercase tracking-wider mb-3">
-              <Sparkles size={13} className="text-secondary" />
-              <span>FAQ</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight mb-3">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-slate-500 text-sm sm:text-base leading-relaxed">
-              Common questions clients ask before partnering with us.
-            </p>
-          </div>
-
-          <div className="space-y-3">
-            {faqs.map((faq, index) => (
-              <div 
-                key={index} 
-                className={`bg-white rounded-2xl border transition-all duration-300 overflow-hidden ${
-                  openFaq === index ? 'border-blue-200 shadow-sm' : 'border-slate-100 shadow-xs hover:border-slate-200'
-                }`}
-              >
-                <button 
-                  onClick={() => toggleFaq(index)}
-                  className="w-full px-5 sm:px-6 py-4 text-left flex justify-between items-center focus:outline-none group cursor-pointer"
-                >
-                  <span className="text-sm sm:text-[15px] font-semibold text-slate-900 pr-4 group-hover:text-primary transition-colors">
-                    {faq.question}
-                  </span>
-                  {openFaq === index ? (
-                    <ChevronUp className="text-primary shrink-0 transition-transform duration-300" size={18} />
-                  ) : (
-                    <ChevronDown className="text-slate-400 group-hover:text-primary shrink-0 transition-all duration-300" size={18} />
-                  )}
-                </button>
-                
-                <div 
-                  className={`px-5 sm:px-6 overflow-hidden transition-all duration-300 ease-in-out ${
-                    openFaq === index ? 'max-h-96 pb-5 opacity-100' : 'max-h-0 opacity-0'
-                  }`}
-                >
-                  <p className="text-slate-500 text-xs sm:text-sm leading-relaxed pt-3 border-t border-slate-100">
-                    {faq.answer}
-                  </p>
-                </div>
+      <section className="py-16 md:py-24 bg-slate-50/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+            
+            {/* Left Column: Heading + Sticky Support Card */}
+            <div className="lg:col-span-5 lg:sticky lg:top-28">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100/80 text-primary text-xs font-semibold uppercase tracking-wider mb-4">
+                <Sparkles size={13} className="text-secondary" />
+                <span>Frequently Asked</span>
               </div>
-            ))}
+              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight mb-4">
+                Frequently Asked Questions
+              </h2>
+              <p className="text-slate-500 text-sm sm:text-base leading-relaxed mb-8">
+                Everything you need to know about our engineering standards, timelines, code ownership, and ongoing partnerships.
+              </p>
+
+              {/* Direct Inquiry Card */}
+              <div className="p-6 rounded-2xl bg-white border border-slate-100 shadow-sm">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 rounded-xl bg-blue-50 text-primary flex items-center justify-center shrink-0">
+                    <HelpCircle size={18} />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-slate-900 text-sm">Have a unique question?</h3>
+                    <p className="text-xs text-slate-500">We typically reply in under 24 hours.</p>
+                  </div>
+                </div>
+                <p className="text-xs text-slate-500 leading-relaxed mb-4">
+                  Need custom scoping, an NDA signed, or want to discuss enterprise integrations? Our engineering leads are available.
+                </p>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-xl bg-primary text-white text-xs font-semibold hover:bg-blue-900 transition-colors shadow-xs"
+                >
+                  <span>Speak with our team</span>
+                  <ArrowRight size={13} />
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Column: Accordions */}
+            <div className="lg:col-span-7 space-y-3.5">
+              {faqs.map((faq, index) => {
+                const isOpen = openFaq === index;
+                return (
+                  <div
+                    key={index}
+                    className={`bg-white rounded-2xl border transition-all duration-200 overflow-hidden ${
+                      isOpen
+                        ? 'border-blue-200/90 shadow-md shadow-blue-900/[0.04]'
+                        : 'border-slate-100 shadow-xs hover:border-slate-200'
+                    }`}
+                  >
+                    <button
+                      onClick={() => toggleFaq(index)}
+                      className="w-full px-5 sm:px-6 py-4.5 text-left flex justify-between items-center focus:outline-none group cursor-pointer gap-4"
+                    >
+                      <div className="flex items-center gap-3.5">
+                        <span className="text-xs font-mono font-semibold text-slate-300 group-hover:text-secondary transition-colors">
+                          {(index + 1).toString().padStart(2, '0')}
+                        </span>
+                        <span className="text-sm sm:text-[15px] font-semibold text-slate-900 group-hover:text-primary transition-colors leading-snug">
+                          {faq.question}
+                        </span>
+                      </div>
+                      <div
+                        className={`w-7 h-7 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${
+                          isOpen
+                            ? 'bg-primary text-white border-primary rotate-180'
+                            : 'bg-slate-50 text-slate-400 border-slate-100 group-hover:border-blue-100 group-hover:text-primary'
+                        }`}
+                      >
+                        <ChevronDown size={14} />
+                      </div>
+                    </button>
+
+                    <div
+                      className={`px-5 sm:px-6 overflow-hidden transition-all duration-300 ease-in-out ${
+                        isOpen ? 'max-h-96 pb-5 opacity-100' : 'max-h-0 opacity-0'
+                      }`}
+                    >
+                      <p className="text-slate-500 text-xs sm:text-sm leading-relaxed pt-3 border-t border-slate-100 pl-7">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
           </div>
         </div>
       </section>
