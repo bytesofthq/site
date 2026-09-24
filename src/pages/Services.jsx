@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { MonitorSmartphone, LineChart, Users, Store, HeartPulse, Smartphone, Bot, Palette, ArrowRight, CheckCircle2, Lightbulb, PenTool, Code2, Rocket, ChevronDown, ChevronUp, TrendingUp, Shield } from 'lucide-react';
+import { MonitorSmartphone, LineChart, Users, Store, HeartPulse, Smartphone, Bot, Palette, ArrowRight, ArrowUpRight, CheckCircle2, Lightbulb, PenTool, Code2, Rocket, ChevronDown, ChevronUp, TrendingUp, Shield, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Services() {
@@ -60,60 +60,60 @@ export default function Services() {
 
   const services = [
     {
-      icon: <MonitorSmartphone size={40} className="text-white" />,
+      id: "web-engineering",
+      icon: MonitorSmartphone,
       title: "Web Engineering",
-      desc: "Custom, responsive web applications built with modern frameworks for exceptional speed and user experience. We engineer scalable architectures that grow with your business.",
-      features: ["React & Next.js Development", "Custom API Integrations", "Advanced Performance Optimization", "Headless CMS Architecture"],
-      color: "from-blue-500 to-blue-700"
+      desc: "Custom, responsive web applications engineered for speed, scalability, and seamless user experiences.",
+      features: ["React & Next.js", "Custom APIs", "Performance", "Headless CMS"]
     },
     {
-      icon: <LineChart size={40} className="text-white" />,
+      id: "search-optimization",
+      icon: LineChart,
       title: "Search Optimization",
-      desc: "Technical and content-driven SEO strategies that dominate search rankings and capture high-intent traffic. We turn search engines into your most reliable acquisition channel.",
-      features: ["Comprehensive Technical Audits", "Data-Driven Content Strategy", "High-Authority Link Building", "Local & Enterprise SEO"],
-      color: "from-emerald-500 to-emerald-700"
+      desc: "Technical and data-driven SEO strategies that capture high-intent traffic and secure sustainable rankings.",
+      features: ["Technical Audits", "Content Strategy", "High-Authority Links", "Enterprise SEO"]
     },
     {
-      icon: <Users size={40} className="text-white" />,
+      id: "social-media",
+      icon: Users,
       title: "Social Media Strategy",
-      desc: "Engaging campaigns across social channels that build brand loyalty, foster community, and generate qualified leads. We tell your brand's story where your audience lives.",
-      features: ["Multi-Channel Content Creation", "Community Management", "Influencer Partnerships", "Advanced Analytics & Reporting"],
-      color: "from-purple-500 to-purple-700"
+      desc: "Targeted multi-channel campaigns that build brand loyalty and generate verified inbound demand.",
+      features: ["Content Creation", "Community Growth", "Influencer Collabs", "Analytics"]
     },
     {
-      icon: <Store size={40} className="text-white" />,
+      id: "ecommerce",
+      icon: Store,
       title: "E-commerce Platforms",
-      desc: "Scalable, secure online storefronts optimized for seamless shopping experiences and high conversion rates. We build digital retail environments that drive sales.",
-      features: ["Shopify & Custom Solutions", "Secure Payment Gateways", "Inventory & ERP Sync", "Cart Abandonment Recovery"],
-      color: "from-orange-500 to-orange-700"
+      desc: "High-converting online storefronts optimized for smooth checkout journeys and enterprise operations.",
+      features: ["Shopify & Headless", "Payment Gateways", "ERP / Sync", "CRO Audits"]
     },
     {
-      icon: <HeartPulse size={40} className="text-white" />,
+      id: "healthcare",
+      icon: HeartPulse,
       title: "Healthcare Software",
-      desc: "Secure, compliant, and intuitive software solutions designed specifically for healthcare providers and patients. We bridge the gap between medical care and modern technology.",
-      features: ["HIPAA Compliant Architecture", "EHR/EMR Integrations", "Secure Patient Portals", "Telehealth Infrastructure"],
-      color: "from-rose-500 to-rose-700"
+      desc: "HIPAA-compliant, highly secure digital health solutions designed for clinical reliability and ease.",
+      features: ["HIPAA Compliant", "EHR/EMR Integrations", "Patient Portals", "Telehealth"]
     },
     {
-      icon: <Smartphone size={40} className="text-white" />,
+      id: "mobile-apps",
+      icon: Smartphone,
       title: "App Development",
-      desc: "Native and cross-platform mobile applications that deliver engaging experiences right to your users' fingertips. We turn complex mobile requirements into intuitive apps.",
-      features: ["iOS & Android Native Apps", "React Native Cross-Platform", "Real-time Push Notifications", "Offline Mode Synchronization"],
-      color: "from-indigo-500 to-indigo-700"
+      desc: "High-performance native and cross-platform mobile apps delivering fluid animations and native device access.",
+      features: ["iOS & Android", "React Native", "Push Notifications", "Offline Sync"]
     },
     {
-      icon: <Bot size={40} className="text-white" />,
+      id: "ai-integration",
+      icon: Bot,
       title: "AI Integration",
-      desc: "Intelligent automation and AI-driven solutions to streamline operations and unlock powerful data insights. Future-proof your business with cutting-edge machine learning.",
-      features: ["Custom LLM Integration", "Automated Customer Support Bots", "Predictive Business Analytics", "Workflow Process Automation"],
-      color: "from-cyan-500 to-cyan-700"
+      desc: "Intelligent automation and custom LLM workflows that streamline operations and elevate business agility.",
+      features: ["Custom LLMs", "AI Support Agents", "Predictive Analytics", "Process Automation"]
     },
     {
-      icon: <Palette size={40} className="text-white" />,
+      id: "ui-ux-design",
+      icon: Palette,
       title: "UI/UX Design",
-      desc: "User-centric interface design focusing on aesthetics and usability to maximize engagement and conversion. We design experiences that users love to interact with.",
-      features: ["In-depth User Research", "Wireframing & Journey Mapping", "Interactive High-Fidelity Prototyping", "Design System Creation"],
-      color: "from-pink-500 to-pink-700"
+      desc: "Strategic product design combining user research, design systems, and rapid prototyping.",
+      features: ["User Research", "Wireframing", "Design Systems", "Usability Audits"]
     }
   ];
 
@@ -208,57 +208,56 @@ export default function Services() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 md:py-24 bg-gradient-to-b from-slate-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">What We Deliver</h2>
-            <div className="w-16 h-1.5 bg-secondary mx-auto mb-6 rounded-full"></div>
-            <p className="text-gray-600 max-w-2xl mx-auto text-base md:text-lg px-4">
-              Comprehensive digital solutions tailored to your unique business challenges.
+      <section className="py-16 md:py-20 bg-slate-50/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">What We Deliver</h2>
+            <p className="text-slate-500 max-w-2xl mx-auto text-base">
+              Comprehensive strategies and technical expertise tailored to your business goals.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
-            {services.map((service, index) => (
-              <div 
-                key={index} 
-                className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100"
-              >
-                <div className={`h-1.5 bg-gradient-to-r ${service.color}`}></div>
-                <div className="p-6 md:p-8">
-                  <div className="flex items-start justify-between mb-5">
-                    <div className={`w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                      {service.icon}
+          {/* Services Grid matching website style */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {services.map((service) => {
+              const Icon = service.icon;
+              return (
+                <Link
+                  key={service.id}
+                  to={`/contact?service=${encodeURIComponent(service.title)}`}
+                  className="group bg-white rounded-2xl border border-slate-100 p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="w-10 h-10 rounded-xl bg-blue-50 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+                        <Icon size={18} />
+                      </div>
+                      <ArrowRight size={15} className="text-slate-300 group-hover:text-primary group-hover:translate-x-0.5 transition-all" />
                     </div>
-                    <div className="text-right">
-                      <span className="text-3xl md:text-4xl font-black text-gray-200 group-hover:text-gray-300 transition-colors">
-                        {(index + 1).toString().padStart(2, '0')}
-                      </span>
-                    </div>
+
+                    <h3 className="font-semibold text-slate-900 text-lg mb-2 group-hover:text-primary transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-sm text-slate-500 leading-relaxed mb-4">
+                      {service.desc}
+                    </p>
                   </div>
-                  
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">{service.title}</h3>
-                  <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-5">
-                    {service.desc}
-                  </p>
-                  
-                  <div className="bg-slate-50 rounded-xl p-4 md:p-5 border border-gray-100">
-                    <h4 className="font-bold text-gray-900 mb-3 text-xs tracking-wider uppercase flex items-center gap-2">
-                      <TrendingUp size={14} className="text-primary" />
-                      Key Capabilities
-                    </h4>
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+
+                  <div className="pt-4 border-t border-slate-50 mt-auto">
+                    <div className="flex flex-wrap gap-1.5">
                       {service.features.map((feature, fIndex) => (
-                        <li key={fIndex} className="flex items-center text-gray-700 text-xs md:text-sm">
-                          <CheckCircle2 size={12} className="text-primary mr-2 shrink-0" />
-                          <span>{feature}</span>
-                        </li>
+                        <span
+                          key={fIndex}
+                          className="text-xs text-slate-500 bg-slate-50/80 px-2.5 py-1 rounded-md border border-slate-100"
+                        >
+                          {feature}
+                        </span>
                       ))}
-                    </ul>
+                    </div>
                   </div>
-                </div>
-              </div>
-            ))}
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
