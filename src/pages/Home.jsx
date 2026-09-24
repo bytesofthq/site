@@ -184,30 +184,40 @@ export default function Home() {
 
       <section className="py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">Why teams choose Bytesoft</h2>
             <p className="text-slate-500 max-w-2xl mx-auto">
               Reliable execution, thoughtful design, and a clear commitment to your success.
             </p>
           </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12 text-center">
-            {[
-              ["50+", "Projects Delivered"],
-              ["100%", "Client Satisfaction"],
-              ["10+", "Expert Developers"],
-              ["24/7", "Support Available"]
-            ].map(([value, label]) => (
-              <div key={label}>
-                <p className="text-3xl sm:text-4xl md:text-5xl font-bold text-accent">{value}</p>
-                <p className="text-sm text-slate-500 mt-1">{label}</p>
-              </div>
-            ))}
+
+          {/* Clean Minimal Stats Card */}
+          <div className="max-w-4xl mx-auto bg-white rounded-2xl border border-slate-100 shadow-sm py-5 px-6 sm:px-8 mb-12">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 divide-y sm:divide-y-0 lg:divide-x divide-slate-100 text-center">
+              {[
+                { value: "50+", label: "Projects Delivered" },
+                { value: "100%", label: "Client Satisfaction" },
+                { value: "10+", label: "Expert Developers" },
+                { value: "24/7", label: "Support Available" }
+              ].map((stat, idx) => (
+                <div key={stat.label} className={`px-4 ${idx > 1 ? "pt-4 sm:pt-0" : ""}`}>
+                  <p className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
+                    {stat.value}
+                  </p>
+                  <p className="text-xs sm:text-sm font-medium text-slate-500 mt-1">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+          {/* Advantages Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {advantages.map((item) => {
               const Icon = item.icon;
               return (
-                <div key={item.title} className="bg-white rounded-2xl border border-slate-100 p-5 shadow-sm">
+                <div key={item.title} className="bg-white rounded-2xl border border-slate-100 p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all">
                   <div className="w-10 h-10 rounded-xl bg-blue-50 text-primary flex items-center justify-center mb-4">
                     <Icon size={18} />
                   </div>
@@ -219,6 +229,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
 
       <section className="py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[0.8fr_1.2fr] gap-10 lg:gap-16 items-start">
