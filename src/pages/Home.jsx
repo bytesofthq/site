@@ -72,19 +72,20 @@ export default function Home() {
 
   return (
     <div>
-      <section className="relative overflow-hidden pt-10 pb-16 md:pt-16 md:pb-24">
-        <div className="absolute top-0 right-0 w-[560px] h-[560px] bg-blue-100/70 rounded-full blur-3xl -translate-y-1/3 translate-x-1/4 pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-          <div>
-            <div className="inline-flex items-center gap-2 bg-white border border-slate-200 text-primary text-sm font-medium px-3.5 py-1.5 rounded-full mb-6 shadow-sm">
+      <section className="relative overflow-hidden pt-12 pb-16 md:pt-20 md:pb-24">
+        <div className="absolute top-[-8%] right-[-6%] w-[640px] h-[640px] bg-blue-100/80 rounded-full blur-3xl pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-2 gap-10 lg:gap-6 items-center">
+          <div className="max-w-xl">
+            <div className="inline-flex items-center gap-2 bg-white border border-blue-100 text-primary text-sm font-medium px-3.5 py-1.5 rounded-full mb-7 shadow-sm">
               <Sparkles size={14} />
               Digital experiences that drive growth
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-[3.4rem] font-bold text-slate-900 leading-[1.08] tracking-tight mb-6">
-              Engineering Digital Experiences That
-              <span className="block mt-2 pl-4 border-l-4 border-secondary text-slate-900">Drive Growth</span>
+            <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-bold text-slate-900 leading-[1.05] tracking-tight mb-6">
+              Engineering Digital
+              <span className="block">Experiences That</span>
+              <span className="mt-1 pl-4 border-l-[5px] border-secondary block">Drive Growth</span>
             </h1>
-            <p className="text-base md:text-lg text-slate-500 mb-8 max-w-xl leading-relaxed">
+            <p className="text-base md:text-lg text-slate-500 mb-8 leading-relaxed">
               A premier digital agency specializing in high-performance web development, strategic SEO, and data-driven marketing to elevate your brand's online presence.
             </p>
             <div className="flex flex-wrap gap-3 mb-10">
@@ -95,31 +96,24 @@ export default function Home() {
                 View Our Work
               </Link>
             </div>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-x-6 gap-y-3">
               {["50+ Projects", "100% Satisfaction", "Remote-first"].map((chip) => (
-                <span key={chip} className="inline-flex items-center gap-2 text-sm text-slate-500 bg-white border border-slate-200 rounded-full px-3 py-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+                <span key={chip} className="inline-flex items-center gap-2 text-sm text-slate-500">
+                  <span className="w-4 h-4 rounded-full border border-slate-300 flex items-center justify-center">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                  </span>
                   {chip}
                 </span>
               ))}
             </div>
           </div>
 
-          <div className="relative h-[340px] sm:h-[420px]" aria-hidden="true">
-            <div className="absolute inset-8 rounded-[2.5rem] bg-gradient-to-br from-blue-100 via-white to-indigo-100 border border-white shadow-xl" />
-            <div className="absolute top-6 right-6 w-40 h-40 rounded-full bg-gradient-to-br from-accent/80 to-indigo-400 blur-2xl opacity-70" />
-            <div className="absolute bottom-10 left-8 w-28 h-28 rounded-3xl bg-white/80 border border-white shadow-lg backdrop-blur" />
-            <div className="absolute top-16 left-16 w-24 h-24 rounded-full border-8 border-primary/15" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-48 h-48 sm:w-56 sm:h-56 rounded-full bg-gradient-to-br from-primary via-blue-800 to-blue-600 shadow-2xl shadow-blue-200/70 relative">
-                <div className="absolute inset-6 rounded-full border border-white/40" />
-                <div className="absolute inset-12 rounded-full bg-white/20" />
-              </div>
-            </div>
-            <div className="absolute bottom-8 right-10 bg-white rounded-2xl shadow-lg border border-slate-100 px-4 py-3">
-              <p className="text-2xl font-bold text-accent">50+</p>
-              <p className="text-xs text-slate-500">Projects delivered</p>
-            </div>
+          <div className="relative flex justify-center lg:justify-end">
+            <img
+              src="/hero-panels.png"
+              alt="Layered interface panels"
+              className="hero-float w-full max-w-[540px] h-auto select-none"
+            />
           </div>
         </div>
       </section>
