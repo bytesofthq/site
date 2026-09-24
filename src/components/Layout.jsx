@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
-import { MessageSquare, Phone, MapPin, Mail, Send, Menu, X, Home, Briefcase, Info, LayoutTemplate, ChevronUp, Sparkles } from 'lucide-react';
+import { MessageSquare, Phone, MapPin, Mail, Menu, X, Home, Briefcase, Info, LayoutTemplate, ChevronUp } from 'lucide-react';
 import ContactForm from './ContactForm';
 
 const navLinks = [
@@ -59,73 +59,47 @@ export default function Layout() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col font-sans">
-      {/* Thin Top Bar - Enhanced */}
-      <div className="bg-gradient-to-r from-[#0b1120] to-[#1a2332] text-gray-300 text-xs py-2 text-center hidden md:block border-b border-white/5">
-        <div className="flex items-center justify-center gap-6">
-          <div className="flex items-center gap-2">
-            <Sparkles size={12} className="text-secondary" />
-            <span>Get a Free Consultation Today — No Commitment Required</span>
-          </div>
-          <span className="text-gray-600">|</span>
-          <a href="tel:+919214749997" className="flex items-center gap-1 hover:text-secondary transition-colors">
-            <Phone size={10} />
-            <span>Call: +91 9214749997</span>
-          </a>
-          <span className="text-gray-600">|</span>
-          <a href="mailto:bytesofthq@gmail.com" className="flex items-center gap-1 hover:text-secondary transition-colors">
-            <Mail size={10} />
-            <span>bytesofthq@gmail.com</span>
-          </a>
-        </div>
-      </div>
-
-      {/* Navigation - Enhanced */}
-      <nav className={`sticky top-0 w-full z-50 transition-all duration-500 ${
-        isScrolled 
-          ? 'bg-white/95 backdrop-blur-xl shadow-lg border-b border-gray-100' 
-          : 'bg-white border-b border-gray-100'
+    <div className="min-h-screen flex flex-col font-sans bg-[#f6f8fc]">
+      <nav className={`sticky top-0 w-full z-50 transition-all duration-300 ${
+        isScrolled
+          ? 'bg-[#f6f8fc]/90 backdrop-blur-xl shadow-sm'
+          : 'bg-[#f6f8fc]'
       }`}>
-        <div className="max-w-7xl mx-auto px-4 md:px-8 h-16 md:h-20 flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex items-center group" aria-label="Bytesoft home">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 h-16 md:h-[4.5rem] flex items-center justify-between gap-4">
+          <Link to="/" className="flex items-center shrink-0 group" aria-label="Bytesoft home">
             <img
               src="/bs-logo.jpg"
               alt="Bytesoft"
-              className="h-10 md:h-12 w-auto object-contain transition-transform group-hover:scale-105 duration-300"
+              className="h-10 md:h-11 w-auto object-contain transition-transform group-hover:scale-105 duration-300"
             />
           </Link>
-          
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1 lg:space-x-2">
+
+          <div className="hidden md:flex items-center bg-white/80 border border-slate-200/80 rounded-full p-1 shadow-sm">
             {navLinks.map((link) => {
-              const isActive = location.pathname === link.path;
+              const isActive = location.pathname === link.path || (link.path !== '/' && location.pathname.startsWith(link.path));
               return (
-                <Link 
-                  key={link.path} 
-                  to={link.path} 
-                  className={`relative px-3 lg:px-4 py-2 rounded-lg font-medium transition-all duration-300 group ${
-                    isActive 
-                      ? 'text-primary bg-primary/5' 
-                      : 'text-gray-600 hover:text-primary hover:bg-gray-50'
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`px-3.5 lg:px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
+                    isActive
+                      ? 'bg-white text-primary shadow-sm border border-slate-200'
+                      : 'text-slate-500 hover:text-slate-900 border border-transparent'
                   }`}
                 >
                   {link.label}
-                  {isActive && (
-                    <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-6 h-0.5 bg-secondary rounded-full"></span>
-                  )}
                 </Link>
               );
             })}
           </div>
 
-          {/* Right Side Buttons */}
-          <div className="flex items-center space-x-3 md:space-x-4">
-            <button 
-              onClick={() => setIsModalOpen(true)} 
-              className="bg-gradient-to-r from-primary to-blue-800 text-white px-4 md:px-6 py-2 md:py-2.5 rounded-full font-semibold text-sm hover:from-blue-800 hover:to-primary transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+          <div className="flex items-center space-x-3">
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="bg-primary text-white px-4 md:px-5 py-2 md:py-2.5 rounded-full font-semibold text-sm hover:bg-blue-900 transition-colors shadow-sm inline-flex items-center gap-1.5"
             >
-              Get Quote
+              Get Started
+              <span aria-hidden="true">→</span>
             </button>
 
             {/* Mobile Menu Button */}
@@ -146,107 +120,73 @@ export default function Layout() {
       </main>
 
       {/* Footer - Enhanced */}
-      <footer className="bg-gradient-to-br from-[#0b1120] to-[#0f172a] text-gray-300 pt-16 pb-8 border-t border-white/5">
+      <footer className="bg-white border-t border-slate-100 pt-16 pb-8">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-12">
-            
-            {/* Column 1: About */}
             <div>
-              <div className="mb-5">
-                <img
-                  src="/bs-logo.jpg"
-                  alt="Bytesoft"
-                  className="h-12 w-auto object-contain"
-                />
-                <div className="h-0.5 w-12 bg-secondary mt-3 rounded-full"></div>
-              </div>
-              <p className="text-sm leading-relaxed text-gray-400">
-                A premier digital agency specializing in high-performance web development, strategic SEO, and data-driven marketing to elevate your brand's online presence.
+              <img src="/bs-logo.jpg" alt="Bytesoft" className="h-11 w-auto object-contain mb-4" />
+              <p className="text-sm leading-relaxed text-slate-500 max-w-xs">
+                A premier digital agency specializing in high-performance web development, strategic SEO, and data-driven marketing.
               </p>
+              <ul className="mt-5 space-y-2.5 text-sm text-slate-600">
+                <li className="flex items-center gap-2">
+                  <Mail size={14} className="text-accent shrink-0" />
+                  <a href="mailto:bytesofthq@gmail.com" className="hover:text-accent transition-colors">bytesofthq@gmail.com</a>
+                </li>
+                <li className="flex items-center gap-2">
+                  <Phone size={14} className="text-accent shrink-0" />
+                  <a href="tel:+919214749997" className="hover:text-accent transition-colors">+91 9214749997</a>
+                </li>
+                <li className="flex items-center gap-2">
+                  <MapPin size={14} className="text-accent shrink-0" />
+                  <span>Lucknow, India</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-slate-900 font-semibold mb-4">Services</h4>
+              <ul className="space-y-2.5 text-sm text-slate-500">
+                <li><Link to="/services" className="hover:text-accent transition-colors">Web Engineering</Link></li>
+                <li><Link to="/services" className="hover:text-accent transition-colors">Search Optimization</Link></li>
+                <li><Link to="/services" className="hover:text-accent transition-colors">App Development</Link></li>
+                <li><Link to="/services" className="hover:text-accent transition-colors">AI Integration</Link></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-slate-900 font-semibold mb-4">Company</h4>
+              <ul className="space-y-2.5 text-sm text-slate-500">
+                <li><Link to="/about" className="hover:text-accent transition-colors">About Us</Link></li>
+                <li><Link to="/our-work" className="hover:text-accent transition-colors">Our Work</Link></li>
+                <li><Link to="/services" className="hover:text-accent transition-colors">Services</Link></li>
+                <li><Link to="/contact" className="hover:text-accent transition-colors">Contact</Link></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-slate-900 font-semibold mb-4">Get in touch</h4>
+              <ul className="space-y-2.5 text-sm text-slate-500">
+                <li><a href="tel:+917033546623" className="hover:text-accent transition-colors">+91 7033546623</a></li>
+                <li><a href="tel:+918009874351" className="hover:text-accent transition-colors">+91 8009874351</a></li>
+                <li><Link to="/" className="hover:text-accent transition-colors">Home</Link></li>
+              </ul>
               <div className="flex gap-3 mt-5">
-                <a href="https://www.linkedin.com/company/bytesofthq" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors">
+                <a href="https://www.linkedin.com/company/bytesofthq" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full border border-slate-200 text-slate-500 flex items-center justify-center hover:text-accent hover:border-accent transition-colors" aria-label="LinkedIn">
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                 </a>
-                <a href="https://www.instagram.com/bytesofthq" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors">
+                <a href="https://www.instagram.com/bytesofthq" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full border border-slate-200 text-slate-500 flex items-center justify-center hover:text-accent hover:border-accent transition-colors" aria-label="Instagram">
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
                 </a>
-                <a href="https://www.facebook.com/bytesofthq" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors">
+                <a href="https://www.facebook.com/bytesofthq" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full border border-slate-200 text-slate-500 flex items-center justify-center hover:text-accent hover:border-accent transition-colors" aria-label="Facebook">
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879v-6.99h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.99C18.343 21.128 22 16.991 22 12z"/></svg>
                 </a>
               </div>
             </div>
-
-            {/* Column 2: Quick Links */}
-            <div>
-              <h4 className="text-white font-bold mb-5 relative inline-block">
-                Quick Links
-                <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-secondary rounded-full"></span>
-              </h4>
-              <ul className="space-y-3 text-sm">
-                <li><Link to="/" className="text-gray-400 hover:text-secondary transition-colors flex items-center gap-2">→ Home</Link></li>
-                <li><Link to="/services" className="text-gray-400 hover:text-secondary transition-colors flex items-center gap-2">→ Services</Link></li>
-                <li><Link to="/our-work" className="text-gray-400 hover:text-secondary transition-colors flex items-center gap-2">→ Our Work</Link></li>
-                <li><Link to="/about" className="text-gray-400 hover:text-secondary transition-colors flex items-center gap-2">→ About Us</Link></li>
-                <li><Link to="/contact" className="text-gray-400 hover:text-secondary transition-colors flex items-center gap-2">→ Contact</Link></li>
-              </ul>
-            </div>
-
-            {/* Column 3: Contact Info */}
-            <div>
-              <h4 className="text-white font-bold mb-5 relative inline-block">
-                Contact Info
-                <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-secondary rounded-full"></span>
-              </h4>
-              <ul className="space-y-4 text-sm">
-                <li className="flex items-start gap-3">
-                  <MapPin size={16} className="text-secondary shrink-0 mt-0.5" />
-                  <span className="text-gray-400">Lucknow, Uttar Pradesh, India</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Phone size={16} className="text-secondary shrink-0 mt-0.5" />
-                  <div className="flex flex-col gap-1">
-                    <a href="tel:+919214749997" className="text-gray-400 hover:text-secondary transition-colors">+91 9214749997</a>
-                    <a href="tel:+917033546623" className="text-gray-400 hover:text-secondary transition-colors">+91 7033546623</a>
-                    <a href="tel:+918009874351" className="text-gray-400 hover:text-secondary transition-colors">+91 8009874351</a>
-                  </div>
-                </li>
-                <li className="flex items-center gap-3">
-                  <Mail size={16} className="text-secondary shrink-0" />
-                  <a href="mailto:bytesofthq@gmail.com" className="text-gray-400 hover:text-secondary transition-colors">bytesofthq@gmail.com</a>
-                </li>
-              </ul>
-            </div>
-
-            {/* Column 4: Newsletter */}
-            <div>
-              <h4 className="text-white font-bold mb-5 relative inline-block">
-                Newsletter
-                <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-secondary rounded-full"></span>
-              </h4>
-              <p className="text-sm leading-relaxed text-gray-400 mb-5">
-                Subscribe to get the latest updates on web development and digital marketing trends.
-              </p>
-              <form className="flex" onSubmit={(e) => e.preventDefault()}>
-                <input 
-                  type="email" 
-                  placeholder="Your Email Address" 
-                  className="flex-1 px-4 py-2.5 text-sm text-gray-900 bg-white border-none rounded-l-lg focus:outline-none focus:ring-2 focus:ring-secondary"
-                  required
-                />
-                <button 
-                  type="submit" 
-                  className="bg-secondary text-white px-4 py-2.5 rounded-r-lg hover:bg-orange-600 transition-colors flex items-center justify-center gap-2"
-                >
-                  <Send size={16} />
-                </button>
-              </form>
-              <p className="text-xs text-gray-500 mt-3">No spam. Unsubscribe anytime.</p>
-            </div>
           </div>
-          
-          {/* Bottom Bar */}
-          <div className="pt-8 border-t border-white/10 text-center text-sm text-gray-500">
-            <p>© {new Date().getFullYear()} Bytesoft. All Rights Reserved. | Designed with ❤️ in India</p>
+
+          <div className="pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-slate-400">
+            <p>© {new Date().getFullYear()} Bytesoft. All Rights Reserved.</p>
           </div>
         </div>
       </footer>

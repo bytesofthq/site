@@ -32,23 +32,14 @@ export default function Contact() {
     <div>
       
       {/* Page Hero */}
-      <section className="relative bg-gradient-to-br from-primary via-blue-900 to-primary py-20 md:py-28 overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-secondary/30 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        </div>
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
-        
-        <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
-            <Mail size={14} className="text-secondary" />
-            <span className="text-secondary font-bold tracking-wider uppercase text-sm">Get In Touch</span>
-          </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
-            Let's Build Something <br className="hidden md:block" /> Extraordinary
+      <section className="pt-14 pb-4 md:pt-20">
+        <div className="max-w-3xl mx-auto px-4 md:px-8">
+          <p className="text-accent text-xs font-semibold tracking-[0.2em] uppercase mb-4">Contact</p>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 leading-tight">
+            Let's Build Something <span className="text-accent">Extraordinary</span>
           </h1>
-          <p className="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto leading-relaxed px-4">
-            Reach out to our strategic team to discuss your next big digital transformation. We're ready to engineer your growth.
+          <p className="text-lg text-slate-500 leading-relaxed max-w-2xl">
+            Whether you have a project in mind or just want to explore possibilities, our team is ready to help.
           </p>
         </div>
       </section>
@@ -69,52 +60,39 @@ export default function Contact() {
               {/* Contact Card */}
               <div className="bg-gradient-to-br from-slate-50 to-white p-6 md:p-8 rounded-2xl border border-gray-100 group hover:border-secondary/30 hover:shadow-xl transition-all duration-300">
                 <div className="w-12 h-12 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-                  <Mail className="text-secondary" size={24} />
+                  <Mail className="text-primary" size={24} />
                 </div>
                 <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">Email Us</h3>
                 <p className="text-gray-600 text-sm mb-4 leading-relaxed">
                   Whether you have a new project in mind or need support — we're here for everything. We reply within 24 hours.
                 </p>
-                <a href="mailto:bytesofthq@gmail.com" className="text-primary font-semibold hover:text-secondary flex items-center gap-2 text-sm transition-colors">
+                <a href="mailto:bytesofthq@gmail.com" className="text-primary font-semibold hover:text-primary flex items-center gap-2 text-sm transition-colors">
                   <Mail size={14} />
                   bytesofthq@gmail.com
                 </a>
               </div>
 
               {/* Headquarters - Enhanced with Map Link */}
-              <div className="bg-gradient-to-br from-primary to-blue-900 p-6 md:p-8 rounded-2xl relative overflow-hidden group">
-                <div className="absolute top-0 right-0 w-40 h-40 bg-secondary/20 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2"></div>
-                <div className="absolute bottom-0 left-0 w-40 h-40 bg-blue-400/20 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2"></div>
-                
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center mb-5 border border-white/20 group-hover:scale-110 transition-transform">
-                    <Building2 className="text-white" size={24} />
-                  </div>
-                  <h3 className="text-lg md:text-xl font-bold text-white mb-2">Based In</h3>
-                  <p className="text-blue-100 text-sm leading-relaxed mb-3">
-                    <span className="inline-flex items-center gap-2">
-                      <MapPin size={14} className="text-secondary shrink-0" />
-                      Lucknow, Uttar Pradesh, India
-                    </span>
-                    <br />
-                    <span className="text-blue-200 text-xs mt-2 block">Remote-first · Available across India & globally</span>
-                  </p>
-                  
-                  <div className="flex flex-col gap-1.5 text-white/90 text-sm mb-4">
-                    <a href="tel:+919214749997" className="flex items-center gap-2 hover:text-secondary transition-colors">
-                      <Phone size={14} className="text-secondary shrink-0" />
-                      +91 9214749997
-                    </a>
-                    <a href="tel:+917033546623" className="flex items-center gap-2 hover:text-secondary transition-colors">
-                      <Phone size={14} className="text-secondary shrink-0" />
-                      +91 8810743304
-                    </a>
-                    <a href="tel:+918009874351" className="flex items-center gap-2 hover:text-secondary transition-colors">
-                      <Phone size={14} className="text-secondary shrink-0" />
-                      +91 8009874351
-                    </a>
-                  </div>
+              <div className="bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-sm">
+                <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-5">
+                  <Building2 className="text-primary" size={22} />
                 </div>
+                <h3 className="text-lg font-bold text-slate-900 mb-2">Based in</h3>
+                <p className="text-slate-500 text-sm leading-relaxed mb-4">
+                  Lucknow, Uttar Pradesh, India. Remote-first, available across India and beyond.
+                </p>
+                <div className="flex flex-col gap-2 text-sm text-slate-700">
+                  <a href="tel:+919214749997" className="flex items-center gap-2 hover:text-accent">
+                    <Phone size={14} className="text-accent shrink-0" /> +91 9214749997
+                  </a>
+                  <a href="tel:+918810743304" className="flex items-center gap-2 hover:text-accent">
+                    <Phone size={14} className="text-accent shrink-0" /> +91 8810743304
+                  </a>
+                  <a href="tel:+918009874351" className="flex items-center gap-2 hover:text-accent">
+                    <Phone size={14} className="text-accent shrink-0" /> +91 8009874351
+                  </a>
+                </div>
+                <p className="text-xs text-slate-400 mt-4">Schedule a call to talk through your project.</p>
               </div>
             </div>
 
@@ -140,7 +118,7 @@ export default function Contact() {
         <div className="max-w-4xl mx-auto px-4 md:px-8">
           <div className="text-center mb-12 md:mb-16">
             <div className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl mb-4">
-              <HelpCircle size={28} className="text-secondary" />
+              <HelpCircle size={28} className="text-primary" />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Frequently Asked Questions</h2>
             <div className="w-16 h-1.5 bg-secondary mx-auto mb-6 rounded-full"></div>
@@ -163,9 +141,9 @@ export default function Contact() {
                     {faq.question}
                   </span>
                   {openFaq === index ? (
-                    <ChevronUp className="text-secondary shrink-0 transition-transform duration-300" size={18} />
+                    <ChevronUp className="text-primary shrink-0 transition-transform duration-300" size={18} />
                   ) : (
-                    <ChevronDown className="text-gray-400 group-hover:text-secondary shrink-0 transition-all duration-300" size={18} />
+                    <ChevronDown className="text-gray-400 group-hover:text-primary shrink-0 transition-all duration-300" size={18} />
                   )}
                 </button>
                 
@@ -185,24 +163,16 @@ export default function Contact() {
       </section>
 
       {/* CTA Banner */}
-      <section className="py-12 md:py-16 bg-gradient-to-r from-primary via-blue-800 to-primary">
-        <div className="max-w-4xl mx-auto px-4 md:px-8 text-center">
-          <h3 className="text-xl md:text-2xl font-bold text-white mb-3">Prefer a quick call?</h3>
-          <p className="text-blue-100 mb-6 md:mb-8">Speak directly with our team</p>
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 md:gap-6">
-            <a
-              href="tel:+918810743304"
-              className="inline-flex items-center justify-center gap-2 bg-secondary text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-xl hover:bg-orange-600 transition-all duration-300 shadow-lg text-base md:text-lg w-full sm:w-auto"
-            >
-              <Phone size={18} />
-              +91 8810743304
+      <section className="py-12 md:py-16">
+        <div className="max-w-3xl mx-auto px-4 md:px-8 text-center">
+          <h3 className="text-2xl font-bold text-slate-900 mb-2">Prefer a quick call?</h3>
+          <p className="text-slate-500 mb-6">Speak directly with our team.</p>
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-3">
+            <a href="tel:+918810743304" className="inline-flex items-center justify-center gap-2 bg-primary text-white font-semibold px-6 py-3 rounded-full hover:bg-blue-900 w-full sm:w-auto">
+              <Phone size={16} /> +91 8810743304
             </a>
-            <a
-              href="tel:+919214749997"
-              className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-xl hover:bg-white/20 transition-all duration-300 shadow-lg text-base md:text-lg border border-white/20 w-full sm:w-auto"
-            >
-              <Phone size={18} />
-              +91 9214749997
+            <a href="tel:+919214749997" className="inline-flex items-center justify-center gap-2 bg-white border border-slate-200 text-slate-800 font-semibold px-6 py-3 rounded-full hover:border-accent w-full sm:w-auto">
+              <Phone size={16} /> +91 9214749997
             </a>
           </div>
         </div>

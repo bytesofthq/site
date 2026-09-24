@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowRight, ExternalLink, Sparkles, Star } from 'lucide-react';
+import { ArrowRight, ExternalLink, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { projectsData } from '../data/projects';
 
@@ -16,23 +16,13 @@ export default function OurWork() {
   return (
     <div>
       {/* Page Hero - Enhanced with Gradient Background */}
-      <section className="relative bg-gradient-to-br from-primary via-blue-900 to-primary py-20 md:py-28 overflow-hidden">
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-secondary/30 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        </div>
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
-        
-        <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
-            <Sparkles size={16} className="text-secondary" />
-            <span className="text-secondary font-bold tracking-wider uppercase text-sm">Our Work</span>
-          </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
-            Projects We've Built
+      <section className="pt-14 pb-4 md:pt-20">
+        <div className="max-w-3xl mx-auto px-4 md:px-8 text-center">
+          <p className="text-accent text-xs font-semibold tracking-[0.2em] uppercase mb-4">Our work</p>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 leading-tight">
+            Projects we've <span className="text-accent">built</span>
           </h1>
-          <p className="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto leading-relaxed px-4">
+          <p className="text-lg text-slate-500 leading-relaxed">
             A showcase of web apps, platforms, and digital products we've delivered for clients and partners.
           </p>
         </div>
@@ -166,23 +156,12 @@ export default function OurWork() {
       </section>
 
       {/* Final CTA - Reduced Height */}
-      <section className="py-12 md:py-16 bg-gradient-to-r from-primary via-blue-800 to-primary relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '24px 24px' }}></div>
-        <div className="absolute -top-20 -right-20 w-60 h-60 bg-secondary/20 rounded-full blur-3xl"></div>
-        
-        <div className="max-w-4xl mx-auto px-4 md:px-8 text-center relative z-10">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3">
-            Ready to bring your idea to life?
-          </h2>
-          <p className="text-blue-100 text-base md:text-lg mb-6 max-w-xl mx-auto">
-            Let's collaborate to build the next generation of scalable and intelligent software solutions.
-          </p>
-          <Link 
-            to="/contact" 
-            className="inline-flex items-center gap-2 bg-secondary text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-xl hover:bg-orange-600 transition-all duration-300 shadow-lg text-sm md:text-base"
-          >
-            Get in Touch
-            <ArrowRight className="group-hover:translate-x-1 transition-transform" size={16} />
+      <section className="py-16">
+        <div className="max-w-3xl mx-auto px-4 md:px-8 text-center">
+          <h2 className="text-3xl font-bold text-slate-900 mb-3">Ready to bring your idea to life?</h2>
+          <p className="text-slate-500 mb-6">Let's collaborate on the next product you want to ship.</p>
+          <Link to="/contact" className="inline-flex items-center gap-2 bg-primary text-white font-semibold px-6 py-3 rounded-full hover:bg-blue-900">
+            Get in Touch <ArrowRight size={16} />
           </Link>
         </div>
       </section>

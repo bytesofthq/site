@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #1e3a8a; /* A nice deep blue matching Bytesoft's image */
-  --color-secondary: #f97316; /* An orange accent matching Bytesoft's image */
+  --color-primary: #1e3a8a;
+  --color-secondary: #f97316;
+  --color-accent: #1e3a8a;
 }
 
 @layer utilities {
@@ -16,7 +17,8 @@
 
 body {
   font-family: 'Inter', system-ui, sans-serif;
-  color: #333;
+  color: #334155;
+  background: #f6f8fc;
 }
 
 h1, h2, h3, h4, h5, h6 {

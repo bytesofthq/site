@@ -27,51 +27,43 @@ export default function ProjectDetail() {
   return (
     <div className="bg-slate-50 min-h-screen pb-24">
       {/* Hero Section */}
-      <section className="relative bg-slate-900 pt-32 pb-20 overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-          <img src={project.image} alt={project.name} className="w-full h-full object-cover opacity-20 blur-sm" />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent"></div>
-        </div>
-        
-        <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
-          <Link to="/our-work" className="inline-flex items-center text-slate-300 hover:text-white mb-8 transition-colors">
-            <ArrowLeft size={20} className="mr-2" /> Back to Our Work
+      <section className="pt-10 pb-6 md:pt-14">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <Link to="/our-work" className="inline-flex items-center text-slate-500 hover:text-accent mb-6 transition-colors">
+            <ArrowLeft size={18} className="mr-2" /> Back to Our Work
           </Link>
-          
-          <div className="flex flex-wrap items-center gap-4 mb-6">
-            <span className="bg-primary/20 text-blue-200 border border-primary/30 px-4 py-1.5 rounded-full text-sm font-semibold backdrop-blur-md">
+          <div className="flex flex-wrap items-center gap-3 mb-4">
+            <span className="bg-blue-50 text-primary border border-blue-100 px-3 py-1 rounded-full text-sm font-semibold">
               {project.category}
             </span>
             {project.rating && (
-              <span className="bg-white/10 text-white border border-white/20 px-4 py-1.5 rounded-full text-sm font-semibold backdrop-blur-md flex items-center gap-2">
-                <Star size={16} className="fill-amber-400 text-amber-400" />
+              <span className="bg-white text-slate-700 border border-slate-200 px-3 py-1 rounded-full text-sm font-semibold flex items-center gap-1.5">
+                <Star size={14} className="fill-amber-400 text-amber-400" />
                 {project.rating}
               </span>
             )}
           </div>
-
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight max-w-4xl">
+          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4 leading-tight max-w-4xl">
             {project.name}
           </h1>
-          <p className="text-xl text-slate-300 max-w-3xl leading-relaxed">
+          <p className="text-lg text-slate-500 max-w-3xl leading-relaxed">
             {project.shortDescription}
           </p>
-
           {project.liveLink && (
-            <a 
+            <a
               href={project.liveLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 inline-flex items-center gap-2 bg-primary hover:bg-opacity-90 text-white px-8 py-4 rounded-full font-bold transition-all duration-300 shadow-lg shadow-primary/30 hover:-translate-y-1"
+              className="mt-6 inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-900"
             >
-              Visit Live Project <ExternalLink size={20} />
+              Visit Live Project <ExternalLink size={18} />
             </a>
           )}
         </div>
       </section>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 md:px-8 -mt-10 relative z-20">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 pb-16 relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           
           {/* Left Column (Main Details) */}
@@ -215,14 +207,14 @@ export default function ProjectDetail() {
 
             {/* Security */}
             {project.security && project.security.length > 0 && (
-              <div className="bg-slate-900 rounded-3xl p-8 shadow-xl text-white">
-                <h2 className="text-xl font-bold mb-4 flex items-center gap-2 text-emerald-400">
-                  <ShieldCheck size={24} /> Security Features
+              <div className="bg-white rounded-3xl p-8 shadow-sm border border-slate-100">
+                <h2 className="text-xl font-bold mb-4 flex items-center gap-2 text-slate-900">
+                  <ShieldCheck size={24} className="text-accent" /> Security Features
                 </h2>
                 <ul className="space-y-3">
                   {project.security.map((item, i) => (
-                     <li key={i} className="flex items-start gap-3 text-sm text-slate-300">
-                       <CheckCircle2 size={16} className="text-emerald-500 shrink-0 mt-0.5" />
+                     <li key={i} className="flex items-start gap-3 text-sm text-slate-600">
+                       <CheckCircle2 size={16} className="text-accent shrink-0 mt-0.5" />
                        <span>{item}</span>
                      </li>
                   ))}

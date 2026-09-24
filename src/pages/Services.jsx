@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { MonitorSmartphone, LineChart, Users, Store, HeartPulse, Smartphone, Bot, Palette, ArrowRight, CheckCircle2, Lightbulb, PenTool, Code2, Rocket, ChevronDown, ChevronUp, Sparkles, TrendingUp, Shield } from 'lucide-react';
+import { MonitorSmartphone, LineChart, Users, Store, HeartPulse, Smartphone, Bot, Palette, ArrowRight, CheckCircle2, Lightbulb, PenTool, Code2, Rocket, ChevronDown, ChevronUp, TrendingUp, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Services() {
@@ -119,25 +119,25 @@ export default function Services() {
 
   const methodologies = [
     {
-      icon: <Lightbulb size={32} className="text-secondary" />,
+      icon: <Lightbulb size={32} className="text-primary" />,
       step: "01",
       title: "Discovery & Strategy",
       desc: "We begin by deeply understanding your business goals, target audience, and competitive landscape to forge a strategic roadmap."
     },
     {
-      icon: <PenTool size={32} className="text-secondary" />,
+      icon: <PenTool size={32} className="text-primary" />,
       step: "02",
       title: "Design & Prototyping",
       desc: "Our designers translate strategy into stunning, user-centric wireframes and interactive prototypes for your approval."
     },
     {
-      icon: <Code2 size={32} className="text-secondary" />,
+      icon: <Code2 size={32} className="text-primary" />,
       step: "03",
       title: "Engineering & Build",
       desc: "Our technical team brings the designs to life using clean, scalable, and modern code architectures."
     },
     {
-      icon: <Rocket size={32} className="text-secondary" />,
+      icon: <Rocket size={32} className="text-primary" />,
       step: "04",
       title: "Deployment & Scale",
       desc: "Rigorous testing precedes a flawless launch, followed by ongoing optimization to ensure sustained growth."
@@ -177,50 +177,31 @@ export default function Services() {
     <div>
       
       {/* Page Hero */}
-      <section className="relative bg-gradient-to-br from-primary via-blue-900 to-primary py-20 md:py-28 overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-secondary/30 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        </div>
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
-        
-        <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
-            <Sparkles size={16} className="text-secondary" />
-            <span className="text-secondary font-bold tracking-wider uppercase text-sm">Our Expertise</span>
-          </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
-            Comprehensive Digital <br className="hidden md:block" /> Engineering
+      <section className="pt-14 pb-8 md:pt-20 md:pb-10">
+        <div className="max-w-3xl mx-auto px-4 md:px-8 text-center">
+          <p className="text-accent text-xs font-semibold tracking-[0.2em] uppercase mb-4">Our expertise</p>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 leading-tight">
+            Comprehensive Digital <span className="text-accent">Engineering</span>
           </h1>
-          <p className="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto leading-relaxed px-4">
-            End-to-end technical solutions and strategic marketing designed to scale your business and dominate your industry.
+          <p className="text-lg text-slate-500 leading-relaxed">
+            End-to-end technical solutions and strategic marketing designed to scale your business.
           </p>
-          
-          {/* Stats Row - Fixed Height & Animated */}
-          <div ref={statsRef} className="flex flex-wrap justify-center gap-6 md:gap-12 mt-10 pt-6 border-t border-white/10">
+          <div ref={statsRef} className="flex flex-wrap justify-center gap-8 md:gap-12 mt-10">
             <div className="text-center min-w-[100px]">
-              <div className="text-2xl md:text-3xl font-bold text-white mb-1">
-                {counters.projects}+
-              </div>
-              <div className="text-blue-200 text-xs md:text-sm">Projects Delivered</div>
+              <div className="text-3xl font-bold text-accent mb-1">{counters.projects}+</div>
+              <div className="text-slate-500 text-sm">Projects Delivered</div>
             </div>
             <div className="text-center min-w-[100px]">
-              <div className="text-2xl md:text-3xl font-bold text-white mb-1">
-                {counters.retention}%
-              </div>
-              <div className="text-blue-200 text-xs md:text-sm">Client Satisfaction</div>
+              <div className="text-3xl font-bold text-accent mb-1">{counters.retention}%</div>
+              <div className="text-slate-500 text-sm">Client Satisfaction</div>
             </div>
             <div className="text-center min-w-[100px]">
-              <div className="text-2xl md:text-3xl font-bold text-white mb-1">
-                {counters.team}+
-              </div>
-              <div className="text-blue-200 text-xs md:text-sm">Expert Developers</div>
+              <div className="text-3xl font-bold text-accent mb-1">{counters.team}+</div>
+              <div className="text-slate-500 text-sm">Expert Developers</div>
             </div>
             <div className="text-center min-w-[100px]">
-              <div className="text-2xl md:text-3xl font-bold text-white mb-1">
-                {counters.support}/7
-              </div>
-              <div className="text-blue-200 text-xs md:text-sm">Support Available</div>
+              <div className="text-3xl font-bold text-accent mb-1">{counters.support}/7</div>
+              <div className="text-slate-500 text-sm">Support Available</div>
             </div>
           </div>
         </div>
@@ -263,13 +244,13 @@ export default function Services() {
                   
                   <div className="bg-slate-50 rounded-xl p-4 md:p-5 border border-gray-100">
                     <h4 className="font-bold text-gray-900 mb-3 text-xs tracking-wider uppercase flex items-center gap-2">
-                      <TrendingUp size={14} className="text-secondary" />
+                      <TrendingUp size={14} className="text-primary" />
                       Key Capabilities
                     </h4>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                       {service.features.map((feature, fIndex) => (
                         <li key={fIndex} className="flex items-center text-gray-700 text-xs md:text-sm">
-                          <CheckCircle2 size={12} className="text-secondary mr-2 shrink-0" />
+                          <CheckCircle2 size={12} className="text-primary mr-2 shrink-0" />
                           <span>{feature}</span>
                         </li>
                       ))}
@@ -353,9 +334,9 @@ export default function Services() {
                     {faq.question}
                   </span>
                   {openFaq === index ? (
-                    <ChevronUp className="text-secondary shrink-0 transition-transform duration-300" size={18} />
+                    <ChevronUp className="text-primary shrink-0 transition-transform duration-300" size={18} />
                   ) : (
-                    <ChevronDown className="text-gray-400 group-hover:text-secondary shrink-0 transition-all duration-300" size={18} />
+                    <ChevronDown className="text-gray-400 group-hover:text-primary shrink-0 transition-all duration-300" size={18} />
                   )}
                 </button>
                 
@@ -375,36 +356,19 @@ export default function Services() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 md:py-20 bg-gradient-to-r from-primary via-blue-800 to-primary relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-64 h-64 md:w-96 md:h-96 bg-secondary/20 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-0 right-0 w-64 h-64 md:w-96 md:h-96 bg-blue-400/20 rounded-full blur-3xl animate-float-delayed"></div>
-        
-        <div className="max-w-4xl mx-auto px-4 md:px-8 text-center relative z-10">
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-3 md:px-4 py-1.5 md:py-2 rounded-full mb-5">
-            <Sparkles size={14} className="text-secondary" />
-            <span className="text-secondary text-xs md:text-sm font-medium">Start Your Journey</span>
-          </div>
-          
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6 leading-tight px-2">
-            Have a project in mind? <br className="hidden md:block"/> Let's talk.
+      <section className="py-16 md:py-20">
+        <div className="max-w-3xl mx-auto px-4 md:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            Have a project in mind? <span className="text-accent">Let's talk.</span>
           </h2>
-          
-          <p className="text-base md:text-xl text-blue-100 mb-8 max-w-2xl mx-auto px-4">
-            Whether you're starting from scratch or improving something existing, we'd love to hear about your goals and see how we can help.
+          <p className="text-slate-500 mb-8">
+            Whether you're starting from scratch or improving something existing, we'd love to hear about your goals.
           </p>
-          
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-3 md:gap-4">
-            <Link 
-              to="/contact" 
-              className="group bg-secondary text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-xl hover:bg-orange-600 transition-all duration-300 shadow-lg hover:shadow-2xl text-sm md:text-lg inline-flex items-center gap-2 w-full sm:w-auto justify-center"
-            >
-              Schedule a Strategy Call
-              <ArrowRight className="group-hover:translate-x-1 transition-transform" size={16} />
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-3">
+            <Link to="/contact" className="bg-primary text-white font-semibold px-6 py-3 rounded-full hover:bg-blue-900 inline-flex items-center gap-2">
+              Schedule a Strategy Call <ArrowRight size={16} />
             </Link>
-            <Link 
-              to="/our-work" 
-              className="bg-white/10 hover:bg-white/20 text-white border border-white/30 px-6 md:px-8 py-3 md:py-4 rounded-xl font-semibold transition-all duration-300 w-full sm:w-auto text-center backdrop-blur-sm text-sm md:text-lg"
-            >
+            <Link to="/our-work" className="bg-white border border-slate-200 text-slate-800 font-semibold px-6 py-3 rounded-full hover:border-primary hover:text-primary">
               View Our Work
             </Link>
           </div>
