@@ -43,11 +43,36 @@ const advantages = [
 ];
 
 const process = [
-  { step: "01", title: "Discover", desc: "Understand your goals, audience, and the technical landscape." },
-  { step: "02", title: "Design", desc: "Turn the strategy into user-centric wireframes and prototypes." },
-  { step: "03", title: "Build", desc: "Ship clean, scalable code with continuous feedback." },
-  { step: "04", title: "Scale", desc: "Test, launch, and optimize so the product can grow." },
-  { step: "05", title: "Support", desc: "Ongoing updates, monitoring, and improvements after launch." }
+  {
+    step: "01",
+    title: "Discover",
+    desc: "Understand your goals, audience, and the technical landscape to map the optimal path forward.",
+    tags: ["Scope & Goals", "Tech Architecture"]
+  },
+  {
+    step: "02",
+    title: "Design",
+    desc: "Turn the strategy into user-centric wireframes, interactive prototypes, and design systems.",
+    tags: ["UI/UX Prototypes", "Design System"]
+  },
+  {
+    step: "03",
+    title: "Build",
+    desc: "Ship clean, scalable code with weekly sprint reviews and continuous feedback loops.",
+    tags: ["Production Code", "Weekly Sprints"]
+  },
+  {
+    step: "04",
+    title: "Scale",
+    desc: "Thorough testing, performance optimization, and seamless cloud deployment.",
+    tags: ["QA Testing", "Cloud Launch"]
+  },
+  {
+    step: "05",
+    title: "Support",
+    desc: "Proactive monitoring, regular updates, and iterative improvements well after launch.",
+    tags: ["SLA Monitoring", "Ongoing Updates"]
+  }
 ];
 
 export default function Home() {
@@ -232,23 +257,71 @@ export default function Home() {
 
 
       <section className="py-16 md:py-24">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[0.8fr_1.2fr] gap-10 lg:gap-16 items-start">
-          <div className="lg:sticky lg:top-28">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[0.85fr_1.15fr] gap-10 lg:gap-16 items-start">
+          <div className="lg:sticky lg:top-28 self-start">
             <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-3">Our process</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">How we deliver</h2>
-            <p className="text-slate-500 max-w-sm">A proven methodology refined across the projects we have shipped. Each step stays visible, so you always know what happens next.</p>
+            <p className="text-slate-500 max-w-sm mb-6 leading-relaxed">
+              A proven methodology refined across the projects we have shipped. Each step stays visible, so you always know what happens next.
+            </p>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50/80 border border-blue-100 text-xs font-medium text-primary">
+              <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
+              Predictable 1–2 week sprint cycles
+            </div>
           </div>
-          <ol className="relative space-y-4">
-            {process.map((step) => (
-              <li key={step.step} className="flex gap-4 bg-white rounded-2xl border border-slate-100 p-5 shadow-sm">
-                <span className="w-10 h-10 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center shrink-0">{step.step}</span>
-                <div className="pt-1.5">
-                  <h3 className="font-semibold text-slate-900 mb-1">{step.title}</h3>
-                  <p className="text-sm text-slate-500 leading-relaxed">{step.desc}</p>
+
+          {/* Connected Timeline Track */}
+          <div className="relative">
+            <div className="absolute left-5 top-5 bottom-8 w-px bg-slate-200 hidden sm:block" />
+
+            <div className="space-y-4">
+              {process.map((step) => (
+                <div key={step.step} className="relative flex gap-4 sm:gap-6 items-start">
+                  {/* Step Node */}
+                  <div className="relative z-10 hidden sm:flex w-10 h-10 rounded-full bg-primary text-white text-sm font-bold items-center justify-center shrink-0 shadow-sm">
+                    {step.step}
+                  </div>
+
+                  {/* Step Card */}
+                  <div className="flex-1 bg-white rounded-2xl border border-slate-100 p-5 sm:p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all">
+                    <div className="flex items-center gap-3 mb-2 sm:hidden">
+                      <span className="w-8 h-8 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shrink-0">
+                        {step.step}
+                      </span>
+                      <h3 className="font-semibold text-slate-900 text-base">{step.title}</h3>
+                    </div>
+
+                    <div className="hidden sm:flex items-center justify-between gap-3 mb-1.5">
+                      <h3 className="font-semibold text-slate-900 text-base">{step.title}</h3>
+                      <div className="flex flex-wrap gap-1.5">
+                        {step.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="text-[11px] font-medium px-2.5 py-0.5 rounded-md bg-slate-50 border border-slate-100 text-slate-500"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    <p className="text-sm text-slate-500 leading-relaxed mb-3 sm:mb-0">{step.desc}</p>
+
+                    <div className="flex flex-wrap gap-1.5 sm:hidden">
+                      {step.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="text-[11px] font-medium px-2 py-0.5 rounded-md bg-slate-50 border border-slate-100 text-slate-500"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-              </li>
-            ))}
-          </ol>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

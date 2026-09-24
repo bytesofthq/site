@@ -59,7 +59,7 @@ export default function Layout() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col font-sans bg-[#f6f8fc] overflow-x-hidden">
+    <div className="min-h-screen flex flex-col font-sans bg-[#f6f8fc] overflow-x-clip">
       <nav className={`sticky top-0 w-full z-50 transition-all duration-300 ${
         isScrolled
           ? 'bg-[#f6f8fc]/90 backdrop-blur-xl shadow-sm'
