@@ -119,28 +119,32 @@ export default function Services() {
 
   const methodologies = [
     {
-      icon: <Lightbulb size={32} className="text-primary" />,
+      icon: Lightbulb,
       step: "01",
       title: "Discovery & Strategy",
-      desc: "We begin by deeply understanding your business goals, target audience, and competitive landscape to forge a strategic roadmap."
+      desc: "We begin by deeply understanding your business goals, target audience, and competitive landscape to forge a strategic roadmap.",
+      deliverable: "Strategic Roadmap"
     },
     {
-      icon: <PenTool size={32} className="text-primary" />,
+      icon: PenTool,
       step: "02",
       title: "Design & Prototyping",
-      desc: "Our designers translate strategy into stunning, user-centric wireframes and interactive prototypes for your approval."
+      desc: "Our designers translate strategy into stunning, user-centric wireframes and interactive prototypes for your approval.",
+      deliverable: "Figma Prototypes"
     },
     {
-      icon: <Code2 size={32} className="text-primary" />,
+      icon: Code2,
       step: "03",
       title: "Engineering & Build",
-      desc: "Our technical team brings the designs to life using clean, scalable, and modern code architectures."
+      desc: "Our technical team brings the designs to life using clean, scalable, and modern code architectures with regular sprints.",
+      deliverable: "Production Code"
     },
     {
-      icon: <Rocket size={32} className="text-primary" />,
+      icon: Rocket,
       step: "04",
       title: "Deployment & Scale",
-      desc: "Rigorous testing precedes a flawless launch, followed by ongoing optimization to ensure sustained growth."
+      desc: "Rigorous testing precedes a flawless launch, followed by ongoing optimization and monitoring for sustained growth.",
+      deliverable: "Live Launch & SLA"
     }
   ];
 
@@ -263,88 +267,109 @@ export default function Services() {
       </section>
 
       {/* Our Methodology */}
-      <section className="py-20 md:py-24 bg-white border-y border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="text-center mb-12 md:mb-16">
-            <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full mb-4">
-              <Shield size={16} className="text-primary" />
-              <span className="text-primary font-bold text-sm tracking-wider">OUR PROCESS</span>
+      <section className="py-16 md:py-20 bg-white border-y border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100/80 text-primary text-xs font-semibold uppercase tracking-wider mb-3">
+              <Sparkles size={13} className="text-secondary" />
+              <span>Our Process</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">How We Work</h2>
-            <div className="w-16 h-1.5 bg-secondary mx-auto mb-6 rounded-full"></div>
-            <p className="text-gray-600 max-w-2xl mx-auto text-base md:text-lg px-4">
-              A proven methodology that ensures transparency, quality, and exceptional results.
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight mb-3">
+              How We Work
+            </h2>
+            <p className="text-slate-500 text-sm sm:text-base leading-relaxed">
+              A proven, transparent methodology that ensures predictability, quality, and exceptional results.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {methodologies.map((method, index) => (
-              <div key={index} className="relative group">
-                <div className="flex flex-col items-center text-center p-5 md:p-6 rounded-2xl bg-white hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-gray-100">
-                  {/* Number Circle */}
-                  <div className="relative mb-4">
-                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/5 to-secondary/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                      <div className="w-16 h-16 rounded-full bg-white border-2 border-primary/20 flex items-center justify-center shadow-md group-hover:border-secondary/50 transition-colors duration-300">
-                        <span className="text-2xl font-black bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                          {method.step}
-                        </span>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {methodologies.map((method, index) => {
+              const Icon = method.icon;
+              return (
+                <div
+                  key={index}
+                  className="group bg-white rounded-2xl border border-slate-100 p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col justify-between"
+                >
+                  <div>
+                    {/* Header: Icon & Step Number */}
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="w-10 h-10 rounded-xl bg-blue-50 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+                        <Icon size={18} />
                       </div>
+                      <span className="text-xs font-mono font-bold text-slate-400 bg-slate-50 px-2.5 py-1 rounded-md border border-slate-100">
+                        {method.step}
+                      </span>
                     </div>
-                    <div className="absolute inset-0 rounded-full border border-dashed border-secondary/30 animate-spin-slow group-hover:border-secondary/50 transition-colors"></div>
+
+                    <h3 className="font-semibold text-slate-900 text-lg mb-2 group-hover:text-primary transition-colors">
+                      {method.title}
+                    </h3>
+                    <p className="text-sm text-slate-500 leading-relaxed mb-4">
+                      {method.desc}
+                    </p>
                   </div>
-                  
-                  <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center mb-3 group-hover:bg-secondary/20 transition-colors">
-                    {method.icon}
+
+                  {/* Deliverable chip */}
+                  <div className="pt-4 border-t border-slate-50 mt-auto flex items-center justify-between">
+                    <span className="inline-flex items-center gap-2 text-xs font-medium text-slate-600">
+                      <span className="w-1.5 h-1.5 rounded-full bg-secondary shrink-0" />
+                      <span>{method.deliverable}</span>
+                    </span>
+                    {index < methodologies.length - 1 && (
+                      <ArrowRight size={14} className="text-slate-300 hidden lg:block group-hover:text-primary group-hover:translate-x-0.5 transition-all" />
+                    )}
                   </div>
-                  
-                  <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">{method.title}</h3>
-                  <p className="text-gray-600 text-xs md:text-sm leading-relaxed">{method.desc}</p>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* Service FAQs */}
-      <section className="py-20 md:py-24 bg-gradient-to-b from-slate-50 to-white">
-        <div className="max-w-4xl mx-auto px-4 md:px-8">
-          <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Frequently Asked Questions</h2>
-            <div className="w-16 h-1.5 bg-secondary mx-auto mb-6 rounded-full"></div>
-            <p className="text-gray-600 text-base md:text-lg px-4">
+      <section className="py-16 md:py-20 bg-slate-50/50">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100/80 text-primary text-xs font-semibold uppercase tracking-wider mb-3">
+              <Sparkles size={13} className="text-secondary" />
+              <span>FAQ</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight mb-3">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-slate-500 text-sm sm:text-base leading-relaxed">
               Common questions clients ask before partnering with us.
             </p>
           </div>
 
-          <div className="space-y-3 md:space-y-4">
+          <div className="space-y-3">
             {faqs.map((faq, index) => (
               <div 
                 key={index} 
-                className={`bg-white rounded-xl border transition-all duration-300 overflow-hidden ${
-                  openFaq === index ? 'border-secondary shadow-lg' : 'border-gray-100 shadow-sm hover:shadow-md'
+                className={`bg-white rounded-2xl border transition-all duration-300 overflow-hidden ${
+                  openFaq === index ? 'border-blue-200 shadow-sm' : 'border-slate-100 shadow-xs hover:border-slate-200'
                 }`}
               >
                 <button 
                   onClick={() => toggleFaq(index)}
-                  className="w-full px-5 md:px-6 py-4 text-left flex justify-between items-center focus:outline-none group"
+                  className="w-full px-5 sm:px-6 py-4 text-left flex justify-between items-center focus:outline-none group cursor-pointer"
                 >
-                  <span className="text-sm md:text-base font-semibold text-gray-900 pr-4 group-hover:text-primary transition-colors">
+                  <span className="text-sm sm:text-[15px] font-semibold text-slate-900 pr-4 group-hover:text-primary transition-colors">
                     {faq.question}
                   </span>
                   {openFaq === index ? (
                     <ChevronUp className="text-primary shrink-0 transition-transform duration-300" size={18} />
                   ) : (
-                    <ChevronDown className="text-gray-400 group-hover:text-primary shrink-0 transition-all duration-300" size={18} />
+                    <ChevronDown className="text-slate-400 group-hover:text-primary shrink-0 transition-all duration-300" size={18} />
                   )}
                 </button>
                 
                 <div 
-                  className={`px-5 md:px-6 overflow-hidden transition-all duration-300 ease-in-out ${
+                  className={`px-5 sm:px-6 overflow-hidden transition-all duration-300 ease-in-out ${
                     openFaq === index ? 'max-h-96 pb-5 opacity-100' : 'max-h-0 opacity-0'
                   }`}
                 >
-                  <p className="text-gray-600 text-sm md:text-base leading-relaxed pt-3 border-t border-gray-100">
+                  <p className="text-slate-500 text-xs sm:text-sm leading-relaxed pt-3 border-t border-slate-100">
                     {faq.answer}
                   </p>
                 </div>
