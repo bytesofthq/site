@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
-import { MessageSquare, Phone, MapPin, Mail, Menu, X, Home, Briefcase, Info, LayoutTemplate, ChevronUp } from 'lucide-react';
+import { MessageSquare, Phone, MapPin, Mail, Menu, X, Home, Briefcase, Info, LayoutTemplate, ChevronUp, ChevronRight } from 'lucide-react';
 import ContactForm from './ContactForm';
 
 const navLinks = [
@@ -231,58 +231,113 @@ export default function Layout() {
         <ChevronUp size={20} />
       </button>
 
+      {/* Modern Mobile Menu Drawer */}
       <div
-        className={`fixed inset-0 z-[110] lg:hidden transition-opacity duration-300 ${
+        className={`fixed inset-0 z-[110] lg:hidden transition-all duration-300 ${
           isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
-        <div className="absolute inset-0 bg-[#eef3fb]/70 backdrop-blur-xl" onClick={() => setIsMobileMenuOpen(false)} />
-        <div className="relative h-full flex flex-col px-5 pt-4 pb-8">
-          <div className="h-14 flex items-center justify-between">
-            <img src="/bs-logo.jpg" alt="Bytesoft" className="h-9 w-auto" />
+        {/* Backdrop */}
+        <div
+          className="absolute inset-0 bg-slate-900/30 backdrop-blur-sm transition-opacity duration-300"
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+
+        {/* Slide-in Sheet */}
+        <div
+          className={`relative h-full w-full max-w-[340px] ml-auto bg-[#f6f8fc] flex flex-col shadow-2xl transition-transform duration-300 ease-out ${
+            isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
+        >
+          {/* Header */}
+          <div className="h-16 px-5 flex items-center justify-between border-b border-slate-200/80 bg-white/70 backdrop-blur-sm shrink-0">
+            <img src="/bs-logo.jpg" alt="Bytesoft" className="h-9 w-auto object-contain" />
             <button
               onClick={() => setIsMobileMenuOpen(false)}
-              className="p-2 text-slate-700 hover:text-slate-900"
+              className="w-9 h-9 rounded-full bg-white border border-slate-200/80 shadow-sm flex items-center justify-center text-slate-600 hover:text-slate-900 hover:border-slate-300 transition-all active:scale-95"
               aria-label="Close menu"
             >
-              <X size={22} />
+              <X size={18} />
             </button>
           </div>
 
-          <nav className="mt-8 flex flex-col gap-1">
+          {/* Navigation Links */}
+          <nav className="p-4 space-y-1.5 flex-1 overflow-y-auto">
             {navLinks.map((link) => {
               const isActive = location.pathname === link.path || (link.path !== '/' && location.pathname.startsWith(link.path));
+              const Icon = link.icon;
               return (
                 <Link
                   key={link.path}
                   to={link.path}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`px-4 py-3.5 rounded-2xl text-base font-medium transition-colors ${
+                  className={`flex items-center justify-between px-3.5 py-3 rounded-2xl transition-all group ${
                     isActive
-                      ? 'bg-white text-slate-900 shadow-sm'
-                      : 'text-slate-500 hover:text-slate-900'
+                      ? 'bg-white text-slate-900 shadow-sm border border-slate-200/80 font-semibold'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-white/60 font-medium'
                   }`}
                 >
-                  {link.label}
+                  <div className="flex items-center gap-3">
+                    <div
+                      className={`w-9 h-9 rounded-xl flex items-center justify-center transition-colors ${
+                        isActive
+                          ? 'bg-primary text-white shadow-sm'
+                          : 'bg-slate-100 text-slate-500 group-hover:bg-blue-50 group-hover:text-primary'
+                      }`}
+                    >
+                      <Icon size={17} />
+                    </div>
+                    <span>{link.label}</span>
+                    {isActive && (
+                      <span className="w-1.5 h-1.5 rounded-full bg-secondary shrink-0" />
+                    )}
+                  </div>
+                  <ChevronRight
+                    size={16}
+                    className={`transition-transform duration-200 ${
+                      isActive ? 'text-primary' : 'text-slate-300 group-hover:text-slate-500 group-hover:translate-x-0.5'
+                    }`}
+                  />
                 </Link>
               );
             })}
           </nav>
 
-          <div className="mt-auto pt-6 border-t border-slate-200/80">
+          {/* Bottom Footer Actions */}
+          <div className="p-5 bg-white border-t border-slate-200/80 shrink-0 space-y-3">
             <button
               onClick={() => { setIsMobileMenuOpen(false); setIsModalOpen(true); }}
-              className="w-full bg-primary text-white py-3.5 rounded-2xl font-semibold hover:bg-blue-900 transition-colors inline-flex items-center justify-center gap-2"
+              className="w-full bg-primary text-white py-3 rounded-xl font-semibold text-sm hover:bg-blue-900 shadow-sm transition-colors inline-flex items-center justify-center gap-2"
             >
-              Get Started
+              <span>Get Started</span>
               <span aria-hidden="true">→</span>
             </button>
-            <a href="mailto:bytesofthq@gmail.com" className="mt-4 block text-center text-sm text-slate-500 hover:text-primary">
-              bytesofthq@gmail.com
-            </a>
+
+            {/* Quick Contact Buttons */}
+            <div className="grid grid-cols-2 gap-2">
+              <a
+                href="mailto:bytesofthq@gmail.com"
+                className="flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-slate-50 border border-slate-100 text-xs font-medium text-slate-600 hover:text-primary hover:bg-blue-50/50 transition-colors"
+              >
+                <Mail size={13} className="text-primary" />
+                <span>Email Us</span>
+              </a>
+              <a
+                href="tel:+919214749997"
+                className="flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-slate-50 border border-slate-100 text-xs font-medium text-slate-600 hover:text-primary hover:bg-blue-50/50 transition-colors"
+              >
+                <Phone size={13} className="text-primary" />
+                <span>Call Us</span>
+              </a>
+            </div>
+
+            <p className="text-center text-[11px] text-slate-400 pt-1">
+              Lucknow, India · bytesofthq@gmail.com
+            </p>
           </div>
         </div>
       </div>
+
 
       {/* Contact Modal - Enhanced */}
       {isModalOpen && (
