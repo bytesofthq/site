@@ -236,7 +236,7 @@ export default function Layout() {
           isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
-        <div className="absolute inset-0 bg-white/25 backdrop-blur-md" onClick={() => setIsMobileMenuOpen(false)} />
+        <div className="absolute inset-0 bg-[#eef3fb]/70 backdrop-blur-xl" onClick={() => setIsMobileMenuOpen(false)} />
         <div className="relative h-full flex flex-col px-5 pt-4 pb-8">
           <div className="h-14 flex items-center justify-between">
             <img src="/bs-logo.jpg" alt="Bytesoft" className="h-9 w-auto" />
