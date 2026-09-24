@@ -475,28 +475,81 @@ export default function Home() {
       </section>
 
 
-      <section className="py-16 md:py-20">
+      <section className="py-16 md:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-3xl border border-slate-100 shadow-sm p-6 sm:p-8 md:p-12 grid md:grid-cols-2 gap-8 md:gap-10 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-slate-900 mb-3">Let's start a conversation</h2>
-              <p className="text-slate-500 mb-6">
-                Ready to elevate your digital presence? Reach out and we'll reply within 24 hours.
+          <div className="relative bg-white rounded-3xl border border-slate-100 shadow-[0_15px_45px_-15px_rgba(15,23,42,0.06)] p-7 sm:p-10 md:p-12 grid md:grid-cols-2 gap-8 md:gap-12 items-center overflow-hidden">
+            {/* Subtle Ambient Corner Tint */}
+            <div className="absolute top-0 right-0 w-72 h-72 bg-blue-50/50 rounded-full blur-3xl pointer-events-none -mr-16 -mt-16" />
+
+            {/* Left Content */}
+            <div className="relative z-10">
+              <div className="inline-flex items-center gap-2 bg-slate-50 border border-slate-200/80 text-primary text-xs font-semibold px-3 py-1 rounded-full mb-3.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
+                <span>Get in Touch</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3 tracking-tight">
+                Let's start a conversation
+              </h2>
+              <p className="text-slate-500 text-sm sm:text-base leading-relaxed mb-6">
+                Ready to elevate your digital presence or build your next product? Reach out and our team will reply within 24 hours.
               </p>
-              <Link to="/contact" className="inline-flex items-center gap-2 bg-primary text-white font-semibold px-6 py-3 rounded-full hover:bg-blue-900 transition-colors">
-                Contact Us <ArrowRight size={16} />
-              </Link>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center justify-center gap-2 bg-primary text-white font-semibold px-6 py-3 rounded-full hover:bg-blue-900 shadow-sm hover:shadow transition-all group"
+                >
+                  <span>Contact Us</span>
+                  <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
+                </Link>
+                <span className="text-xs text-slate-400 font-medium">
+                  ⚡ Reply within 24h guaranteed
+                </span>
+              </div>
             </div>
-            <div className="space-y-4 text-sm">
-              <a href="mailto:bytesofthq@gmail.com" className="flex items-center gap-3 text-slate-700 hover:text-accent">
-                <Mail size={16} className="text-accent" /> bytesofthq@gmail.com
+
+            {/* Right Contact Tiles */}
+            <div className="relative z-10 space-y-3">
+              <a
+                href="mailto:bytesofthq@gmail.com"
+                className="flex items-center gap-4 p-4 rounded-2xl bg-slate-50/80 hover:bg-blue-50/70 border border-slate-100 hover:border-blue-100 transition-all group"
+              >
+                <div className="w-10 h-10 rounded-xl bg-white shadow-sm border border-slate-100 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all shrink-0">
+                  <Mail size={18} />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Email Us</p>
+                  <p className="text-sm font-semibold text-slate-800 group-hover:text-primary transition-colors truncate">
+                    bytesofthq@gmail.com
+                  </p>
+                </div>
               </a>
-              <a href="tel:+919214749997" className="flex items-center gap-3 text-slate-700 hover:text-accent">
-                <Phone size={16} className="text-accent" /> +91 9214749997
+
+              <a
+                href="tel:+919214749997"
+                className="flex items-center gap-4 p-4 rounded-2xl bg-slate-50/80 hover:bg-blue-50/70 border border-slate-100 hover:border-blue-100 transition-all group"
+              >
+                <div className="w-10 h-10 rounded-xl bg-white shadow-sm border border-slate-100 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all shrink-0">
+                  <Phone size={18} />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Call Directly</p>
+                  <p className="text-sm font-semibold text-slate-800 group-hover:text-primary transition-colors">
+                    +91 9214749997
+                  </p>
+                </div>
               </a>
-              <p className="flex items-center gap-3 text-slate-700">
-                <MapPin size={16} className="text-accent" /> Lucknow, India
-              </p>
+
+              <div className="flex items-center gap-4 p-4 rounded-2xl bg-slate-50/80 border border-slate-100">
+                <div className="w-10 h-10 rounded-xl bg-white shadow-sm border border-slate-100 flex items-center justify-center text-primary shrink-0">
+                  <MapPin size={18} />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Headquarters</p>
+                  <p className="text-sm font-semibold text-slate-800">
+                    Lucknow, India
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
