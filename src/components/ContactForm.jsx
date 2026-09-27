@@ -40,25 +40,25 @@ export default function ContactForm() {
         <label className="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-2">
           Full Name <span className="text-secondary">*</span>
         </label>
-        <input 
-          type="text" 
+        <input
+          type="text"
           name="name"
-          placeholder="e.g. Sarah Jenkins" 
-          className="w-full px-4 py-3 rounded-xl bg-slate-50/70 border border-slate-200/80 focus:outline-none focus:border-primary focus:bg-white focus:ring-2 focus:ring-primary/10 text-slate-800 text-sm transition-all" 
+          placeholder="e.g. Sarah Jenkins"
+          className="w-full px-4 py-3 rounded-xl bg-slate-50/70 border border-slate-200/80 focus:outline-none focus:border-primary focus:bg-white focus:ring-2 focus:ring-primary/10 text-slate-800 text-sm transition-all"
           required
         />
       </div>
-      
+
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
         <div>
           <label className="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-2">
             Email Address <span className="text-secondary">*</span>
           </label>
-          <input 
-            type="email" 
+          <input
+            type="email"
             name="email"
-            placeholder="sarah@company.com" 
-            className="w-full px-4 py-3 rounded-xl bg-slate-50/70 border border-slate-200/80 focus:outline-none focus:border-primary focus:bg-white focus:ring-2 focus:ring-primary/10 text-slate-800 text-sm transition-all" 
+            placeholder="sarah@company.com"
+            className="w-full px-4 py-3 rounded-xl bg-slate-50/70 border border-slate-200/80 focus:outline-none focus:border-primary focus:bg-white focus:ring-2 focus:ring-primary/10 text-slate-800 text-sm transition-all"
             required
           />
         </div>
@@ -66,11 +66,11 @@ export default function ContactForm() {
           <label className="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-2">
             Phone Number <span className="text-secondary">*</span>
           </label>
-          <input 
-            type="tel" 
+          <input
+            type="tel"
             name="phone"
-            placeholder="+91 98765 43210" 
-            className="w-full px-4 py-3 rounded-xl bg-slate-50/70 border border-slate-200/80 focus:outline-none focus:border-primary focus:bg-white focus:ring-2 focus:ring-primary/10 text-slate-800 text-sm transition-all" 
+            placeholder="+91 98765 43210"
+            className="w-full px-4 py-3 rounded-xl bg-slate-50/70 border border-slate-200/80 focus:outline-none focus:border-primary focus:bg-white focus:ring-2 focus:ring-primary/10 text-slate-800 text-sm transition-all"
             required
           />
         </div>
@@ -81,9 +81,9 @@ export default function ContactForm() {
           Service Required
         </label>
         <div className="relative">
-          <select 
-            name="software_type" 
-            className="w-full px-4 py-3 rounded-xl bg-slate-50/70 border border-slate-200/80 focus:outline-none focus:border-primary focus:bg-white focus:ring-2 focus:ring-primary/10 text-slate-800 text-sm transition-all appearance-none pr-10 cursor-pointer" 
+          <select
+            name="software_type"
+            className="w-full px-4 py-3 rounded-xl bg-slate-50/70 border border-slate-200/80 focus:outline-none focus:border-primary focus:bg-white focus:ring-2 focus:ring-primary/10 text-slate-800 text-sm transition-all appearance-none pr-10 cursor-pointer"
             required
           >
             <option value="Web Design & Development">Web Design & Development</option>
@@ -104,10 +104,10 @@ export default function ContactForm() {
         <label className="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-2">
           Project Details <span className="text-secondary">*</span>
         </label>
-        <textarea 
+        <textarea
           name="message"
-          rows="4" 
-          placeholder="Briefly describe your objectives, estimated timeline, and current requirements..." 
+          rows="4"
+          placeholder="Briefly describe your objectives, estimated timeline, and current requirements..."
           className="w-full px-4 py-3 rounded-xl bg-slate-50/70 border border-slate-200/80 focus:outline-none focus:border-primary focus:bg-white focus:ring-2 focus:ring-primary/10 text-slate-800 text-sm transition-all resize-none"
           required
         ></textarea>
@@ -127,9 +127,9 @@ export default function ContactForm() {
         </div>
       )}
 
-      <button 
-        type="submit" 
-        disabled={isSubmitting} 
+      <button
+        type="submit"
+        disabled={isSubmitting}
         className="group w-full bg-primary text-white font-semibold text-sm sm:text-base py-3.5 px-6 rounded-xl hover:bg-blue-900 transition-all duration-200 shadow-sm hover:shadow-md flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {isSubmitting ? (

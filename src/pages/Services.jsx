@@ -34,14 +34,14 @@ export default function Services() {
       const duration = 2000;
       const steps = 60;
       const interval = duration / steps;
-      
+
       const targets = { projects: 50, retention: 100, team: 10, support: 24 };
       let step = 0;
 
       const timer = setInterval(() => {
         step++;
         const progress = step / steps;
-        
+
         setCounters({
           projects: Math.min(Math.floor(targets.projects * progress), targets.projects),
           retention: Math.min(Math.floor(targets.retention * progress), targets.retention),
@@ -179,7 +179,7 @@ export default function Services() {
 
   return (
     <div>
-      
+
       {/* Page Hero */}
       <section className="pt-14 pb-8 md:pt-20 md:pb-10">
         <div className="max-w-3xl mx-auto px-4 md:px-8 text-center">
@@ -220,7 +220,7 @@ export default function Services() {
               Comprehensive strategies and technical expertise tailored to your business goals.
             </p>
           </div>
-          
+
           {/* Services Grid matching website style */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {services.map((service) => {
@@ -266,8 +266,36 @@ export default function Services() {
         </div>
       </section>
 
+      {/* Interactive AI Journey Callout Banner */}
+      <section className="py-12 bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 text-white border-y border-slate-800 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(59,130,246,0.15),transparent_60%)] pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="max-w-2xl text-center md:text-left">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-400/20 text-blue-400 text-xs font-mono font-semibold uppercase tracking-wider mb-3">
+              <Sparkles size={13} className="text-blue-400 animate-pulse" />
+              <span>Interactive Build Demo</span>
+            </div>
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-2">
+              Want to See How We Build Your Service?
+            </h3>
+            <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+              Step inside our interactive AI Project Journey. Watch requirement analysis, system architecture drawing, code compilation, and live deployment in action.
+            </p>
+          </div>
+          <div className="shrink-0">
+            <Link
+              to="/project-journey"
+              className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm shadow-xl hover:shadow-blue-500/25 transition-all hover:scale-105 active:scale-95"
+            >
+              <span>Experience AI Journey</span>
+              <ArrowRight size={16} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Our Methodology */}
-      <section className="py-16 md:py-20 bg-white border-y border-slate-100">
+      <section className="py-16 md:py-20 bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100/80 text-primary text-xs font-semibold uppercase tracking-wider mb-3">
@@ -330,7 +358,7 @@ export default function Services() {
       <section className="py-16 md:py-24 bg-slate-50/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-            
+
             {/* Left Column: Heading + Sticky Support Card */}
             <div className="lg:col-span-5 lg:sticky lg:top-28">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100/80 text-primary text-xs font-semibold uppercase tracking-wider mb-4">
@@ -375,11 +403,10 @@ export default function Services() {
                 return (
                   <div
                     key={index}
-                    className={`bg-white rounded-2xl border transition-all duration-200 overflow-hidden ${
-                      isOpen
+                    className={`bg-white rounded-2xl border transition-all duration-200 overflow-hidden ${isOpen
                         ? 'border-blue-200/90 shadow-md shadow-blue-900/[0.04]'
                         : 'border-slate-100 shadow-xs hover:border-slate-200'
-                    }`}
+                      }`}
                   >
                     <button
                       onClick={() => toggleFaq(index)}
@@ -394,20 +421,18 @@ export default function Services() {
                         </span>
                       </div>
                       <div
-                        className={`w-7 h-7 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${
-                          isOpen
+                        className={`w-7 h-7 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${isOpen
                             ? 'bg-primary text-white border-primary rotate-180'
                             : 'bg-slate-50 text-slate-400 border-slate-100 group-hover:border-blue-100 group-hover:text-primary'
-                        }`}
+                          }`}
                       >
                         <ChevronDown size={14} />
                       </div>
                     </button>
 
                     <div
-                      className={`px-5 sm:px-6 overflow-hidden transition-all duration-300 ease-in-out ${
-                        isOpen ? 'max-h-96 pb-5 opacity-100' : 'max-h-0 opacity-0'
-                      }`}
+                      className={`px-5 sm:px-6 overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 pb-5 opacity-100' : 'max-h-0 opacity-0'
+                        }`}
                     >
                       <p className="text-slate-500 text-xs sm:text-sm leading-relaxed pt-3 border-t border-slate-100 pl-7">
                         {faq.answer}

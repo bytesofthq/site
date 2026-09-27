@@ -30,7 +30,7 @@ export default function Contact() {
 
   return (
     <div>
-      
+
       {/* Page Hero */}
       <section className="pt-12 pb-6 md:pt-16 md:pb-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -67,10 +67,10 @@ export default function Contact() {
       <section className="py-12 md:py-16 bg-white border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-            
+
             {/* Left Column: Contact Channels & Operational Details */}
             <div className="lg:col-span-5 space-y-5">
-              
+
               {/* Email & Direct Inquiry */}
               <div className="bg-white p-6 sm:p-7 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all">
                 <div className="flex items-center justify-between mb-4">
@@ -85,8 +85,8 @@ export default function Contact() {
                 <p className="text-xs sm:text-[13px] text-slate-500 leading-relaxed mb-4">
                   For scopes, RFPs, and partnership requests. We review all inbound mail within 2 hours during business hours.
                 </p>
-                <a 
-                  href="mailto:bytesofthq@gmail.com" 
+                <a
+                  href="mailto:bytesofthq@gmail.com"
                   className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-secondary transition-colors"
                 >
                   <span>bytesofthq@gmail.com</span>
@@ -104,15 +104,15 @@ export default function Contact() {
                   Speak directly with our technical team during standard business hours (Mon–Sat, 9 AM – 8 PM IST).
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  <a 
-                    href="tel:+918810743304" 
+                  <a
+                    href="tel:+918810743304"
                     className="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-50 border border-slate-100 text-xs font-semibold text-slate-700 hover:border-blue-100 hover:text-primary transition-all"
                   >
                     <Phone size={13} className="text-secondary shrink-0" />
                     <span>+91 8810743304</span>
                   </a>
-                  <a 
-                    href="tel:+919214749997" 
+                  <a
+                    href="tel:+919214749997"
                     className="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-50 border border-slate-100 text-xs font-semibold text-slate-700 hover:border-blue-100 hover:text-primary transition-all"
                   >
                     <Phone size={13} className="text-secondary shrink-0" />
@@ -157,7 +157,7 @@ export default function Contact() {
                     Fill in the essential details below and our team will get in touch with an initial perspective.
                   </p>
                 </div>
-                
+
                 <ContactForm />
               </div>
             </div>
@@ -170,7 +170,7 @@ export default function Contact() {
       <section className="py-16 md:py-24 bg-slate-50/50 border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-            
+
             {/* Left Column: Heading + Direct Help Card */}
             <div className="lg:col-span-5 lg:sticky lg:top-28">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100/80 text-primary text-xs font-semibold uppercase tracking-wider mb-4">
@@ -215,11 +215,10 @@ export default function Contact() {
                 return (
                   <div
                     key={index}
-                    className={`bg-white rounded-2xl border transition-all duration-200 overflow-hidden ${
-                      isOpen
+                    className={`bg-white rounded-2xl border transition-all duration-200 overflow-hidden ${isOpen
                         ? 'border-blue-200/90 shadow-md shadow-blue-900/[0.04]'
                         : 'border-slate-100 shadow-xs hover:border-slate-200'
-                    }`}
+                      }`}
                   >
                     <button
                       onClick={() => setOpenFaq(isOpen ? -1 : index)}
@@ -234,20 +233,18 @@ export default function Contact() {
                         </span>
                       </div>
                       <div
-                        className={`w-7 h-7 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${
-                          isOpen
+                        className={`w-7 h-7 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${isOpen
                             ? 'bg-primary text-white border-primary rotate-180'
                             : 'bg-slate-50 text-slate-400 border-slate-100 group-hover:border-blue-100 group-hover:text-primary'
-                        }`}
+                          }`}
                       >
                         <ChevronDown size={14} />
                       </div>
                     </button>
 
                     <div
-                      className={`px-5 sm:px-6 overflow-hidden transition-all duration-300 ease-in-out ${
-                        isOpen ? 'max-h-96 pb-5 opacity-100' : 'max-h-0 opacity-0'
-                      }`}
+                      className={`px-5 sm:px-6 overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 pb-5 opacity-100' : 'max-h-0 opacity-0'
+                        }`}
                     >
                       <p className="text-slate-500 text-xs sm:text-sm leading-relaxed pt-3 border-t border-slate-100 pl-7">
                         {faq.answer}
@@ -276,22 +273,22 @@ export default function Contact() {
             Speak directly with our technical leads to discuss your scope.
           </p>
           <div className="flex flex-wrap justify-center items-center gap-3">
-            <a 
-              href="tel:+918810743304" 
+            <a
+              href="tel:+918810743304"
               className="inline-flex items-center justify-center gap-2 bg-primary text-white font-semibold px-5 py-2.5 rounded-full hover:bg-blue-900 transition-colors text-sm shadow-xs"
             >
               <Phone size={14} />
               <span>+91 8810743304</span>
             </a>
-            <a 
-              href="tel:+919214749997" 
+            <a
+              href="tel:+919214749997"
               className="inline-flex items-center justify-center gap-2 bg-white border border-slate-200 text-slate-700 font-semibold px-5 py-2.5 rounded-full hover:border-primary hover:text-primary transition-colors text-sm"
             >
               <Phone size={14} />
               <span>+91 9214749997</span>
             </a>
-            <a 
-              href="tel:+918009874351" 
+            <a
+              href="tel:+918009874351"
               className="inline-flex items-center justify-center gap-2 bg-white border border-slate-200 text-slate-700 font-semibold px-5 py-2.5 rounded-full hover:border-primary hover:text-primary transition-colors text-sm"
             >
               <Phone size={14} />

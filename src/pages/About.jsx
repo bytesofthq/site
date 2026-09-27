@@ -22,7 +22,7 @@ export default function About() {
 
   return (
     <div>
-      
+
       {/* Page Hero - Enhanced with Gradient Background */}
       <section className="relative overflow-hidden pt-12 pb-16 md:pt-20 md:pb-20">
         <div aria-hidden="true" className="absolute -top-32 right-0 w-[480px] h-[480px] rounded-full bg-blue-100/70 blur-3xl pointer-events-none" />
@@ -41,14 +41,14 @@ export default function About() {
       <section className="py-16 md:py-20 bg-white border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
-            
+
             <div className="relative w-full">
-              <img 
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                alt="Bytesoft Team Collaboration" 
+              <img
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                alt="Bytesoft Team Collaboration"
                 className="rounded-2xl shadow-sm border border-slate-100 object-cover w-full h-72 sm:h-[360px] lg:h-[400px]"
               />
-              
+
               {/* Floating Stat Card */}
               <div className="absolute bottom-4 left-4 right-4 sm:right-auto bg-white/95 p-4 rounded-2xl shadow-sm border border-white flex items-center gap-3">
                 <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center shrink-0">
@@ -71,7 +71,7 @@ export default function About() {
               <p className="text-sm sm:text-base text-slate-500 leading-relaxed mb-6 md:mb-8">
                 Our mission is simple: <strong className="text-slate-900 font-semibold">We don't just build websites; we architect digital growth platforms.</strong> By combining cutting-edge software engineering with strategic digital insights, we build digital assets that help businesses grow and succeed online.
               </p>
-              
+
               <div className="grid grid-cols-2 gap-4 pt-6 border-t border-slate-100">
                 <div className="border-l-2 border-secondary pl-4">
                   <span className="block text-3xl md:text-4xl font-bold text-slate-900 mb-1 md:mb-2">50+</span>
@@ -83,7 +83,7 @@ export default function About() {
                 </div>
               </div>
             </div>
-            
+
           </div>
         </div>
       </section>
@@ -125,7 +125,7 @@ export default function About() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            
+
             {[
               { icon: <Search size={20} />, title: "Discovery", desc: "We dive deep into your business goals, target audience, and market landscape." },
               { icon: <PenTool size={20} />, title: "Strategy & Design", desc: "Crafting intuitive user experiences and striking visual identities that convert." },
@@ -165,7 +165,7 @@ export default function About() {
                 ))}
               </ul>
             </div>
-            
+
             <div className="lg:col-span-3 w-full grid grid-cols-2 sm:grid-cols-3 gap-4">
               {[
                 { name: "Frontend", icon: <Layout size={20} />, tags: "React, Vue, Next.js" },

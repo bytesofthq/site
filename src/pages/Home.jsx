@@ -1,8 +1,56 @@
-import { MonitorSmartphone, LineChart, Users, Store, HeartPulse, Smartphone, Bot, Palette, Star, Zap, HeartHandshake, Mail, ChevronLeft, ChevronRight, ArrowRight, Phone, MapPin, Shield, Sparkles, Quote, CheckCircle2 } from 'lucide-react';
+import {
+  MonitorSmartphone,
+  LineChart,
+  Users,
+  Store,
+  HeartPulse,
+  Smartphone,
+  Bot,
+  Palette,
+  Star,
+  Zap,
+  HeartHandshake,
+  Mail,
+  ChevronLeft,
+  ChevronRight,
+  ArrowRight,
+  Phone,
+  MapPin,
+  Shield,
+  Sparkles,
+  Quote,
+  CheckCircle2,
+  Cpu,
+  Layers,
+  FileSearch,
+  Network,
+  Activity,
+  Code2,
+  Terminal,
+  Workflow,
+  Cloud
+} from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { projectsData } from '../data/projects';
 
+// Helper to safely extract tech tags from any techStack shape (object or array)
+const getTechTags = (techStack) => {
+  if (!techStack) return [];
+  if (Array.isArray(techStack)) return techStack.slice(0, 3);
+  if (typeof techStack === 'object') {
+    const tags = [
+      ...(techStack.frontend || []),
+      ...(techStack.backend || []),
+      ...(techStack.tools || []),
+      ...(techStack.database || [])
+    ];
+    return tags.slice(0, 3);
+  }
+  return [];
+};
+
+// Real verified client partners
 const testimonials = [
   {
     quote: "Campus Quest completely revolutionized how we conduct assessments. Our students love the real-time competition and instant feedback. Faculty workload has reduced significantly, and they can now focus on teaching.",
@@ -36,61 +84,86 @@ const testimonials = [
   }
 ];
 
-const services = [
-  { icon: MonitorSmartphone, title: "Web Design & Development", desc: "Custom, responsive web applications built for speed and a clear user experience." },
-  { icon: LineChart, title: "Search Optimization", desc: "Technical and content SEO that captures high-intent search traffic." },
-  { icon: Users, title: "Social Media Strategy", desc: "Campaigns that build loyalty, community, and qualified leads." },
-  { icon: Store, title: "E-commerce Platforms", desc: "Secure storefronts built for a smooth shopping experience." },
-  { icon: HeartPulse, title: "Healthcare Software", desc: "Secure, intuitive software for healthcare providers and patients." },
-  { icon: Smartphone, title: "App Development", desc: "Native and cross-platform apps that reach users on their phones." },
-  { icon: Bot, title: "AI Integration", desc: "Automation and AI that streamline work and surface useful insight." },
-  { icon: Palette, title: "UI/UX Design", desc: "Interfaces that balance clarity, usability, and a strong brand feel." }
+// Dual-pillar Service Architecture: Digital & Software + AI & Intelligent Technology
+const digitalServices = [
+  { icon: MonitorSmartphone, title: "Web Engineering", desc: "Custom, high-performance web applications, enterprise portals, and SaaS platforms built for speed and scale." },
+  { icon: Smartphone, title: "Mobile App Development", desc: "Native and cross-platform iOS & Android apps with smooth interfaces and reliable offline capabilities." },
+  { icon: Store, title: "E-commerce Platforms", desc: "Secure storefronts, custom checkout flows, and catalog engines optimized for conversion." },
+  { icon: HeartPulse, title: "Healthcare Software", desc: "HIPAA-compliant patient portals, resource management systems, and clinical scheduling software." },
+  { icon: LineChart, title: "Search Optimization (SEO)", desc: "Technical and structured SEO audits that capture high-intent organic business traffic." },
+  { icon: Users, title: "Social Media Strategy", desc: "Targeted digital marketing campaigns that build brand loyalty, community, and inbound leads." },
+  { icon: Palette, title: "UI/UX Architecture", desc: "User journeys, wireframes, and production design systems that balance clarity with brand appeal." },
+  { icon: Code2, title: "Custom Cloud Software", desc: "Scalable backend microservices, robust REST/GraphQL APIs, and modern cloud architectures." }
 ];
 
+const intelligentServices = [
+  { icon: Bot, title: "AI Integration & Workflows", desc: "Connecting intelligent LLM logic directly into existing enterprise databases and operational tools." },
+  { icon: Cpu, title: "Custom AI Agents", desc: "Task-oriented agents that execute multi-step business workflows with strict safety boundaries." },
+  { icon: FileSearch, title: "Document Intelligence", desc: "Automated OCR extraction, contract parsing, invoice processing, and structured classification." },
+  { icon: Layers, title: "Enterprise Knowledge (RAG)", desc: "Private vector search across internal documentation, SOPs, and proprietary databases." },
+  { icon: Activity, title: "Predictive Analytics", desc: "Machine learning models for demand forecasting, anomaly detection, and operational optimization." },
+  { icon: Network, title: "Voice & Conversational AI", desc: "Multi-modal conversational systems designed for support routing and natural customer dialog." }
+];
+
+// Trust & Value Proposition
 const advantages = [
-  { icon: Star, title: "Uncompromising Quality", desc: "Top-tier engineering with an obsessive focus on performance and usability." },
-  { icon: Zap, title: "Rapid Deployment", desc: "Agile delivery that launches robust solutions on a predictable timeline." },
-  { icon: HeartHandshake, title: "Dedicated Partnership", desc: "An extension of your team, with proactive support after launch." },
-  { icon: Shield, title: "You Own the Code", desc: "Fixed-price proposals, direct access to the team, and full code ownership." }
+  { icon: Star, title: "Uncompromising Quality", desc: "Top-tier engineering with an obsessive focus on performance, usability, and maintainability." },
+  { icon: Zap, title: "Rapid Deployment", desc: "Agile 1–2 week sprints that ship functional milestones on a transparent, predictable schedule." },
+  { icon: HeartHandshake, title: "Dedicated Partnership", desc: "Direct collaboration with senior developers, proactive communication, and post-launch support." },
+  { icon: Shield, title: "100% Code Ownership", desc: "Fixed-price proposals, no vendor lock-in, and complete intellectual property ownership." }
 ];
 
+// Delivery Process (Preserved & Enhanced)
 const process = [
   {
     step: "01",
     title: "Discover",
-    desc: "Understand your goals, audience, and the technical landscape to map the optimal path forward.",
-    tags: ["Scope & Goals", "Tech Architecture"]
+    desc: "Understand your business goals, user needs, and technical requirements to map the optimal roadmap.",
+    tags: ["Scope & Goals", "Tech Architecture", "Data Security"]
   },
   {
     step: "02",
     title: "Design",
-    desc: "Turn the strategy into user-centric wireframes, interactive prototypes, and design systems.",
-    tags: ["UI/UX Prototypes", "Design System"]
+    desc: "Turn the strategy into user-centric wireframes, interactive prototypes, and modular design systems.",
+    tags: ["UI/UX Prototypes", "Design System", "Workflow Mapping"]
   },
   {
     step: "03",
     title: "Build",
-    desc: "Ship clean, scalable code with weekly sprint reviews and continuous feedback loops.",
-    tags: ["Production Code", "Weekly Sprints"]
+    desc: "Ship clean, modular, and scalable code in rapid sprint cycles with continuous integration and reviews.",
+    tags: ["Production Code", "Weekly Sprints", "API Engineering"]
   },
   {
     step: "04",
     title: "Scale",
-    desc: "Thorough testing, performance optimization, and seamless cloud deployment.",
-    tags: ["QA Testing", "Cloud Launch"]
+    desc: "Connect data pipelines, APIs, and cloud services with thorough automated testing and security audits.",
+    tags: ["Cloud Launch", "QA Testing", "Performance Tuning"]
   },
   {
     step: "05",
     title: "Support",
-    desc: "Proactive monitoring, regular updates, and iterative improvements well after launch.",
-    tags: ["SLA Monitoring", "Ongoing Updates"]
+    desc: "Proactive monitoring, uptime SLAs, performance updates, and continuous optimization as your business grows.",
+    tags: ["SLA Monitoring", "Ongoing Updates", "System Health"]
   }
+];
+
+const blueprints = [
+  { label: "Website", stack: "Next.js + Tailwind + Edge CDN", db: "PostgreSQL", time: "2–4 Weeks" },
+  { label: "Mobile App", stack: "React Native + Node.js API", db: "MongoDB Atlas", time: "4–8 Weeks" },
+  { label: "Business Software", stack: "React + Python FastAPI", db: "PostgreSQL ACID", time: "6–10 Weeks" },
+  { label: "E-Commerce", stack: "Next.js + GraphQL + Stripe", db: "MongoDB + Redis", time: "4–6 Weeks" },
+  { label: "Healthcare", stack: "React + FHIR API + HIPAA", db: "Encrypted PostgreSQL", time: "8–12 Weeks" },
+  { label: "AI & Automation", stack: "Python LangGraph + RAG", db: "Pinecone Vector DB", time: "3–6 Weeks" },
+  { label: "Custom Platform", stack: "Microservices + Cloud Cluster", db: "Multi-DB Cluster", time: "Flexible" }
 ];
 
 export default function Home() {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [activeServiceTab, setActiveServiceTab] = useState('digital');
+  const [selectedBlueprint, setSelectedBlueprint] = useState(0);
 
+  // Auto-rotate testimonials
   useEffect(() => {
     if (isPaused) return;
     const timer = setInterval(() => {
@@ -99,6 +172,7 @@ export default function Home() {
     return () => clearInterval(timer);
   }, [isPaused]);
 
+  // Reveal animation observer
   useEffect(() => {
     const elements = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
@@ -118,34 +192,64 @@ export default function Home() {
 
   return (
     <div>
+      {/* =========================================================================
+          HERO SECTION: Modernized messaging + PRESERVED 01/02/03 Floating Image Visual
+          ========================================================================= */}
       <section className="relative overflow-hidden pt-12 pb-16 md:pt-20 md:pb-24">
         <div className="absolute top-[-8%] right-[-6%] w-[640px] h-[640px] bg-blue-100/80 rounded-full blur-3xl pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-2 gap-10 lg:gap-6 items-center">
+        <div className="absolute bottom-[-10%] left-[-5%] w-[450px] h-[450px] bg-orange-100/50 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-2 gap-10 lg:gap-8 items-center">
           <div className="max-w-xl">
-            <div className="inline-flex items-center gap-2 bg-white border border-blue-100 text-primary text-sm font-medium px-3.5 py-1.5 rounded-full mb-7 shadow-sm">
-              <Sparkles size={14} />
-              Digital experiences that drive growth
+            {/* Top pill badge */}
+            <div className="inline-flex items-center gap-2 bg-white border border-blue-100 text-primary text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full mb-6 shadow-xs">
+              <Sparkles size={14} className="text-secondary shrink-0" />
+              <span>Digital Experiences & Intelligent Systems</span>
             </div>
-            <h1 className="text-[2rem] sm:text-5xl lg:text-[3.5rem] font-bold text-slate-900 leading-[1.08] tracking-tight mb-6">
+
+            {/* Strategic Headline */}
+            <h1 className="text-[2.2rem] sm:text-5xl lg:text-[3.35rem] font-bold text-slate-900 leading-[1.1] tracking-tight mb-6">
               Engineering Digital
-              <span className="block">Experiences That</span>
-              <span className="mt-1 pl-4 border-l-[5px] border-secondary block">Drive Growth</span>
+              <span className="block text-slate-900">Experiences &</span>
+              <span className="mt-1 pl-4 border-l-[5px] border-secondary block text-primary">
+                Intelligent Systems
+              </span>
             </h1>
-            <p className="text-base md:text-lg text-slate-500 mb-8 leading-relaxed">
-              A premier digital agency specializing in high-performance web development, strategic SEO, and data-driven marketing to elevate your brand's online presence.
+
+            {/* Supporting Copy */}
+            <p className="text-base sm:text-lg text-slate-600 mb-8 leading-relaxed">
+              Bytesoft builds high-performance digital products, software solutions, and AI-powered systems that help modern businesses operate efficiently, connect with customers, and drive measurable growth.
             </p>
-            <div className="flex flex-wrap gap-3 mb-10">
-              <Link to="/contact" className="bg-primary text-white font-semibold px-6 py-3 rounded-full hover:bg-blue-900 transition-colors shadow-sm inline-flex items-center gap-2">
-                Get in Touch <ArrowRight size={16} />
+
+            {/* Action Buttons */}
+            <div className="flex flex-wrap gap-3 mb-9">
+              <Link
+                to="/project-journey"
+                className="bg-primary hover:bg-blue-900 text-white font-semibold px-6 py-3.5 rounded-full transition-all shadow-sm hover:shadow inline-flex items-center gap-2.5 text-sm sm:text-base group"
+              >
+                <Zap size={16} className="text-secondary group-hover:scale-110 transition-transform" />
+                <span>Experience How Bytesoft Builds</span>
+                <ArrowRight size={15} className="group-hover:translate-x-0.5 transition-transform" />
               </Link>
-              <Link to="/services" className="bg-white border border-slate-200 text-slate-800 font-semibold px-6 py-3 rounded-full hover:border-primary hover:text-primary transition-colors">
-                Explore Our Services
+
+              <Link
+                to="/contact"
+                className="bg-white border border-slate-200 text-slate-800 font-semibold px-6 py-3.5 rounded-full hover:border-primary hover:text-primary transition-colors text-sm sm:text-base"
+              >
+                Discuss Your Project
               </Link>
             </div>
-            <div className="flex flex-wrap gap-x-6 gap-y-3">
-              {["50+ Projects", "100% Satisfaction", "Remote-first"].map((chip) => (
-                <span key={chip} className="inline-flex items-center gap-2 text-sm text-slate-500">
-                  <span className="w-4 h-4 rounded-full border border-slate-300 flex items-center justify-center">
+
+            {/* Credibility Badges */}
+            <div className="flex flex-wrap gap-x-5 gap-y-2.5 pt-2 border-t border-slate-200/70">
+              {[
+                "50+ Projects Shipped",
+                "100% Code Ownership",
+                "Software + AI Layer",
+                "Remote-First Team"
+              ].map((chip) => (
+                <span key={chip} className="inline-flex items-center gap-2 text-xs sm:text-sm text-slate-600 font-medium">
+                  <span className="w-4 h-4 rounded-full bg-blue-50 border border-blue-200 flex items-center justify-center shrink-0">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                   </span>
                   {chip}
@@ -154,6 +258,9 @@ export default function Home() {
             </div>
           </div>
 
+          {/* =========================================================================
+              HERO VISUAL (PRESERVED): The exact 3 floating panels (01 Discover, 02 Design, 03 Build)
+              ========================================================================= */}
           <div className="relative flex justify-center lg:justify-end">
             <div
               className="hero-float relative w-full max-w-[500px] h-[400px] sm:h-[440px]"
@@ -161,12 +268,14 @@ export default function Home() {
                 WebkitMaskImage: "radial-gradient(ellipse 78% 74% at 48% 52%, #000 62%, transparent 92%)",
                 maskImage: "radial-gradient(ellipse 78% 74% at 48% 52%, #000 62%, transparent 92%)"
               }}
-              aria-hidden="true"
+              aria-label="Bytesoft Delivery Framework: 01 Discover, 02 Design, 03 Build"
             >
+              {/* Background ambient glow */}
               <div className="absolute left-[18%] top-[18%] h-56 w-56 rounded-full bg-blue-200/70 blur-3xl" />
 
+              {/* 01 Discover Card */}
               <div className="absolute left-0 top-3 w-[70%] origin-bottom-left -rotate-[13deg] rounded-[1.6rem] border border-white/80 bg-white/40 p-4 shadow-[0_18px_40px_-28px_rgba(15,23,42,0.55)] backdrop-blur-md sm:p-5">
-                <p className="text-[10px] font-semibold tracking-[0.22em] text-slate-400">01</p>
+                <p className="text-[10px] font-semibold tracking-[0.22em] text-slate-400 uppercase">01</p>
                 <p className="mt-1 text-base font-semibold text-slate-600">Discover</p>
                 <div className="mt-4 space-y-2">
                   <div className="h-1.5 w-[84%] rounded-full bg-slate-300/80" />
@@ -175,8 +284,9 @@ export default function Home() {
                 </div>
               </div>
 
+              {/* 02 Design Card */}
               <div className="absolute left-[14%] top-[5.25rem] w-[72%] -rotate-[4deg] rounded-[1.6rem] border border-white bg-white/75 p-4 shadow-[0_24px_50px_-28px_rgba(30,58,138,0.55)] backdrop-blur-md sm:p-5">
-                <p className="text-[10px] font-semibold tracking-[0.22em] text-primary">02</p>
+                <p className="text-[10px] font-semibold tracking-[0.22em] text-primary uppercase">02</p>
                 <p className="mt-1 text-base font-semibold text-slate-900">Design</p>
                 <div className="mt-4 flex gap-2">
                   <div className="h-12 flex-1 rounded-xl border border-blue-100 bg-gradient-to-b from-blue-50 to-white" />
@@ -185,13 +295,14 @@ export default function Home() {
                 </div>
               </div>
 
+              {/* 03 Build Card */}
               <div className="absolute right-0 top-[11.5rem] w-[74%] rotate-[7deg] overflow-hidden rounded-[1.7rem] bg-gradient-to-br from-[#2a56c6] via-[#1e3a8a] to-[#152a66] p-5 text-white shadow-[0_30px_55px_-18px_rgba(30,58,138,0.7)]">
                 <div className="hero-sheen pointer-events-none absolute inset-0" />
                 <div className="pointer-events-none absolute inset-y-3 right-0 w-px bg-gradient-to-b from-transparent via-amber-200 to-amber-400/70" />
                 <div className="pointer-events-none absolute inset-x-6 bottom-0 h-px bg-gradient-to-r from-transparent via-amber-200/90 to-amber-300" />
-                <p className="relative text-[10px] font-semibold tracking-[0.22em] text-white/55">03</p>
+                <p className="relative text-[10px] font-semibold tracking-[0.22em] text-white/55 uppercase">03</p>
                 <p className="relative mt-1 text-xl font-semibold">Build</p>
-                <p className="relative mt-2 text-sm leading-relaxed text-blue-100/80">Clean code, shipped with you.</p>
+                <p className="relative mt-2 text-sm leading-relaxed text-blue-100/90">Clean code, shipped with you.</p>
                 <div className="relative mt-4 flex items-center gap-1.5">
                   <span className="h-1.5 w-8 rounded-full bg-white/75" />
                   <span className="h-1.5 w-4 rounded-full bg-white/30" />
@@ -203,87 +314,244 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 md:py-20">
+      {/* =========================================================================
+          KEY POSITIONING BANNER: "Software is our foundation. Intelligence is our next layer."
+          ========================================================================= */}
+      <section className="py-6 bg-white border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">Digital Solutions</h2>
-            <p className="text-slate-500 max-w-2xl mx-auto">
-              Comprehensive strategies and technical expertise tailored to your business goals.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {services.map((service) => {
-              const Icon = service.icon;
-              return (
-                <div key={service.title} className="bg-white rounded-2xl border border-slate-100 p-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all">
-                  <div className="w-10 h-10 rounded-xl bg-blue-50 text-primary flex items-center justify-center mb-4">
-                    <Icon size={18} />
-                  </div>
-                  <h3 className="font-semibold text-slate-900 mb-1.5">{service.title}</h3>
-                  <p className="text-sm text-slate-500 leading-relaxed">{service.desc}</p>
-                </div>
-              );
-            })}
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-blue-50 text-primary flex items-center justify-center shrink-0">
+                <Layers size={20} />
+              </div>
+              <div>
+                <p className="text-sm font-bold text-slate-900">
+                  Software is our foundation. Intelligence is our next layer.
+                </p>
+                <p className="text-xs text-slate-500">
+                  From web & mobile platforms to intelligent business systems.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-semibold px-3 py-1 rounded-md bg-slate-100 text-slate-700">Web & Mobile</span>
+              <span className="text-xs font-semibold px-3 py-1 rounded-md bg-slate-100 text-slate-700">Healthcare</span>
+              <span className="text-xs font-semibold px-3 py-1 rounded-md bg-slate-100 text-slate-700">E-commerce</span>
+              <span className="text-xs font-semibold px-3 py-1 rounded-md bg-blue-50 text-primary border border-blue-100">+ AI Layer</span>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="py-16 md:py-20">
+      {/* =========================================================================
+          MAGNETIC ANIMATED ACTION CARD: "See Your Idea Become a System"
+          Directly invites user to experience the cinematic interactive journey
+          ========================================================================= */}
+      <section className="py-14 md:py-20 bg-[#f6f8fc]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative bg-gradient-to-br from-slate-900 via-[#152a66] to-[#0f172a] rounded-3xl p-8 sm:p-12 md:p-14 text-white overflow-hidden shadow-2xl border border-blue-900/50">
+            {/* Ambient Lighting Orbs */}
+            <div className="absolute top-0 right-0 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-orange-500/15 rounded-full blur-3xl pointer-events-none -ml-20 -mb-20" />
+
+            <div className="relative z-10 grid lg:grid-cols-[1.2fr_0.8fr] gap-8 items-center">
+              <div>
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-300 text-xs font-semibold mb-4">
+                  <Sparkles size={13} className="text-amber-300" />
+                  <span>Cinematic Interactive Experience</span>
+                </div>
+
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mb-4 leading-tight">
+                  See Your Idea Become a System.
+                </h2>
+
+                <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-8 max-w-xl">
+                  From an idea to a deployed digital product, explore how Bytesoft turns business requirements into intelligent technology across 10 automated lifecycle stages.
+                </p>
+
+                <div className="flex flex-wrap items-center gap-4">
+                  <Link
+                    to="/project-journey"
+                    className="bg-white text-slate-900 hover:bg-blue-50 font-bold px-7 py-3.5 rounded-full shadow-lg transition-all inline-flex items-center gap-2.5 text-sm sm:text-base group"
+                  >
+                    <Zap size={17} className="text-secondary group-hover:scale-110 transition-transform" />
+                    <span>Launch Interactive Simulation</span>
+                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                  </Link>
+
+                  <span className="text-xs text-blue-200 font-mono flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                    Auto-Pilot • 60s Lifecycle
+                  </span>
+                </div>
+              </div>
+
+              {/* Animated Mini Topology Visual Preview */}
+              <div className="bg-slate-950/70 border border-slate-700/80 p-5 sm:p-6 rounded-2xl space-y-3 font-mono text-xs shadow-inner">
+                <div className="flex items-center justify-between pb-3 border-b border-slate-800 text-[11px] text-slate-400">
+                  <span>Architecture Live Stream</span>
+                  <span className="text-emerald-400 font-bold">100% READY</span>
+                </div>
+
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between bg-slate-900 p-2.5 rounded-xl border border-slate-800 text-slate-300">
+                    <span className="flex items-center gap-2">
+                      <Terminal size={14} className="text-blue-400" /> 01. Vision Deconstruction
+                    </span>
+                    <span className="text-emerald-400 text-[10px]">Auto</span>
+                  </div>
+
+                  <div className="flex items-center justify-between bg-slate-900 p-2.5 rounded-xl border border-slate-800 text-slate-300">
+                    <span className="flex items-center gap-2">
+                      <Workflow size={14} className="text-primary" /> 02. Topological Map
+                    </span>
+                    <span className="text-emerald-400 text-[10px]">Synced</span>
+                  </div>
+
+                  <div className="flex items-center justify-between bg-slate-900 p-2.5 rounded-xl border border-slate-800 text-slate-300">
+                    <span className="flex items-center gap-2">
+                      <Bot size={14} className="text-indigo-400" /> 03. Intelligence & RAG
+                    </span>
+                    <span className="text-emerald-400 text-[10px]">Active</span>
+                  </div>
+
+                  <div className="flex items-center justify-between bg-blue-950/80 p-2.5 rounded-xl border border-blue-500/40 text-blue-200">
+                    <span className="flex items-center gap-2">
+                      <Cloud size={14} className="text-amber-300" /> 04. Cloud Deployment
+                    </span>
+                    <span className="text-amber-300 text-[10px] font-bold">Live SLA</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================================
+          SECTION: COMPLETE SERVICES PORTFOLIO (Digital & Software + AI & Intelligent Tech)
+          ========================================================================= */}
+      <section className="py-16 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">Why teams choose Bytesoft</h2>
-            <p className="text-slate-500 max-w-2xl mx-auto">
-              Reliable execution, thoughtful design, and a clear commitment to your success.
+            <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-primary text-xs font-semibold px-3.5 py-1.5 rounded-full mb-3">
+              <Sparkles size={13} className="text-secondary" />
+              <span>Full-Stack Capabilities</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">
+              What We Build & Engineer
+            </h2>
+            <p className="text-slate-500 max-w-xl mx-auto text-sm sm:text-base">
+              Explore our core software engineering services alongside modern AI integrations designed for real business systems.
             </p>
-          </div>
 
-          {/* Clean Minimal Stats Card */}
-          <div className="max-w-4xl mx-auto bg-white rounded-2xl border border-slate-100 shadow-sm py-5 px-6 sm:px-8 mb-12">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 divide-y sm:divide-y-0 lg:divide-x divide-slate-100 text-center">
-              {[
-                { value: "50+", label: "Projects Delivered" },
-                { value: "100%", label: "Client Satisfaction" },
-                { value: "10+", label: "Expert Developers" },
-                { value: "24/7", label: "Support Available" }
-              ].map((stat, idx) => (
-                <div key={stat.label} className={`px-4 ${idx > 1 ? "pt-4 sm:pt-0" : ""}`}>
-                  <p className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
-                    {stat.value}
-                  </p>
-                  <p className="text-xs sm:text-sm font-medium text-slate-500 mt-1">
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
+            {/* Toggle Tabs */}
+            <div className="inline-flex items-center bg-slate-50 p-1 rounded-full border border-slate-200 mt-6 shadow-xs">
+              <button
+                type="button"
+                onClick={() => setActiveServiceTab('digital')}
+                className={`px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all ${
+                  activeServiceTab === 'digital'
+                    ? 'bg-primary text-white shadow-sm'
+                    : 'text-slate-600 hover:text-slate-900'
+                }`}
+              >
+                Digital & Software Engineering
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveServiceTab('intelligent')}
+                className={`px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all ${
+                  activeServiceTab === 'intelligent'
+                    ? 'bg-primary text-white shadow-sm'
+                    : 'text-slate-600 hover:text-slate-900'
+                }`}
+              >
+                AI & Intelligent Technology
+              </button>
             </div>
           </div>
 
-          {/* Advantages Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {advantages.map((item) => {
-              const Icon = item.icon;
-              return (
-                <div key={item.title} className="bg-white rounded-2xl border border-slate-100 p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all">
-                  <div className="w-10 h-10 rounded-xl bg-blue-50 text-primary flex items-center justify-center mb-4">
-                    <Icon size={18} />
+          {/* Tab 1: Digital & Software Grid */}
+          {activeServiceTab === 'digital' && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 animate-fade-in">
+              {digitalServices.map((service) => {
+                const Icon = service.icon;
+                return (
+                  <div
+                    key={service.title}
+                    className="bg-white rounded-2xl border border-slate-100 p-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col justify-between"
+                  >
+                    <div>
+                      <div className="w-10 h-10 rounded-xl bg-blue-50 text-primary flex items-center justify-center mb-4">
+                        <Icon size={18} />
+                      </div>
+                      <h3 className="font-semibold text-slate-900 mb-1.5 text-base">{service.title}</h3>
+                      <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">{service.desc}</p>
+                    </div>
+                    <div className="mt-4 pt-3 border-t border-slate-50">
+                      <Link to="/services" className="text-xs font-semibold text-primary hover:text-secondary inline-flex items-center gap-1">
+                        Learn more <ArrowRight size={12} />
+                      </Link>
+                    </div>
                   </div>
-                  <h3 className="font-semibold text-slate-900 mb-1.5">{item.title}</h3>
-                  <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
+          )}
+
+          {/* Tab 2: AI & Intelligent Tech Grid */}
+          {activeServiceTab === 'intelligent' && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 animate-fade-in">
+              {intelligentServices.map((service) => {
+                const Icon = service.icon;
+                return (
+                  <div
+                    key={service.title}
+                    className="bg-white rounded-2xl border border-blue-100/80 p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col justify-between relative overflow-hidden"
+                  >
+                    <div>
+                      <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-blue-50 to-indigo-50 text-primary border border-blue-100 flex items-center justify-center mb-4">
+                        <Icon size={20} />
+                      </div>
+                      <h3 className="font-semibold text-slate-900 mb-2 text-base sm:text-lg">{service.title}</h3>
+                      <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">{service.desc}</p>
+                    </div>
+                    <div className="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between">
+                      <span className="text-[11px] font-medium text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">Production-Ready</span>
+                      <Link to="/services" className="text-xs font-semibold text-primary hover:text-secondary inline-flex items-center gap-1">
+                        View details <ArrowRight size={12} />
+                      </Link>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+
+          <div className="mt-8 text-center">
+            <Link
+              to="/services"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-secondary"
+            >
+              <span>View full service details & pricing models</span>
+              <ArrowRight size={14} />
+            </Link>
           </div>
         </div>
       </section>
 
-
-      <section className="py-16 md:py-24">
+      {/* =========================================================================
+          SECTION: HOW WE DELIVER (PRESERVED NON-NEGOTIABLE)
+          Connected Timeline Track with sprint cycles and tag chips
+          ========================================================================= */}
+      <section className="py-16 md:py-20 bg-[#f6f8fc]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[0.85fr_1.15fr] gap-10 lg:gap-16 items-start">
           <div className="lg:sticky lg:top-28 self-start">
             <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-3">Our process</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">How we deliver</h2>
-            <p className="text-slate-500 max-w-sm mb-6 leading-relaxed">
-              A proven methodology refined across the projects we have shipped. Each step stays visible, so you always know what happens next.
+            <p className="text-slate-500 max-w-sm mb-6 leading-relaxed text-sm sm:text-base">
+              A proven methodology refined across 50+ shipped projects. Each milestone stays completely visible, so you always know what code is shipping next.
             </p>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50/80 border border-blue-100 text-xs font-medium text-primary">
               <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
@@ -346,27 +614,61 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 md:py-20">
+      {/* =========================================================================
+          SECTION: FEATURED REAL PROJECTS (Campus Quest, Bharat Almirah, etc.)
+          ========================================================================= */}
+      <section className="py-16 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-10 gap-4">
             <div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-2">Featured Projects</h2>
-              <p className="text-slate-500">A selection of our most impactful digital work.</p>
+              <div className="inline-flex items-center gap-2 bg-slate-50 border border-slate-200 text-slate-700 text-xs font-semibold px-3 py-1 rounded-full mb-2 shadow-xs">
+                <span>Real Case Studies</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-2">Featured Systems We Engineered</h2>
+              <p className="text-slate-500 text-sm sm:text-base">Real software solutions driving operations for our clients.</p>
             </div>
-            <Link to="/our-work" className="text-accent font-semibold hover:text-primary inline-flex items-center gap-1 text-sm">
-              View all <ArrowRight size={14} />
+            <Link to="/our-work" className="text-primary font-semibold hover:text-secondary inline-flex items-center gap-1 text-sm group">
+              <span>View all projects</span>
+              <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
             </Link>
           </div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {projectsData.slice(0, 3).map((project) => (
-              <Link key={project.id} to={`/our-work/${project.id}`} className="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-md transition-shadow group">
-                <div className="h-48 overflow-hidden">
-                  <img src={project.image} alt={project.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <Link
+                key={project.id}
+                to={`/our-work/${project.id}`}
+                className="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-md transition-shadow group flex flex-col justify-between"
+              >
+                <div>
+                  <div className="h-48 overflow-hidden bg-slate-100 relative">
+                    <img
+                      src={project.image}
+                      alt={project.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <span className="absolute top-3 left-3 bg-white/95 backdrop-blur-xs text-primary font-semibold text-[11px] px-2.5 py-1 rounded-md shadow-xs">
+                      {project.category}
+                    </span>
+                  </div>
+                  <div className="p-5">
+                    <h3 className="text-lg font-bold text-slate-900 mb-1 group-hover:text-primary transition-colors">
+                      {project.name}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-slate-500 line-clamp-2 leading-relaxed mb-4">
+                      {project.shortDescription}
+                    </p>
+                  </div>
                 </div>
-                <div className="p-5">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-1">{project.category}</p>
-                  <h3 className="text-lg font-bold text-slate-900 mb-1">{project.name}</h3>
-                  <p className="text-sm text-slate-500 line-clamp-2">{project.shortDescription}</p>
+
+                <div className="px-5 pb-5 pt-0">
+                  <div className="flex flex-wrap gap-1.5 pt-3 border-t border-slate-100">
+                    {getTechTags(project.techStack).map((t) => (
+                      <span key={t} className="text-[10px] font-medium bg-slate-50 border border-slate-100 px-2 py-0.5 rounded text-slate-600">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </Link>
             ))}
@@ -374,13 +676,16 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24">
+      {/* =========================================================================
+          SECTION: REAL CLIENT TESTIMONIALS (Dr. S. Ahmad, A. Kumar, Team Bharat Almirah)
+          ========================================================================= */}
+      <section className="py-16 md:py-20 bg-[#f6f8fc] border-y border-slate-100">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
-          <div className="inline-flex items-center gap-2 bg-white border border-blue-100 text-primary text-xs font-semibold px-3.5 py-1.5 rounded-full mb-3 shadow-sm">
+          <div className="inline-flex items-center gap-2 bg-white border border-blue-100 text-primary text-xs font-semibold px-3.5 py-1.5 rounded-full mb-3 shadow-xs">
             <Sparkles size={13} className="text-secondary" />
-            <span>Client Feedback</span>
+            <span>Verified Client Feedback</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">What our partners say</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">What Our Partners Say</h2>
           <p className="text-slate-500 text-sm sm:text-base max-w-lg mx-auto mb-10">
             Real feedback from organizations we have partnered with to build impactful digital products.
           </p>
@@ -389,7 +694,7 @@ export default function Home() {
           <div
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
-            className="relative bg-white rounded-3xl border border-slate-100 shadow-[0_12px_40px_-15px_rgba(15,23,42,0.06)] p-7 sm:p-10 md:p-12 transition-all overflow-hidden text-center group"
+            className="relative bg-white rounded-3xl border border-slate-200/80 shadow-[0_12px_40px_-15px_rgba(15,23,42,0.06)] p-7 sm:p-10 md:p-12 transition-all overflow-hidden text-center group"
           >
             {/* Watermark Quote Icon */}
             <Quote className="absolute top-6 right-8 w-20 h-20 text-slate-100 -rotate-12 pointer-events-none select-none transition-transform group-hover:scale-105 duration-500" />
@@ -413,7 +718,7 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* Quote with Smooth Key Transition */}
+            {/* Quote with Smooth Transition */}
             <p
               key={activeTestimonial}
               className="relative z-10 text-base sm:text-lg md:text-xl text-slate-800 leading-relaxed font-normal mb-8 max-w-2xl mx-auto"
@@ -423,7 +728,7 @@ export default function Home() {
 
             {/* Author with Verified Badge */}
             <div className="relative z-10 flex items-center justify-center gap-3.5">
-              <div className="w-11 h-11 rounded-full bg-blue-50 text-primary font-bold text-sm flex items-center justify-center border border-blue-100/80 shadow-sm shrink-0">
+              <div className="w-11 h-11 rounded-full bg-blue-50 text-primary font-bold text-sm flex items-center justify-center border border-blue-200 shadow-xs shrink-0">
                 {testimonials[activeTestimonial].initial}
               </div>
               <div className="text-left">
@@ -436,7 +741,7 @@ export default function Home() {
                   </span>
                 </div>
                 <p className="text-xs text-slate-500">
-                  {testimonials[activeTestimonial].role} · <span className="text-slate-600 font-medium">{testimonials[activeTestimonial].org}</span>
+                  {testimonials[activeTestimonial].role} · <span className="text-slate-700 font-medium">{testimonials[activeTestimonial].org}</span>
                 </p>
               </div>
             </div>
@@ -446,7 +751,7 @@ export default function Home() {
           <div className="flex items-center justify-center gap-4 mt-8">
             <button
               onClick={prevTestimonial}
-              className="w-10 h-10 rounded-full bg-white border border-slate-200/90 shadow-sm flex items-center justify-center text-slate-600 hover:border-primary hover:text-primary transition-all hover:scale-105 active:scale-95"
+              className="w-10 h-10 rounded-full bg-white border border-slate-200 shadow-xs flex items-center justify-center text-slate-600 hover:border-primary hover:text-primary transition-all hover:scale-105 active:scale-95"
               aria-label="Previous testimonial"
             >
               <ChevronLeft size={18} />
@@ -465,7 +770,7 @@ export default function Home() {
             </div>
             <button
               onClick={nextTestimonial}
-              className="w-10 h-10 rounded-full bg-white border border-slate-200/90 shadow-sm flex items-center justify-center text-slate-600 hover:border-primary hover:text-primary transition-all hover:scale-105 active:scale-95"
+              className="w-10 h-10 rounded-full bg-white border border-slate-200 shadow-xs flex items-center justify-center text-slate-600 hover:border-primary hover:text-primary transition-all hover:scale-105 active:scale-95"
               aria-label="Next testimonial"
             >
               <ChevronRight size={18} />
@@ -474,8 +779,135 @@ export default function Home() {
         </div>
       </section>
 
+      {/* =========================================================================
+          SECTION: WHY CLIENTS CHOOSE BYTESOFT (Stats & Advantages)
+          ========================================================================= */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-2 bg-slate-50 border border-slate-200 text-slate-700 text-xs font-semibold px-3.5 py-1.5 rounded-full mb-3 shadow-xs">
+              <Star size={13} className="text-secondary" />
+              <span>Proven Track Record</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">Why Teams Choose Bytesoft</h2>
+            <p className="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base">
+              Reliable execution, thoughtful software architecture, and a clear commitment to your business outcomes.
+            </p>
+          </div>
 
-      <section className="py-16 md:py-24">
+          {/* Clean Minimal Stats Card */}
+          <div className="max-w-4xl mx-auto bg-white rounded-2xl border border-slate-100 shadow-sm py-5 px-6 sm:px-8 mb-12">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 divide-y sm:divide-y-0 lg:divide-x divide-slate-100 text-center">
+              {[
+                { value: "50+", label: "Projects Delivered" },
+                { value: "100%", label: "Client Satisfaction" },
+                { value: "10+", label: "Expert Engineers" },
+                { value: "24/7", label: "Ongoing SLA Support" }
+              ].map((stat, idx) => (
+                <div key={stat.label} className={`px-4 ${idx > 1 ? "pt-4 sm:pt-0" : ""}`}>
+                  <p className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
+                    {stat.value}
+                  </p>
+                  <p className="text-xs sm:text-sm font-medium text-slate-500 mt-1">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Advantages Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {advantages.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.title} className="bg-white rounded-2xl border border-slate-100 p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all">
+                  <div className="w-10 h-10 rounded-xl bg-blue-50 text-primary flex items-center justify-center mb-4">
+                    <Icon size={18} />
+                  </div>
+                  <h3 className="font-semibold text-slate-900 mb-1.5">{item.title}</h3>
+                  <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================================
+          SECTION: BUILD YOUR DIGITAL SYSTEM (Interactive Quick Selector)
+          ========================================================================= */}
+      <section className="py-14 md:py-18 bg-white border-t border-slate-100">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-xl mx-auto mb-8">
+            <span className="text-xs font-bold text-primary uppercase tracking-widest">Interactive Blueprint</span>
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mt-1 mb-2">Build Your Digital System</h2>
+            <p className="text-xs sm:text-sm text-slate-500">
+              Select your system type below to see recommended technology architecture for your requirements.
+            </p>
+          </div>
+
+          <div className="bg-[#f8fafc] rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-xs">
+            {/* Quick Pills */}
+            <div className="flex flex-wrap justify-center gap-2 mb-6">
+              {[
+                { label: "Website", stack: "Next.js + Tailwind + Edge CDN", db: "PostgreSQL", time: "2–4 Weeks" },
+                { label: "Mobile App", stack: "React Native + Node.js API", db: "MongoDB Atlas", time: "4–8 Weeks" },
+                { label: "Business Software", stack: "React + Python FastAPI", db: "PostgreSQL ACID", time: "6–10 Weeks" },
+                { label: "E-Commerce", stack: "Next.js + GraphQL + Stripe", db: "MongoDB + Redis", time: "4–6 Weeks" },
+                { label: "Healthcare", stack: "React + FHIR API + HIPAA", db: "Encrypted PostgreSQL", time: "8–12 Weeks" },
+                { label: "AI & Automation", stack: "Python LangGraph + RAG", db: "Pinecone Vector DB", time: "3–6 Weeks" },
+                { label: "Custom Platform", stack: "Microservices + Cloud Cluster", db: "Multi-DB Cluster", time: "Flexible" }
+              ].map((pill, pIdx) => (
+                <button
+                  key={pill.label}
+                  type="button"
+                  onClick={() => setSelectedBlueprint(pIdx)}
+                  className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all ${
+                    selectedBlueprint === pIdx
+                      ? 'bg-primary text-white shadow-xs'
+                      : 'bg-white text-slate-600 border border-slate-200 hover:border-primary'
+                  }`}
+                >
+                  {pill.label}
+                </button>
+              ))}
+            </div>
+
+            {/* Architecture Card */}
+            <div className="grid sm:grid-cols-3 gap-3 bg-white p-4 rounded-2xl border border-slate-200/80 mb-5 text-xs text-slate-700">
+              <div>
+                <p className="text-[10px] uppercase font-bold text-slate-400">Recommended Stack</p>
+                <p className="font-semibold text-slate-900 mt-0.5">{blueprints[selectedBlueprint].stack}</p>
+              </div>
+              <div>
+                <p className="text-[10px] uppercase font-bold text-slate-400">Database Layer</p>
+                <p className="font-semibold text-slate-900 mt-0.5">{blueprints[selectedBlueprint].db}</p>
+              </div>
+              <div>
+                <p className="text-[10px] uppercase font-bold text-slate-400">Estimated Sprint Delivery</p>
+                <p className="font-semibold text-primary mt-0.5">{blueprints[selectedBlueprint].time}</p>
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+              <span className="text-slate-500">Fixed-price milestone proposal delivered within 24 hours.</span>
+              <Link
+                to="/contact"
+                className="bg-primary hover:bg-blue-900 text-white font-semibold px-5 py-2.5 rounded-full shadow-xs transition-colors inline-flex items-center gap-1.5"
+              >
+                <span>Request Custom Scope & Quote</span>
+                <ArrowRight size={13} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================================
+          SECTION: FINAL CONVERSION & GET IN TOUCH
+          ========================================================================= */}
+      <section className="py-16 md:py-20 bg-[#f6f8fc]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative bg-white rounded-3xl border border-slate-100 shadow-[0_15px_45px_-15px_rgba(15,23,42,0.06)] p-7 sm:p-10 md:p-12 grid md:grid-cols-2 gap-8 md:gap-12 items-center overflow-hidden">
             {/* Subtle Ambient Corner Tint */}
@@ -485,24 +917,24 @@ export default function Home() {
             <div className="relative z-10">
               <div className="inline-flex items-center gap-2 bg-slate-50 border border-slate-200/80 text-primary text-xs font-semibold px-3 py-1 rounded-full mb-3.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
-                <span>Get in Touch</span>
+                <span>Let's Build Together</span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3 tracking-tight">
-                Let's start a conversation
+                Ready to engineer your next system?
               </h2>
               <p className="text-slate-500 text-sm sm:text-base leading-relaxed mb-6">
-                Ready to elevate your digital presence or build your next product? Reach out and our team will reply within 24 hours.
+                Whether you need a full web platform, a mobile application, or an intelligent workflow automation layer, our team will review your requirements and respond within 24 hours.
               </p>
               <div className="flex flex-col sm:flex-row sm:items-center gap-4">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center gap-2 bg-primary text-white font-semibold px-6 py-3 rounded-full hover:bg-blue-900 shadow-sm hover:shadow transition-all group"
+                  className="inline-flex items-center justify-center gap-2 bg-primary text-white font-semibold px-6 py-3.5 rounded-full hover:bg-blue-900 shadow-sm hover:shadow transition-all group text-sm sm:text-base"
                 >
-                  <span>Contact Us</span>
+                  <span>Book a Consultation</span>
                   <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
                 </Link>
                 <span className="text-xs text-slate-400 font-medium">
-                  ⚡ Reply within 24h guaranteed
+                  ⚡ Reply within 24 hours
                 </span>
               </div>
             </div>
@@ -532,7 +964,7 @@ export default function Home() {
                   <Phone size={18} />
                 </div>
                 <div className="min-w-0">
-                  <p className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Call Directly</p>
+                  <p className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Direct Hotline</p>
                   <p className="text-sm font-semibold text-slate-800 group-hover:text-primary transition-colors">
                     +91 9214749997
                   </p>
