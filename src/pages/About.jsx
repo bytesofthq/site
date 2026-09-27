@@ -1,20 +1,20 @@
-import { ArrowRight, Target, ShieldCheck, Zap, Award, Globe, Search, PenTool, Code, Rocket, CheckCircle2, Server, Smartphone, Database, Layout } from 'lucide-react';
+import { ArrowRight, Sparkles, Target, ShieldCheck, Zap, Award, Globe, Search, PenTool, Code, Rocket, CheckCircle2, Server, Smartphone, Database, Layout } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function About() {
   const values = [
     {
-      icon: <Zap size={32} className="text-primary" />,
+      icon: <Zap size={20} className="text-primary" />,
       title: "Radical Innovation",
       desc: "We don't settle for industry standards; we define them. Our team is constantly exploring emerging technologies to give you a competitive edge."
     },
     {
-      icon: <ShieldCheck size={32} className="text-primary" />,
+      icon: <ShieldCheck size={20} className="text-primary" />,
       title: "Uncompromising Integrity",
       desc: "We believe in transparent pricing, honest timelines, and clear communication. No hidden fees, no technical jargon—just results."
     },
     {
-      icon: <Award size={32} className="text-primary" />,
+      icon: <Award size={20} className="text-primary" />,
       title: "Relentless Excellence",
       desc: "From the first pixel designed to the final line of code deployed, we maintain an obsessive focus on quality and performance."
     }
@@ -24,63 +24,62 @@ export default function About() {
     <div>
       
       {/* Page Hero - Enhanced with Gradient Background */}
-      <section className="pt-14 pb-6 md:pt-20">
-        <div className="max-w-3xl mx-auto px-4 md:px-8 text-center">
-          <p className="text-accent text-xs font-semibold tracking-[0.2em] uppercase mb-4">Who we are</p>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 leading-tight">
-            Engineering the future of <span className="text-accent">digital</span>
+      <section className="relative overflow-hidden pt-12 pb-16 md:pt-20 md:pb-20">
+        <div aria-hidden="true" className="absolute -top-32 right-0 w-[480px] h-[480px] rounded-full bg-blue-100/70 blur-3xl pointer-events-none" />
+        <div className="relative max-w-3xl mx-auto px-4 sm:px-6 text-center">
+          <div className="inline-flex items-center gap-2 bg-white border border-blue-100 text-primary text-sm font-medium px-3.5 py-1.5 rounded-full mb-6 shadow-sm"><Sparkles size={14} /> About Bytesoft</div>
+          <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-bold text-slate-900 mb-6 leading-[1.08] tracking-tight">
+            Engineering the future of <span className="text-primary">digital</span>
           </h1>
-          <p className="text-lg text-slate-500 leading-relaxed">
+          <p className="text-base md:text-lg text-slate-500 leading-relaxed">
             We are a collective of passionate technologists, designers, and strategists dedicated to building exceptional online experiences.
           </p>
         </div>
       </section>
 
       {/* Mission & Vision Section */}
-      <section className="py-20 md:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="flex flex-col lg:flex-row gap-12 md:gap-16 items-center">
+      <section className="py-16 md:py-20 bg-white border-y border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
             
-            <div className="lg:w-1/2 relative">
-              <div className="absolute top-0 left-0 w-32 h-32 bg-blue-50 rounded-full -translate-x-8 -translate-y-8 -z-10"></div>
-              <div className="absolute bottom-0 right-0 w-32 h-32 bg-blue-50 rounded-full translate-x-8 translate-y-8 -z-10"></div>
+            <div className="relative w-full">
               <img 
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
                 alt="Bytesoft Team Collaboration" 
-                className="rounded-2xl shadow-2xl border border-slate-100 object-cover w-full h-64 sm:h-[400px] md:h-[500px]"
+                className="rounded-2xl shadow-sm border border-slate-100 object-cover w-full h-72 sm:h-[360px] lg:h-[400px]"
               />
               
               {/* Floating Stat Card */}
-              <div className="absolute -bottom-6 -left-6 bg-white p-5 md:p-8 rounded-xl md:rounded-2xl shadow-xl border border-slate-100 hidden md:flex items-center gap-4 md:gap-6 animate-pulse-slow">
-                <div className="w-12 h-12 md:w-16 md:h-16 bg-blue-50 rounded-full flex items-center justify-center shrink-0">
-                  <Globe className="text-primary" size={24} />
+              <div className="absolute bottom-4 left-4 right-4 sm:right-auto bg-white/95 p-4 rounded-2xl shadow-sm border border-white flex items-center gap-3">
+                <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center shrink-0">
+                  <Globe className="text-primary" size={20} />
                 </div>
                 <div>
-                  <span className="block text-2xl md:text-3xl font-black text-gray-900 mb-1">50+</span>
-                  <span className="text-gray-600 text-sm md:text-base font-medium">Projects Delivered</span>
+                  <span className="block text-2xl font-bold text-slate-900 mb-1">50+</span>
+                  <span className="text-slate-500 text-sm font-medium">Projects Delivered</span>
                 </div>
               </div>
             </div>
-            <div className="lg:w-1/2">
+            <div className="min-w-0">
               <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
-                <Target size={28} className="text-primary" />
-                <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Mission</h2>
+                <Target size={20} className="text-primary" />
+                <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">Our Mission</h2>
               </div>
-              <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-4 md:mb-6">
+              <p className="text-sm sm:text-base text-slate-500 leading-relaxed mb-4 md:mb-6">
                 At Bytesoft, we believe that the internet is the most powerful tool for business growth in human history. Yet, too many companies are held back by slow, outdated, and uninspired digital infrastructure.
               </p>
-              <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-6 md:mb-8">
-                Our mission is simple: <strong className="text-gray-900 font-semibold">We don't just build websites; we architect digital growth platforms.</strong> By combining cutting-edge software engineering with strategic digital insights, we build digital assets that help businesses grow and succeed online.
+              <p className="text-sm sm:text-base text-slate-500 leading-relaxed mb-6 md:mb-8">
+                Our mission is simple: <strong className="text-slate-900 font-semibold">We don't just build websites; we architect digital growth platforms.</strong> By combining cutting-edge software engineering with strategic digital insights, we build digital assets that help businesses grow and succeed online.
               </p>
               
-              <div className="grid grid-cols-2 gap-6 md:gap-8">
-                <div className="border-l-4 border-secondary pl-5 md:pl-6">
-                  <span className="block text-3xl md:text-4xl font-black text-gray-900 mb-1 md:mb-2">50+</span>
-                  <span className="text-gray-600 text-sm md:text-base font-medium">Projects Delivered</span>
+              <div className="grid grid-cols-2 gap-4 pt-6 border-t border-slate-100">
+                <div className="border-l-2 border-secondary pl-4">
+                  <span className="block text-3xl md:text-4xl font-bold text-slate-900 mb-1 md:mb-2">50+</span>
+                  <span className="text-slate-500 text-sm font-medium">Projects Delivered</span>
                 </div>
-                <div className="border-l-4 border-primary pl-5 md:pl-6">
-                  <span className="block text-3xl md:text-4xl font-black text-gray-900 mb-1 md:mb-2">100%</span>
-                  <span className="text-gray-600 text-sm md:text-base font-medium">Client Satisfaction</span>
+                <div className="border-l-2 border-primary pl-4">
+                  <span className="block text-3xl md:text-4xl font-bold text-slate-900 mb-1 md:mb-2">100%</span>
+                  <span className="text-slate-500 text-sm font-medium">Client Satisfaction</span>
                 </div>
               </div>
             </div>
@@ -90,24 +89,23 @@ export default function About() {
       </section>
 
       {/* Core Values */}
-      <section className="py-20 md:py-24 bg-slate-50 border-t border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Our Core Values</h2>
-            <div className="w-16 h-1.5 bg-secondary mx-auto mb-6 rounded-full"></div>
-            <p className="text-gray-600 max-w-2xl mx-auto text-base md:text-lg px-4">
+      <section className="py-16 md:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 md:mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-4">Our Core Values</h2>
+            <p className="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base px-4">
               The foundational principles that guide every line of code we write and every strategy we deploy.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {values.map((value, index) => (
-              <div key={index} className="bg-white p-6 md:p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group">
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-blue-50 rounded-xl md:rounded-2xl flex items-center justify-center mb-5 md:mb-6 group-hover:-translate-y-2 transition-transform duration-300">
+              <div key={index} className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md motion-safe:hover:-translate-y-0.5 transition-all duration-300 border border-slate-100 group">
+                <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center mb-4">
                   {value.icon}
                 </div>
-                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4">{value.title}</h3>
-                <p className="text-gray-600 leading-relaxed text-base md:text-lg">
+                <h3 className="text-lg font-semibold text-slate-900 mb-2">{value.title}</h3>
+                <p className="text-slate-500 leading-relaxed text-sm sm:text-base">
                   {value.desc}
                 </p>
               </div>
@@ -117,34 +115,32 @@ export default function About() {
       </section>
 
       {/* Our Proven Process */}
-      <section className="py-20 md:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Our Proven Process</h2>
-            <div className="w-16 h-1.5 bg-secondary mx-auto mb-6 rounded-full"></div>
-            <p className="text-gray-600 max-w-2xl mx-auto text-base md:text-lg px-4">
+      <section className="py-16 md:py-20 bg-white border-y border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 md:mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-4">Our Proven Process</h2>
+            <p className="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base px-4">
               A systematic approach to turning complex challenges into elegant digital solutions.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 relative">
-            {/* Connecting line for desktop */}
-            <div className="hidden lg:block absolute top-12 left-[12%] right-[12%] h-0.5 bg-slate-100 -z-10"></div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             
             {[
-              { icon: <Search size={24} />, title: "1. Discovery", desc: "We dive deep into your business goals, target audience, and market landscape." },
-              { icon: <PenTool size={24} />, title: "2. Strategy & Design", desc: "Crafting intuitive user experiences and striking visual identities that convert." },
-              { icon: <Code size={24} />, title: "3. Engineering", desc: "Building robust, scalable, and blazingly fast technical infrastructure." },
-              { icon: <Rocket size={24} />, title: "4. Launch & Scale", desc: "Deploying flawlessly and continuously optimizing for maximum growth." }
+              { icon: <Search size={20} />, title: "Discovery", desc: "We dive deep into your business goals, target audience, and market landscape." },
+              { icon: <PenTool size={20} />, title: "Strategy & Design", desc: "Crafting intuitive user experiences and striking visual identities that convert." },
+              { icon: <Code size={20} />, title: "Engineering", desc: "Building robust, scalable, and blazingly fast technical infrastructure." },
+              { icon: <Rocket size={20} />, title: "Launch & Scale", desc: "Deploying flawlessly and continuously optimizing for maximum growth." }
             ].map((step, index) => (
-              <div key={index} className="relative group text-center flex flex-col items-center p-4">
-                <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-full border-4 border-slate-50 flex items-center justify-center mb-4 md:mb-5 shadow-sm group-hover:border-secondary transition-colors duration-300 relative z-10">
-                  <div className="w-14 h-14 md:w-16 md:h-16 bg-blue-50 rounded-full flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+              <div key={index} className="group rounded-2xl border border-slate-100 bg-white p-6 shadow-sm hover:shadow-md motion-safe:hover:-translate-y-0.5 transition-all">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                     {step.icon}
                   </div>
+                  <span className="text-xs font-mono font-semibold text-slate-400 bg-slate-50 border border-slate-100 px-2.5 py-1 rounded-md">{String(index + 1).padStart(2, '0')}</span>
                 </div>
-                <h3 className="text-base md:text-xl font-bold text-gray-900 mb-2">{step.title}</h3>
-                <p className="text-gray-600 text-sm md:text-base leading-relaxed">{step.desc}</p>
+                <h3 className="text-lg font-semibold text-slate-900 mb-2">{step.title}</h3>
+                <p className="text-slate-500 text-sm leading-relaxed">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -152,18 +148,17 @@ export default function About() {
       </section>
 
       {/* Tech Stack Section */}
-      <section className="py-20 md:py-24 bg-slate-50 border-t border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="flex flex-col md:flex-row gap-10 md:gap-16 items-center">
-            <div className="md:w-1/3">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 md:mb-6">The Tech Stack We Master</h2>
-              <div className="w-16 h-1.5 bg-secondary mb-6 md:mb-8 rounded-full"></div>
-              <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-6 md:mb-8">
+      <section className="py-16 md:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14 items-center">
+            <div className="lg:col-span-2">
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-4 md:mb-6">The Tech Stack We Master</h2>
+              <p className="text-slate-500 text-sm sm:text-base leading-relaxed mb-6 md:mb-8">
                 We don't tie ourselves to a single technology. We select the right tools for your specific business requirements, ensuring scalability, security, and exceptional performance.
               </p>
               <ul className="space-y-3">
                 {['High-Performance React & Next.js', 'Robust Node.js & Python Backends', 'Scalable AWS Cloud Infrastructure', 'Modern E-commerce Platforms'].map((item, i) => (
-                  <li key={i} className="flex items-center text-gray-700 text-sm md:text-base font-medium">
+                  <li key={i} className="flex items-center text-slate-600 text-sm font-medium">
                     <CheckCircle2 className="text-primary mr-3 shrink-0" size={18} />
                     {item}
                   </li>
@@ -171,7 +166,7 @@ export default function About() {
               </ul>
             </div>
             
-            <div className="md:w-2/3 grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4">
+            <div className="lg:col-span-3 w-full grid grid-cols-2 sm:grid-cols-3 gap-4">
               {[
                 { name: "Frontend", icon: <Layout size={20} />, tags: "React, Vue, Next.js" },
                 { name: "Backend", icon: <Server size={20} />, tags: "Node, Python, Go" },
@@ -180,12 +175,12 @@ export default function About() {
                 { name: "Cloud", icon: <Globe size={20} />, tags: "AWS, GCP, Vercel" },
                 { name: "UI/UX", icon: <PenTool size={20} />, tags: "Figma, TailwindCSS" },
               ].map((tech, idx) => (
-                <div key={idx} className="bg-white p-4 md:p-5 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow group">
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-blue-50 text-primary rounded-lg md:rounded-xl flex items-center justify-center mb-3 md:mb-4 group-hover:scale-110 transition-transform">
+                <div key={idx} className="bg-white p-4 md:p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow group">
+                  <div className="w-10 h-10 bg-blue-50 text-primary rounded-xl flex items-center justify-center mb-3 md:mb-4 transition-colors">
                     {tech.icon}
                   </div>
-                  <h4 className="font-bold text-gray-900 text-sm md:text-base mb-1">{tech.name}</h4>
-                  <p className="text-xs text-gray-500">{tech.tags}</p>
+                  <h4 className="font-bold text-slate-900 text-sm md:text-base mb-1">{tech.name}</h4>
+                  <p className="text-xs text-slate-500">{tech.tags}</p>
                 </div>
               ))}
             </div>
@@ -194,8 +189,8 @@ export default function About() {
       </section>
 
       {/* Final CTA - Reduced Height */}
-      <section className="py-16">
-        <div className="max-w-3xl mx-auto px-4 md:px-8 text-center">
+      <section className="py-16 md:py-20 bg-white border-t border-slate-100">
+        <div className="relative max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
             Ready to partner with us?
           </h2>
@@ -208,21 +203,7 @@ export default function About() {
         </div>
       </section>
 
-      <style>{`
-        @keyframes pulse-slow {
-          0%, 100% {
-            transform: scale(1);
-            opacity: 1;
-          }
-          50% {
-            transform: scale(1.05);
-            opacity: 0.9;
-          }
-        }
-        .animate-pulse-slow {
-          animation: pulse-slow 3s ease-in-out infinite;
-        }
-      `}</style>
+
     </div>
   );
 }
