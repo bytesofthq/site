@@ -37,7 +37,7 @@ const testimonials = [
 ];
 
 const services = [
-  { icon: MonitorSmartphone, title: "Web Engineering", desc: "Custom, responsive web applications built for speed and a clear user experience." },
+  { icon: MonitorSmartphone, title: "Web Design & Development", desc: "Custom, responsive web applications built for speed and a clear user experience." },
   { icon: LineChart, title: "Search Optimization", desc: "Technical and content SEO that captures high-intent search traffic." },
   { icon: Users, title: "Social Media Strategy", desc: "Campaigns that build loyalty, community, and qualified leads." },
   { icon: Store, title: "E-commerce Platforms", desc: "Secure storefronts built for a smooth shopping experience." },

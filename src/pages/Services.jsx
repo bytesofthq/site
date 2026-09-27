@@ -62,7 +62,7 @@ export default function Services() {
     {
       id: "web-engineering",
       icon: MonitorSmartphone,
-      title: "Web Engineering",
+      title: "Web Design & Development",
       desc: "Custom, responsive web applications engineered for speed, scalability, and seamless user experiences.",
       features: ["React & Next.js", "Custom APIs", "Performance", "Headless CMS"]
     },

@@ -150,7 +150,7 @@ export default function Layout() {
             <nav aria-label="Footer services" className="lg:col-span-2">
               <h2 className="text-sm font-semibold text-slate-900 mb-4">Services</h2>
               <ul className="space-y-1 text-sm text-slate-500">
-                {['Web Engineering', 'Search Optimization', 'App Development', 'AI Integration', 'UI/UX Design'].map((service) => (
+                {['Web Design & Development', 'Search Optimization', 'App Development', 'AI Integration', 'UI/UX Design'].map((service) => (
                   <li key={service}><Link to="/services" className="inline-block py-2 hover:text-primary transition-colors">{service}</Link></li>
                 ))}
               </ul>

@@ -86,7 +86,7 @@ export default function ContactForm() {
             className="w-full px-4 py-3 rounded-xl bg-slate-50/70 border border-slate-200/80 focus:outline-none focus:border-primary focus:bg-white focus:ring-2 focus:ring-primary/10 text-slate-800 text-sm transition-all appearance-none pr-10 cursor-pointer" 
             required
           >
-            <option value="Web Engineering">Web Engineering</option>
+            <option value="Web Design & Development">Web Design & Development</option>
             <option value="Search Optimization">Search Optimization & SEO</option>
             <option value="Social Media Strategy">Social Media Strategy</option>
             <option value="E-commerce Platform">E-commerce Platform</option>
