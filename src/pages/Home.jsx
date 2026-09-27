@@ -138,8 +138,8 @@ export default function Home() {
               <Link to="/contact" className="bg-primary text-white font-semibold px-6 py-3 rounded-full hover:bg-blue-900 transition-colors shadow-sm inline-flex items-center gap-2">
                 Get in Touch <ArrowRight size={16} />
               </Link>
-              <Link to="/our-work" className="bg-white border border-slate-200 text-slate-800 font-semibold px-6 py-3 rounded-full hover:border-primary hover:text-primary transition-colors">
-                View Our Work
+              <Link to="/services" className="bg-white border border-slate-200 text-slate-800 font-semibold px-6 py-3 rounded-full hover:border-primary hover:text-primary transition-colors">
+                Explore Our Services
               </Link>
             </div>
             <div className="flex flex-wrap gap-x-6 gap-y-3">
