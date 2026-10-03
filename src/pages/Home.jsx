@@ -349,78 +349,115 @@ export default function Home() {
           ========================================================================= */}
       <section className="py-14 md:py-20 bg-[#f6f8fc]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative bg-gradient-to-br from-slate-900 via-[#152a66] to-[#0f172a] rounded-3xl p-8 sm:p-12 md:p-14 text-white overflow-hidden shadow-2xl border border-blue-900/50">
-            {/* Ambient Lighting Orbs */}
-            <div className="absolute top-0 right-0 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-orange-500/15 rounded-full blur-3xl pointer-events-none -ml-20 -mb-20" />
+          <div className="relative bg-white rounded-3xl p-8 sm:p-12 md:p-14 overflow-hidden border border-blue-100/80 shadow-[0_20px_50px_-20px_rgba(30,58,138,0.08)]">
+            {/* Subtle Tech Grid Texture */}
+            <div
+              className="absolute inset-0 opacity-[0.035] pointer-events-none"
+              style={{
+                backgroundImage: 'radial-gradient(#1e3a8a 1px, transparent 1px)',
+                backgroundSize: '20px 20px'
+              }}
+            />
 
-            <div className="relative z-10 grid lg:grid-cols-[1.2fr_0.8fr] gap-8 items-center">
+            {/* Ambient Lighting Orbs */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100/60 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
+            <div className="absolute bottom-0 left-0 w-80 h-80 bg-orange-100/40 rounded-full blur-3xl pointer-events-none -ml-20 -mb-20" />
+
+            <div className="relative z-10 grid lg:grid-cols-[1.2fr_0.8fr] gap-8 lg:gap-12 items-center">
               <div>
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-300 text-xs font-semibold mb-4">
-                  <Sparkles size={13} className="text-amber-300" />
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-primary text-xs font-semibold mb-4 shadow-xs">
+                  <Sparkles size={13} className="text-secondary" />
                   <span>Cinematic Interactive Experience</span>
                 </div>
 
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mb-4 leading-tight">
-                  See Your Idea Become a System.
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-4 leading-tight">
+                  See Your Idea Become a <span className="text-primary">System.</span>
                 </h2>
 
-                <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-8 max-w-xl">
+                <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-8 max-w-xl">
                   From an idea to a deployed digital product, explore how Bytesoft turns business requirements into intelligent technology across 10 automated lifecycle stages.
                 </p>
 
                 <div className="flex flex-wrap items-center gap-4">
                   <Link
                     to="/project-journey"
-                    className="bg-white text-slate-900 hover:bg-blue-50 font-bold px-7 py-3.5 rounded-full shadow-lg transition-all inline-flex items-center gap-2.5 text-sm sm:text-base group"
+                    className="bg-primary hover:bg-blue-900 text-white font-semibold px-7 py-3.5 rounded-full shadow-md shadow-primary/15 hover:shadow-lg transition-all inline-flex items-center gap-2.5 text-sm sm:text-base group"
                   >
                     <Zap size={17} className="text-secondary group-hover:scale-110 transition-transform" />
                     <span>Launch Interactive Simulation</span>
                     <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                   </Link>
 
-                  <span className="text-xs text-blue-200 font-mono flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                    Auto-Pilot • 60s Lifecycle
-                  </span>
+                  <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-slate-50 border border-slate-200/80 text-xs font-medium text-slate-600">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                    </span>
+                    <span>Auto-Pilot • 60s Lifecycle</span>
+                  </div>
                 </div>
               </div>
 
-              {/* Animated Mini Topology Visual Preview */}
-              <div className="bg-slate-950/70 border border-slate-700/80 p-5 sm:p-6 rounded-2xl space-y-3 font-mono text-xs shadow-inner">
-                <div className="flex items-center justify-between pb-3 border-b border-slate-800 text-[11px] text-slate-400">
-                  <span>Architecture Live Stream</span>
-                  <span className="text-emerald-400 font-bold">100% READY</span>
+              {/* Clean Modern Architecture Lifecycle Stream Widget */}
+              <div className="bg-slate-50/90 backdrop-blur-sm border border-slate-200/80 p-5 sm:p-6 rounded-2xl space-y-3.5 shadow-sm">
+                <div className="flex items-center justify-between pb-3 border-b border-slate-200/80 text-xs text-slate-500">
+                  <span className="flex items-center gap-1.5 font-semibold text-slate-700">
+                    <Activity size={14} className="text-primary" />
+                    Architecture Live Stream
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-bold text-[11px]">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                    100% READY
+                  </span>
                 </div>
 
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between bg-slate-900 p-2.5 rounded-xl border border-slate-800 text-slate-300">
-                    <span className="flex items-center gap-2">
-                      <Terminal size={14} className="text-blue-400" /> 01. Vision Deconstruction
+                <div className="space-y-2.5">
+                  <div className="flex items-center justify-between bg-white p-3 rounded-xl border border-slate-100 shadow-xs hover:border-blue-200 transition-all">
+                    <span className="flex items-center gap-2.5 text-xs font-medium text-slate-800">
+                      <div className="w-6 h-6 rounded-md bg-blue-50 text-primary flex items-center justify-center shrink-0">
+                        <Terminal size={13} />
+                      </div>
+                      <span>01. Vision Deconstruction</span>
                     </span>
-                    <span className="text-emerald-400 text-[10px]">Auto</span>
+                    <span className="text-emerald-700 bg-emerald-50 border border-emerald-100 text-[10px] font-semibold px-2 py-0.5 rounded">Auto</span>
                   </div>
 
-                  <div className="flex items-center justify-between bg-slate-900 p-2.5 rounded-xl border border-slate-800 text-slate-300">
-                    <span className="flex items-center gap-2">
-                      <Workflow size={14} className="text-primary" /> 02. Topological Map
+                  <div className="flex items-center justify-between bg-white p-3 rounded-xl border border-slate-100 shadow-xs hover:border-blue-200 transition-all">
+                    <span className="flex items-center gap-2.5 text-xs font-medium text-slate-800">
+                      <div className="w-6 h-6 rounded-md bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0">
+                        <Workflow size={13} />
+                      </div>
+                      <span>02. Topological Map</span>
                     </span>
-                    <span className="text-emerald-400 text-[10px]">Synced</span>
+                    <span className="text-emerald-700 bg-emerald-50 border border-emerald-100 text-[10px] font-semibold px-2 py-0.5 rounded">Synced</span>
                   </div>
 
-                  <div className="flex items-center justify-between bg-slate-900 p-2.5 rounded-xl border border-slate-800 text-slate-300">
-                    <span className="flex items-center gap-2">
-                      <Bot size={14} className="text-indigo-400" /> 03. Intelligence & RAG
+                  <div className="flex items-center justify-between bg-white p-3 rounded-xl border border-slate-100 shadow-xs hover:border-blue-200 transition-all">
+                    <span className="flex items-center gap-2.5 text-xs font-medium text-slate-800">
+                      <div className="w-6 h-6 rounded-md bg-purple-50 text-purple-600 flex items-center justify-center shrink-0">
+                        <Bot size={13} />
+                      </div>
+                      <span>03. Intelligence & RAG</span>
                     </span>
-                    <span className="text-emerald-400 text-[10px]">Active</span>
+                    <span className="text-emerald-700 bg-emerald-50 border border-emerald-100 text-[10px] font-semibold px-2 py-0.5 rounded">Active</span>
                   </div>
 
-                  <div className="flex items-center justify-between bg-blue-950/80 p-2.5 rounded-xl border border-blue-500/40 text-blue-200">
-                    <span className="flex items-center gap-2">
-                      <Cloud size={14} className="text-amber-300" /> 04. Cloud Deployment
+                  <div className="flex items-center justify-between bg-gradient-to-r from-blue-50/80 to-indigo-50/70 p-3 rounded-xl border border-blue-200/80 shadow-xs">
+                    <span className="flex items-center gap-2.5 text-xs font-semibold text-primary">
+                      <div className="w-6 h-6 rounded-md bg-primary text-white flex items-center justify-center shrink-0 shadow-xs">
+                        <Cloud size={13} />
+                      </div>
+                      <span>04. Cloud Deployment</span>
                     </span>
-                    <span className="text-amber-300 text-[10px] font-bold">Live SLA</span>
+                    <span className="text-amber-800 bg-amber-100 border border-amber-200 text-[10px] font-bold px-2 py-0.5 rounded">Live SLA</span>
                   </div>
+                </div>
+
+                <div className="pt-1 flex items-center justify-between text-[11px] text-slate-400">
+                  <span>10-stage automated pipeline</span>
+                  <Link to="/project-journey" className="text-primary font-medium hover:underline inline-flex items-center gap-0.5">
+                    Explore simulation <ArrowRight size={11} />
+                  </Link>
                 </div>
               </div>
             </div>
