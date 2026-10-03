@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
-import { MessageSquare, MessageSquareMore, Phone, Mail, Menu, X, Home, Briefcase, Info, LayoutTemplate, ChevronUp, ChevronRight, Sparkles } from 'lucide-react';
+import { MessageSquare, MessageSquareMore, Phone, Mail, Menu, X, Home, Briefcase, Info, LayoutTemplate, ChevronRight, Sparkles } from 'lucide-react';
 import ContactForm from './ContactForm';
 import Footer from './Footer';
 
@@ -17,13 +17,11 @@ export default function Layout() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [showScrollTop, setShowScrollTop] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
-      setShowScrollTop(window.scrollY > 500);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -55,10 +53,6 @@ export default function Layout() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, [location.pathname]);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
 
   return (
     <div className="min-h-screen flex flex-col font-sans bg-[#f6f8fc] overflow-x-clip">
@@ -124,16 +118,6 @@ export default function Layout() {
 
       {/* Consolidate Floating Action Dock (Bottom Right) */}
       <div className={`fixed bottom-5 right-5 flex flex-col items-end gap-3 z-40 transition-all duration-300 ${isMobileMenuOpen || isModalOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
-        
-        {/* Scroll to Top Button */}
-        <button
-          onClick={scrollToTop}
-          className={`bg-slate-900 text-white p-3 rounded-full shadow-xl hover:bg-primary transition-all duration-300 hover:scale-110 flex items-center justify-center ${showScrollTop ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-6 scale-90 pointer-events-none'}`}
-          aria-label="Scroll to top"
-        >
-          <ChevronUp size={18} />
-        </button>
-
         {/* Email Button */}
         <a
           href="mailto:bytesofthq@gmail.com"

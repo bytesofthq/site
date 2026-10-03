@@ -352,128 +352,6 @@ export default function Home() {
       </section>
 
       {/* =========================================================================
-          MAGNETIC ACTION CARD: "See Your Idea Become a Live Product"
-          Directly invites user to experience the interactive project journey
-          ========================================================================= */}
-      <section className="py-12 md:py-16 bg-[#f6f8fc]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative bg-white rounded-3xl p-6 sm:p-10 md:p-12 overflow-hidden border border-slate-200/80 shadow-sm">
-            <div className="relative z-10 grid lg:grid-cols-[1.2fr_0.8fr] gap-8 lg:gap-12 items-center">
-              <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-primary text-xs font-semibold mb-3">
-                  <Sparkles size={12} className="text-secondary" />
-                  <span>How Bytesoft Builds</span>
-                </div>
-
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900 mb-3 leading-tight">
-                  See Your Idea Become a <span className="text-primary">Live Product.</span>
-                </h2>
-
-                <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-6 max-w-lg">
-                  A predictable 4-step engineering process with fixed sprint milestones, zero scope surprises, and 100% code ownership from day one.
-                </p>
-
-                <div className="flex flex-wrap items-center gap-3">
-                  <Link
-                    to="/project-journey"
-                    className="bg-primary hover:bg-blue-900 text-white text-xs sm:text-sm font-semibold px-5 sm:px-6 py-2.5 sm:py-3 rounded-full shadow-2xs hover:shadow-md transition-all inline-flex items-center gap-2 group cursor-pointer"
-                  >
-                    <span>Explore How We Build</span>
-                    <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                  </Link>
-
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200/80 text-xs font-medium text-slate-600">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                    <span>4-Step Fixed Sprint</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Clean Bytesoft Architecture Stream Widget */}
-              <div className="bg-[#f8faff] border border-blue-100/90 p-4 sm:p-5 rounded-2xl space-y-2.5 shadow-xs relative overflow-hidden">
-                <div
-                  className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:16px_16px] opacity-40 pointer-events-none"
-                  aria-hidden="true"
-                />
-
-                <div className="flex items-center justify-between pb-2.5 border-b border-slate-200/80 text-xs text-slate-500 relative z-10">
-                  <span className="flex items-center gap-1.5 font-semibold text-slate-700">
-                    <Activity size={13} className="text-primary" />
-                    Engineering Stages
-                  </span>
-                  <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-bold text-[10px] shadow-2xs">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                    VERIFIED PROCESS
-                  </span>
-                </div>
-
-                <div className="space-y-2 relative z-10">
-                  <div className="flex items-center justify-between bg-white p-2.5 sm:p-3 rounded-xl border border-slate-200/80 shadow-2xs hover:border-blue-200 transition-all">
-                    <span className="flex items-center gap-2.5 text-xs font-semibold text-slate-800">
-                      <div className="w-6 h-6 rounded-md bg-blue-50 text-primary flex items-center justify-center shrink-0 border border-blue-100/80">
-                        <Compass size={13} />
-                      </div>
-                      <span>01. Plan & Scope</span>
-                    </span>
-                    <span className="text-emerald-700 bg-emerald-50 border border-emerald-200/80 text-[10px] font-mono font-bold px-2 py-0.5 rounded-md">
-                      Scope Locked
-                    </span>
-                  </div>
-
-                  <div className="flex items-center justify-between bg-white p-2.5 sm:p-3 rounded-xl border border-slate-200/80 shadow-2xs hover:border-blue-200 transition-all">
-                    <span className="flex items-center gap-2.5 text-xs font-semibold text-slate-800">
-                      <div className="w-6 h-6 rounded-md bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0 border border-indigo-100/80">
-                        <Layers size={13} />
-                      </div>
-                      <span>02. Design & Setup</span>
-                    </span>
-                    <span className="text-blue-700 bg-blue-50 border border-blue-200/80 text-[10px] font-mono font-bold px-2 py-0.5 rounded-md">
-                      Cloud Ready
-                    </span>
-                  </div>
-
-                  <div className="flex items-center justify-between bg-white p-2.5 sm:p-3 rounded-xl border border-slate-200/80 shadow-2xs hover:border-blue-200 transition-all">
-                    <span className="flex items-center gap-2.5 text-xs font-semibold text-slate-800">
-                      <div className="w-6 h-6 rounded-md bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 border border-emerald-100/80">
-                        <Code2 size={13} />
-                      </div>
-                      <span>03. Build & Test</span>
-                    </span>
-                    <span className="text-emerald-700 bg-emerald-50 border border-emerald-200/80 text-[10px] font-mono font-bold px-2 py-0.5 rounded-md">
-                      14-Day Sprints
-                    </span>
-                  </div>
-
-                  <div className="flex items-center justify-between bg-blue-50/70 p-2.5 sm:p-3 rounded-xl border border-blue-200/80 shadow-2xs">
-                    <span className="flex items-center gap-2.5 text-xs font-bold text-primary">
-                      <div className="w-6 h-6 rounded-md bg-primary text-white flex items-center justify-center shrink-0 shadow-2xs">
-                        <Globe size={13} />
-                      </div>
-                      <span>04. Launch & Support</span>
-                    </span>
-                    <span className="text-primary bg-white border border-blue-200 text-[10px] font-mono font-bold px-2 py-0.5 rounded-md shadow-2xs">
-                      100% IP Rights
-                    </span>
-                  </div>
-                </div>
-
-                <div className="pt-2 border-t border-slate-200/70 flex items-center justify-between text-[11px] text-slate-500 font-mono relative z-10">
-                  <span>Zero scope surprises</span>
-                  <Link
-                    to="/project-journey"
-                    className="text-primary font-semibold hover:underline inline-flex items-center gap-1 group"
-                  >
-                    <span>View full tour</span>
-                    <ArrowRight size={11} className="group-hover:translate-x-0.5 transition-transform" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================================================
           SECTION: COMPLETE SERVICES PORTFOLIO (Digital & Software + AI & Intelligent Tech)
           ========================================================================= */}
       <section className="py-16 md:py-20 bg-white">
@@ -875,6 +753,128 @@ export default function Home() {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================================
+          MAGNETIC ACTION CARD: "See Your Idea Become a Live Product"
+          Directly invites user to experience the interactive project journey
+          ========================================================================= */}
+      <section className="py-14 md:py-18 bg-[#f6f8fc]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative bg-white rounded-3xl p-6 sm:p-10 md:p-12 overflow-hidden border border-slate-200/80 shadow-sm">
+            <div className="relative z-10 grid lg:grid-cols-[1.2fr_0.8fr] gap-8 lg:gap-12 items-center">
+              <div>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-primary text-xs font-semibold mb-3">
+                  <Sparkles size={12} className="text-secondary" />
+                  <span>How Bytesoft Builds</span>
+                </div>
+
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900 mb-3 leading-tight">
+                  See Your Idea Become a <span className="text-primary">Live Product.</span>
+                </h2>
+
+                <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-6 max-w-lg">
+                  A predictable 4-step engineering process with fixed sprint milestones, zero scope surprises, and 100% code ownership from day one.
+                </p>
+
+                <div className="flex flex-wrap items-center gap-3">
+                  <Link
+                    to="/project-journey"
+                    className="bg-primary hover:bg-blue-900 text-white text-xs sm:text-sm font-semibold px-5 sm:px-6 py-2.5 sm:py-3 rounded-full shadow-2xs hover:shadow-md transition-all inline-flex items-center gap-2 group cursor-pointer"
+                  >
+                    <span>Explore How We Build</span>
+                    <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                  </Link>
+
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200/80 text-xs font-medium text-slate-600">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                    <span>4-Step Fixed Sprint</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Clean Bytesoft Architecture Stream Widget */}
+              <div className="bg-[#f8faff] border border-blue-100/90 p-4 sm:p-5 rounded-2xl space-y-2.5 shadow-xs relative overflow-hidden">
+                <div
+                  className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:16px_16px] opacity-40 pointer-events-none"
+                  aria-hidden="true"
+                />
+
+                <div className="flex items-center justify-between pb-2.5 border-b border-slate-200/80 text-xs text-slate-500 relative z-10">
+                  <span className="flex items-center gap-1.5 font-semibold text-slate-700">
+                    <Activity size={13} className="text-primary" />
+                    Engineering Stages
+                  </span>
+                  <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-bold text-[10px] shadow-2xs">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                    VERIFIED PROCESS
+                  </span>
+                </div>
+
+                <div className="space-y-2 relative z-10">
+                  <div className="flex items-center justify-between bg-white p-2.5 sm:p-3 rounded-xl border border-slate-200/80 shadow-2xs hover:border-blue-200 transition-all">
+                    <span className="flex items-center gap-2.5 text-xs font-semibold text-slate-800">
+                      <div className="w-6 h-6 rounded-md bg-blue-50 text-primary flex items-center justify-center shrink-0 border border-blue-100/80">
+                        <Compass size={13} />
+                      </div>
+                      <span>01. Plan & Scope</span>
+                    </span>
+                    <span className="text-emerald-700 bg-emerald-50 border border-emerald-200/80 text-[10px] font-mono font-bold px-2 py-0.5 rounded-md">
+                      Scope Locked
+                    </span>
+                  </div>
+
+                  <div className="flex items-center justify-between bg-white p-2.5 sm:p-3 rounded-xl border border-slate-200/80 shadow-2xs hover:border-blue-200 transition-all">
+                    <span className="flex items-center gap-2.5 text-xs font-semibold text-slate-800">
+                      <div className="w-6 h-6 rounded-md bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0 border border-indigo-100/80">
+                        <Layers size={13} />
+                      </div>
+                      <span>02. Design & Setup</span>
+                    </span>
+                    <span className="text-blue-700 bg-blue-50 border border-blue-200/80 text-[10px] font-mono font-bold px-2 py-0.5 rounded-md">
+                      Cloud Ready
+                    </span>
+                  </div>
+
+                  <div className="flex items-center justify-between bg-white p-2.5 sm:p-3 rounded-xl border border-slate-200/80 shadow-2xs hover:border-blue-200 transition-all">
+                    <span className="flex items-center gap-2.5 text-xs font-semibold text-slate-800">
+                      <div className="w-6 h-6 rounded-md bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 border border-emerald-100/80">
+                        <Code2 size={13} />
+                      </div>
+                      <span>03. Build & Test</span>
+                    </span>
+                    <span className="text-emerald-700 bg-emerald-50 border border-emerald-200/80 text-[10px] font-mono font-bold px-2 py-0.5 rounded-md">
+                      14-Day Sprints
+                    </span>
+                  </div>
+
+                  <div className="flex items-center justify-between bg-blue-50/70 p-2.5 sm:p-3 rounded-xl border border-blue-200/80 shadow-2xs">
+                    <span className="flex items-center gap-2.5 text-xs font-bold text-primary">
+                      <div className="w-6 h-6 rounded-md bg-primary text-white flex items-center justify-center shrink-0 shadow-2xs">
+                        <Globe size={13} />
+                      </div>
+                      <span>04. Launch & Support</span>
+                    </span>
+                    <span className="text-primary bg-white border border-blue-200 text-[10px] font-mono font-bold px-2 py-0.5 rounded-md shadow-2xs">
+                      100% IP Rights
+                    </span>
+                  </div>
+                </div>
+
+                <div className="pt-2 border-t border-slate-200/70 flex items-center justify-between text-[11px] text-slate-500 font-mono relative z-10">
+                  <span>Zero scope surprises</span>
+                  <Link
+                    to="/project-journey"
+                    className="text-primary font-semibold hover:underline inline-flex items-center gap-1 group"
+                  >
+                    <span>View full tour</span>
+                    <ArrowRight size={11} className="group-hover:translate-x-0.5 transition-transform" />
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
