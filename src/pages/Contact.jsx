@@ -31,34 +31,42 @@ export default function Contact() {
   return (
     <div>
 
-      {/* Page Hero */}
-      <section className="pt-12 pb-6 md:pt-16 md:pb-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100/80 text-primary text-xs font-semibold uppercase tracking-wider mb-4">
-              <Sparkles size={13} className="text-secondary" />
-              <span>Get in Touch</span>
-            </div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-slate-900 mb-4 tracking-tight leading-[1.12]">
-              Let's Build Something <span className="text-primary">Exceptional</span>
-            </h1>
-            <p className="text-base sm:text-lg text-slate-500 leading-relaxed max-w-2xl mb-6">
-              Have an upcoming project, replatforming challenge, or just want to explore engineering capabilities? We are ready to help.
-            </p>
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs sm:text-[13px] font-medium text-slate-500">
-              <span className="inline-flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                Available for new projects
-              </span>
-              <span className="inline-flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                Avg. response: &lt; 2 hours
-              </span>
-              <span className="inline-flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
-                NDA protected
-              </span>
-            </div>
+      {/* Page Hero - Matching Project Journey & Our Work Header Exactly */}
+      <section className="pt-12 pb-10 md:pt-16 md:pb-14 border-b border-slate-200/80 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-primary text-xs font-semibold uppercase tracking-wider mb-5">
+            <Sparkles size={13} className="text-primary" />
+            Let&apos;s Connect
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+            Let&apos;s Build Something{' '}
+            <span className="text-primary underline decoration-blue-200 decoration-wavy underline-offset-8">
+              Exceptional Together.
+            </span>
+          </h1>
+
+          <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto mt-4 leading-relaxed">
+            Have an upcoming project, replatforming challenge, or need dedicated software and AI engineering capabilities? We are ready to help.
+          </p>
+
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 mt-8 pt-6 border-t border-slate-100 text-xs sm:text-sm font-medium text-slate-600">
+            <span className="inline-flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              Available for New Projects
+            </span>
+            <span className="inline-flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+              Direct Senior Engineer Access
+            </span>
+            <span className="inline-flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+              Avg. Response &lt; 2 Hours
+            </span>
+            <span className="inline-flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+              NDA Protected
+            </span>
           </div>
         </div>
       </section>

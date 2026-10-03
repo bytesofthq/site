@@ -23,17 +23,43 @@ export default function About() {
   return (
     <div>
 
-      {/* Page Hero - Enhanced with Gradient Background */}
-      <section className="relative overflow-hidden pt-12 pb-16 md:pt-20 md:pb-20">
-        <div aria-hidden="true" className="absolute -top-32 right-0 w-[480px] h-[480px] rounded-full bg-blue-100/70 blur-3xl pointer-events-none" />
-        <div className="relative max-w-3xl mx-auto px-4 sm:px-6 text-center">
-          <div className="inline-flex items-center gap-2 bg-white border border-blue-100 text-primary text-sm font-medium px-3.5 py-1.5 rounded-full mb-6 shadow-sm"><Sparkles size={14} /> About Bytesoft</div>
-          <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-bold text-slate-900 mb-6 leading-[1.08] tracking-tight">
-            Engineering the future of <span className="text-primary">digital</span>
+      {/* Page Hero - Matching Project Journey Header Exactly */}
+      <section className="pt-12 pb-10 md:pt-16 md:pb-14 border-b border-slate-200/80 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-primary text-xs font-semibold uppercase tracking-wider mb-5">
+            <Sparkles size={13} className="text-primary" />
+            About Bytesoft
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+            Engineering the Future of Software.{' '}
+            <span className="text-primary underline decoration-blue-200 decoration-wavy underline-offset-8">
+              Built for Impact.
+            </span>
           </h1>
-          <p className="text-base md:text-lg text-slate-500 leading-relaxed">
-            We are a collective of passionate technologists, designers, and strategists dedicated to building exceptional online experiences.
+
+          <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto mt-4 leading-relaxed">
+            We are a high-performance engineering studio. We partner with ambitious startups and established enterprises to build resilient web architectures, intelligent AI workflows, and digital growth engines.
           </p>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mt-10 pt-8 border-t border-slate-100">
+            <div className="text-center">
+              <div className="text-2xl sm:text-3xl font-extrabold font-mono text-primary mb-0.5">50+</div>
+              <div className="text-slate-500 text-xs font-medium">Projects Delivered</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl sm:text-3xl font-extrabold font-mono text-primary mb-0.5">100%</div>
+              <div className="text-slate-500 text-xs font-medium">Client Satisfaction</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl sm:text-3xl font-extrabold font-mono text-primary mb-0.5">Zero</div>
+              <div className="text-slate-500 text-xs font-medium">Technical Compromises</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl sm:text-3xl font-extrabold font-mono text-primary mb-0.5">24/7</div>
+              <div className="text-slate-500 text-xs font-medium">Uptime & Support SLA</div>
+            </div>
+          </div>
         </div>
       </section>
 

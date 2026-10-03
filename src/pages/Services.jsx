@@ -171,35 +171,41 @@ export default function Services() {
   return (
     <div>
 
-      {/* Page Hero */}
-      <section className="pt-14 pb-8 md:pt-20 md:pb-12">
-        <div className="max-w-3xl mx-auto px-4 md:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-primary text-xs font-semibold uppercase tracking-wider mb-4 shadow-xs">
-            <Sparkles size={13} className="text-secondary" />
-            <span>Engineering & Intelligence</span>
+      {/* Page Hero - Matching Project Journey Header Exactly */}
+      <section className="pt-12 pb-10 md:pt-16 md:pb-14 border-b border-slate-200/80 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-primary text-xs font-semibold uppercase tracking-wider mb-5">
+            <Sparkles size={13} className="text-primary" />
+            Engineering & Intelligence
           </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 leading-tight">
-            Software Solutions & Intelligent Systems <span className="text-primary">Built for Scale</span>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+            Software Solutions & Intelligent Systems.{' '}
+            <span className="text-primary underline decoration-blue-200 decoration-wavy underline-offset-8">
+              Built for Scale.
+            </span>
           </h1>
-          <p className="text-base sm:text-lg text-slate-500 leading-relaxed max-w-2xl mx-auto">
+
+          <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto mt-4 leading-relaxed">
             From production-grade web and mobile applications to autonomous AI agent workflows, Bytesoft engineers robust digital systems with zero technical debt and 100% intellectual property ownership.
           </p>
-          <div ref={statsRef} className="flex flex-wrap justify-center gap-x-6 gap-y-5 sm:gap-8 md:gap-12 mt-10">
-            <div className="text-center min-w-[100px]">
-              <div className="text-3xl font-bold text-primary mb-1">{counters.projects}+</div>
-              <div className="text-slate-500 text-xs sm:text-sm">Production Systems Shipped</div>
+
+          <div ref={statsRef} className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mt-10 pt-8 border-t border-slate-100">
+            <div className="text-center">
+              <div className="text-2xl sm:text-3xl font-extrabold font-mono text-primary mb-0.5">{counters.projects}+</div>
+              <div className="text-slate-500 text-xs font-medium">Production Systems Shipped</div>
             </div>
-            <div className="text-center min-w-[100px]">
-              <div className="text-3xl font-bold text-primary mb-1">{counters.retention}%</div>
-              <div className="text-slate-500 text-xs sm:text-sm">Client Satisfaction Rate</div>
+            <div className="text-center">
+              <div className="text-2xl sm:text-3xl font-extrabold font-mono text-primary mb-0.5">{counters.retention}%</div>
+              <div className="text-slate-500 text-xs font-medium">Client Satisfaction Rate</div>
             </div>
-            <div className="text-center min-w-[100px]">
-              <div className="text-3xl font-bold text-primary mb-1">{counters.team}+</div>
-              <div className="text-slate-500 text-xs sm:text-sm">Senior Engineers & Architects</div>
+            <div className="text-center">
+              <div className="text-2xl sm:text-3xl font-extrabold font-mono text-primary mb-0.5">{counters.team}+</div>
+              <div className="text-slate-500 text-xs font-medium">Senior Engineers & Architects</div>
             </div>
-            <div className="text-center min-w-[100px]">
-              <div className="text-3xl font-bold text-primary mb-1">{counters.support}/7</div>
-              <div className="text-slate-500 text-xs sm:text-sm">Uptime & Support SLA</div>
+            <div className="text-center">
+              <div className="text-2xl sm:text-3xl font-extrabold font-mono text-primary mb-0.5">{counters.support}/7</div>
+              <div className="text-slate-500 text-xs font-medium">Uptime & Support SLA</div>
             </div>
           </div>
         </div>
