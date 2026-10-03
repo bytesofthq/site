@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
-import { MessageSquare, MessageSquareMore, Phone, Mail, Menu, X, Home, Briefcase, Info, LayoutTemplate, ChevronRight, Sparkles } from 'lucide-react';
+import { MessageSquare, MessageSquareMore, Phone, Mail, Menu, X, Home, Briefcase, Info, LayoutTemplate, ChevronRight, Sparkles, ArrowRight } from 'lucide-react';
 import ContactForm from './ContactForm';
 import Footer from './Footer';
 
@@ -57,28 +57,28 @@ export default function Layout() {
   return (
     <div className="min-h-screen flex flex-col font-sans bg-[#f6f8fc] overflow-x-clip">
       <nav className={`sticky top-0 w-full z-50 transition-all duration-300 ${isScrolled
-        ? 'bg-[#f6f8fc]/90 backdrop-blur-xl shadow-sm'
+        ? 'bg-[#f6f8fc]/95 backdrop-blur-xl shadow-xs border-b border-slate-200/60'
         : 'bg-[#f6f8fc]'
         }`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 lg:h-[4.75rem] flex items-center justify-between gap-3">
-          <Link to="/" className="flex items-center shrink-0 group" aria-label="Bytesoft home">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 sm:h-22 lg:h-24 flex items-center justify-between gap-4">
+          <Link to="/" className="flex items-center shrink-0 group py-1" aria-label="Bytesoft home">
             <img
               src="/bs-logo.jpg"
               alt="Bytesoft"
-              className="h-9 sm:h-10 lg:h-11 w-auto object-contain transition-transform group-hover:scale-105 duration-300"
+              className="h-10 sm:h-12 lg:h-14 w-auto object-contain transition-transform group-hover:scale-105 duration-300"
             />
           </Link>
 
-          <div className="hidden lg:flex items-center bg-white/80 border border-slate-200/80 rounded-full p-1.5 shadow-sm gap-0.5">
+          <div className="hidden lg:flex items-center bg-white/90 border border-slate-200/90 rounded-full p-2 shadow-xs gap-1">
             {navLinks.map((link) => {
               const isActive = location.pathname === link.path || (link.path !== '/' && location.pathname.startsWith(link.path));
               return (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`px-3.5 lg:px-4 py-1.5 rounded-full text-xs lg:text-sm font-medium transition-all duration-200 ${isActive
-                    ? 'bg-white text-primary shadow-sm border border-slate-200 font-semibold'
-                    : 'text-slate-600 hover:text-slate-900 border border-transparent hover:bg-slate-100/50'
+                  className={`px-4 xl:px-5 py-2 lg:py-2.5 rounded-full text-sm xl:text-[15px] transition-all duration-200 ${isActive
+                    ? 'bg-white text-primary shadow-xs border border-slate-200 font-semibold'
+                    : 'text-slate-600 hover:text-slate-900 border border-transparent hover:bg-slate-100/70 font-medium'
                     }`}
                 >
                   {link.label}
@@ -90,19 +90,19 @@ export default function Layout() {
           <div className="flex items-center space-x-3">
             <button
               onClick={() => setIsModalOpen(true)}
-              className="bg-primary text-white px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full font-semibold text-sm hover:bg-blue-900 transition-colors shadow-sm inline-flex items-center gap-1.5"
+              className="bg-primary text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-full font-semibold text-sm sm:text-base hover:bg-blue-900 transition-all duration-200 shadow-sm hover:shadow hover:-translate-y-0.5 active:translate-y-0 inline-flex items-center gap-2 group cursor-pointer"
             >
-              Get Started
-              <span aria-hidden="true">→</span>
+              <span>Get Started</span>
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </button>
 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(true)}
-              className="lg:hidden p-2 rounded-full text-slate-700 hover:text-primary hover:bg-white transition-colors focus:outline-none"
+              className="lg:hidden p-2.5 rounded-xl text-slate-700 hover:text-primary hover:bg-white border border-transparent hover:border-slate-200 transition-colors focus:outline-none"
               aria-label="Open Menu"
             >
-              <Menu size={22} />
+              <Menu size={24} />
             </button>
           </div>
         </div>
@@ -162,14 +162,14 @@ export default function Layout() {
             }`}
         >
           {/* Header */}
-          <div className="h-16 px-5 flex items-center justify-between border-b border-slate-200/80 bg-white/70 backdrop-blur-sm shrink-0">
-            <img src="/bs-logo.jpg" alt="Bytesoft" className="h-9 w-auto object-contain" />
+          <div className="h-20 px-5 sm:px-6 flex items-center justify-between border-b border-slate-200/80 bg-white/70 backdrop-blur-sm shrink-0">
+            <img src="/bs-logo.jpg" alt="Bytesoft" className="h-10 sm:h-11 w-auto object-contain" />
             <button
               onClick={() => setIsMobileMenuOpen(false)}
-              className="w-9 h-9 rounded-full bg-white border border-slate-200/80 shadow-sm flex items-center justify-center text-slate-600 hover:text-slate-900 hover:border-slate-300 transition-all active:scale-95"
+              className="w-10 h-10 rounded-full bg-white border border-slate-200/80 shadow-sm flex items-center justify-center text-slate-600 hover:text-slate-900 hover:border-slate-300 transition-all active:scale-95"
               aria-label="Close menu"
             >
-              <X size={18} />
+              <X size={20} />
             </button>
           </div>
 
