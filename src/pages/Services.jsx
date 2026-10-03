@@ -150,7 +150,7 @@ export default function Services() {
 
   const faqs = [
     {
-      question: "How long does a typical web engineering project take?",
+      question: "How long does a typical web design & development project take?",
       answer: "A standard corporate website typically takes 4-8 weeks from discovery to launch. Complex e-commerce platforms or custom web applications can take 3-6 months depending on the required features and integrations. We always provide a detailed timeline during the proposal phase."
     },
     {

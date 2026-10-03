@@ -87,7 +87,7 @@ const testimonials = [
 
 // Dual-pillar Service Architecture: Digital & Software + AI & Intelligent Technology
 const digitalServices = [
-  { icon: MonitorSmartphone, title: "Web Engineering", desc: "Custom, high-performance web applications, enterprise portals, and SaaS platforms built for speed and scale." },
+  { icon: MonitorSmartphone, title: "Web Design & Development", desc: "Custom, high-performance web applications, enterprise portals, and SaaS platforms built for speed and scale." },
   { icon: Smartphone, title: "Mobile App Development", desc: "Native and cross-platform iOS & Android apps with smooth interfaces and reliable offline capabilities." },
   { icon: Store, title: "E-commerce Platforms", desc: "Secure storefronts, custom checkout flows, and catalog engines optimized for conversion." },
   { icon: HeartPulse, title: "Healthcare Software", desc: "HIPAA-compliant patient portals, resource management systems, and clinical scheduling software." },
@@ -197,8 +197,8 @@ export default function Home() {
           HERO SECTION: Modernized messaging + PRESERVED 01/02/03 Floating Image Visual
           ========================================================================= */}
       <section className="relative overflow-hidden pt-12 pb-16 md:pt-20 md:pb-24">
-        <div className="absolute top-[-8%] right-[-6%] w-[640px] h-[640px] bg-blue-100/80 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-[-10%] left-[-5%] w-[450px] h-[450px] bg-orange-100/50 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-[-8%] right-[-6%] w-[640px] h-[640px] bg-blue-100/30 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-[-10%] left-[-5%] w-[450px] h-[450px] bg-orange-100/20 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-2 gap-10 lg:gap-8 items-center">
           <div className="max-w-xl">
@@ -272,7 +272,7 @@ export default function Home() {
               aria-label="Bytesoft Delivery Framework: 01 Discover, 02 Design, 03 Build"
             >
               {/* Background ambient glow */}
-              <div className="absolute left-[18%] top-[18%] h-56 w-56 rounded-full bg-blue-200/70 blur-3xl" />
+              <div className="absolute left-[18%] top-[18%] h-56 w-56 rounded-full bg-blue-100/40 blur-3xl" />
 
               {/* 01 Discover Card */}
               <div className="absolute left-0 top-3 w-[70%] origin-bottom-left -rotate-[13deg] rounded-[1.6rem] border border-white/80 bg-white/40 p-4 shadow-[0_18px_40px_-28px_rgba(15,23,42,0.55)] backdrop-blur-md sm:p-5">
