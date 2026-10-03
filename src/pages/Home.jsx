@@ -970,16 +970,17 @@ export default function Home() {
               <p className="text-slate-500 text-sm sm:text-base leading-relaxed mb-6">
                 Whether you need an enterprise web platform, a native mobile application, or a private AI automation layer, our senior architects will evaluate your requirements and deliver a clear execution roadmap within 24 hours.
               </p>
-              <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-3.5 pt-1">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center gap-2 bg-primary text-white font-semibold px-6 py-3.5 rounded-full hover:bg-blue-900 shadow-sm hover:shadow transition-all group text-sm sm:text-base"
+                  className="inline-flex items-center justify-center gap-2 bg-primary text-white font-semibold px-6 py-3.5 rounded-full hover:bg-blue-900 shadow-sm hover:shadow-md transition-all group text-sm sm:text-base whitespace-nowrap shrink-0 active:scale-95"
                 >
                   <span>Book Architecture Consultation</span>
-                  <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
+                  <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform shrink-0" />
                 </Link>
-                <span className="text-xs text-slate-400 font-medium">
-                  ⚡ Reply within 24 hours
+                <span className="text-xs text-slate-500 font-medium flex items-center gap-1.5 whitespace-nowrap">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+                  <span>Reply within 24 hours</span>
                 </span>
               </div>
             </div>

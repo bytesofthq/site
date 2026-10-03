@@ -33,7 +33,7 @@ export default function Footer({ onOpenQuote }) {
             <Link to="/" className="inline-flex rounded-lg" aria-label="Bytesoft home">
               <img src="/bs-logo.jpg" alt="Bytesoft" className="h-11 w-auto object-contain" />
             </Link>
-            <p className="text-sm leading-relaxed text-slate-500 max-w-xs mt-4">
+            <p className="text-sm leading-relaxed text-slate-500 max-w-sm mt-4">
               Web development, strategic SEO, AI engineering, and digital marketing to help your business scale online.
             </p>
             <div className="flex items-center gap-2 mt-4 text-sm text-slate-500">
