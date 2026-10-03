@@ -314,27 +314,30 @@ export default function Services() {
               <div className="max-w-2xl">
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-primary text-xs font-semibold mb-3.5 shadow-xs">
                   <Sparkles size={13} className="text-secondary" />
-                  <span>Interactive Build Demo</span>
+                  <span>Our Engineering Methodology</span>
                 </div>
 
                 <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 tracking-tight mb-2.5 leading-tight">
-                  Want to See How We Build Your <span className="text-primary">Service?</span>
+                  Want to See How We Build Your <span className="text-primary">System?</span>
                 </h3>
 
                 <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-5">
-                  Step inside our interactive AI Project Journey. Watch requirement analysis, system architecture mapping, code compilation, and live deployment in action.
+                  Explore our disciplined 4-stage engineering process — from discovery and architecture mapping to continuous agile delivery and high-availability cloud deployment.
                 </p>
 
                 {/* Milestone Chips */}
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-600 bg-slate-50 px-2.5 py-1 rounded-md border border-slate-100">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary" /> Requirement Analysis
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary" /> 01. Discovery
                   </span>
                   <span className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-600 bg-slate-50 px-2.5 py-1 rounded-md border border-slate-100">
-                    <span className="w-1.5 h-1.5 rounded-full bg-indigo-500" /> Architecture Mapping
+                    <span className="w-1.5 h-1.5 rounded-full bg-indigo-500" /> 02. Architecture
                   </span>
                   <span className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-600 bg-slate-50 px-2.5 py-1 rounded-md border border-slate-100">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" /> Cloud Deployment
+                    <span className="w-1.5 h-1.5 rounded-full bg-purple-500" /> 03. Engineering
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-600 bg-slate-50 px-2.5 py-1 rounded-md border border-slate-100">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" /> 04. Cloud Deployment
                   </span>
                 </div>
               </div>
@@ -344,8 +347,7 @@ export default function Services() {
                   to="/project-journey"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-primary hover:bg-blue-900 text-white font-semibold text-sm sm:text-base shadow-md shadow-primary/15 hover:shadow-lg transition-all group shrink-0"
                 >
-                  <Zap size={16} className="text-secondary group-hover:scale-110 transition-transform" />
-                  <span>Experience AI Journey</span>
+                  <span>Explore How We Build</span>
                   <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
 
@@ -354,7 +356,7 @@ export default function Services() {
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                   </span>
-                  Interactive 60s lifecycle preview
+                  Transparent 4-stage lifecycle
                 </span>
               </div>
             </div>

@@ -355,7 +355,7 @@ export default function Home() {
               <div>
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-primary text-xs font-semibold mb-4 shadow-xs">
                   <Sparkles size={13} className="text-secondary" />
-                  <span>Cinematic Interactive Experience</span>
+                  <span>Our Engineering Process</span>
                 </div>
 
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-4 leading-tight">
@@ -363,7 +363,7 @@ export default function Home() {
                 </h2>
 
                 <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-8 max-w-xl">
-                  From an idea to a deployed digital product, explore how Bytesoft turns business requirements into intelligent technology across 10 automated lifecycle stages.
+                  From initial technical requirements to multi-region cloud rollout, explore our transparent 4-stage engineering lifecycle engineered for performance and scalability.
                 </p>
 
                 <div className="flex flex-wrap items-center gap-4">
@@ -371,8 +371,7 @@ export default function Home() {
                     to="/project-journey"
                     className="bg-primary hover:bg-blue-900 text-white font-semibold px-7 py-3.5 rounded-full shadow-md shadow-primary/15 hover:shadow-lg transition-all inline-flex items-center gap-2.5 text-sm sm:text-base group"
                   >
-                    <Zap size={17} className="text-secondary group-hover:scale-110 transition-transform" />
-                    <span>Launch Interactive Simulation</span>
+                    <span>Explore How We Build</span>
                     <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                   </Link>
 
@@ -381,7 +380,7 @@ export default function Home() {
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                       <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                     </span>
-                    <span>Auto-Pilot • 60s Lifecycle</span>
+                    <span>4-Stage Lifecycle</span>
                   </div>
                 </div>
               </div>
@@ -391,11 +390,11 @@ export default function Home() {
                 <div className="flex items-center justify-between pb-3 border-b border-slate-200/80 text-xs text-slate-500">
                   <span className="flex items-center gap-1.5 font-semibold text-slate-700">
                     <Activity size={14} className="text-primary" />
-                    Architecture Live Stream
+                    Engineering Milestones
                   </span>
                   <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-bold text-[11px]">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                    100% READY
+                    DISCIPLINED
                   </span>
                 </div>
 
@@ -405,9 +404,9 @@ export default function Home() {
                       <div className="w-6 h-6 rounded-md bg-blue-50 text-primary flex items-center justify-center shrink-0">
                         <Terminal size={13} />
                       </div>
-                      <span>01. Vision Deconstruction</span>
+                      <span>01. Discovery & Strategy</span>
                     </span>
-                    <span className="text-emerald-700 bg-emerald-50 border border-emerald-100 text-[10px] font-semibold px-2 py-0.5 rounded">Auto</span>
+                    <span className="text-emerald-700 bg-emerald-50 border border-emerald-100 text-[10px] font-semibold px-2 py-0.5 rounded">RFC</span>
                   </div>
 
                   <div className="flex items-center justify-between bg-white p-3 rounded-xl border border-slate-100 shadow-xs hover:border-blue-200 transition-all">
@@ -415,9 +414,9 @@ export default function Home() {
                       <div className="w-6 h-6 rounded-md bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0">
                         <Workflow size={13} />
                       </div>
-                      <span>02. Topological Map</span>
+                      <span>02. System Architecture</span>
                     </span>
-                    <span className="text-emerald-700 bg-emerald-50 border border-emerald-100 text-[10px] font-semibold px-2 py-0.5 rounded">Synced</span>
+                    <span className="text-emerald-700 bg-emerald-50 border border-emerald-100 text-[10px] font-semibold px-2 py-0.5 rounded">Decoupled</span>
                   </div>
 
                   <div className="flex items-center justify-between bg-white p-3 rounded-xl border border-slate-100 shadow-xs hover:border-blue-200 transition-all">
@@ -425,9 +424,9 @@ export default function Home() {
                       <div className="w-6 h-6 rounded-md bg-purple-50 text-purple-600 flex items-center justify-center shrink-0">
                         <Bot size={13} />
                       </div>
-                      <span>03. Intelligence & RAG</span>
+                      <span>03. Agile Engineering & AI</span>
                     </span>
-                    <span className="text-emerald-700 bg-emerald-50 border border-emerald-100 text-[10px] font-semibold px-2 py-0.5 rounded">Active</span>
+                    <span className="text-emerald-700 bg-emerald-50 border border-emerald-100 text-[10px] font-semibold px-2 py-0.5 rounded">Sprints</span>
                   </div>
 
                   <div className="flex items-center justify-between bg-blue-50/80 p-3 rounded-xl border border-blue-200/80 shadow-xs">
@@ -435,16 +434,16 @@ export default function Home() {
                       <div className="w-6 h-6 rounded-md bg-primary text-white flex items-center justify-center shrink-0 shadow-xs">
                         <Cloud size={13} />
                       </div>
-                      <span>04. Cloud Deployment</span>
+                      <span>04. Cloud Deployment & Scale</span>
                     </span>
-                    <span className="text-amber-800 bg-amber-100 border border-amber-200 text-[10px] font-bold px-2 py-0.5 rounded">Live SLA</span>
+                    <span className="text-amber-800 bg-amber-100 border border-amber-200 text-[10px] font-bold px-2 py-0.5 rounded">99.99%</span>
                   </div>
                 </div>
 
                 <div className="pt-1 flex items-center justify-between text-[11px] text-slate-400">
-                  <span>10-stage automated pipeline</span>
+                  <span>4-stage engineering methodology</span>
                   <Link to="/project-journey" className="text-primary font-medium hover:underline inline-flex items-center gap-0.5">
-                    Explore simulation <ArrowRight size={11} />
+                    Explore process <ArrowRight size={11} />
                   </Link>
                 </div>
               </div>
