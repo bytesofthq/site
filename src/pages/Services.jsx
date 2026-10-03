@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { MonitorSmartphone, LineChart, Users, Store, HeartPulse, Smartphone, Bot, Palette, ArrowRight, ArrowUpRight, CheckCircle2, Lightbulb, PenTool, Code2, Rocket, ChevronDown, ChevronUp, TrendingUp, Shield, Sparkles, HelpCircle } from 'lucide-react';
+import { MonitorSmartphone, LineChart, Users, Store, HeartPulse, Smartphone, Bot, Palette, ArrowRight, ArrowUpRight, CheckCircle2, Lightbulb, PenTool, Code2, Rocket, ChevronDown, ChevronUp, TrendingUp, Shield, Sparkles, HelpCircle, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Services() {
@@ -267,29 +267,57 @@ export default function Services() {
       </section>
 
       {/* Interactive AI Journey Callout Banner */}
-      <section className="py-12 bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 text-white border-y border-slate-800 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(59,130,246,0.15),transparent_60%)] pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="max-w-2xl text-center md:text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-400/20 text-blue-400 text-xs font-mono font-semibold uppercase tracking-wider mb-3">
-              <Sparkles size={13} className="text-blue-400 animate-pulse" />
-              <span>Interactive Build Demo</span>
+      <section className="py-12 md:py-16 bg-[#f6f8fc]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative bg-white rounded-3xl p-8 sm:p-10 md:p-12 border border-slate-200/80 shadow-sm overflow-hidden">
+            <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+              <div className="max-w-2xl">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-primary text-xs font-semibold mb-3.5 shadow-xs">
+                  <Sparkles size={13} className="text-secondary" />
+                  <span>Interactive Build Demo</span>
+                </div>
+
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 tracking-tight mb-2.5 leading-tight">
+                  Want to See How We Build Your <span className="text-primary">Service?</span>
+                </h3>
+
+                <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-5">
+                  Step inside our interactive AI Project Journey. Watch requirement analysis, system architecture mapping, code compilation, and live deployment in action.
+                </p>
+
+                {/* Milestone Chips */}
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-600 bg-slate-50 px-2.5 py-1 rounded-md border border-slate-100">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary" /> Requirement Analysis
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-600 bg-slate-50 px-2.5 py-1 rounded-md border border-slate-100">
+                    <span className="w-1.5 h-1.5 rounded-full bg-indigo-500" /> Architecture Mapping
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-600 bg-slate-50 px-2.5 py-1 rounded-md border border-slate-100">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" /> Cloud Deployment
+                  </span>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row lg:flex-col items-start sm:items-center lg:items-end gap-3 shrink-0 w-full lg:w-auto">
+                <Link
+                  to="/project-journey"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-primary hover:bg-blue-900 text-white font-semibold text-sm sm:text-base shadow-md shadow-primary/15 hover:shadow-lg transition-all group shrink-0"
+                >
+                  <Zap size={16} className="text-secondary group-hover:scale-110 transition-transform" />
+                  <span>Experience AI Journey</span>
+                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                </Link>
+
+                <span className="text-xs text-slate-500 font-medium flex items-center gap-1.5 px-1">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                  </span>
+                  Interactive 60s lifecycle preview
+                </span>
+              </div>
             </div>
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-2">
-              Want to See How We Build Your Service?
-            </h3>
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-              Step inside our interactive AI Project Journey. Watch requirement analysis, system architecture drawing, code compilation, and live deployment in action.
-            </p>
-          </div>
-          <div className="shrink-0">
-            <Link
-              to="/project-journey"
-              className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm shadow-xl hover:shadow-blue-500/25 transition-all hover:scale-105 active:scale-95"
-            >
-              <span>Experience AI Journey</span>
-              <ArrowRight size={16} />
-            </Link>
           </div>
         </div>
       </section>

@@ -1,3 +1,4 @@
+
 import {
   MonitorSmartphone,
   LineChart,
@@ -349,20 +350,7 @@ export default function Home() {
           ========================================================================= */}
       <section className="py-14 md:py-20 bg-[#f6f8fc]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative bg-white rounded-3xl p-8 sm:p-12 md:p-14 overflow-hidden border border-blue-100/80 shadow-[0_20px_50px_-20px_rgba(30,58,138,0.08)]">
-            {/* Subtle Tech Grid Texture */}
-            <div
-              className="absolute inset-0 opacity-[0.035] pointer-events-none"
-              style={{
-                backgroundImage: 'radial-gradient(#1e3a8a 1px, transparent 1px)',
-                backgroundSize: '20px 20px'
-              }}
-            />
-
-            {/* Ambient Lighting Orbs */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100/60 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
-            <div className="absolute bottom-0 left-0 w-80 h-80 bg-orange-100/40 rounded-full blur-3xl pointer-events-none -ml-20 -mb-20" />
-
+          <div className="relative bg-white rounded-3xl p-8 sm:p-12 md:p-14 overflow-hidden border border-slate-200/80 shadow-sm">
             <div className="relative z-10 grid lg:grid-cols-[1.2fr_0.8fr] gap-8 lg:gap-12 items-center">
               <div>
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-primary text-xs font-semibold mb-4 shadow-xs">
@@ -442,7 +430,7 @@ export default function Home() {
                     <span className="text-emerald-700 bg-emerald-50 border border-emerald-100 text-[10px] font-semibold px-2 py-0.5 rounded">Active</span>
                   </div>
 
-                  <div className="flex items-center justify-between bg-gradient-to-r from-blue-50/80 to-indigo-50/70 p-3 rounded-xl border border-blue-200/80 shadow-xs">
+                  <div className="flex items-center justify-between bg-blue-50/80 p-3 rounded-xl border border-blue-200/80 shadow-xs">
                     <span className="flex items-center gap-2.5 text-xs font-semibold text-primary">
                       <div className="w-6 h-6 rounded-md bg-primary text-white flex items-center justify-center shrink-0 shadow-xs">
                         <Cloud size={13} />
