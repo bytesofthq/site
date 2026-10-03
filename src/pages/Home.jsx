@@ -203,17 +203,16 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-2 gap-10 lg:gap-8 items-center">
           <div className="max-w-xl">
             {/* Top pill badge */}
-            <div className="inline-flex items-center gap-2 bg-white border border-blue-100 text-primary text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full mb-6 shadow-xs">
-              <Sparkles size={14} className="text-secondary shrink-0" />
-              <span>Architecting Digital Products & Intelligent Systems</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-primary text-xs font-semibold uppercase tracking-wider mb-6">
+              <Sparkles size={13} className="text-primary" />
+              <span>Digital Engineering & Intelligent Systems</span>
             </div>
 
             {/* Strategic Headline */}
-            <h1 className="text-[2.2rem] sm:text-5xl lg:text-[3.35rem] font-bold text-slate-900 leading-[1.1] tracking-tight mb-6">
-              Engineering Digital
-              <span className="block text-slate-900">Experiences &</span>
-              <span className="mt-1 pl-4 border-l-[5px] border-secondary block text-primary">
-                Intelligent Systems
+            <h1 className="text-3xl sm:text-5xl lg:text-[3.35rem] font-extrabold text-slate-900 leading-[1.12] tracking-tight mb-6">
+              Engineering Digital Experiences &{' '}
+              <span className="text-primary underline decoration-blue-200 decoration-wavy underline-offset-8">
+                Intelligent Systems.
               </span>
             </h1>
 
@@ -225,19 +224,18 @@ export default function Home() {
             {/* Action Buttons */}
             <div className="flex flex-wrap gap-3 mb-9">
               <Link
-                to="/project-journey"
-                className="bg-primary hover:bg-blue-900 text-white font-semibold px-6 py-3.5 rounded-full transition-all shadow-sm hover:shadow inline-flex items-center gap-2.5 text-sm sm:text-base group"
+                to="/contact"
+                className="bg-primary hover:bg-blue-900 text-white font-semibold px-7 py-3.5 rounded-full transition-all shadow-sm hover:shadow inline-flex items-center gap-2 text-sm sm:text-base group"
               >
-                <Zap size={16} className="text-secondary group-hover:scale-110 transition-transform" />
-                <span>Experience How Bytesoft Builds</span>
+                <span>Start a Project</span>
                 <ArrowRight size={15} className="group-hover:translate-x-0.5 transition-transform" />
               </Link>
 
               <Link
-                to="/contact"
-                className="bg-white border border-slate-200 text-slate-800 font-semibold px-6 py-3.5 rounded-full hover:border-primary hover:text-primary transition-colors text-sm sm:text-base"
+                to="/our-work"
+                className="bg-white border border-slate-200 text-slate-800 font-semibold px-7 py-3.5 rounded-full hover:border-primary hover:text-primary hover:bg-slate-50 transition-colors text-sm sm:text-base shadow-2xs"
               >
-                Book Architecture Consultation
+                Explore Our Work
               </Link>
             </div>
 
