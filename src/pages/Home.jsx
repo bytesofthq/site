@@ -315,27 +315,28 @@ export default function Home() {
       {/* =========================================================================
           KEY POSITIONING BANNER: "Software is our foundation. Intelligence is our next layer."
           ========================================================================= */}
-      <section className="py-6 bg-white border-y border-slate-100">
+      <section className="py-4 sm:py-5 md:py-6 bg-white border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-blue-50 text-primary flex items-center justify-center shrink-0">
-                <Layers size={20} />
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-3.5 sm:gap-4">
+            <div className="flex items-start sm:items-center gap-3 text-left">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-blue-50 text-primary flex items-center justify-center shrink-0 mt-0.5 sm:mt-0 border border-blue-100/80">
+                <Layers size={18} className="sm:w-5 sm:h-5" />
               </div>
               <div>
-                <p className="text-sm font-bold text-slate-900">
+                <p className="text-xs sm:text-sm font-bold text-slate-900 leading-snug">
                   Software is our foundation. Intelligence is our next layer.
                 </p>
-                <p className="text-xs text-slate-500">
+                <p className="text-[11px] sm:text-xs text-slate-500 mt-0.5 leading-relaxed">
                   From mission-critical web and mobile architectures to autonomous AI workflow layers.
                 </p>
               </div>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="text-xs font-semibold px-3 py-1 rounded-md bg-slate-100 text-slate-700">Web & Mobile</span>
-              <span className="text-xs font-semibold px-3 py-1 rounded-md bg-slate-100 text-slate-700">Cloud Systems</span>
-              <span className="text-xs font-semibold px-3 py-1 rounded-md bg-slate-100 text-slate-700">Healthcare</span>
-              <span className="text-xs font-semibold px-3 py-1 rounded-md bg-blue-50 text-primary border border-blue-100">+ AI Layer</span>
+
+            <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 self-start lg:self-auto shrink-0 pl-12 sm:pl-0">
+              <span className="text-[11px] sm:text-xs font-semibold px-2.5 sm:px-3 py-1 rounded-md bg-slate-100 text-slate-700">Web & Mobile</span>
+              <span className="text-[11px] sm:text-xs font-semibold px-2.5 sm:px-3 py-1 rounded-md bg-slate-100 text-slate-700">Cloud Systems</span>
+              <span className="text-[11px] sm:text-xs font-semibold px-2.5 sm:px-3 py-1 rounded-md bg-slate-100 text-slate-700">Healthcare</span>
+              <span className="text-[11px] sm:text-xs font-bold px-2.5 sm:px-3 py-1 rounded-md bg-blue-50 text-primary border border-blue-200/80 shadow-2xs">+ AI Layer</span>
             </div>
           </div>
         </div>
