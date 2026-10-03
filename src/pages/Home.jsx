@@ -87,75 +87,75 @@ const testimonials = [
 
 // Dual-pillar Service Architecture: Digital & Software + AI & Intelligent Technology
 const digitalServices = [
-  { icon: MonitorSmartphone, title: "Web Design & Development", desc: "Custom, high-performance web applications, enterprise portals, and SaaS platforms built for speed and scale." },
-  { icon: Smartphone, title: "Mobile App Development", desc: "Native and cross-platform iOS & Android apps with smooth interfaces and reliable offline capabilities." },
-  { icon: Store, title: "E-commerce Platforms", desc: "Secure storefronts, custom checkout flows, and catalog engines optimized for conversion." },
-  { icon: HeartPulse, title: "Healthcare Software", desc: "HIPAA-compliant patient portals, resource management systems, and clinical scheduling software." },
-  { icon: LineChart, title: "Search Optimization (SEO)", desc: "Technical and structured SEO audits that capture high-intent organic business traffic." },
-  { icon: Users, title: "Social Media Strategy", desc: "Targeted digital marketing campaigns that build brand loyalty, community, and inbound leads." },
-  { icon: Palette, title: "UI/UX Architecture", desc: "User journeys, wireframes, and production design systems that balance clarity with brand appeal." },
-  { icon: Code2, title: "Custom Cloud Software", desc: "Scalable backend microservices, robust REST/GraphQL APIs, and modern cloud architectures." }
+  { icon: MonitorSmartphone, title: "Web Design & Development", desc: "Custom, high-velocity web platforms, enterprise portals, and SaaS applications built for sub-second speeds and massive scale." },
+  { icon: Smartphone, title: "Mobile App Development", desc: "Production-ready native and cross-platform iOS & Android apps with fluid 60fps animations and offline-first reliability." },
+  { icon: Store, title: "E-Commerce Platforms", desc: "High-converting headless storefronts, custom checkout funnels, and real-time enterprise ERP inventory synchronization." },
+  { icon: HeartPulse, title: "Healthcare Software", desc: "HIPAA-compliant patient portals, clinical management workflows, and secure EHR/EMR FHIR interoperability." },
+  { icon: LineChart, title: "Search Optimization (SEO)", desc: "Data-driven technical SEO audits and structured schema engineering that capture qualified commercial search intent." },
+  { icon: Users, title: "Digital Growth & Strategy", desc: "Targeted digital marketing campaigns, content engines, and attribution analytics that build authentic brand authority." },
+  { icon: Palette, title: "UI/UX Architecture & Design", desc: "User-centered design architecture, interactive click-through prototypes, and production Figma design systems." },
+  { icon: Code2, title: "Custom Cloud & Backend Systems", desc: "Resilient microservices, high-throughput REST/GraphQL APIs, and autoscaling cloud infrastructure with zero downtime." }
 ];
 
 const intelligentServices = [
-  { icon: Bot, title: "AI Integration & Workflows", desc: "Connecting intelligent LLM logic directly into existing enterprise databases and operational tools." },
-  { icon: Cpu, title: "Custom AI Agents", desc: "Task-oriented agents that execute multi-step business workflows with strict safety boundaries." },
-  { icon: FileSearch, title: "Document Intelligence", desc: "Automated OCR extraction, contract parsing, invoice processing, and structured classification." },
-  { icon: Layers, title: "Enterprise Knowledge (RAG)", desc: "Private vector search across internal documentation, SOPs, and proprietary databases." },
-  { icon: Activity, title: "Predictive Analytics", desc: "Machine learning models for demand forecasting, anomaly detection, and operational optimization." },
-  { icon: Network, title: "Voice & Conversational AI", desc: "Multi-modal conversational systems designed for support routing and natural customer dialog." }
+  { icon: Bot, title: "AI Integration & Workflows", desc: "Embedding state-of-the-art LLM intelligence directly into existing enterprise databases and operational business pipelines." },
+  { icon: Cpu, title: "Autonomous AI Agents", desc: "Task-oriented, deterministic autonomous agents that execute multi-step workflows, tool calls, and API transactions with strict guardrails." },
+  { icon: FileSearch, title: "Document Intelligence", desc: "Automated multi-modal OCR extraction, contract parsing, invoice processing, and structured schema validation." },
+  { icon: Layers, title: "Enterprise Knowledge (RAG)", desc: "Private vector database search across internal documentation, SOPs, and proprietary databases with zero data leakage." },
+  { icon: Activity, title: "Predictive Analytics & ML", desc: "Custom machine learning models for demand forecasting, customer churn prediction, anomaly detection, and operational optimization." },
+  { icon: Network, title: "Voice & Conversational AI", desc: "Next-generation conversational agents and voice systems designed for intelligent triage and natural customer dialog." }
 ];
 
 // Trust & Value Proposition
 const advantages = [
-  { icon: Star, title: "Uncompromising Quality", desc: "Top-tier engineering with an obsessive focus on performance, usability, and maintainability." },
-  { icon: Zap, title: "Rapid Deployment", desc: "Agile 1–2 week sprints that ship functional milestones on a transparent, predictable schedule." },
-  { icon: HeartHandshake, title: "Dedicated Partnership", desc: "Direct collaboration with senior developers, proactive communication, and post-launch support." },
-  { icon: Shield, title: "100% Code Ownership", desc: "Fixed-price proposals, no vendor lock-in, and complete intellectual property ownership." }
+  { icon: Star, title: "Production-Grade Craft", desc: "Top-tier software engineering with an obsessive focus on sub-second latency, security hygiene, and clean architectural maintainability." },
+  { icon: Zap, title: "High-Velocity Sprints", desc: "Disciplined 1–2 week agile sprint cycles that ship tested, reviewable milestones on a transparent, predictable schedule." },
+  { icon: HeartHandshake, title: "Direct Senior Partnership", desc: "Unfiltered collaboration with principal engineers and technical architects—no middlemen, account managers, or communication silos." },
+  { icon: Shield, title: "100% IP & Code Ownership", desc: "Fixed-scope deliverables, complete source code repository handover, and absolute intellectual property freedom from day one." }
 ];
 
 // Delivery Process (Preserved & Enhanced)
 const process = [
   {
     step: "01",
-    title: "Discover",
-    desc: "Understand your business goals, user needs, and technical requirements to map the optimal roadmap.",
+    title: "Discover & Architect",
+    desc: "We unpack your business requirements, define user workflows, and establish an unshakeable technical blueprint before writing a single line of code.",
     tags: ["Scope & Goals", "Tech Architecture", "Data Security"]
   },
   {
     step: "02",
-    title: "Design",
-    desc: "Turn the strategy into user-centric wireframes, interactive prototypes, and modular design systems.",
+    title: "Design & Prototype",
+    desc: "We translate strategy into responsive Figma design systems, component tokens, and interactive high-fidelity prototypes validated with real users.",
     tags: ["UI/UX Prototypes", "Design System", "Workflow Mapping"]
   },
   {
     step: "03",
-    title: "Build",
-    desc: "Ship clean, modular, and scalable code in rapid sprint cycles with continuous integration and reviews.",
+    title: "Engineer & Build",
+    desc: "Our senior developers write clean, modular, test-driven code in rapid sprint cycles with continuous integration, strict typing, and peer reviews.",
     tags: ["Production Code", "Weekly Sprints", "API Engineering"]
   },
   {
     step: "04",
-    title: "Scale",
-    desc: "Connect data pipelines, APIs, and cloud services with thorough automated testing and security audits.",
+    title: "Scale & Deploy",
+    desc: "We configure resilient cloud infrastructure, automated load testing, and security hardening for zero-downtime production deployment.",
     tags: ["Cloud Launch", "QA Testing", "Performance Tuning"]
   },
   {
     step: "05",
-    title: "Support",
-    desc: "Proactive monitoring, uptime SLAs, performance updates, and continuous optimization as your business grows.",
+    title: "Govern & Support",
+    desc: "Proactive uptime monitoring, security patching, performance profiling, and continuous feature optimization as your business scales.",
     tags: ["SLA Monitoring", "Ongoing Updates", "System Health"]
   }
 ];
 
 const blueprints = [
-  { label: "Website", stack: "Next.js + Tailwind + Edge CDN", db: "PostgreSQL", time: "2–4 Weeks" },
-  { label: "Mobile App", stack: "React Native + Node.js API", db: "MongoDB Atlas", time: "4–8 Weeks" },
-  { label: "Business Software", stack: "React + Python FastAPI", db: "PostgreSQL ACID", time: "6–10 Weeks" },
-  { label: "E-Commerce", stack: "Next.js + GraphQL + Stripe", db: "MongoDB + Redis", time: "4–6 Weeks" },
-  { label: "Healthcare", stack: "React + FHIR API + HIPAA", db: "Encrypted PostgreSQL", time: "8–12 Weeks" },
-  { label: "AI & Automation", stack: "Python LangGraph + RAG", db: "Pinecone Vector DB", time: "3–6 Weeks" },
-  { label: "Custom Platform", stack: "Microservices + Cloud Cluster", db: "Multi-DB Cluster", time: "Flexible" }
+  { label: "SaaS Web Platform", stack: "Next.js + Tailwind + Node.js API", db: "PostgreSQL + Redis", time: "2–4 Weeks" },
+  { label: "Mobile Application", stack: "React Native + Cross-Platform Engine", db: "MongoDB Atlas / Supabase", time: "4–8 Weeks" },
+  { label: "Enterprise Software", stack: "React + Python FastAPI Microservices", db: "PostgreSQL ACID Cluster", time: "6–10 Weeks" },
+  { label: "E-Commerce Engine", stack: "Next.js + Headless Storefront + Stripe", db: "PostgreSQL + Redis Cache", time: "4–6 Weeks" },
+  { label: "Healthcare Portal", stack: "React + FHIR Interop API + HIPAA Shield", db: "Encrypted PostgreSQL", time: "8–12 Weeks" },
+  { label: "AI & Automation Layer", stack: "Python LangGraph + Custom LLM Agents", db: "Pinecone / pgvector Vector DB", time: "3–6 Weeks" },
+  { label: "Custom Cloud Cluster", stack: "Distributed Microservices + Docker", db: "Multi-Region Distributed DB", time: "Flexible" }
 ];
 
 export default function Home() {
@@ -205,7 +205,7 @@ export default function Home() {
             {/* Top pill badge */}
             <div className="inline-flex items-center gap-2 bg-white border border-blue-100 text-primary text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full mb-6 shadow-xs">
               <Sparkles size={14} className="text-secondary shrink-0" />
-              <span>Digital Experiences & Intelligent Systems</span>
+              <span>Architecting Digital Products & Intelligent Systems</span>
             </div>
 
             {/* Strategic Headline */}
@@ -219,7 +219,7 @@ export default function Home() {
 
             {/* Supporting Copy */}
             <p className="text-base sm:text-lg text-slate-600 mb-8 leading-relaxed">
-              Bytesoft builds high-performance digital products, software solutions, and AI-powered systems that help modern businesses operate efficiently, connect with customers, and drive measurable growth.
+              Bytesoft engineers high-velocity digital products, mission-critical software, and enterprise AI workflows that help modern organizations operate with agility, connect with customers, and drive measurable growth.
             </p>
 
             {/* Action Buttons */}
@@ -237,17 +237,17 @@ export default function Home() {
                 to="/contact"
                 className="bg-white border border-slate-200 text-slate-800 font-semibold px-6 py-3.5 rounded-full hover:border-primary hover:text-primary transition-colors text-sm sm:text-base"
               >
-                Discuss Your Project
+                Book Architecture Consultation
               </Link>
             </div>
 
             {/* Credibility Badges */}
             <div className="flex flex-wrap gap-x-5 gap-y-2.5 pt-2 border-t border-slate-200/70">
               {[
-                "50+ Projects Shipped",
-                "100% Code Ownership",
-                "Software + AI Layer",
-                "Remote-First Team"
+                "50+ Production Systems Shipped",
+                "100% IP & Code Ownership",
+                "Software + AI Native",
+                "Zero Vendor Lock-in"
               ].map((chip) => (
                 <span key={chip} className="inline-flex items-center gap-2 text-xs sm:text-sm text-slate-600 font-medium">
                   <span className="w-4 h-4 rounded-full bg-blue-50 border border-blue-200 flex items-center justify-center shrink-0">
@@ -330,14 +330,14 @@ export default function Home() {
                   Software is our foundation. Intelligence is our next layer.
                 </p>
                 <p className="text-xs text-slate-500">
-                  From web & mobile platforms to intelligent business systems.
+                  From mission-critical web and mobile architectures to autonomous AI workflow layers.
                 </p>
               </div>
             </div>
             <div className="flex items-center gap-2">
               <span className="text-xs font-semibold px-3 py-1 rounded-md bg-slate-100 text-slate-700">Web & Mobile</span>
+              <span className="text-xs font-semibold px-3 py-1 rounded-md bg-slate-100 text-slate-700">Cloud Systems</span>
               <span className="text-xs font-semibold px-3 py-1 rounded-md bg-slate-100 text-slate-700">Healthcare</span>
-              <span className="text-xs font-semibold px-3 py-1 rounded-md bg-slate-100 text-slate-700">E-commerce</span>
               <span className="text-xs font-semibold px-3 py-1 rounded-md bg-blue-50 text-primary border border-blue-100">+ AI Layer</span>
             </div>
           </div>
@@ -466,8 +466,8 @@ export default function Home() {
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">
               What We Build & Engineer
             </h2>
-            <p className="text-slate-500 max-w-xl mx-auto text-sm sm:text-base">
-              Explore our core software engineering services alongside modern AI integrations designed for real business systems.
+            <p className="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+              Explore our production software engineering capabilities alongside enterprise AI architectures designed for measurable commercial impact.
             </p>
 
             {/* Toggle Tabs */}
@@ -536,7 +536,7 @@ export default function Home() {
                     className="bg-white rounded-2xl border border-blue-100/80 p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col justify-between relative overflow-hidden"
                   >
                     <div>
-                      <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-blue-50 to-indigo-50 text-primary border border-blue-100 flex items-center justify-center mb-4">
+                      <div className="w-11 h-11 rounded-xl bg-blue-50 text-primary border border-blue-100 flex items-center justify-center mb-4">
                         <Icon size={20} />
                       </div>
                       <h3 className="font-semibold text-slate-900 mb-2 text-base sm:text-lg">{service.title}</h3>
@@ -945,17 +945,17 @@ export default function Home() {
                 <span>Let's Build Together</span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3 tracking-tight">
-                Ready to engineer your next system?
+                Ready to engineer your next mission-critical system?
               </h2>
               <p className="text-slate-500 text-sm sm:text-base leading-relaxed mb-6">
-                Whether you need a full web platform, a mobile application, or an intelligent workflow automation layer, our team will review your requirements and respond within 24 hours.
+                Whether you need an enterprise web platform, a native mobile application, or a private AI automation layer, our senior architects will evaluate your requirements and deliver a clear execution roadmap within 24 hours.
               </p>
               <div className="flex flex-col sm:flex-row sm:items-center gap-4">
                 <Link
                   to="/contact"
                   className="inline-flex items-center justify-center gap-2 bg-primary text-white font-semibold px-6 py-3.5 rounded-full hover:bg-blue-900 shadow-sm hover:shadow transition-all group text-sm sm:text-base"
                 >
-                  <span>Book a Consultation</span>
+                  <span>Book Architecture Consultation</span>
                   <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
                 </Link>
                 <span className="text-xs text-slate-400 font-medium">
