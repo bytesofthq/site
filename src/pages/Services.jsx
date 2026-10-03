@@ -312,7 +312,7 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Interactive AI Journey Callout Banner */}
+      {/* Project Journey Callout Banner */}
       <section className="py-12 md:py-16 bg-[#f6f8fc]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative bg-white rounded-3xl p-8 sm:p-10 md:p-12 border border-slate-200/80 shadow-sm overflow-hidden">

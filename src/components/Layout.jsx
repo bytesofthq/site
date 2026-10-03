@@ -7,7 +7,7 @@ import Footer from './Footer';
 const navLinks = [
   { path: '/', label: 'Home', icon: Home },
   { path: '/services', label: 'Services', icon: LayoutTemplate },
-  { path: '/project-journey', label: 'AI Journey', icon: Sparkles },
+  { path: '/project-journey', label: 'Project Journey', icon: Sparkles },
   { path: '/our-work', label: 'Our Work', icon: Briefcase },
   { path: '/about', label: 'About', icon: Info },
   { path: '/contact', label: 'Contact', icon: Mail }

@@ -4,7 +4,7 @@ import { MapPin, Mail, Phone, ChevronRight, ChevronUp } from 'lucide-react';
 const footerNavLinks = [
   { path: '/', label: 'Home' },
   { path: '/services', label: 'Services' },
-  { path: '/project-journey', label: 'AI Journey' },
+  { path: '/project-journey', label: 'Project Journey' },
   { path: '/our-work', label: 'Our Work' },
   { path: '/about', label: 'About' },
   { path: '/contact', label: 'Contact' },
